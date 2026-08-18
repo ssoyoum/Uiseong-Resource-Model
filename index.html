@@ -147,7 +147,7 @@
            ============================================ -->
       <section id="why" class="section alt">
         <div class="container">
-          <span class="section-kicker">PROJECT 01. WHY THIS PROJECT</span>
+          <span class="section-kicker">WHY THIS PROJECT</span>
           <h2>왜 '못'을 데이터로 보았는가?</h2>
           
           <div class="two-col">
@@ -185,7 +185,7 @@
            ============================================ -->
       <section id="research" class="section">
         <div class="container">
-          <span class="section-kicker">PROJECT 02. MY RESEARCH</span>
+          <span class="section-kicker">MY RESEARCH</span>
           <h2>의성 청년연구자로 수행한 연구</h2>
           
           <div class="timeline">
@@ -311,7 +311,7 @@
            ============================================ -->
       <section id="result" class="section">
         <div class="container">
-          <span class="section-kicker">04. WEB GIS · PROJECT RESULT</span>
+          <span class="section-kicker">PROJECT RESULT</span>
           <h2>GIS로 바라본 의성의 못</h2>
           
           <p style="color: var(--muted); text-align: center; margin-bottom: 2rem;">
@@ -391,7 +391,8 @@
            ============================================ -->
       <section id="webgis" class="section">
         <div class="container">
-          <h2>04. WEB GIS · 데이터를 직접 탐색하는 화면</h2>
+          <span class="section-kicker">04. WEB GIS</span>
+          <h2>데이터를 직접 탐색하는 화면</h2>
           
           <p style="color: var(--muted); text-align: center; margin-bottom: 1.5rem;">
             QGIS와 Python으로 정리한 공간데이터를<br>
@@ -423,16 +424,16 @@
            ============================================ -->
       <section id="analysis" class="section alt">
         <div class="container">
-          <span class="section-kicker">05. DATA ANALYSIS</span>
-          <h2>문제를 정의하고 분석한 결과를 웹에 연결했습니다</h2>
-          
-          <p style="color: var(--muted); margin-bottom: 2rem;">
-            각 분석은 문제 → 데이터 → 전처리 → 분석 → 핵심 결과의 흐름으로 정리했습니다.<br>
-            화면에는 대표 결과를 우선 보여주며, 차트와 지도에 마우스를 가까이 대면 세부정보를 확인할 수 있습니다.
-          </p>
-
-          <div class="analysis-blocks">
-            <div class="analysis-block">
+          <div class="analysis-overview">
+            <div class="analysis-intro-wave">
+              <span class="section-kicker">05. DATA ANALYSIS</span>
+              <h2>문제를 정의하고 분석한 결과를 웹에 연결했습니다</h2>
+              <p>
+                각 분석은 문제 → 데이터 → 전처리 → 분석 → 핵심 결과의 흐름으로 정리했습니다.<br>
+                화면에는 대표 결과를 우선 보여주며, 차트와 지도에 마우스를 가까이 대면 세부정보를 확인할 수 있습니다.
+              </p>
+            </div>
+            <div id="basic-stats" class="analysis-block basic-stats-block">
               <h3>기본 통계</h3>
               <div class="stats-grid">
                 <div class="stat-card">
@@ -453,8 +454,9 @@
                 </div>
               </div>
             </div>
+          </div>
 
-            <div class="analysis-block">
+            <div class="analysis-block analysis-a-block">
               <h3>분석 A. 시설 규모·용량의 공간적 분포 분석</h3>
               <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem;">
                 저수량을 가중치로 사용해 중심점을 계산하고, 용량 상위 시설의 위치가
@@ -474,7 +476,9 @@
               </div>
             </div>
 
-            <div class="analysis-block">
+          <div class="analysis-blocks">
+
+            <div class="analysis-block analysis-b-block">
               <h3>분석 B. 행정구역별 비교</h3>
               <p class="analysis-note">pandas 집계 후 GeoPandas spatial join으로 시설을 읍면 Polygon에 연결했습니다. 관리주체 분포와 토지 면적당 시설 밀도를 대표 지표로 시각화하고, 읍면 경계와 결과를 Leaflet에서 함께 확인합니다.</p>
               <div id="region-insight" class="analysis-callout"></div>
@@ -483,16 +487,19 @@
                   <h4>토지 면적당 못 개수</h4>
                   <p class="analysis-note">읍면 면적을 기준으로 표준화한 시설 밀도입니다. 순위와 실제 값을 함께 보여주어 단순 시설 수와 구분했습니다.</p>
                   <div id="region-density-dotplot" class="density-dotplot"></div>
+                  <div id="analysis-b-insight" class="analysis-insight"></div>
                 </div>
                 <div>
                   <h4>관리주체별 시설 수</h4>
                   <div id="management-pie" class="pie-chart-wrap"></div>
-                  <div id="management-insight" class="compact-callout"></div>
+                  <div class="management-notes">
+                    <p>관리주체 비교는 별도 관리대장 XLSX 원자료 696건을 기준으로 집계했습니다.</p>
+                    <p>그래프에 마우스를 가까이 대면 세부 집계값을 확인할 수 있습니다. 읍면별 공간 분포는 지도에서 <strong>읍면별 시설 밀도</strong> 레이어를 ON/OFF하여 확인합니다.</p>
+                    <p>시설 수 비중은 공간 밀도와 분리해 읽도록 구성해, 시설의 분포와 관리 책임의 구조를 함께 비교할 수 있습니다.</p>
+                  </div>
+                  <div id="management-insight" class="compact-callout management-insight"></div>
                 </div>
               </div>
-              <div id="analysis-b-insight" class="analysis-insight"></div>
-              <p class="analysis-note">관리주체 비교는 별도 관리대장 XLSX 원자료 696건을 기준으로 집계했습니다.</p>
-              <p class="analysis-note">점과 원그래프 조각에 마우스를 올리면 세부 집계값을 확인할 수 있습니다. 읍면별 공간 분포는 지도에서 <strong>읍면별 시설 밀도</strong> 레이어를 ON/OFF하여 확인합니다.</p>
             </div>
 
             <div class="analysis-block">
