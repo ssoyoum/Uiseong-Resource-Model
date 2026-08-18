@@ -355,7 +355,9 @@
         "min_capacity": 1.5,
         "max_capacity": 4703.9,
         "q1": 4.7,
-        "q3": 12.2
+        "q3": 12.2,
+        "area_km2": 41.4,
+        "facilities_per_km2": 0.676
       },
       {
         "region": "구천면",
@@ -366,7 +368,9 @@
         "min_capacity": 0.5,
         "max_capacity": 3597.0,
         "q1": 4.0,
-        "q3": 37.0
+        "q3": 37.0,
+        "area_km2": 43.68,
+        "facilities_per_km2": 0.458
       },
       {
         "region": "안계면",
@@ -377,7 +381,9 @@
         "min_capacity": 1.5,
         "max_capacity": 1271.0,
         "q1": 13.4,
-        "q3": 32.9
+        "q3": 32.9,
+        "area_km2": 43.71,
+        "facilities_per_km2": 0.732
       },
       {
         "region": "점곡면",
@@ -388,7 +394,9 @@
         "min_capacity": 0.6,
         "max_capacity": 798.5,
         "q1": 5.0,
-        "q3": 21.3
+        "q3": 21.3,
+        "area_km2": 65.38,
+        "facilities_per_km2": 0.444
       },
       {
         "region": "비안면",
@@ -399,7 +407,9 @@
         "min_capacity": 0.5,
         "max_capacity": 372.9,
         "q1": 5.5,
-        "q3": 18.8
+        "q3": 18.8,
+        "area_km2": 65.38,
+        "facilities_per_km2": 0.795
       },
       {
         "region": "다인면",
@@ -410,7 +420,9 @@
         "min_capacity": 3.2,
         "max_capacity": 615.0,
         "q1": 9.6,
-        "q3": 24.9
+        "q3": 24.9,
+        "area_km2": 89.68,
+        "facilities_per_km2": 0.424
       },
       {
         "region": "단밀면",
@@ -421,7 +433,9 @@
         "min_capacity": 1.7,
         "max_capacity": 828.0,
         "q1": 4.5,
-        "q3": 23.7
+        "q3": 23.7,
+        "area_km2": 53.86,
+        "facilities_per_km2": 0.483
       },
       {
         "region": "안사면",
@@ -432,7 +446,9 @@
         "min_capacity": 2.1,
         "max_capacity": 913.2,
         "q1": 6.7,
-        "q3": 15.0
+        "q3": 15.0,
+        "area_km2": 61.67,
+        "facilities_per_km2": 0.454
       },
       {
         "region": "안평면",
@@ -443,7 +459,9 @@
         "min_capacity": 1.3,
         "max_capacity": 223.0,
         "q1": 4.0,
-        "q3": 16.6
+        "q3": 16.6,
+        "area_km2": 101.06,
+        "facilities_per_km2": 0.594
       },
       {
         "region": "의성읍",
@@ -454,7 +472,9 @@
         "min_capacity": 0.4,
         "max_capacity": 165.0,
         "q1": 2.0,
-        "q3": 15.6
+        "q3": 15.6,
+        "area_km2": 68.28,
+        "facilities_per_km2": 0.6
       },
       {
         "region": "단촌면",
@@ -465,7 +485,9 @@
         "min_capacity": 0.3,
         "max_capacity": 52.5,
         "q1": 2.0,
-        "q3": 14.6
+        "q3": 14.6,
+        "area_km2": 73.48,
+        "facilities_per_km2": 0.517
       },
       {
         "region": "춘산면",
@@ -476,7 +498,9 @@
         "min_capacity": 0.7,
         "max_capacity": 58.3,
         "q1": 3.8,
-        "q3": 15.8
+        "q3": 15.8,
+        "area_km2": 66.47,
+        "facilities_per_km2": 0.436
       },
       {
         "region": "단북면",
@@ -487,7 +511,9 @@
         "min_capacity": 6.0,
         "max_capacity": 49.0,
         "q1": 8.0,
-        "q3": 17.8
+        "q3": 17.8,
+        "area_km2": 23.86,
+        "facilities_per_km2": 0.251
       }
     ],
     "xlsx_management_summary": [

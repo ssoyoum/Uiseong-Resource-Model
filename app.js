@@ -46,13 +46,13 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     onEachFeature: (feature, layer) => {
       const area = Number(feature.properties?.area_ha || 0);
-      layer.bindPopup(`농업진흥지역<br>면적: ${formatNumber(area)} ha`);
+      layer.bindPopup(`농경지·농업진흥지역<br>면적: ${formatNumber(area)} ha`);
     },
   }).addTo(map);
   const regionLayer = L.geoJSON(null, {
     style: (feature) => {
-      const capacity = Number(feature.properties?.total_capacity || 0);
-      const fillOpacity = capacity > 0 ? Math.min(0.65, 0.12 + capacity / 30000) : 0.04;
+      const density = Number(feature.properties?.facilities_per_km2 || 0);
+      const fillOpacity = density > 0 ? Math.min(0.65, 0.12 + density / 2) : 0.04;
       return {
         color: '#6d8272',
         weight: 1,
@@ -65,7 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
       layer.bindPopup(
         `${properties.spatial_region || '읍면'}<br>` +
         `시설: ${formatNumber(properties.facility_count)}개<br>` +
-        `총용량: ${formatNumber(properties.total_capacity)} 천톤`
+        `면적: ${formatNumber(properties.area_km2)}km²<br>` +
+        `면적당 시설: ${formatNumber(properties.facilities_per_km2)}개/km²`
       );
     },
   });
@@ -78,8 +79,8 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       '의성군 행정경계': boundaryLayer,
       '못 위치': pondLayer,
-      '농업진흥지역': agricultureLayer,
-      '읍면별 총용량': regionLayer,
+      '농경지·농업진흥지역': agricultureLayer,
+      '읍면별 시설 밀도': regionLayer,
     },
     { collapsed: false }
   ).addTo(map);
@@ -177,13 +178,104 @@ document.addEventListener('DOMContentLoaded', () => {
       const value = Number(item[valueKey]) || 0;
       const width = Math.max(1, (value / maximum) * 100);
       return `
-        <div class="bar-row">
+        <div class="bar-row" title="${escapeHtml(`${item[labelKey]}: ${formatter(value)}`)}">
           <span>${escapeHtml(item[labelKey])}</span>
           <div class="bar-track"><div class="bar-fill" style="width:${width}%"></div></div>
           <span class="bar-value">${formatter(value)}</span>
         </div>
       `;
     }).join('');
+  }
+
+  function renderTopFacilitiesChart(items) {
+    const container = document.getElementById('top-facilities');
+    if (!container || !items?.length) return;
+
+    const topItems = items.slice(0, 5);
+    const maximum = Math.max(...topItems.map((item) => Number(item.capacity) || 0), 1);
+    container.innerHTML = topItems.map((item) => {
+      const value = Number(item.capacity) || 0;
+      // 극단적인 용량 값이 작은 시설의 차트를 숨기지 않도록 로그 스케일로 폭을 계산한다.
+      const width = Math.max(4, (Math.log10(value + 1) / Math.log10(maximum + 1)) * 100);
+      const title = `${item.address || '시설'} · ${item.region || '-'} · ${formatNumber(value)} 천톤`;
+      return `
+        <div class="bar-row" title="${escapeHtml(title)}">
+          <span>${escapeHtml(item.address || '시설')}</span>
+          <div class="bar-track"><div class="bar-fill bar-fill-accent" style="width:${width}%"></div></div>
+          <span class="bar-value">${formatNumber(value)}</span>
+        </div>
+      `;
+    }).join('');
+  }
+
+  function renderDensityDotPlot(items) {
+    const container = document.getElementById('region-density-dotplot');
+    if (!container || !items?.length) return;
+
+    const ranked = [...items]
+      .filter((item) => Number(item.facilities_per_km2) >= 0)
+      .sort((a, b) => Number(b.facilities_per_km2) - Number(a.facilities_per_km2));
+    const maximum = Math.max(...ranked.map((item) => Number(item.facilities_per_km2) || 0), 1);
+
+    container.innerHTML = `
+      <div class="dotplot-scale"><span>0개/km²</span><span>${formatNumber(maximum)}개/km²</span></div>
+      ${ranked.map((item, index) => {
+        const value = Number(item.facilities_per_km2) || 0;
+        const position = Math.max(2, (value / maximum) * 100);
+        const title = `${item.region}: ${formatNumber(value)}개/km² · 시설 ${formatNumber(item.facility_count)}개 · 면적 ${formatNumber(item.area_km2)}km²`;
+        return `
+          <div class="dotplot-row" title="${escapeHtml(title)}">
+            <span class="dotplot-rank">${String(index + 1).padStart(2, '0')}</span>
+            <span class="dotplot-label">${escapeHtml(item.region)}</span>
+            <div class="dotplot-track"><i class="dotplot-line" style="width:${position}%"></i><i class="dotplot-dot" style="left:${position}%"></i></div>
+            <span class="dotplot-value">${formatNumber(value)}</span>
+          </div>
+        `;
+      }).join('')}
+    `;
+  }
+
+  function renderManagementPie(items) {
+    const container = document.getElementById('management-pie');
+    if (!container || !items?.length) return;
+
+    const total = items.reduce((sum, item) => sum + (Number(item.facility_count) || 0), 0);
+    const colors = ['#2d6a4f', '#d59d2d', '#397bb8', '#9b5de5'];
+    const center = 100;
+    const radius = 72;
+    let angle = -Math.PI / 2;
+    const slices = items.map((item, index) => {
+      const value = Number(item.facility_count) || 0;
+      const share = total ? value / total : 0;
+      const nextAngle = angle + share * Math.PI * 2;
+      const start = [center + radius * Math.cos(angle), center + radius * Math.sin(angle)];
+      const end = [center + radius * Math.cos(nextAngle), center + radius * Math.sin(nextAngle)];
+      const largeArc = share > 0.5 ? 1 : 0;
+      const path = `M ${center} ${center} L ${start[0].toFixed(2)} ${start[1].toFixed(2)} A ${radius} ${radius} 0 ${largeArc} 1 ${end[0].toFixed(2)} ${end[1].toFixed(2)} Z`;
+      angle = nextAngle;
+      const percentage = total ? (share * 100).toFixed(1) : '0.0';
+      return {
+        item,
+        path,
+        color: colors[index % colors.length],
+        percentage,
+        title: `${item.management}: ${formatNumber(value)}개 (${percentage}%) · 총용량 ${formatNumber(item.total_capacity)}천톤 · 평균 ${formatNumber(item.mean_capacity)}천톤`,
+      };
+    });
+
+    container.innerHTML = `
+      <div class="pie-layout">
+        <svg class="pie-chart" viewBox="0 0 200 200" role="img" aria-label="관리주체별 시설 수 원그래프">
+          ${slices.map((slice) => `<path class="pie-slice" d="${slice.path}" fill="${slice.color}"><title>${escapeHtml(slice.title)}</title></path>`).join('')}
+          <circle cx="100" cy="100" r="40" fill="var(--panel)" />
+          <text x="100" y="96" text-anchor="middle" class="pie-total-label">${formatNumber(total)}</text>
+          <text x="100" y="112" text-anchor="middle" class="pie-total-sub">시설</text>
+        </svg>
+        <div class="pie-legend">
+          ${slices.map((slice) => `<div class="pie-legend-item" title="${escapeHtml(slice.title)}"><i style="background:${slice.color}"></i><span>${escapeHtml(slice.item.management)}</span><strong>${formatNumber(slice.item.facility_count)}개</strong></div>`).join('')}
+        </div>
+      </div>
+    `;
   }
 
   function renderScatterPlot(containerId, points) {
@@ -195,21 +287,37 @@ document.addEventListener('DOMContentLoaded', () => {
     const padding = { top: 18, right: 20, bottom: 42, left: 58 };
     const plotWidth = width - padding.left - padding.right;
     const plotHeight = height - padding.top - padding.bottom;
-    const maxX = Math.max(...points.map((point) => Number(point.capacity)), 1);
-    const maxY = Math.max(...points.map((point) => Number(point.agricultural_area_ha)), 1);
+    const maxX = Math.max(...points.map((point) => Number(point.capacity) || 0), 1);
+    const maxY = Math.max(...points.map((point) => Number(point.agricultural_area_ha) || 0), 1);
+    const xDomain = 10 ** Math.ceil(Math.log10(maxX + 1));
+    const yDomain = 10 ** Math.ceil(Math.log10(maxY + 1));
+    const logPosition = (value, domain) => Math.log10(1 + Math.max(0, Number(value) || 0)) / Math.log10(1 + domain);
+    const ticksFor = (domain) => [0, 1, 10, 100, 1000, domain].filter((value, index, values) => value <= domain && values.indexOf(value) === index);
+    const xTicks = ticksFor(xDomain);
+    const yTicks = ticksFor(yDomain);
     const circles = points.map((point) => {
-      const x = padding.left + (Number(point.capacity) / maxX) * plotWidth;
-      const y = padding.top + plotHeight - (Number(point.agricultural_area_ha) / maxY) * plotHeight;
-      return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="3" fill="#176b4d" fill-opacity="0.45"><title>${escapeHtml(point.address)}: ${formatNumber(point.capacity)}천톤 / ${formatNumber(point.agricultural_area_ha)}ha</title></circle>`;
+      const x = padding.left + logPosition(point.capacity, xDomain) * plotWidth;
+      const y = padding.top + plotHeight - logPosition(point.agricultural_area_ha, yDomain) * plotHeight;
+      const title = `${point.address || '시설'} · ${point.region || '-'} · 용량 ${formatNumber(point.capacity)}천톤 · 주변 농업지역 ${formatNumber(point.agricultural_area_ha)}ha`;
+      return `<circle class="scatter-point" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="3.5" fill="#176b4d" fill-opacity="0.48"><title>${escapeHtml(title)}</title></circle>`;
+    }).join('');
+    const xGuides = xTicks.map((value) => {
+      const x = padding.left + logPosition(value, xDomain) * plotWidth;
+      return `<line x1="${x.toFixed(1)}" y1="${padding.top}" x2="${x.toFixed(1)}" y2="${padding.top + plotHeight}" class="scatter-grid" /><text x="${x.toFixed(1)}" y="${height - 22}" class="scatter-tick">${formatNumber(value)}</text>`;
+    }).join('');
+    const yGuides = yTicks.map((value) => {
+      const y = padding.top + plotHeight - logPosition(value, yDomain) * plotHeight;
+      return `<line x1="${padding.left}" y1="${y.toFixed(1)}" x2="${width - padding.right}" y2="${y.toFixed(1)}" class="scatter-grid" /><text x="${padding.left - 8}" y="${(y + 4).toFixed(1)}" class="scatter-tick scatter-y-tick">${formatNumber(value)}</text>`;
     }).join('');
 
     container.innerHTML = `
-      <svg class="scatter-plot" viewBox="0 0 ${width} ${height}" role="img" aria-label="못 용량과 주변 농업지역 면적 산점도">
+      <svg class="scatter-plot" viewBox="0 0 ${width} ${height}" role="img" aria-label="로그축 못 용량과 주변 농업지역 면적 산점도">
+        ${xGuides}${yGuides}
         <line x1="${padding.left}" y1="${padding.top + plotHeight}" x2="${width - padding.right}" y2="${padding.top + plotHeight}" class="scatter-axis" />
         <line x1="${padding.left}" y1="${padding.top}" x2="${padding.left}" y2="${padding.top + plotHeight}" class="scatter-axis" />
         ${circles}
-        <text x="${width / 2}" y="${height - 8}" class="scatter-label">시설 용량 (천톤)</text>
-        <text x="16" y="${height / 2}" class="scatter-label" transform="rotate(-90 16 ${height / 2})">주변 농업지역 (ha)</text>
+        <text x="${width / 2}" y="${height - 6}" class="scatter-label">시설 용량 (천톤, log scale)</text>
+        <text x="16" y="${height / 2}" class="scatter-label" transform="rotate(-90 16 ${height / 2})">주변 농업지역 (ha, log scale)</text>
       </svg>
     `;
   }
@@ -228,15 +336,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('average-capacity').textContent = `${formatNumber(averageCapacity)} 천톤`;
     document.getElementById('max-capacity').textContent = `${formatNumber(maximumCapacity)} 천톤`;
 
-    const regionSummary = document.getElementById('region-summary');
-    regionSummary.innerHTML = regions.map((item) => `
-      <div class="region-card">
-        <strong>${escapeHtml(item.region)}</strong>
-        <span>시설: ${formatNumber(item.facility_count)}개</span>
-        <span>총용량: ${formatNumber(item.total_capacity)} 천톤</span>
-      </div>
-    `).join('');
-
     document.getElementById('c-research-note').textContent =
       '시설 간 최근린거리 및 공간적 군집성을 추가적으로 검토했으나, ' +
       '통계적 유의성이 낮아 강한 군집 패턴은 확인되지 않았다.';
@@ -253,56 +352,15 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     `).join('');
 
-    document.getElementById('top-facilities').innerHTML = `
-      <table class="analysis-table">
-        <thead><tr><th>주소</th><th>지역</th><th>용량(천톤)</th></tr></thead>
-        <tbody>${centroid.top_facilities.map((item) => `
-          <tr><td>${escapeHtml(item.address)}</td><td>${escapeHtml(item.region)}</td><td>${formatNumber(item.capacity)}</td></tr>
-        `).join('')}</tbody>
-      </table>
-    `;
-
-    document.getElementById('regional-centroids').innerHTML = `
-      <table class="analysis-table">
-        <thead><tr><th>지역</th><th>시설</th><th>가중 중심</th></tr></thead>
-        <tbody>${centroid.regional_weighted_centroids.map((item) => `
-          <tr><td>${escapeHtml(item.region)}</td><td>${item.facility_count}개</td><td>${item.weighted_lat.toFixed(3)}, ${item.weighted_lng.toFixed(3)}</td></tr>
-        `).join('')}</tbody>
-      </table>
-    `;
-
-    renderBarChart('region-capacity-chart', regions.slice(0, 13), 'region', 'total_capacity', (value) => `${formatNumber(value)} 천톤`);
-
-    const boxplot = document.getElementById('region-boxplot');
-    const boxplotMaximum = Math.max(...regions.map((item) => item.max_capacity), 1);
-    boxplot.innerHTML = regions.map((item) => {
-      const range = Math.max(item.max_capacity - item.min_capacity, 1);
-      const left = (item.min_capacity / boxplotMaximum) * 100;
-      const whiskerWidth = ((item.max_capacity - item.min_capacity) / boxplotMaximum) * 100;
-      const boxLeft = (item.q1 / boxplotMaximum) * 100;
-      const boxWidth = Math.max(0.5, ((item.q3 - item.q1) / boxplotMaximum) * 100);
-      const medianLeft = (item.median_capacity / boxplotMaximum) * 100;
-      return `
-        <div class="boxplot-row" title="최소 ${item.min_capacity} / Q1 ${item.q1} / 중앙 ${item.median_capacity} / Q3 ${item.q3} / 최대 ${item.max_capacity}">
-          <span>${escapeHtml(item.region)}</span>
-          <div class="boxplot-track">
-            <i class="boxplot-whisker" style="left:${left}%;width:${Math.max(0.5, whiskerWidth)}%"></i>
-            <i class="boxplot-box" style="left:${boxLeft}%;width:${boxWidth}%"></i>
-            <i class="boxplot-median" style="left:${medianLeft}%"></i>
-          </div>
-        </div>
-      `;
-    }).join('');
-
     const management = analysis.e.xlsx_management_summary || [];
-    document.getElementById('management-summary').innerHTML = `
-      <table class="analysis-table">
-        <thead><tr><th>관리주체</th><th>시설</th><th>총용량</th><th>평균용량</th></tr></thead>
-        <tbody>${management.map((item) => `
-          <tr><td>${escapeHtml(item.management)}</td><td>${item.facility_count}개</td><td>${formatNumber(item.total_capacity)} 천톤</td><td>${formatNumber(item.mean_capacity)} 천톤</td></tr>
-        `).join('')}</tbody>
-      </table>
-    `;
+    renderTopFacilitiesChart(centroid.top_facilities);
+    renderDensityDotPlot(regions);
+    renderManagementPie(management);
+
+    const densest = [...regions].sort((a, b) => Number(b.facilities_per_km2 || 0) - Number(a.facilities_per_km2 || 0))[0];
+    document.getElementById('region-insight').innerHTML = densest
+      ? `<strong>대표 insight</strong> ${escapeHtml(densest.region)}의 토지 면적당 시설 수가 가장 높습니다(${formatNumber(densest.facilities_per_km2)}개/km²). 읍면별 시설 수를 면적으로 표준화해 지역 규모의 영향을 줄였습니다.`
+      : '';
 
     const buffer500 = agriculture.buffers['500'];
     const buffer1000 = agriculture.buffers['1000'];
@@ -314,8 +372,8 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     `).join('');
     document.getElementById('agriculture-correlation').innerHTML =
-      `<strong>용량 × 주변 농업환경:</strong> 1km 기준 Pearson r=${formatNumber(buffer1000.pearson_r)}, ` +
-      `Spearman ρ=${formatNumber(buffer1000.spearman_r)}. ${escapeHtml(buffer1000.correlation_interpretation)}.`;
+      `<strong>보조 검토 결과:</strong> 1km 기준 Pearson r=${formatNumber(buffer1000.pearson_r)}, ` +
+      `Spearman ρ=${formatNumber(buffer1000.spearman_r)}로 상관관계는 약했습니다. 따라서 이 분석은 인과관계 주장이 아니라, 시설별 주변 환경지표를 만드는 GIS 처리 사례로 해석합니다.`;
     renderScatterPlot('agriculture-scatter', buffer1000.scatter);
   }
 
@@ -387,7 +445,57 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  function initializeScrollExperience() {
+    const progressBar = document.getElementById('scroll-progress-bar');
+    const updateProgress = () => {
+      if (!progressBar) return;
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+      progressBar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', updateProgress);
+    updateProgress();
+
+    const revealTargets = document.querySelectorAll(
+      '.section > .container, .career-card, .learning-card, .outcome-card, .analysis-block'
+    );
+    revealTargets.forEach((target, index) => {
+      target.classList.add('scroll-reveal');
+      target.style.setProperty('--reveal-delay', `${Math.min(index % 4, 3) * 80}ms`);
+    });
+
+    if (!('IntersectionObserver' in window)) {
+      revealTargets.forEach((target) => target.classList.add('is-visible'));
+    } else {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -7% 0px' });
+      revealTargets.forEach((target) => revealObserver.observe(target));
+
+      const navLinks = [...document.querySelectorAll('nav a[href^="#"]')];
+      const navSections = navLinks
+        .map((link) => document.querySelector(link.getAttribute('href')))
+        .filter(Boolean);
+      const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          navLinks.forEach((link) => link.classList.toggle(
+            'is-active', link.getAttribute('href') === `#${entry.target.id}`
+          ));
+        });
+      }, { threshold: 0.2, rootMargin: '-20% 0px -65% 0px' });
+      navSections.forEach((section) => navObserver.observe(section));
+    }
+  }
+
   // 2. Leaflet 지도는 위에서 생성했고, 데이터는 경계부터 순서대로 불러온다.
+  initializeScrollExperience();
   initializeMap();
   initializeAnalysis();
 });

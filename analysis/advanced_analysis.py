@@ -316,10 +316,19 @@ def read_management_workbook():
     return pd.concat(frames, ignore_index=True), workbook
 
 
-def regional_analysis(points):
+def regional_analysis(points, emd=None):
+    area_by_region = {}
+    if emd is not None:
+        area_by_region = (
+            emd.assign(area_km2=emd.geometry.area / 1_000_000)
+            .groupby("spatial_region")["area_km2"]
+            .sum()
+            .to_dict()
+        )
     records = []
     for region, frame in points.groupby("region"):
         capacities = frame["capacity"].to_numpy(dtype=float)
+        area_km2 = float(area_by_region.get(region, 0))
         records.append({
             "region": region,
             "facility_count": int(len(frame)),
@@ -330,6 +339,8 @@ def regional_analysis(points):
             "max_capacity": rounded(capacities.max(), 1),
             "q1": rounded(np.percentile(capacities, 25), 1),
             "q3": rounded(np.percentile(capacities, 75), 1),
+            "area_km2": rounded(area_km2, 2),
+            "facilities_per_km2": rounded(len(frame) / area_km2, 3) if area_km2 else 0,
         })
     records.sort(key=lambda item: item["total_capacity"], reverse=True)
     return records
@@ -368,6 +379,7 @@ def main():
     )
 
     # E 결과를 읍면동 Polygon 속성에 넣어 Leaflet choropleth 레이어로 저장한다.
+    region_area = emd.assign(area_km2=emd.geometry.area / 1_000_000).groupby("spatial_region")["area_km2"].sum().to_dict()
     region_totals = points.groupby("region").agg(
         facility_count=("id", "count"),
         total_capacity=("capacity", "sum"),
@@ -379,7 +391,12 @@ def main():
     emd_web["total_capacity"] = emd_web["spatial_region"].map(
         lambda region: round(region_totals.get(region, {}).get("total_capacity", 0), 1)
     )
-    emd_web[["spatial_region", "facility_count", "total_capacity", "geometry"]].to_file(
+    emd_web["area_km2"] = emd_web["spatial_region"].map(lambda region: round(region_area.get(region, 0), 2))
+    emd_web["facilities_per_km2"] = emd_web.apply(
+        lambda row: round(row["facility_count"] / row["area_km2"], 3) if row["area_km2"] else 0,
+        axis=1,
+    )
+    emd_web[["spatial_region", "facility_count", "total_capacity", "area_km2", "facilities_per_km2", "geometry"]].to_file(
         BASE_DIR / "data" / "geojson" / "uiseong_emd.geojson",
         driver="GeoJSON",
         encoding="utf-8",
@@ -400,7 +417,7 @@ def main():
         "e": {
             "join_method": "GeoPandas spatial join (Point within 읍면동 Polygon)",
             "spatial_join_match_count": int(points["region"].notna().sum()),
-            "csv_region_summary": regional_analysis(points),
+            "csv_region_summary": regional_analysis(points, emd),
             "xlsx_management_summary": management_analysis(workbook_data),
             "xlsx_record_count": int(len(workbook_data)),
         },
