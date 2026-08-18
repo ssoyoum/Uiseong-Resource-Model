@@ -65,8 +65,9 @@
 - QGIS를 활용한 지역별 분포 분석
 - 못 규모, 용량, 관리주체 통계
 - Research Note: 시설 간 최근린거리 및 공간적 군집성 추가 검토
-- 분석 D: 시설 규모·용량의 공간적 분포 분석
-- 분석 E: pandas 집계 → GeoPandas spatial join → 차트·Leaflet 지도
+- 분석 A: 시설 규모·용량의 공간적 분포 분석
+- 분석 B: pandas 집계 → GeoPandas spatial join → 차트·Leaflet 지도
+- 분석 C: 못 × 농업지역 Buffer/Intersection 처리 파이프라인
 - 못 주변 농업진흥지역 Buffer/Intersection 및 용량 상관분석
 
 ### 웹 포트폴리오 제작
@@ -111,7 +112,7 @@ https://ssoyoum.github.io/Uiseong-Young-Researchers/
 | `uiseong_boundary.geojson` | GeoJSON | 의성군 행정경계 |
 | `region_summary.json` | JSON | 지역별 시설 통계 |
 | `distance_cluster_summary.json` | JSON | 공간 통계 분석 결과 |
-| `advanced_analysis.json` | JSON | 분석 C·D·E 웹 시각화 결과 |
+| `advanced_analysis.json` | JSON | 분석 A·B·C 및 Research Note 웹 시각화 결과 |
 | `uiseong_emd.geojson` | GeoJSON | 읍면별 시설 수·면적·시설 밀도 지도 레이어 |
 | `agricultural_areas.geojson` | GeoJSON | 의성군 경계와 겹치는 농지·농업진흥지역 |
 
@@ -221,7 +222,7 @@ Uiseong-Young-Researchers/
 │   └── analysis/
 │       ├── region_summary.json
 │       ├── distance_cluster_summary.json
-│       └── advanced_analysis.json # 분석 C·D·E 결과
+│       └── advanced_analysis.json # 분석 A·B·C 결과
 │
 └── 의성/  # 원본 데이터
 ```
@@ -235,13 +236,14 @@ Uiseong-Young-Researchers/
 - ✅ 용량별 필터링
 - ✅ 마커 클릭 상세정보
 - ✅ 지역별 통계 분석
-- ✅ 분석 D: 시설 규모·용량의 공간적 분포 분석
-- ✅ 분석 E: GeoPandas spatial join 기반 읍면별 비교
+- ✅ 분석 A: 시설 규모·용량의 공간적 분포 분석
+- ✅ 분석 B: GeoPandas spatial join 기반 읍면별 비교
+- ✅ 분석 C: 못 × 농업지역 공간분석 과정 시각화
 - ✅ 관리주체별 시설 수 원그래프·토지면적당 시설 수 dot plot
 - ✅ 못 주변 500m·1km 농업지역 면적 분석
 - ✅ 농경지·농업진흥지역 Leaflet 레이어 ON/OFF와 Polygon Popup
 - ✅ 용량과 주변 농업환경의 Pearson·Spearman 상관분석
-- ✅ 로그축 Scatter plot과 점별 hover 상세정보
+- ✅ 로그축 Scatter plot과 점별 마우스 상세정보
 - ✅ 스크롤 진입 애니메이션·페이지 진행률 UI
 - ✅ Python 공간 통계 분석
 

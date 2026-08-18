@@ -352,14 +352,34 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     `).join('');
 
+    const weighted = centroid.weighted_centroid;
+    const unweighted = centroid.unweighted_centroid;
+    const centerShiftKm = Math.sqrt(
+      Math.pow((weighted.lat - unweighted.lat) * 111, 2) +
+      Math.pow((weighted.lng - unweighted.lng) * 89, 2)
+    );
+    document.getElementById('analysis-a-insight').innerHTML =
+      `<strong>핵심 결과</strong> 용량 가중 중심은 ${weighted.lat.toFixed(3)}°N, ${weighted.lng.toFixed(3)}°E로 계산되었고, 단순 중심과 약 ${formatNumber(centerShiftKm)}km 차이가 나타났습니다. 시설의 개수뿐 아니라 규모까지 함께 보았을 때의 공간적 차이를 확인한 결과입니다.`;
+
     const management = analysis.e.xlsx_management_summary || [];
     renderTopFacilitiesChart(centroid.top_facilities);
     renderDensityDotPlot(regions);
     renderManagementPie(management);
+    const managementInsight = document.getElementById('management-insight');
+    if (managementInsight && management.length) {
+      const totalManaged = management.reduce((sum, item) => sum + Number(item.facility_count || 0), 0);
+      const largestManagement = [...management].sort((a, b) => Number(b.facility_count || 0) - Number(a.facility_count || 0))[0];
+      const share = totalManaged ? (Number(largestManagement.facility_count) / totalManaged) * 100 : 0;
+      managementInsight.innerHTML = `<strong>관리 구조</strong> ${escapeHtml(largestManagement.management)}가 ${formatNumber(largestManagement.facility_count)}개(${formatNumber(share)}%)로 가장 큰 비중을 차지합니다.`;
+    }
 
     const densest = [...regions].sort((a, b) => Number(b.facilities_per_km2 || 0) - Number(a.facilities_per_km2 || 0))[0];
     document.getElementById('region-insight').innerHTML = densest
       ? `<strong>대표 insight</strong> ${escapeHtml(densest.region)}의 토지 면적당 시설 수가 가장 높습니다(${formatNumber(densest.facilities_per_km2)}개/km²). 읍면별 시설 수를 면적으로 표준화해 지역 규모의 영향을 줄였습니다.`
+      : '';
+    const largestManagement = [...management].sort((a, b) => Number(b.facility_count || 0) - Number(a.facility_count || 0))[0];
+    document.getElementById('analysis-b-insight').innerHTML = densest && largestManagement
+      ? `<strong>비교 기준</strong> 읍면 비교는 토지 면적당 시설 밀도, 관리주체 비교는 시설 수 비중으로 나누어 해석했습니다. 서로 다른 공간 단위와 관리 단위를 한 지표로 섞지 않았습니다.`
       : '';
 
     const buffer500 = agriculture.buffers['500'];
@@ -409,7 +429,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ? pondsGeoJson.features
         : [];
 
-      // E와 농업환경 분석에 사용한 농업진흥지역 Polygon을 지도에 올린다.
+      // 분석 C와 농업환경 분석에 사용한 농경지 Polygon을 지도에 올린다.
       const agricultureGeoJson = await loadJson('data/geojson/agricultural_areas.geojson');
       agricultureLayer.addData(agricultureGeoJson);
       const regionGeoJson = await loadJson('data/geojson/uiseong_emd.geojson');
