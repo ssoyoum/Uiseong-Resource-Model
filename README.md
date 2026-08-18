@@ -68,6 +68,22 @@
 
 ## 5. Data
 
+## 5.0 Public portfolio deployment
+
+이 프로젝트는 GitHub Pages로 공개할 수 있는 정적 웹 포트폴리오입니다.
+
+1. VS Code 소스 제어에서 `.github/workflows/pages.yml`을 포함해 커밋합니다.
+2. `Sync Changes` 또는 `Push`로 `main` 브랜치를 GitHub에 올립니다.
+3. GitHub 저장소의 `Settings` → `Pages`로 이동합니다.
+4. `Build and deployment`의 `Source`를 `GitHub Actions`로 선택합니다.
+5. `Actions` 탭에서 `Deploy portfolio to GitHub Pages`가 성공하면 아래 주소를 공유합니다.
+
+```text
+https://ssoyoum.github.io/Uiseong-Young-Researchers/
+```
+
+이후 `main`에 Push할 때마다 Workflow가 HTML, CSS, JavaScript, GeoJSON, 분석 JSON을 자동으로 다시 배포합니다.
+
 ### 5.1 Source Data
 
 | 데이터 | 출처 | 건수 | 형식 |

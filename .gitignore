@@ -1,0 +1,7 @@
+analysis/__pycache__/
+*.py[cod]
+.venv/
+data/source/
+의성/
+data/geojson/boundary.geojson
+index_old.html
