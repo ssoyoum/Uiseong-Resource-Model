@@ -301,19 +301,6 @@ Uiseong-Young-Researchers/
 
 현재는 HTML, CSS, JavaScript를 중심으로 웹 개발의 기본기를 학습하고 있으며, 향후 React와 백엔드 기술까지 학습 범위를 확장할 예정입니다.
 
-## 실행 방법
-
-정적 파일 기반 프로젝트이므로 간단한 로컬 서버로 실행할 수 있습니다.
-
-```bash
-python -m http.server 5500
-```
-
-브라우저에서 아래 주소로 접속합니다.
-
-```text
-http://localhost:5500
-```
 
 ## Project Status
 
