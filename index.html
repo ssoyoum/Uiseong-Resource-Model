@@ -3,27 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="2025 의성군 청년연구자 프로젝트 포트폴리오 - GIS 기반 농업유산 데이터 분석" />
-    <title>못을 통해 바라본 의성의 농업유산 | 청년연구자 포트폴리오</title>
+    <meta name="description" content="토목·GIS 도메인 경험을 웹과 AI로 확장하는 개발자 박소영의 포트폴리오" />
+    <title>박소영 | 토목·GIS 데이터 기반 개발자 포트폴리오</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
     <!-- HEADER & NAVIGATION -->
     <header class="site-header">
       <div class="container nav">
-        <div class="brand">농업유산 Web GIS</div>
+        <div class="brand">박소영 Portfolio</div>
         <nav>
-          <a href="#intro">01 프로젝트</a>
-          <a href="#why">02 배경</a>
-          <a href="#research">03 연구</a>
-          <a href="#data">04 데이터</a>
-          <a href="#result">05 결과</a>
-          <a href="#outcome">06 성과</a>
-          <a href="#webgis">07 지도</a>
-          <a href="#analysis">08 분석</a>
-          <a href="#built">09 기술</a>
-          <a href="#archive">10 아카이브</a>
+          <a href="#about">00 ABOUT ME</a>
+          <a href="#career">01 CAREER</a>
+          <a href="#project">02 PROJECT</a>
+          <a href="#data">03 DATA</a>
+          <a href="#webgis">04 WEB GIS</a>
+          <a href="#analysis">05 DATA ANALYSIS</a>
+          <a href="#development">06 DEVELOPMENT</a>
+          <a href="#archive">07 ARCHIVE</a>
         </nav>
       </div>
     </header>
@@ -31,35 +30,39 @@
     <main>
 
       <!-- ============================================
-           SECTION 01: PROJECT INTRO
+           SECTION 00: ABOUT ME
            ============================================ -->
-      <section id="intro" class="section hero">
+      <section id="about" class="section hero about-hero">
         <div class="container">
           <div class="hero-content">
-            <h1>못을 통해 바라본<br>의성의 농업유산</h1>
-            <p class="intro-subtitle">2025 의성군 청년연구자 프로젝트</p>
+            <span class="section-kicker">00. ABOUT ME</span>
+            <h1>토목·GIS 데이터를 다루던 경험을<br>웹과 AI로 확장하는 개발자,<br>박소영입니다.</h1>
+            <p class="intro-subtitle">Domain experience in Civil Engineering, GIS &amp; Water Resources</p>
             
             <p class="intro-description">
-              의성의 전통 농업유산인 '못'을 매개로<br>
-              지역의 공간데이터를 구축하고 분석한 연구 프로젝트입니다.
+              토목공학과 환경공학을 전공하고, 수자원 분야에서 하천·수자원 데이터와 GIS를 다뤄왔습니다.<br>
+              이후 Python, LLM, RAG, HTML, JavaScript 등을 학습하며<br>
+              기존의 도메인 경험을 데이터와 웹 기술로 확장하는 개발자를 목표로 하고 있습니다.<br><br>
+              이 포트폴리오는 과거 의성 청년연구자로 수행했던 전통수리시설 '못' 연구를<br>
+              개발 기술을 활용해 웹 서비스로 재구성한 프로젝트입니다.
             </p>
 
             <div class="project-meta">
               <div class="meta-item">
-                <span class="meta-label">ROLE</span>
-                <span class="meta-value">의성군 청년연구자</span>
+                <span class="meta-label">DOMAIN</span>
+                <span class="meta-value">토목 · 수자원 · GIS</span>
               </div>
               <div class="meta-item">
-                <span class="meta-label">PERIOD</span>
-                <span class="meta-value">2025.06 — 2025.09</span>
+                <span class="meta-label">BACKGROUND</span>
+                <span class="meta-value">건설시스템공학 · 환경공학</span>
               </div>
               <div class="meta-item">
-                <span class="meta-label">FIELD</span>
-                <span class="meta-value">GIS · Spatial Data · Agriculture</span>
+                <span class="meta-label">CURRENTLY LEARNING</span>
+                <span class="meta-value">HTML · CSS · JavaScript · Web GIS</span>
               </div>
               <div class="meta-item">
-                <span class="meta-label">OUTPUT</span>
-                <span class="meta-value">데이터 구축 · 공간분석 · 웹 재구성</span>
+                <span class="meta-label">GOAL</span>
+                <span class="meta-value">데이터 기반 웹서비스 개발</span>
               </div>
             </div>
           </div>
@@ -67,11 +70,85 @@
       </section>
 
       <!-- ============================================
-           SECTION 02: WHY THIS PROJECT
+           SECTION 01: CAREER / BACKGROUND
+           ============================================ -->
+      <section id="career" class="section alt">
+        <div class="container">
+          <span class="section-kicker">01. CAREER / BACKGROUND</span>
+          <h2>현장 데이터와 공간정보를 다뤄온 경험</h2>
+          <div class="career-grid">
+            <article class="career-card">
+              <span class="career-period">2018.01 — 2018.03</span>
+              <h3>온실가스종합정보센터</h3>
+              <p>NGMS 시스템 사용자 상담과 일반 문의를 대응했습니다.</p>
+              <strong>얻은 역량 · 시스템 이해 · 사용자 관점의 문제 대응</strong>
+            </article>
+            <article class="career-card">
+              <span class="career-period">2020.08 — 2020.10</span>
+              <h3>한국시설안전공단</h3>
+              <p>FMS 점검·진단 보고서 56건의 외관조사 및 재료시험 결과를 입력·검토했습니다.</p>
+              <strong>얻은 역량 · 데이터 품질 검토 · 구조화된 기록 관리</strong>
+            </article>
+            <article class="career-card">
+              <span class="career-period">2021.04 — 2021.12</span>
+              <h3>한국수자원조사기술원</h3>
+              <p>국가하천 유역조사, 유량·유사량 측정, 홍수피해조사와 데이터 정리를 수행했습니다.</p>
+              <strong>얻은 역량 · 현장 데이터 수집 · 수자원 데이터 해석</strong>
+            </article>
+            <article class="career-card">
+              <span class="career-period">2022.06 — 2025.07</span>
+              <h3>동부엔지니어링</h3>
+              <p>하천기본계획, 홍수위험지도, 해외 ODA 사업의 조사자료 분석과 보고서 작성을 담당했습니다.</p>
+              <strong>얻은 역량 · 프로젝트 문서화 · GIS/BIM/CAD 기반 공간정보 활용</strong>
+            </article>
+          </div>
+          <div class="education-strip">
+            <strong>서울과학기술대학교</strong>
+            <span>건설시스템공학과 · 환경공학과 복수전공</span>
+            <span>토목기사</span>
+            <span>주요 기술: BIM · ArcGIS · QGIS · CAD</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+           SECTION 02: PROJECT INTRO
+           ============================================ -->
+      <section id="project" class="section project-intro-section">
+        <div class="container">
+          <span class="section-kicker">02. PROJECT</span>
+          <h2>의성 농업유산 Web GIS</h2>
+          <p class="project-lead">기존 연구 데이터를 웹과 데이터 분석으로 재구성하다</p>
+          <div class="project-intro-grid">
+            <div>
+              <p>
+                2025년 의성 청년연구자로 수행했던 전통수리시설 '못' 연구를 기반으로
+                기존 GIS 데이터를 Python으로 분석하고 Leaflet 기반 Web GIS로 재구성한
+                개인 포트폴리오 프로젝트입니다.
+              </p>
+              <p>
+                이 프로젝트에서 저는 수자원·GIS 도메인 경험을 데이터 전처리, 공간분석,
+                인터랙티브 지도와 연결해 실제 사용자가 탐색할 수 있는 웹 결과물로 확장했습니다.
+              </p>
+            </div>
+            <div class="project-highlight-card">
+              <strong>핵심 흐름</strong>
+              <span>현장·주소 데이터</span>
+              <span>→ 좌표 변환·검증</span>
+              <span>→ Python / GeoPandas 분석</span>
+              <span>→ Leaflet Web GIS</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+           PROJECT FLOW 01: WHY THIS PROJECT
            ============================================ -->
       <section id="why" class="section alt">
         <div class="container">
-          <h2>왜 '못'을 연구했는가?</h2>
+          <span class="section-kicker">PROJECT 01. WHY THIS PROJECT</span>
+          <h2>왜 '못'을 데이터로 보았는가?</h2>
           
           <div class="two-col">
             <div>
@@ -104,10 +181,11 @@
       </section>
 
       <!-- ============================================
-           SECTION 03: MY RESEARCH (TIMELINE)
+           PROJECT FLOW 02: MY RESEARCH
            ============================================ -->
       <section id="research" class="section">
         <div class="container">
+          <span class="section-kicker">PROJECT 02. MY RESEARCH</span>
           <h2>의성 청년연구자로 수행한 연구</h2>
           
           <div class="timeline">
@@ -129,7 +207,7 @@
               <span class="timeline-marker">3</span>
               <div class="timeline-content">
                 <h4>못 데이터 수집</h4>
-                <p>의성군 행정구역 내 696개 저수지·못 위치정보 수집</p>
+                <p>원자료를 확인하고 의성군 행정경계 안의 못 위치정보를 선별</p>
               </div>
             </div>
             <div class="timeline-item">
@@ -179,11 +257,12 @@
       </section>
 
       <!-- ============================================
-           SECTION 04: DATA
+           PROJECT FLOW 03: DATA
            ============================================ -->
       <section id="data" class="section alt">
         <div class="container">
-          <h2>연구를 데이터로 바꾸다</h2>
+          <span class="section-kicker">03. DATA · RESEARCH DATA PIPELINE</span>
+          <h2>연구를 분석 가능한 데이터로 바꾸다</h2>
           
           <div class="data-pipeline">
             <div class="pipeline-stage">
@@ -213,7 +292,7 @@
           </div>
 
           <div class="data-sample">
-            <h3>실제 사용 데이터 샘플</h3>
+            <h3>웹에서 사용하는 데이터 구조</h3>
             <table class="data-table">
               <thead>
                 <tr>
@@ -226,108 +305,101 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>예시 못 1</td>
-                  <td>옥산면</td>
-                  <td>36.252</td>
-                  <td>128.574</td>
-                  <td>450.2</td>
+                  <td>시설 주소</td>
+                  <td>읍면</td>
+                  <td>WGS84 위도</td>
+                  <td>WGS84 경도</td>
+                  <td>저수량</td>
                 </tr>
                 <tr>
-                  <td>예시 못 2</td>
-                  <td>사곡면</td>
-                  <td>36.145</td>
-                  <td>128.456</td>
-                  <td>320.8</td>
+                  <td colspan="5">원자료 좌표계(EPSG:5174)를 WGS84로 변환한 뒤 GeoJSON Feature로 저장</td>
                 </tr>
                 <tr>
-                  <td>예시 못 3</td>
-                  <td>가음면</td>
-                  <td>36.389</td>
-                  <td>128.712</td>
-                  <td>215.5</td>
+                  <td colspan="5">의성군 경계 밖 좌표와 결측·중복 좌표를 분석 목적에 맞게 검토</td>
                 </tr>
               </tbody>
             </table>
             <p style="color: var(--muted); font-size: 0.85rem; margin-top: 1rem;">
-              * 전체 696개 시설의 데이터를 처리했습니다.
+              * 지도와 추가 분석에는 의성군 행정경계 안에서 확인된 427개 시설을 사용합니다.
             </p>
           </div>
         </div>
       </section>
 
       <!-- ============================================
-           SECTION 05: RESEARCH RESULT
+           PROJECT FLOW 04: RESEARCH RESULT
            ============================================ -->
       <section id="result" class="section">
         <div class="container">
+          <span class="section-kicker">04. WEB GIS · PROJECT RESULT</span>
           <h2>GIS로 바라본 의성의 못</h2>
           
           <p style="color: var(--muted); text-align: center; margin-bottom: 2rem;">
-            기존 연구에서는 QGIS를 활용하여<br>
-            의성의 전통수리시설 위치를 공간적으로 구축하고<br>
-            지역별 분포를 확인했습니다.
+            기존 연구에서 구축한 GIS 자료를 검증·변환하고<br>
+            실제 Leaflet 지도에서 탐색 가능한 결과물로 연결했습니다.
           </p>
 
           <div class="result-stats">
             <div class="result-stat">
-              <span class="stat-number">696</span>
-              <span class="stat-label">조사 시설</span>
+              <span class="stat-number">427</span>
+              <span class="stat-label">의성군 경계 내 시설</span>
             </div>
             <div class="result-stat">
-              <span class="stat-number">696</span>
-              <span class="stat-label">좌표화된 시설</span>
+              <span class="stat-number">5174 → WGS84</span>
+              <span class="stat-label">좌표계 변환</span>
             </div>
             <div class="result-stat">
-              <span class="stat-number">39,578.75</span>
-              <span class="stat-label">총 용량 (천톤)</span>
+              <span class="stat-number">GeoJSON</span>
+              <span class="stat-label">웹 지도 데이터 형식</span>
             </div>
             <div class="result-stat">
-              <span class="stat-number">56.89</span>
-              <span class="stat-label">평균 용량 (천톤)</span>
+              <span class="stat-number">Popup</span>
+              <span class="stat-label">시설별 상세정보</span>
             </div>
           </div>
 
-          <div class="result-image-placeholder">
-            <p>[QGIS 분석 결과 이미지 또는 지도 스크린샷]</p>
+          <div class="result-text-panel">
+            <h3>핵심 결과물은 아래의 Interactive Web GIS입니다</h3>
+            <p>의성군 행정경계의 실제 bounds를 계산해 처음부터 의성군 전체가 보이도록 맞추고, 경계 밖 시설은 표시하지 않았습니다. 레이어 ON/OFF, 용량 필터, 시설 Popup을 통해 분석 결과를 직접 확인할 수 있습니다.</p>
           </div>
         </div>
       </section>
 
       <!-- ============================================
-           SECTION 06: PROJECT OUTCOME
+           PROJECT FLOW 05: PROJECT OUTCOME
            ============================================ -->
       <section id="outcome" class="section alt">
         <div class="container">
-          <h2>연구에서 실제 활동으로</h2>
-          <h3 style="text-align: center; color: var(--primary); margin-top: 1rem;">청년의 재능으로 농업유산의 가치를 알리다</h3>
+          <span class="section-kicker">PROJECT OUTCOME</span>
+          <h2>분석을 사용자가 경험하는 웹으로 확장</h2>
           
           <p style="color: var(--muted); text-align: center; margin-bottom: 2rem;">
-            2025년 연구가 2026년 실제 청년 활동과 프로젝트로 이어졌습니다.
+            도메인 자료를 정리하는 데서 끝내지 않고, 데이터 처리 과정과 결과를 웹에서 확인할 수 있도록 구현했습니다.
           </p>
 
           <div class="outcome-grid">
             <div class="outcome-card">
-              <span class="outcome-tag">활동</span>
-              <h4>현장 활동 및 데이터 검증</h4>
+              <span class="outcome-tag">DATA</span>
+              <h4>자료 검증과 전처리</h4>
               <p>
-                [실제 청년 활동 내용]<br>
-                현장 조사, 사진 촬영, 지역 주민 인터뷰 등
+                주소 기반 자료의 좌표계를 확인하고<br>
+                의성군 경계 내부 데이터만 선별했습니다.
               </p>
             </div>
             <div class="outcome-card">
-              <span class="outcome-tag">콘텐츠</span>
-              <h4>디지털 콘텐츠 제작</h4>
+              <span class="outcome-tag">ANALYSIS</span>
+              <h4>Python 공간분석</h4>
               <p>
-                [실제 제작 콘텐츠]<br>
-                사진, 영상, 인포그래픽 등
+                pandas와 GeoPandas로 지역 집계,<br>
+                Buffer·Intersection·상관분석을 수행했습니다.
               </p>
             </div>
             <div class="outcome-card">
-              <span class="outcome-tag">결과</span>
-              <h4>정책 제안 및 보고</h4>
+              <span class="outcome-tag">WEB</span>
+              <h4>Interactive Web GIS</h4>
               <p>
-                [실제 정책 제안 내용]<br>
-                지역 활성화, 청년 참여 방안 등
+                GeoJSON을 Leaflet으로 연결해<br>
+                지도·레이어·필터·Popup을 구현했습니다.
               </p>
             </div>
           </div>
@@ -335,15 +407,15 @@
       </section>
 
       <!-- ============================================
-           SECTION 07: INTERACTIVE WEB GIS
+           PROJECT FLOW 06: INTERACTIVE WEB GIS
            ============================================ -->
       <section id="webgis" class="section">
         <div class="container">
-          <h2>그리고 이 연구를 웹으로 다시 만들었습니다</h2>
+          <h2>04. WEB GIS · 데이터를 직접 탐색하는 화면</h2>
           
           <p style="color: var(--muted); text-align: center; margin-bottom: 1.5rem;">
-            기존에 QGIS에서 구축했던 공간데이터를<br>
-            웹에서 직접 탐색할 수 있도록 재구성했습니다.
+            QGIS와 Python으로 정리한 공간데이터를<br>
+            Leaflet 지도에서 직접 탐색할 수 있도록 재구성했습니다.
           </p>
 
           <div class="filter-box" style="margin-bottom: 1.5rem;">
@@ -360,22 +432,23 @@
 
           <div class="map-info" style="margin-top: 1.5rem; padding: 1rem; background: var(--secondary); border-radius: 8px; color: var(--text); font-size: 0.9rem;">
             <strong>지도 설명:</strong> 의성군 행정경계(진한 초록선) 안의 못 위치만 표시합니다.<br>
-            마커 크기는 저수지 용량에 비례합니다. 마커를 클릭하면 상세 정보를 확인할 수 있습니다.
+            마커 크기는 저수지 용량에 비례합니다. 마커를 클릭하면 상세 정보를 확인할 수 있습니다.<br>
+            오른쪽 레이어 컨트롤에서 <strong>농경지·농업진흥지역</strong>과 <strong>읍면별 시설 밀도</strong>를 ON/OFF하고 Polygon Popup을 확인할 수 있습니다.
           </div>
         </div>
       </section>
 
       <!-- ============================================
-           SECTION 08: PYTHON DATA ANALYSIS
+           PROJECT FLOW 07: PYTHON DATA ANALYSIS
            ============================================ -->
       <section id="analysis" class="section alt">
         <div class="container">
-          <h2>웹으로 옮기면서 데이터를 다시 분석했습니다</h2>
+          <span class="section-kicker">05. DATA ANALYSIS</span>
+          <h2>문제를 정의하고 분석한 결과를 웹에 연결했습니다</h2>
           
           <p style="color: var(--muted); margin-bottom: 2rem;">
-            기존 연구에서 구축한 못 데이터를 기반으로<br>
-            이번 웹 포트폴리오를 제작하면서<br>
-            Python을 활용한 추가적인 공간 통계 분석을 수행했습니다.
+            각 분석은 문제 → 데이터 → 전처리 → 분석 → 핵심 결과의 흐름으로 정리했습니다.<br>
+            화면에는 대표 결과를 우선 보여주고, 세부 값은 차트 hover와 지도 레이어에서 확인할 수 있습니다.
           </p>
 
           <div class="analysis-blocks">
@@ -402,11 +475,6 @@
             </div>
 
             <div class="analysis-block">
-              <h3>지역별 분포</h3>
-              <div id="region-summary" class="region-summary"></div>
-            </div>
-
-            <div class="analysis-block">
               <h3>분석 D. 시설 규모·용량의 공간적 분포 분석</h3>
               <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem;">
                 저수량을 가중치로 사용해 중심점을 계산하고, 용량 상위 시설의 위치가
@@ -415,42 +483,64 @@
               <div id="centroid-summary" class="centroid-summary"></div>
               <div class="analysis-columns">
                 <div>
-                  <h4>용량 상위 10개 시설</h4>
-                  <div id="top-facilities" class="analysis-table-wrap"></div>
+                  <h4>대표적인 대용량 시설</h4>
+                  <div id="top-facilities" class="bar-chart"></div>
                 </div>
                 <div>
-                  <h4>지역별 용량 가중 중심</h4>
-                  <div id="regional-centroids" class="analysis-table-wrap"></div>
+                  <h4>해석</h4>
+                  <p class="analysis-note">용량을 가중치로 계산한 중심과 단순 중심을 비교해 시설 규모가 공간 분포에 미치는 영향을 확인했습니다. 극단값의 영향은 대표 상위 시설과 함께 해석합니다.</p>
                 </div>
               </div>
             </div>
 
             <div class="analysis-block">
               <h3>분석 E. 행정구역별 비교</h3>
-              <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem;">
-                pandas 집계에서 출발해 읍면동 Polygon과 못 Point를 GeoPandas spatial join으로 연결하고,
-                차트와 Leaflet 지도에서 지역별 차이를 확인합니다.
-              </p>
-              <h4>읍면별 총저수량</h4>
-              <div id="region-capacity-chart" class="bar-chart"></div>
-              <h4>읍면별 용량 분포(Boxplot)</h4>
-              <div id="region-boxplot" class="boxplot-list"></div>
-              <h4>관리주체별 비교</h4>
-              <div id="management-summary" class="analysis-table-wrap"></div>
+              <p class="analysis-note">pandas 집계 후 GeoPandas spatial join으로 시설을 읍면 Polygon에 연결했습니다. 관리주체 분포와 토지 면적당 시설 밀도를 대표 지표로 시각화하고, 읍면 경계와 결과를 Leaflet에서 함께 확인합니다.</p>
+              <div id="region-insight" class="analysis-callout"></div>
+              <div class="analysis-columns comparison-visuals">
+                <div>
+                  <h4>토지 면적당 못 개수</h4>
+                  <p class="analysis-note">읍면 면적을 기준으로 표준화한 시설 밀도입니다. 순위와 실제 값을 함께 보여주어 단순 시설 수와 구분했습니다.</p>
+                  <div id="region-density-dotplot" class="density-dotplot"></div>
+                </div>
+                <div>
+                  <h4>관리주체별 시설 수</h4>
+                  <div id="management-pie" class="pie-chart-wrap"></div>
+                </div>
+              </div>
+              <p class="analysis-note">관리주체 비교는 별도 관리대장 XLSX 원자료 696건을 기준으로 집계했습니다.</p>
+              <p class="analysis-note">점과 원그래프 조각에 마우스를 올리면 세부 집계값을 확인할 수 있습니다. 읍면별 공간 분포는 지도에서 <strong>읍면별 시설 밀도</strong> 레이어를 ON/OFF하여 확인합니다.</p>
             </div>
 
             <div class="analysis-block">
               <h3>못 × 농업지역 공간분석</h3>
-              <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem;">
-                농지·농업진흥지역 Polygon과 못 주변 500m·1km Buffer를 Intersection하여
-                주변 농업지역 면적을 계산했습니다.
+              <p class="analysis-note">
+                약한 상관계수를 강한 결론으로 포장하기보다, 실제 GIS 데이터를 어떻게 공간분석으로 변환했는지를 핵심 결과로 제시합니다.
               </p>
+              <div class="analysis-method-layout">
+                <div class="method-pipeline">
+                  <div class="method-step"><b>01</b><strong>Point</strong><span>못 좌표<br>427개 시설</span></div>
+                  <div class="method-arrow">→</div>
+                  <div class="method-step"><b>02</b><strong>Project</strong><span>EPSG:5174<br>거리 계산용 좌표계</span></div>
+                  <div class="method-arrow">→</div>
+                  <div class="method-step"><b>03</b><strong>Buffer</strong><span>500m / 1km<br>주변 범위 생성</span></div>
+                  <div class="method-arrow">→</div>
+                  <div class="method-step"><b>04</b><strong>Intersection</strong><span>농경지 Polygon<br>공간 중첩</span></div>
+                  <div class="method-arrow">→</div>
+                  <div class="method-step"><b>05</b><strong>Measure</strong><span>시설별 면적<br>상관관계 검토</span></div>
+                </div>
+                <div class="method-spec">
+                  <span class="method-spec-label">PROCESS NOTE</span>
+                  <p><code>GeoPandas</code>로 농경지 Polygon을 의성군 경계와 겹치는 영역으로 제한한 뒤, 시설별 Buffer와 Intersection 면적을 계산했습니다.</p>
+                  <p><code>Output</code>은 시설별 500m·1km 농업지역 면적이며, 지도에서는 농경지 레이어를 ON/OFF하고 Polygon을 클릭해 면적을 확인할 수 있습니다.</p>
+                </div>
+              </div>
               <div id="agriculture-summary" class="centroid-summary"></div>
+              <h4>용량과 주변 농업환경의 관계</h4>
               <div id="agriculture-correlation" class="analysis-callout"></div>
-              <h4>못 용량 × 1km 주변 농업지역 면적</h4>
               <div id="agriculture-scatter" class="scatter-plot-wrap"></div>
               <p class="analysis-note">
-                농업지역 자료: 의성 폴더의 농지·농업진흥지역 Polygon. 지도에는 의성군 경계와 겹치는 Polygon만 표시합니다.
+                산점도는 극단값의 영향을 줄이기 위해 로그축으로 표시하며, 각 점에 마우스를 올리면 시설명·지역·용량·주변 농업지역 면적을 확인할 수 있습니다.
               </p>
             </div>
 
@@ -466,50 +556,74 @@
       </section>
 
       <!-- ============================================
-           SECTION 09: WHAT I BUILT
+           SECTION 06: DEVELOPMENT / LEARNING
            ============================================ -->
-      <section id="built" class="section">
+      <section id="development" class="section">
         <div class="container">
-          <h2>프로젝트를 웹으로 재구성하며</h2>
-          
-          <p style="color: var(--muted); text-align: center; margin-bottom: 2rem;">
-            각 기술이 프로젝트에서 어떤 역할을 했는지 설명합니다.
+          <span class="section-kicker">06. DEVELOPMENT / LEARNING</span>
+          <h2>토목·GIS 경험을 개발 역량으로 확장하는 과정</h2>
+
+          <p class="development-lead">
+            현장에서 다루던 데이터를 새로운 방식으로 활용하고 싶었습니다.<br>
+            수자원 분야에서 GIS와 현장 데이터를 다루며 쌓은 경험을 바탕으로 Python을 이용한 데이터 분석과 LLM/RAG 프로젝트를 경험했고,<br>
+            현재는 HTML, CSS, JavaScript를 학습하며 데이터를 실제 사용자가 경험할 수 있는 웹 서비스로 구현하는 개발자를 목표로 역량을 확장하고 있습니다.
           </p>
+
+          <div class="development-flow" aria-label="토목 도메인에서 개발자로 전환하는 흐름">
+            <span>토목·수자원</span><b>↓</b><span>GIS / 공간데이터</span><b>↓</b><span>의성 청년연구자</span><b>↓</b><span>Python / Jupyter / RAG / LLM</span><b>↓</b><span>HTML / CSS / JavaScript</span><b>↓</b><span>Web GIS / 데이터 기반 웹서비스</span><b>↓</b><span>개발자 커리어 전환</span>
+          </div>
+
+          <div class="learning-grid">
+            <article class="learning-card">
+              <span class="learning-status">PROJECT</span>
+              <h3>오르미캠프 AI 모델링</h3>
+              <span>2025.10.20 — 2025.12.29</span>
+              <p>Python · Jupyter Notebook · RAG · LLM<br>제주 신화자료를 활용한 관광 콘텐츠 프로젝트</p>
+            </article>
+            <article class="learning-card">
+              <span class="learning-status">EDUCATION</span>
+              <h3>포항 포스코 LLM 교육</h3>
+              <span>2026.07.29 — 2026.11.11</span>
+              <p>LLM 기반 Smart Factory AI Assistant 개발 교육</p>
+            </article>
+            <article class="learning-card currently-learning">
+              <span class="learning-status">CURRENTLY LEARNING</span>
+              <h3>Web Development</h3>
+              <p>HTML · CSS · JavaScript<br>Web GIS · Leaflet</p>
+            </article>
+          </div>
 
           <div class="tech-breakdown">
             <div class="tech-item">
-              <h4>HTML / CSS</h4>
-              <p>프로젝트 정보와 분석 결과를<br>웹페이지 구조로 구현</p>
+              <h4>GIS / DOMAIN</h4>
+              <p>QGIS · ArcGIS · CAD · BIM<br>공간정보와 수자원 도메인</p>
             </div>
             <div class="tech-item">
-              <h4>JavaScript</h4>
-              <p>데이터 로딩, 필터링,<br>사용자 인터랙션 처리</p>
+              <h4>DATA</h4>
+              <p>Python · pandas · GeoPandas · Jupyter<br>전처리·집계·공간분석</p>
             </div>
             <div class="tech-item">
-              <h4>Leaflet</h4>
-              <p>GIS 공간데이터를<br>웹 지도에서 시각화</p>
+              <h4>AI</h4>
+              <p>RAG · LLM · ChromaDB<br>학습 및 프로젝트 경험</p>
             </div>
             <div class="tech-item">
-              <h4>GeoJSON</h4>
-              <p>공간데이터를<br>웹에서 사용할 수 있는 형태로 변환</p>
+              <h4>WEB</h4>
+              <p>HTML · CSS · JavaScript · Leaflet<br>현재 학습하며 구현 중</p>
             </div>
             <div class="tech-item">
-              <h4>Python</h4>
-              <p>못 데이터와 농업 데이터<br>전처리 및 공간 통계 분석</p>
-            </div>
-            <div class="tech-item">
-              <h4>pandas / GeoPandas</h4>
-              <p>공간데이터 처리<br>및 좌표 변환</p>
+              <h4>TOOLS</h4>
+              <p>Git · GitHub<br>버전관리와 배포</p>
             </div>
           </div>
         </div>
       </section>
 
       <!-- ============================================
-           SECTION 10: PROJECT ARCHIVE
+           SECTION 07: PROJECT ARCHIVE
            ============================================ -->
       <section id="archive" class="section alt">
         <div class="container">
+          <span class="section-kicker">07. PROJECT ARCHIVE</span>
           <h2>프로젝트 아카이브</h2>
           
           <div class="archive-info">
@@ -527,7 +641,7 @@
             </div>
             <div class="archive-item">
               <strong>DATA</strong>
-              <p>못 데이터 (696개)<br>+ 농업 공개 데이터<br>+ GIS 공간데이터</p>
+              <p>못 데이터 (경계 내 427개)<br>+ 농지·농업진흥지역<br>+ 행정경계·읍면 Polygon</p>
             </div>
             <div class="archive-item">
               <strong>TOOLS</strong>
@@ -535,7 +649,7 @@
             </div>
             <div class="archive-item">
               <strong>REPOSITORY</strong>
-              <p><a href="https://github.com" target="_blank">GitHub Repository</a></p>
+              <p><a href="https://github.com/ssoyoum/Uiseong-Young-Researchers" target="_blank" rel="noreferrer">GitHub Repository</a><br><a href="https://ssoyoum.github.io/Uiseong-Young-Researchers/" target="_blank" rel="noreferrer">Live Portfolio</a></p>
             </div>
           </div>
         </div>
@@ -546,8 +660,8 @@
     <!-- FOOTER -->
     <footer class="site-footer">
       <div class="container">
-        <p>&copy; 2025-2026 의성군 청년연구자 · GIS 데이터 분석 포트폴리오</p>
-        <p style="font-size: 0.85rem; color: var(--muted);">이 포트폴리오는 실제 의성군 청년연구자 프로젝트를 기반으로 제작되었습니다.</p>
+        <p>&copy; 2025-2026 박소영 · 토목·GIS 데이터 기반 개발자 포트폴리오</p>
+        <p style="font-size: 0.85rem; color: var(--muted);">도메인 경험을 데이터 분석과 Web GIS로 확장한 개인 프로젝트입니다.</p>
       </div>
     </footer>
 

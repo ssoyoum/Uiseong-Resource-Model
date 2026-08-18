@@ -1,18 +1,29 @@
-# 못을 통해 바라본 의성의 농업유산
+# 박소영 | 토목·GIS 데이터 기반 개발자 포트폴리오
 
 ## GIS 데이터 분석 웹 포트폴리오
 
 ### 1. Project Overview
 
-이 프로젝트는 **2025년 의성군 청년연구자 활동**을 바탕으로 제작한 **개발자 포트폴리오**입니다.
+토목·수자원 분야에서 다뤄온 공간데이터와 현장 데이터 경험을 Python, AI, Web GIS로 확장하는 박소영의 개발자 포트폴리오입니다.
 
 의성의 전통 농업유산인 '못'을 매개로 지역의 공간데이터를 구축하고, GIS 분석을 수행한 연구를 **웹 기반 인터랙티브 포트폴리오**로 재구성했습니다.
 
-**Live Demo**: [http://localhost:8000](http://localhost:8000)
-
+[🌐 Live Demo](https://ssoyoum.github.io/Uiseong-Young-Researchers/)
+[📁 GitHub Repository](https://github.com/ssoyoum/Uiseong-Young-Researchers)
 ---
 
-## 2. Background
+## 2. About & Career
+
+- 서울과학기술대학교 건설시스템공학과·환경공학과 복수전공
+- 토목기사
+- 온실가스종합정보센터: NGMS 시스템 사용자 상담 및 문의 대응
+- 한국시설안전공단: FMS 점검·진단 보고서 56건 데이터 입력·검토
+- 한국수자원조사기술원: 국가하천 유역조사, 유량·유사량 측정, 홍수피해조사
+- 동부엔지니어링: 하천기본계획, 홍수위험지도, 해외 ODA, 조사자료 분석·보고서 작성
+
+주요 도메인 기술은 BIM, ArcGIS, QGIS, CAD이며, 현재 HTML, CSS, JavaScript, Web GIS, Leaflet을 학습하고 있습니다.
+
+## 3. Background
 
 ### 2.1 2025년 의성군 청년연구자 프로젝트
 
@@ -27,7 +38,7 @@
 
 ---
 
-## 3. Research Background
+## 4. Research Background
 
 ### 의성 전통수리시설 '못'
 
@@ -41,7 +52,7 @@
 
 ---
 
-## 4. My Role
+## 5. My Role
 
 ### 데이터 구축
 
@@ -66,9 +77,9 @@
 
 ---
 
-## 5. Data
+## 6. Data
 
-## 5.0 Public portfolio deployment
+### 6.0 Public portfolio deployment
 
 이 프로젝트는 GitHub Pages로 공개할 수 있는 정적 웹 포트폴리오입니다.
 
@@ -84,7 +95,7 @@ https://ssoyoum.github.io/Uiseong-Young-Researchers/
 
 이후 `main`에 Push할 때마다 Workflow가 HTML, CSS, JavaScript, GeoJSON, 분석 JSON을 자동으로 다시 배포합니다.
 
-### 5.1 Source Data
+### 6.1 Source Data
 
 | 데이터 | 출처 | 건수 | 형식 |
 |--------|------|------|------|
@@ -92,7 +103,7 @@ https://ssoyoum.github.io/Uiseong-Young-Researchers/
 | 건물 경계 | GIS 건물 경계 데이터 | - | Polygon |
 | 농업유산 정보 | 농림축산식품부 | - | 메타정보 |
 
-### 5.2 Processed Data
+### 6.2 Processed Data
 
 | 파일 | 형식 | 내용 |
 |------|------|------|
@@ -101,12 +112,12 @@ https://ssoyoum.github.io/Uiseong-Young-Researchers/
 | `region_summary.json` | JSON | 지역별 시설 통계 |
 | `distance_cluster_summary.json` | JSON | 공간 통계 분석 결과 |
 | `advanced_analysis.json` | JSON | 분석 C·D·E 웹 시각화 결과 |
-| `uiseong_emd.geojson` | GeoJSON | 읍면별 시설 수·총용량 지도 레이어 |
+| `uiseong_emd.geojson` | GeoJSON | 읍면별 시설 수·면적·시설 밀도 지도 레이어 |
 | `agricultural_areas.geojson` | GeoJSON | 의성군 경계와 겹치는 농지·농업진흥지역 |
 
 ---
 
-## 6. Original Research
+## 7. Original Research
 
 ### QGIS 분석 결과
 
@@ -118,7 +129,7 @@ https://ssoyoum.github.io/Uiseong-Young-Researchers/
 
 ---
 
-## 7. Web Reconstruction
+## 8. Web Reconstruction
 
 기존 QGIS 기반 분석을 웹으로 재구성하면서:
 
@@ -129,7 +140,7 @@ https://ssoyoum.github.io/Uiseong-Young-Researchers/
 
 ---
 
-## 8. Python Analysis
+## 9. Python Analysis
 
 ### 좌표 변환
 
@@ -226,9 +237,12 @@ Uiseong-Young-Researchers/
 - ✅ 지역별 통계 분석
 - ✅ 분석 D: 시설 규모·용량의 공간적 분포 분석
 - ✅ 분석 E: GeoPandas spatial join 기반 읍면별 비교
+- ✅ 관리주체별 시설 수 원그래프·토지면적당 시설 수 dot plot
 - ✅ 못 주변 500m·1km 농업지역 면적 분석
+- ✅ 농경지·농업진흥지역 Leaflet 레이어 ON/OFF와 Polygon Popup
 - ✅ 용량과 주변 농업환경의 Pearson·Spearman 상관분석
-- ✅ 10섹션 Case Study 포트폴리오
+- ✅ 로그축 Scatter plot과 점별 hover 상세정보
+- ✅ 스크롤 진입 애니메이션·페이지 진행률 UI
 - ✅ Python 공간 통계 분석
 
 ---
@@ -237,7 +251,8 @@ Uiseong-Young-Researchers/
 
 | 항목 | 결과 |
 |------|------|
-| 조사 시설 | 696개 |
+| 원본 조사 시설 | 696개 |
+| 의성군 경계 내 지도·분석 시설 | 427개 |
 | 총 저수 용량 | 39,578.75 천톤 |
 | 평균 용량 | 56.89 천톤 |
 | 평균 최근접 거리 | 683.8m |
