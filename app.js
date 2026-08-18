@@ -101,6 +101,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  function enableFastTooltips(container) {
+    if (!container) return;
+    let tooltip = document.querySelector('.fast-tooltip');
+    if (!tooltip) {
+      tooltip = document.createElement('div');
+      tooltip.className = 'fast-tooltip';
+      document.body.appendChild(tooltip);
+    }
+
+    const moveTooltip = (event) => {
+      const left = Math.min(event.clientX + 12, window.innerWidth - tooltip.offsetWidth - 12);
+      const top = Math.min(event.clientY + 12, window.innerHeight - tooltip.offsetHeight - 12);
+      tooltip.style.left = `${Math.max(8, left)}px`;
+      tooltip.style.top = `${Math.max(8, top)}px`;
+    };
+
+    container.querySelectorAll('[data-tooltip]').forEach((target) => {
+      target.addEventListener('mouseenter', (event) => {
+        tooltip.textContent = target.dataset.tooltip;
+        tooltip.classList.add('is-visible');
+        moveTooltip(event);
+      });
+      target.addEventListener('mousemove', moveTooltip);
+      target.addEventListener('mouseleave', () => tooltip.classList.remove('is-visible'));
+    });
+  }
+
   function pondColor(capacity) {
     if (capacity >= 10) return '#176b4d';
     if (capacity >= 5) return '#d39a24';
@@ -178,13 +205,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const value = Number(item[valueKey]) || 0;
       const width = Math.max(1, (value / maximum) * 100);
       return `
-        <div class="bar-row" title="${escapeHtml(`${item[labelKey]}: ${formatter(value)}`)}">
+        <div class="bar-row" data-tooltip="${escapeHtml(`${item[labelKey]}: ${formatter(value)}`)}">
           <span>${escapeHtml(item[labelKey])}</span>
           <div class="bar-track"><div class="bar-fill" style="width:${width}%"></div></div>
           <span class="bar-value">${formatter(value)}</span>
         </div>
       `;
     }).join('');
+    enableFastTooltips(container);
   }
 
   function renderTopFacilitiesChart(items) {
@@ -199,13 +227,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const width = Math.max(4, (Math.log10(value + 1) / Math.log10(maximum + 1)) * 100);
       const title = `${item.address || '시설'} · ${item.region || '-'} · ${formatNumber(value)} 천톤`;
       return `
-        <div class="bar-row" title="${escapeHtml(title)}">
+        <div class="bar-row" data-tooltip="${escapeHtml(title)}">
           <span>${escapeHtml(item.address || '시설')}</span>
           <div class="bar-track"><div class="bar-fill bar-fill-accent" style="width:${width}%"></div></div>
           <span class="bar-value">${formatNumber(value)}</span>
         </div>
       `;
     }).join('');
+    enableFastTooltips(container);
   }
 
   function renderDensityDotPlot(items) {
@@ -224,15 +253,42 @@ document.addEventListener('DOMContentLoaded', () => {
         const position = Math.max(2, (value / maximum) * 100);
         const title = `${item.region}: ${formatNumber(value)}개/km² · 시설 ${formatNumber(item.facility_count)}개 · 면적 ${formatNumber(item.area_km2)}km²`;
         return `
-          <div class="dotplot-row" title="${escapeHtml(title)}">
+          <div class="dotplot-row" data-tooltip="${escapeHtml(title)}">
             <span class="dotplot-rank">${String(index + 1).padStart(2, '0')}</span>
             <span class="dotplot-label">${escapeHtml(item.region)}</span>
-            <div class="dotplot-track"><i class="dotplot-line" style="width:${position}%"></i><i class="dotplot-dot" style="left:${position}%"></i></div>
-            <span class="dotplot-value">${formatNumber(value)}</span>
+            <div class="dotplot-track"><i class="dotplot-line" style="--dot-end:${position}%"></i><i class="dotplot-dot" style="--dot-end:${position}%"></i></div>
+            <span class="dotplot-value" data-target="${value}">0</span>
           </div>
         `;
       }).join('')}
     `;
+    enableFastTooltips(container);
+
+    const startAnimation = () => {
+      container.classList.add('is-visible');
+      container.querySelectorAll('.dotplot-value').forEach((valueElement, index) => {
+        const target = Number(valueElement.dataset.target || 0);
+        const startedAt = performance.now() + index * 45;
+        const duration = 720;
+        const tick = (now) => {
+          const progress = Math.min(1, Math.max(0, (now - startedAt) / duration));
+          const eased = 1 - Math.pow(1 - progress, 3);
+          valueElement.textContent = formatNumber(target * eased);
+          if (progress < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      });
+    };
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries, currentObserver) => {
+        if (!entries[0].isIntersecting) return;
+        startAnimation();
+        currentObserver.disconnect();
+      }, { threshold: 0.25 });
+      observer.observe(container);
+    } else {
+      startAnimation();
+    }
   }
 
   function renderManagementPie(items) {
@@ -266,16 +322,30 @@ document.addEventListener('DOMContentLoaded', () => {
     container.innerHTML = `
       <div class="pie-layout">
         <svg class="pie-chart" viewBox="0 0 200 200" role="img" aria-label="관리주체별 시설 수 원그래프">
-          ${slices.map((slice) => `<path class="pie-slice" d="${slice.path}" fill="${slice.color}"><title>${escapeHtml(slice.title)}</title></path>`).join('')}
+          ${slices.map((slice) => `<path class="pie-slice" d="${slice.path}" fill="${slice.color}" data-tooltip="${escapeHtml(slice.title)}"></path>`).join('')}
           <circle cx="100" cy="100" r="40" fill="var(--panel)" />
           <text x="100" y="96" text-anchor="middle" class="pie-total-label">${formatNumber(total)}</text>
           <text x="100" y="112" text-anchor="middle" class="pie-total-sub">시설</text>
         </svg>
         <div class="pie-legend">
-          ${slices.map((slice) => `<div class="pie-legend-item" title="${escapeHtml(slice.title)}"><i style="background:${slice.color}"></i><span>${escapeHtml(slice.item.management)}</span><strong>${formatNumber(slice.item.facility_count)}개</strong></div>`).join('')}
+          ${slices.map((slice) => `<div class="pie-legend-item" data-tooltip="${escapeHtml(slice.title)}"><i style="background:${slice.color}"></i><span>${escapeHtml(slice.item.management)}</span><strong>${formatNumber(slice.item.facility_count)}개</strong></div>`).join('')}
         </div>
       </div>
     `;
+    enableFastTooltips(container);
+
+    const pieChart = container.querySelector('.pie-chart');
+    const revealPie = () => pieChart?.classList.add('is-visible');
+    if (pieChart && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries, currentObserver) => {
+        if (!entries[0].isIntersecting) return;
+        revealPie();
+        currentObserver.disconnect();
+      }, { threshold: 0.35 });
+      observer.observe(pieChart);
+    } else {
+      revealPie();
+    }
   }
 
   function renderScatterPlot(containerId, points) {
@@ -322,6 +392,45 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
   }
 
+  function animateBasicStats(values) {
+    const container = document.getElementById('basic-stats');
+    if (!container) return;
+
+    const targets = [
+      { id: 'total-facilities', value: values.facilities, format: (value) => formatNumber(value) },
+      { id: 'total-capacity', value: values.totalCapacity, format: (value) => `${formatNumber(value)} 천톤` },
+      { id: 'average-capacity', value: values.averageCapacity, format: (value) => `${formatNumber(value)} 천톤` },
+      { id: 'max-capacity', value: values.maximumCapacity, format: (value) => `${formatNumber(value)} 천톤` },
+    ];
+
+    const play = () => {
+      targets.forEach((target, index) => {
+        const element = document.getElementById(target.id);
+        if (!element) return;
+        const startedAt = performance.now() + index * 90;
+        const duration = 850;
+        const tick = (now) => {
+          const progress = Math.min(1, Math.max(0, (now - startedAt) / duration));
+          const eased = 1 - Math.pow(1 - progress, 3);
+          element.textContent = target.format(target.value * eased);
+          if (progress < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      });
+    };
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries, currentObserver) => {
+        if (!entries[0].isIntersecting) return;
+        play();
+        currentObserver.disconnect();
+      }, { threshold: 0.35 });
+      observer.observe(container);
+    } else {
+      play();
+    }
+  }
+
   function renderAnalysis(analysis) {
     const regions = analysis.e.csv_region_summary || [];
     const facilityStats = analysis.c;
@@ -331,10 +440,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const averageCapacity = facilityStats.facility_count ? totalCapacity / facilityStats.facility_count : 0;
     const maximumCapacity = centroid.top_facilities?.[0]?.capacity || 0;
 
-    document.getElementById('total-facilities').textContent = formatNumber(facilityStats.facility_count);
-    document.getElementById('total-capacity').textContent = `${formatNumber(totalCapacity)} 천톤`;
-    document.getElementById('average-capacity').textContent = `${formatNumber(averageCapacity)} 천톤`;
-    document.getElementById('max-capacity').textContent = `${formatNumber(maximumCapacity)} 천톤`;
+    animateBasicStats({
+      facilities: facilityStats.facility_count,
+      totalCapacity,
+      averageCapacity,
+      maximumCapacity,
+    });
 
     document.getElementById('c-research-note').textContent =
       '시설 간 최근린거리 및 공간적 군집성을 추가적으로 검토했으나, ' +
@@ -498,19 +609,26 @@ document.addEventListener('DOMContentLoaded', () => {
       }, { threshold: 0.12, rootMargin: '0px 0px -7% 0px' });
       revealTargets.forEach((target) => revealObserver.observe(target));
 
+      const header = document.querySelector('.site-header');
       const navLinks = [...document.querySelectorAll('nav a[href^="#"]')];
       const navSections = navLinks
         .map((link) => document.querySelector(link.getAttribute('href')))
         .filter(Boolean);
-      const navObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          navLinks.forEach((link) => link.classList.toggle(
-            'is-active', link.getAttribute('href') === `#${entry.target.id}`
-          ));
+      const updateActiveNavigation = () => {
+        const headerOffset = (header?.offsetHeight || 72) + 36;
+        const currentPosition = window.scrollY + headerOffset;
+        let activeSection = navSections[0]?.id || 'about';
+        navSections.forEach((section) => {
+          if (section.offsetTop <= currentPosition) activeSection = section.id;
         });
-      }, { threshold: 0.2, rootMargin: '-20% 0px -65% 0px' });
-      navSections.forEach((section) => navObserver.observe(section));
+        navLinks.forEach((link) => link.classList.toggle(
+          'is-active', link.getAttribute('href') === `#${activeSection}`
+        ));
+        header?.setAttribute('data-section', activeSection);
+      };
+      window.addEventListener('scroll', updateActiveNavigation, { passive: true });
+      window.addEventListener('resize', updateActiveNavigation);
+      updateActiveNavigation();
     }
   }
 
