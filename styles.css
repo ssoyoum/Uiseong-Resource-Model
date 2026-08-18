@@ -669,6 +669,43 @@ nav a.is-active {
   font-size: 1.05rem;
 }
 
+.data-structure-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.data-structure-card {
+  display: flex;
+  min-height: 130px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 1rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  text-align: center;
+}
+
+.data-structure-card span {
+  color: var(--primary);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.data-structure-card strong {
+  font-size: 0.88rem;
+}
+
+.data-structure-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.76rem;
+}
+
 .data-table {
   width: 100%;
   border-collapse: collapse;
@@ -706,6 +743,11 @@ nav a.is-active {
 }
 
 .result-stat {
+  display: flex;
+  min-height: 150px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background: linear-gradient(135deg, #edf7f0 0%, #e0efe6 100%);
   border: 1px solid var(--secondary);
   padding: 1.5rem;
@@ -831,14 +873,14 @@ nav a.is-active {
 .analysis-blocks {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  margin-top: 2rem;
+  gap: 1.1rem;
+  margin-top: 1.5rem;
 }
 
 .analysis-block {
   background: var(--panel);
   border: 1px solid var(--border);
-  padding: 1.5rem;
+  padding: 1.2rem 1.35rem;
   border-radius: 12px;
 }
 
@@ -864,6 +906,20 @@ nav a.is-active {
   box-shadow: var(--shadow);
 }
 
+.career-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.learning-card {
+  display: flex;
+  min-height: 180px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 .career-period,
 .learning-status {
   color: var(--primary);
@@ -885,11 +941,30 @@ nav a.is-active {
   font-size: 0.88rem;
 }
 
-.career-card strong {
-  display: block;
-  color: var(--text);
+.career-skills {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: auto;
+  padding-top: 0.9rem;
+  color: var(--muted);
   font-size: 0.78rem;
   line-height: 1.5;
+}
+
+.career-skills strong {
+  color: var(--text);
+  font-size: 0.8rem;
+}
+
+.career-skills span {
+  padding-left: 0.7rem;
+}
+
+.career-skills span::before {
+  content: "·";
+  margin-right: 0.35rem;
+  color: var(--accent);
 }
 
 .education-strip {
@@ -950,9 +1025,10 @@ nav a.is-active {
 
 .development-lead {
   max-width: 900px;
-  margin: 0 0 1.5rem;
+  margin: 0 auto 1.5rem;
   color: var(--muted);
   line-height: 1.8;
+  text-align: center;
 }
 
 .development-flow {
@@ -995,13 +1071,17 @@ nav a.is-active {
   font-size: 0.8rem;
 }
 
+.learning-card p {
+  margin-bottom: 0;
+}
+
 .currently-learning {
   border-color: var(--accent);
   background: #fffaf0;
 }
 
 .analysis-block h4 {
-  margin: 1.25rem 0 0.7rem;
+  margin: 0.85rem 0 0.5rem;
   color: var(--text);
 }
 
@@ -1013,10 +1093,38 @@ nav a.is-active {
   line-height: 1.6;
 }
 
+.analysis-insight {
+  margin-top: 0.9rem;
+  padding: 0.8rem 0.9rem;
+  border-left: 3px solid var(--primary);
+  border-radius: 7px;
+  background: #f1f7f2;
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.analysis-insight strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  color: var(--primary);
+}
+
 .analysis-note {
   color: var(--muted);
   font-size: 0.85rem;
   line-height: 1.6;
+}
+
+.compact-callout {
+  margin-top: 0.75rem;
+  padding: 0.65rem 0.8rem;
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+  background: #fffaf0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
 }
 
 .bar-chart {
@@ -1091,11 +1199,20 @@ nav a.is-active {
   margin: 1rem 0;
 }
 
+.agriculture-summary {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .centroid-card {
+  display: flex;
+  min-height: 92px;
+  flex-direction: column;
+  justify-content: center;
   padding: 0.9rem;
   border: 1px solid var(--border);
   border-radius: 8px;
   background: #fff;
+  text-align: center;
 }
 
 .centroid-card strong,
@@ -1141,6 +1258,11 @@ nav a.is-active {
 .analysis-table th {
   color: var(--muted);
   font-weight: 600;
+}
+
+.result-stat .stat-number-compact {
+  font-size: clamp(1.2rem, 2.6vw, 1.8rem);
+  line-height: 1.25;
 }
 
 .boxplot-list {
@@ -1248,6 +1370,7 @@ nav a.is-active {
 
 .comparison-visuals {
   align-items: start;
+  margin-top: 0.2rem;
 }
 
 .density-dotplot {
@@ -1387,19 +1510,16 @@ nav a.is-active {
 }
 
 .analysis-method-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1.8fr) minmax(220px, 0.8fr);
-  gap: 1rem;
-  align-items: stretch;
-  margin: 1.2rem 0 1.4rem;
+  display: block;
+  margin: 1rem 0 1.15rem;
 }
 
 .method-pipeline {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: stretch;
   gap: 0.45rem;
-  padding: 1rem;
+  padding: 0.85rem;
   border: 1px solid var(--border);
   border-radius: 12px;
   background: #f7faf7;
@@ -1407,10 +1527,10 @@ nav a.is-active {
 
 .method-step {
   display: grid;
-  flex: 1 1 92px;
+  flex: 1 1 0;
   gap: 0.25rem;
-  min-width: 88px;
-  padding: 0.7rem;
+  min-width: 0;
+  padding: 0.75rem;
   border-radius: 8px;
   background: var(--panel);
   box-shadow: 0 4px 12px rgba(31, 42, 55, 0.05);
@@ -1423,12 +1543,12 @@ nav a.is-active {
 
 .method-step strong {
   color: var(--primary);
-  font-size: 0.85rem;
+  font-size: 1rem;
 }
 
 .method-step span {
   color: var(--muted);
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   line-height: 1.4;
 }
 
@@ -1440,7 +1560,12 @@ nav a.is-active {
 }
 
 .method-spec {
-  padding: 1rem;
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+  gap: 0.8rem;
+  align-items: center;
+  margin-top: 0.7rem;
+  padding: 0.75rem 1rem;
   border-left: 3px solid var(--accent);
   border-radius: 8px;
   background: #fffaf0;
@@ -1454,7 +1579,7 @@ nav a.is-active {
 }
 
 .method-spec p {
-  margin: 0.65rem 0 0;
+  margin: 0;
   color: var(--muted);
   font-size: 0.78rem;
   line-height: 1.6;
@@ -1466,6 +1591,18 @@ nav a.is-active {
   background: #f0eadb;
   color: var(--primary);
   font-size: 0.75rem;
+}
+
+.research-note-block {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.65fr) minmax(0, 1.35fr);
+  gap: 1rem;
+  align-items: center;
+}
+
+.research-note-block h3,
+.research-note-block .analysis-note {
+  margin: 0;
 }
 
 .scroll-reveal {
@@ -1555,8 +1692,10 @@ nav a.is-active {
   .career-grid,
   .project-intro-grid,
   .learning-grid,
+  .data-structure-grid,
   .analysis-method-layout,
   .pie-layout,
+  .research-note-block,
   .analysis-columns,
   .centroid-summary,
   .stats-grid,
@@ -1599,6 +1738,18 @@ nav a.is-active {
 
   .method-arrow {
     transform: rotate(90deg);
+  }
+
+  .method-pipeline {
+    flex-wrap: wrap;
+  }
+
+  .method-step {
+    flex-basis: 9rem;
+  }
+
+  .method-spec {
+    grid-template-columns: 1fr;
   }
 
   .dotplot-row {

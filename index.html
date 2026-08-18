@@ -81,25 +81,25 @@
               <span class="career-period">2018.01 — 2018.03</span>
               <h3>온실가스종합정보센터</h3>
               <p>NGMS 시스템 사용자 상담과 일반 문의를 대응했습니다.</p>
-              <strong>얻은 역량 · 시스템 이해 · 사용자 관점의 문제 대응</strong>
+              <div class="career-skills"><strong>얻은 역량</strong><span>시스템 이해</span><span>사용자 관점의 문제 대응</span></div>
             </article>
             <article class="career-card">
               <span class="career-period">2020.08 — 2020.10</span>
               <h3>한국시설안전공단</h3>
               <p>FMS 점검·진단 보고서 56건의 외관조사 및 재료시험 결과를 입력·검토했습니다.</p>
-              <strong>얻은 역량 · 데이터 품질 검토 · 구조화된 기록 관리</strong>
+              <div class="career-skills"><strong>얻은 역량</strong><span>데이터 품질 검토</span><span>구조화된 기록 관리</span></div>
             </article>
             <article class="career-card">
               <span class="career-period">2021.04 — 2021.12</span>
               <h3>한국수자원조사기술원</h3>
               <p>국가하천 유역조사, 유량·유사량 측정, 홍수피해조사와 데이터 정리를 수행했습니다.</p>
-              <strong>얻은 역량 · 현장 데이터 수집 · 수자원 데이터 해석</strong>
+              <div class="career-skills"><strong>얻은 역량</strong><span>현장 데이터 수집</span><span>수자원 데이터 해석</span></div>
             </article>
             <article class="career-card">
               <span class="career-period">2022.06 — 2025.07</span>
               <h3>동부엔지니어링</h3>
               <p>하천기본계획, 홍수위험지도, 해외 ODA 사업의 조사자료 분석과 보고서 작성을 담당했습니다.</p>
-              <strong>얻은 역량 · 프로젝트 문서화 · GIS/BIM/CAD 기반 공간정보 활용</strong>
+              <div class="career-skills"><strong>얻은 역량</strong><span>프로젝트 문서화</span><span>GIS/BIM/CAD 기반 공간정보 활용</span></div>
             </article>
           </div>
           <div class="education-strip">
@@ -155,10 +155,10 @@
               <h3>문제 인식</h3>
               <p>
                 의성에는 오래전부터 농업용수를 확보하고<br>
-                공동으로 이용하기 위한 전통 수리시설인 '못'이 존재했습니다.
+                공동으로 이용해 온 <strong>의성만의 고유한 전통 농업수리시설</strong>인 '못'이 존재했습니다.
               </p>
               <p>
-                이러한 못들은 단순한 문화유산이 아니라,<br>
+                의성의 농업환경과 공동체의 물 관리 방식이 담긴 이 시설들은 단순한 문화유산이 아니라,<br>
                 지역의 농업 시스템과 수자원 관리의<br>
                 핵심 인프라로 기능해왔습니다.
               </p>
@@ -293,32 +293,12 @@
 
           <div class="data-sample">
             <h3>웹에서 사용하는 데이터 구조</h3>
-            <table class="data-table">
-              <thead>
-                <tr>
-                  <th>시설명</th>
-                  <th>지역</th>
-                  <th>위도</th>
-                  <th>경도</th>
-                  <th>용량 (천톤)</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>시설 주소</td>
-                  <td>읍면</td>
-                  <td>WGS84 위도</td>
-                  <td>WGS84 경도</td>
-                  <td>저수량</td>
-                </tr>
-                <tr>
-                  <td colspan="5">원자료 좌표계(EPSG:5174)를 WGS84로 변환한 뒤 GeoJSON Feature로 저장</td>
-                </tr>
-                <tr>
-                  <td colspan="5">의성군 경계 밖 좌표와 결측·중복 좌표를 분석 목적에 맞게 검토</td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="data-structure-grid">
+              <div class="data-structure-card"><span>INPUT</span><strong>시설 주소 · 읍면 · 용량</strong><p>원자료의 속성 필드</p></div>
+              <div class="data-structure-card"><span>COORDINATE</span><strong>EPSG:5174 → WGS84</strong><p>웹 지도를 위한 좌표 변환</p></div>
+              <div class="data-structure-card"><span>VALIDATION</span><strong>경계 · 결측 · 중복 검토</strong><p>의성군 분석 범위에 맞는 데이터 선별</p></div>
+              <div class="data-structure-card"><span>OUTPUT</span><strong>GeoJSON Feature</strong><p>Leaflet 지도와 Popup에 연결</p></div>
+            </div>
             <p style="color: var(--muted); font-size: 0.85rem; margin-top: 1rem;">
               * 지도와 추가 분석에는 의성군 행정경계 안에서 확인된 427개 시설을 사용합니다.
             </p>
@@ -345,7 +325,7 @@
               <span class="stat-label">의성군 경계 내 시설</span>
             </div>
             <div class="result-stat">
-              <span class="stat-number">5174 → WGS84</span>
+              <span class="stat-number stat-number-compact">EPSG:5174<br>→ WGS84</span>
               <span class="stat-label">좌표계 변환</span>
             </div>
             <div class="result-stat">
@@ -448,7 +428,7 @@
           
           <p style="color: var(--muted); margin-bottom: 2rem;">
             각 분석은 문제 → 데이터 → 전처리 → 분석 → 핵심 결과의 흐름으로 정리했습니다.<br>
-            화면에는 대표 결과를 우선 보여주고, 세부 값은 차트 hover와 지도 레이어에서 확인할 수 있습니다.
+            화면에는 대표 결과를 우선 보여주며, 차트와 지도에 마우스를 가까이 대면 세부정보를 확인할 수 있습니다.
           </p>
 
           <div class="analysis-blocks">
@@ -475,7 +455,7 @@
             </div>
 
             <div class="analysis-block">
-              <h3>분석 D. 시설 규모·용량의 공간적 분포 분석</h3>
+              <h3>분석 A. 시설 규모·용량의 공간적 분포 분석</h3>
               <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem;">
                 저수량을 가중치로 사용해 중심점을 계산하고, 용량 상위 시설의 위치가
                 전체 시설 분포와 어떻게 다른지 비교합니다.
@@ -489,12 +469,13 @@
                 <div>
                   <h4>해석</h4>
                   <p class="analysis-note">용량을 가중치로 계산한 중심과 단순 중심을 비교해 시설 규모가 공간 분포에 미치는 영향을 확인했습니다. 극단값의 영향은 대표 상위 시설과 함께 해석합니다.</p>
+                  <div id="analysis-a-insight" class="analysis-insight"></div>
                 </div>
               </div>
             </div>
 
             <div class="analysis-block">
-              <h3>분석 E. 행정구역별 비교</h3>
+              <h3>분석 B. 행정구역별 비교</h3>
               <p class="analysis-note">pandas 집계 후 GeoPandas spatial join으로 시설을 읍면 Polygon에 연결했습니다. 관리주체 분포와 토지 면적당 시설 밀도를 대표 지표로 시각화하고, 읍면 경계와 결과를 Leaflet에서 함께 확인합니다.</p>
               <div id="region-insight" class="analysis-callout"></div>
               <div class="analysis-columns comparison-visuals">
@@ -506,36 +487,37 @@
                 <div>
                   <h4>관리주체별 시설 수</h4>
                   <div id="management-pie" class="pie-chart-wrap"></div>
+                  <div id="management-insight" class="compact-callout"></div>
                 </div>
               </div>
+              <div id="analysis-b-insight" class="analysis-insight"></div>
               <p class="analysis-note">관리주체 비교는 별도 관리대장 XLSX 원자료 696건을 기준으로 집계했습니다.</p>
               <p class="analysis-note">점과 원그래프 조각에 마우스를 올리면 세부 집계값을 확인할 수 있습니다. 읍면별 공간 분포는 지도에서 <strong>읍면별 시설 밀도</strong> 레이어를 ON/OFF하여 확인합니다.</p>
             </div>
 
             <div class="analysis-block">
-              <h3>못 × 농업지역 공간분석</h3>
+              <h3>분석 C. 못 × 농업지역 공간분석</h3>
               <p class="analysis-note">
                 약한 상관계수를 강한 결론으로 포장하기보다, 실제 GIS 데이터를 어떻게 공간분석으로 변환했는지를 핵심 결과로 제시합니다.
               </p>
               <div class="analysis-method-layout">
                 <div class="method-pipeline">
-                  <div class="method-step"><b>01</b><strong>Point</strong><span>못 좌표<br>427개 시설</span></div>
+                  <div class="method-step"><b>01</b><strong>Point</strong><span>못 좌표 · 427개 시설</span></div>
                   <div class="method-arrow">→</div>
-                  <div class="method-step"><b>02</b><strong>Project</strong><span>EPSG:5174<br>거리 계산용 좌표계</span></div>
+                  <div class="method-step"><b>02</b><strong>Project</strong><span>EPSG:5174 · 거리 계산용 좌표계</span></div>
                   <div class="method-arrow">→</div>
-                  <div class="method-step"><b>03</b><strong>Buffer</strong><span>500m / 1km<br>주변 범위 생성</span></div>
+                  <div class="method-step"><b>03</b><strong>Buffer</strong><span>500m / 1km · 주변 범위 생성</span></div>
                   <div class="method-arrow">→</div>
-                  <div class="method-step"><b>04</b><strong>Intersection</strong><span>농경지 Polygon<br>공간 중첩</span></div>
+                  <div class="method-step"><b>04</b><strong>Intersection</strong><span>농경지 Polygon · 공간 중첩</span></div>
                   <div class="method-arrow">→</div>
-                  <div class="method-step"><b>05</b><strong>Measure</strong><span>시설별 면적<br>상관관계 검토</span></div>
+                  <div class="method-step"><b>05</b><strong>Measure</strong><span>시설별 면적 · 상관관계 검토</span></div>
                 </div>
                 <div class="method-spec">
                   <span class="method-spec-label">PROCESS NOTE</span>
-                  <p><code>GeoPandas</code>로 농경지 Polygon을 의성군 경계와 겹치는 영역으로 제한한 뒤, 시설별 Buffer와 Intersection 면적을 계산했습니다.</p>
-                  <p><code>Output</code>은 시설별 500m·1km 농업지역 면적이며, 지도에서는 농경지 레이어를 ON/OFF하고 Polygon을 클릭해 면적을 확인할 수 있습니다.</p>
+                  <p><code>GeoPandas</code>로 의성군 경계와 겹치는 농경지 Polygon을 제한하고, 시설별 Buffer와 Intersection 면적을 계산했습니다. 결과는 지도 레이어와 Popup으로 확인합니다.</p>
                 </div>
               </div>
-              <div id="agriculture-summary" class="centroid-summary"></div>
+              <div id="agriculture-summary" class="centroid-summary agriculture-summary"></div>
               <h4>용량과 주변 농업환경의 관계</h4>
               <div id="agriculture-correlation" class="analysis-callout"></div>
               <div id="agriculture-scatter" class="scatter-plot-wrap"></div>
@@ -545,10 +527,9 @@
             </div>
 
             <div class="analysis-block research-note-block">
-              <h3>Research Note. 시설 간 최근린거리 및 공간적 군집성</h3>
+              <h3>Research Note. 추가 통계 검토</h3>
               <p id="c-research-note" class="analysis-note">
-                시설 간 최근린거리 및 공간적 군집성을 추가적으로 검토했으나,
-                통계적 유의성이 낮아 강한 군집 패턴은 확인되지 않았다.
+                시설 간 최근린거리와 공간적 군집성을 검토했으나 강한 군집 패턴은 확인되지 않아 보조 분석으로 정리했습니다.
               </p>
             </div>
           </div>
@@ -661,7 +642,7 @@
     <footer class="site-footer">
       <div class="container">
         <p>&copy; 2025-2026 박소영 · 토목·GIS 데이터 기반 개발자 포트폴리오</p>
-        <p style="font-size: 0.85rem; color: var(--muted);">도메인 경험을 데이터 분석과 Web GIS로 확장한 개인 프로젝트입니다.</p>
+        <p style="font-size: 0.85rem; color: var(--muted);">의성군의 지원을 받아 실시한 연구를 데이터 분석과 Web GIS로 확장한 개인 프로젝트입니다.</p>
       </div>
     </footer>
 
