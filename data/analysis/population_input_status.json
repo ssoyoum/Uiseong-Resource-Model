@@ -1,0 +1,10 @@
+{
+  "status": "AVAILABLE",
+  "source": [
+    "data/raw/population/mois_age_2024_1year.csv",
+    "data/raw/population/mois_age_2025_1year.csv"
+  ],
+  "message": "행정안전부 연령별 주민등록 CSV에서 의성군 읍·면 자료를 추출했습니다.",
+  "youth_definition": "만 19~39세",
+  "elderly_definition": "만 65세 이상"
+}

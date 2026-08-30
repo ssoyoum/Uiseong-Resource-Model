@@ -1,0 +1,3 @@
+dataset_name,provider,source_url,downloaded_at,reference_period,geographic_filter,age_definition,encoding,license_or_note,status
+지역별 연령별 주민등록 인구현황,행정안전부,https://jumin.mois.go.kr/ageStatMonth.do,2026-08-30,2024-12,의성군 읍면 코드 4773,청년 만 19~39세; 고령 만 65세 이상,CP949,읍면동 집계자료; 개인정보 없음,AVAILABLE
+지역별 연령별 주민등록 인구현황,행정안전부,https://jumin.mois.go.kr/ageStatMonth.do,2026-08-30,2025-12,의성군 읍면 코드 4773,청년 만 19~39세; 고령 만 65세 이상,CP949,읍면동 집계자료; 개인정보 없음,AVAILABLE
