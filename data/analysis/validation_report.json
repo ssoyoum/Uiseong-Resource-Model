@@ -1,0 +1,116 @@
+{
+  "status": "PASS",
+  "pass_count": 12,
+  "fail_count": 0,
+  "checks": [
+    {
+      "name": "pond_count_427",
+      "status": "PASS",
+      "details": {
+        "actual": 427,
+        "expected": 427
+      }
+    },
+    {
+      "name": "pond_geometry_valid",
+      "status": "PASS",
+      "details": {
+        "invalid_count": 0
+      }
+    },
+    {
+      "name": "pond_id_duplicate",
+      "status": "PASS",
+      "details": {
+        "duplicate_count": 0
+      }
+    },
+    {
+      "name": "pond_coordinate_duplicate",
+      "status": "WARN",
+      "details": {
+        "duplicate_count": 41
+      }
+    },
+    {
+      "name": "pond_required_null",
+      "status": "PASS",
+      "details": {
+        "null_counts": {
+          "id": 0,
+          "capacity": 0,
+          "geometry": 0
+        }
+      }
+    },
+    {
+      "name": "ponds_inside_uiseong_boundary",
+      "status": "PASS",
+      "details": {
+        "outside_count": 0
+      }
+    },
+    {
+      "name": "analysis_crs_meter",
+      "status": "PASS",
+      "details": {
+        "crs": "EPSG:5174",
+        "expected": "EPSG:5174"
+      }
+    },
+    {
+      "name": "vworld_facilities_crs",
+      "status": "PASS",
+      "details": {
+        "crs": "EPSG:5174",
+        "expected": "EPSG:5174"
+      }
+    },
+    {
+      "name": "vworld_facilities_geometry_valid",
+      "status": "PASS",
+      "details": {
+        "invalid_count": 0
+      }
+    },
+    {
+      "name": "vworld_facilities_inside_boundary",
+      "status": "PASS",
+      "details": {
+        "feature_count": 68,
+        "outside_count": 0,
+        "boundary_tolerance_m": 0.01
+      }
+    },
+    {
+      "name": "distance_unit_meter",
+      "status": "DATA_NOT_AVAILABLE",
+      "details": {
+        "message": "도로 원자료 없음"
+      }
+    },
+    {
+      "name": "buffer_area_unit",
+      "status": "PASS",
+      "details": {
+        "unit": "m² and ha",
+        "record_count": 427
+      }
+    },
+    {
+      "name": "emd_geometry_valid",
+      "status": "PASS",
+      "details": {
+        "invalid_count": 0
+      }
+    },
+    {
+      "name": "spatial_join_missing",
+      "status": "PASS",
+      "details": {
+        "missing_count": 0
+      }
+    }
+  ],
+  "note": "DATA_NOT_AVAILABLE는 오류가 아니라 원자료 미확보 상태를 뜻합니다."
+}

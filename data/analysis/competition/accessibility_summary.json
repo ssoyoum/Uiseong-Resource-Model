@@ -1,0 +1,9 @@
+{
+  "status": "DATA_NOT_AVAILABLE",
+  "facility_count": 427,
+  "class_counts": {
+    "DATA_NOT_AVAILABLE": 427
+  },
+  "mean_nearest_road_m": null,
+  "median_nearest_road_m": null
+}

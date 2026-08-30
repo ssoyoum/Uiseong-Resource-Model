@@ -1,0 +1,19 @@
+{
+  "status": "PARTIAL_DATASET_READY",
+  "current_analyzed_facility_count": 427,
+  "legacy_metrics_preserved": {
+    "raw_facility_count": 696,
+    "analyzed_facility_count": 427,
+    "total_capacity_thousand_ton": 39578.75,
+    "mean_capacity_thousand_ton": 56.89,
+    "mean_agricultural_area_1km_ha": 40.63,
+    "spearman_capacity_agricultural_area_1km": 0.219
+  },
+  "current_input_capacity_sum": 20729.59,
+  "interpretation": "저수용량 하나만으로 주변 공간의 활용 가능성을 설명하기 어려워 인구·접근성·생활환경 결합이 필요함",
+  "data_status": {
+    "population": "AVAILABLE",
+    "vworld": "AVAILABLE_PARTIAL",
+    "traffic_culture": "AVAILABLE"
+  }
+}
