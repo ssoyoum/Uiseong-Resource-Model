@@ -1,0 +1,11 @@
+{
+  "status": "AVAILABLE",
+  "method": "규칙 기반; 충분한 검증 입력이 없는 시설은 D_PRESERVATION으로 보수적 표시",
+  "types": [
+    {
+      "classification_type": "D_PRESERVATION",
+      "facility_count": 427
+    }
+  ],
+  "missing_data_policy": "DATA_NOT_AVAILABLE"
+}

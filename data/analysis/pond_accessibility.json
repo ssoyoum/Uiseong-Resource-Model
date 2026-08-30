@@ -1,0 +1,2144 @@
+{
+  "status": "DATA_NOT_AVAILABLE",
+  "facility_count": 427,
+  "distance_unit": "DATA_NOT_AVAILABLE",
+  "class_thresholds_m": null,
+  "data": [
+    {
+      "pond_id": "1",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "2",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "3",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "4",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "5",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "6",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "7",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "8",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "9",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "10",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "11",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "12",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "13",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "14",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "15",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "16",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "17",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "18",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "19",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "20",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "21",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "22",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "23",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "24",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "25",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "26",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "27",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "28",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "29",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "30",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "31",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "32",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "33",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "34",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "35",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "36",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "37",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "38",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "39",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "40",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "41",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "42",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "43",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "44",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "45",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "46",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "47",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "48",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "49",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "50",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "51",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "52",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "53",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "54",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "55",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "56",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "57",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "58",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "59",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "60",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "61",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "62",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "63",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "64",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "65",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "66",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "67",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "68",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "69",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "70",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "71",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "72",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "73",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "74",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "75",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "76",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "77",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "78",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "79",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "80",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "81",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "82",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "83",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "84",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "85",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "86",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "87",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "88",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "89",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "90",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "91",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "92",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "93",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "94",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "95",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "96",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "97",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "98",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "99",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "100",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "101",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "102",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "103",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "188",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "189",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "190",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "191",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "192",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "193",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "194",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "195",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "196",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "197",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "198",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "199",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "200",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "201",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "202",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "203",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "204",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "213",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "214",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "215",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "216",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "217",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "218",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "219",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "220",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "221",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "222",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "223",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "224",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "225",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "226",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "227",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "228",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "229",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "230",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "231",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "232",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "233",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "234",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "235",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "236",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "237",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "238",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "239",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "240",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "241",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "242",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "243",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "244",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "245",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "246",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "247",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "248",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "249",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "250",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "251",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "380",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "381",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "382",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "383",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "384",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "385",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "386",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "387",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "388",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "389",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "390",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "391",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "392",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "393",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "394",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "395",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "396",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "397",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "398",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "399",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "400",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "401",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "402",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "403",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "404",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "405",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "406",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "407",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "408",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "409",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "410",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "411",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "412",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "413",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "414",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "415",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "416",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "417",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "418",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "419",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "420",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "421",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "422",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "423",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "424",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "425",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "426",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "427",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "428",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "429",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "430",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "431",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "432",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "433",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "434",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "435",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "436",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "437",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "438",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "439",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "440",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "441",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "442",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "443",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "444",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "445",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "446",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "447",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "448",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "449",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "450",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "451",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "452",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "453",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "454",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "455",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "456",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "457",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "458",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "459",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "460",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "461",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "462",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "463",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "464",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "465",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "466",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "467",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "468",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "469",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "470",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "471",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "472",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "473",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "474",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "475",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "476",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "477",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "478",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "479",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "480",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "481",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "482",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "483",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "484",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "485",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "486",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "487",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "488",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "489",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "490",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "491",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "492",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "493",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "494",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "495",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "496",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "497",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "498",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "499",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "500",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "501",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "502",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "503",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "504",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "505",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "506",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "507",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "508",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "509",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "510",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "511",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "512",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "513",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "514",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "515",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "516",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "517",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "518",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "519",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "543",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "544",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "545",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "546",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "547",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "548",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "549",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "550",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "551",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "556",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "557",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "558",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "559",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "560",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "561",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "562",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "563",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "564",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "565",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "566",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "567",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "568",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "569",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "570",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "571",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "572",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "573",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "574",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "575",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "576",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "587",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "588",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "589",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "590",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "591",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "592",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "593",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "594",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "595",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "596",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "597",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "598",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "599",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "600",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "601",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "602",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "603",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "604",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "605",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "606",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "607",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "608",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "609",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "610",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "611",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "612",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "613",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "614",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "615",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "616",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "617",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "618",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "619",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "620",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "621",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "622",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "623",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "624",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "625",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "626",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "627",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "628",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "629",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "630",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "631",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "632",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "633",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "634",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "635",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "636",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "637",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "638",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "639",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "640",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "641",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "642",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "643",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "644",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "645",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "646",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "647",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "656",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "657",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "658",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "659",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "660",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "661",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "662",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "666",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "667",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "668",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "669",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "670",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "671",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "672",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "673",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "674",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "675",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "676",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "677",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "678",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "679",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "680",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "681",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "682",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "683",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "684",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "685",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "686",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "687",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "688",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "689",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "690",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "691",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "692",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "693",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "695",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    },
+    {
+      "pond_id": "696",
+      "nearest_road_m": null,
+      "accessibility_class": "DATA_NOT_AVAILABLE"
+    }
+  ],
+  "message": "도로 원자료가 없어 거리를 산출하지 않았습니다."
+}

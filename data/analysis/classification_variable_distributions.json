@@ -1,0 +1,72 @@
+{
+  "capacity": {
+    "min": 0.3,
+    "max": 4703.87,
+    "mean": 48.54704918032787,
+    "median": 9.6,
+    "q1": 4.45,
+    "q3": 20.0,
+    "missing_count": 0,
+    "status": "AVAILABLE"
+  },
+  "nearest_road_m": {
+    "min": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "q1": null,
+    "q3": null,
+    "missing_count": 427,
+    "status": "DATA_NOT_AVAILABLE"
+  },
+  "agricultural_ratio_500m": {
+    "min": 0.0,
+    "max": 82.53505611065532,
+    "mean": 12.954611404649874,
+    "median": 8.258928558616818,
+    "q1": 0.0,
+    "q3": 19.029165442837154,
+    "missing_count": 0,
+    "status": "AVAILABLE"
+  },
+  "agricultural_ratio_1000m": {
+    "min": 0.0,
+    "max": 78.7265729028892,
+    "mean": 12.950387837684662,
+    "median": 8.582808085438975,
+    "q1": 2.192842237654994,
+    "q3": 18.00897634265711,
+    "missing_count": 0,
+    "status": "AVAILABLE"
+  },
+  "population_500m": {
+    "min": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "q1": null,
+    "q3": null,
+    "missing_count": 427,
+    "status": "DATA_NOT_AVAILABLE"
+  },
+  "facility_count_500m": {
+    "min": 0.0,
+    "max": 7.0,
+    "mean": 0.6955503512880562,
+    "median": 0.0,
+    "q1": 0.0,
+    "q3": 0.0,
+    "missing_count": 0,
+    "status": "AVAILABLE"
+  },
+  "facility_count_1000m": {
+    "min": 0.0,
+    "max": 13.0,
+    "mean": 1.3442622950819672,
+    "median": 0.0,
+    "q1": 0.0,
+    "q3": 0.0,
+    "missing_count": 0,
+    "status": "AVAILABLE"
+  }
+}
