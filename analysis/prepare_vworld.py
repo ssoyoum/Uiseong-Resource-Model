@@ -8,9 +8,9 @@ from __future__ import annotations
 
 import csv
 import os
+import sqlite3
 import tempfile
 import zipfile
-from datetime import datetime
 from pathlib import Path
 
 import geopandas as gpd
@@ -171,6 +171,29 @@ def normalize_facilities(frame: gpd.GeoDataFrame, source_layer: str, source_file
     return result[columns]
 
 
+def normalize_gpkg_metadata(path: Path) -> None:
+    """Remove run-time timestamps so identical inputs produce stable output."""
+    with sqlite3.connect(path) as connection:
+        connection.execute(
+            "UPDATE gpkg_contents SET last_change = ? WHERE table_name = ?",
+            ("2000-01-01T00:00:00.000Z", "facilities"),
+        )
+        connection.commit()
+    with sqlite3.connect(path) as connection:
+        connection.execute("VACUUM")
+
+
+def same_facilities(existing: gpd.GeoDataFrame, candidate: gpd.GeoDataFrame) -> bool:
+    """Compare logical attributes and geometry, ignoring GPKG metadata bytes."""
+    if list(existing.columns) != list(candidate.columns) or len(existing) != len(candidate):
+        return False
+    left = pd.DataFrame(existing.drop(columns="geometry")).copy()
+    right = pd.DataFrame(candidate.drop(columns="geometry")).copy()
+    left["geometry_wkb"] = existing.geometry.map(lambda value: value.wkb_hex if value is not None else None).to_numpy()
+    right["geometry_wkb"] = candidate.geometry.map(lambda value: value.wkb_hex if value is not None else None).to_numpy()
+    return left.astype(str).reset_index(drop=True).equals(right.astype(str).reset_index(drop=True))
+
+
 def inventory_records(directory: Path) -> list[dict[str, object]]:
     records = []
     for path in sorted(directory.iterdir()) if directory.exists() else []:
@@ -273,7 +296,16 @@ def prepare() -> dict:
     if facilities:
         combined = gpd.GeoDataFrame(pd.concat(facilities, ignore_index=True), geometry="geometry", crs=ANALYSIS_CRS)
         output_path.parent.mkdir(parents=True, exist_ok=True)
-        combined.to_file(output_path, layer="facilities", driver="GPKG")
+        rewrite = True
+        if output_path.exists():
+            try:
+                existing = gpd.read_file(output_path, layer="facilities").to_crs(ANALYSIS_CRS)
+                rewrite = not same_facilities(existing, combined)
+            except Exception:
+                rewrite = True
+        if rewrite:
+            combined.to_file(output_path, layer="facilities", driver="GPKG")
+            normalize_gpkg_metadata(output_path)
         facility_count = len(combined)
     else:
         facility_count = 0
@@ -326,7 +358,6 @@ def prepare() -> dict:
     inventory = inventory_records(directory)
     write_json(DATA_DIR / "analysis" / "vworld_layer_inventory.json", {
         "source_directory": source_path_label(directory),
-        "generated_at": datetime.now().isoformat(timespec="seconds"),
         "records": inventory,
     })
     used_layers = [record["dataset_name"] for record in records if record["status"] == "AVAILABLE"]
