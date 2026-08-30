@@ -1,0 +1,177 @@
+{
+  "source_directory": "vworld",
+  "generated_at": "2026-08-31T00:17:02",
+  "records": [
+    {
+      "file_name": "2. 제8회 공간정보 활용·아이디어 경진대회_제출서류 양식.hwp",
+      "file_type": "hwp",
+      "size_bytes": 93184,
+      "classification": "정의서·제출서류·참조코드 문서",
+      "recommended_action": "분석 원자료가 아닌 메타데이터·제출 참고자료로 보관",
+      "status": "METADATA_OR_DOCUMENT",
+      "source_path": "vworld/2. 제8회 공간정보 활용·아이디어 경진대회_제출서류 양식.hwp"
+    },
+    {
+      "file_name": "gb_r032.zip",
+      "file_type": "zip",
+      "size_bytes": 28045185,
+      "classification": "생활SOC 2020 입지·수요분석 자료; 현재 파일 범위가 의성군 밖",
+      "recommended_action": "아이디어로 보류; 의성군 포함 버전 확보 전 사용하지 않음",
+      "status": "OUT_OF_SCOPE_NO_UISEONG_COVERAGE",
+      "source_path": "vworld/gb_r032.zip"
+    },
+    {
+      "file_name": "gb_r032_테이블정의서 (1).xlsx",
+      "file_type": "xlsx",
+      "size_bytes": 10613,
+      "classification": "정의서·제출서류·참조코드 문서",
+      "recommended_action": "분석 원자료가 아닌 메타데이터·제출 참고자료로 보관",
+      "status": "METADATA_OR_DOCUMENT",
+      "source_path": "vworld/gb_r032_테이블정의서 (1).xlsx"
+    },
+    {
+      "file_name": "gb_r032_테이블정의서.xlsx",
+      "file_type": "xlsx",
+      "size_bytes": 10613,
+      "classification": "정의서·제출서류·참조코드 문서",
+      "recommended_action": "분석 원자료가 아닌 메타데이터·제출 참고자료로 보관",
+      "status": "METADATA_OR_DOCUMENT",
+      "source_path": "vworld/gb_r032_테이블정의서.xlsx"
+    },
+    {
+      "file_name": "gb_r033.zip",
+      "file_type": "zip",
+      "size_bytes": 3323011,
+      "classification": "생활SOC 2020 입지·수요분석 자료; 현재 파일 범위가 의성군 밖",
+      "recommended_action": "아이디어로 보류; 의성군 포함 버전 확보 전 사용하지 않음",
+      "status": "OUT_OF_SCOPE_NO_UISEONG_COVERAGE",
+      "source_path": "vworld/gb_r033.zip"
+    },
+    {
+      "file_name": "gb_r033_테이블정의서 (1).xlsx",
+      "file_type": "xlsx",
+      "size_bytes": 10407,
+      "classification": "정의서·제출서류·참조코드 문서",
+      "recommended_action": "분석 원자료가 아닌 메타데이터·제출 참고자료로 보관",
+      "status": "METADATA_OR_DOCUMENT",
+      "source_path": "vworld/gb_r033_테이블정의서 (1).xlsx"
+    },
+    {
+      "file_name": "gb_r033_테이블정의서.xlsx",
+      "file_type": "xlsx",
+      "size_bytes": 10407,
+      "classification": "정의서·제출서류·참조코드 문서",
+      "recommended_action": "분석 원자료가 아닌 메타데이터·제출 참고자료로 보관",
+      "status": "METADATA_OR_DOCUMENT",
+      "source_path": "vworld/gb_r033_테이블정의서.xlsx"
+    },
+    {
+      "file_name": "LSMD_CONT_UO000_5174_경북.zip",
+      "file_type": "zip",
+      "size_bytes": 39461,
+      "classification": "도시계획 관련 Polygon; 의성군 feature 없음",
+      "recommended_action": "현재 분석에서 제외",
+      "status": "NO_UISEONG_FEATURES",
+      "source_path": "vworld/LSMD_CONT_UO000_5174_경북.zip"
+    },
+    {
+      "file_name": "LSMD_CONT_UO601_5174_경북.zip",
+      "file_type": "zip",
+      "size_bytes": 210367,
+      "classification": "관광지·관광특구 관련 Polygon",
+      "recommended_action": "의성군 feature를 시설·관광 context로 처리",
+      "status": "USED",
+      "source_path": "vworld/LSMD_CONT_UO601_5174_경북.zip"
+    },
+    {
+      "file_name": "LSMD_CONT_UQ164_5174_경북.zip",
+      "file_type": "zip",
+      "size_bytes": 1430185,
+      "classification": "도시계획시설 관련 Polygon; 공공·교육·문화·안전시설 속성 포함",
+      "recommended_action": "의성군 feature를 생활·공공시설로 처리",
+      "status": "USED",
+      "source_path": "vworld/LSMD_CONT_UQ164_5174_경북.zip"
+    },
+    {
+      "file_name": "OA_IN.zip",
+      "file_type": "zip",
+      "size_bytes": 25812758,
+      "classification": "읍·면·격자형 통계 TXT 묶음",
+      "recommended_action": "기존 행정안전부 인구자료와 비교 후 필요 시 보조 사용",
+      "status": "PUBLIC_STATISTICS_REFERENCE",
+      "source_path": "vworld/OA_IN.zip"
+    },
+    {
+      "file_name": "statistics_code.xls",
+      "file_type": "xls",
+      "size_bytes": 159232,
+      "classification": "정의서·제출서류·참조코드 문서",
+      "recommended_action": "분석 원자료가 아닌 메타데이터·제출 참고자료로 보관",
+      "status": "METADATA_OR_DOCUMENT",
+      "source_path": "vworld/statistics_code.xls"
+    },
+    {
+      "file_name": "statistics_guide (1).hwp",
+      "file_type": "hwp",
+      "size_bytes": 48640,
+      "classification": "정의서·제출서류·참조코드 문서",
+      "recommended_action": "분석 원자료가 아닌 메타데이터·제출 참고자료로 보관",
+      "status": "METADATA_OR_DOCUMENT",
+      "source_path": "vworld/statistics_guide (1).hwp"
+    },
+    {
+      "file_name": "statistics_guide.hwp",
+      "file_type": "hwp",
+      "size_bytes": 48640,
+      "classification": "정의서·제출서류·참조코드 문서",
+      "recommended_action": "분석 원자료가 아닌 메타데이터·제출 참고자료로 보관",
+      "status": "METADATA_OR_DOCUMENT",
+      "source_path": "vworld/statistics_guide.hwp"
+    },
+    {
+      "file_name": "T_W_BASE_ART_CULT_IDX.zip",
+      "file_type": "zip",
+      "size_bytes": 69950,
+      "classification": "교통·문화지수 비공간 통계 테이블",
+      "recommended_action": "의성군 시군구 배경지표로 별도 처리",
+      "status": "CONTEXT_ONLY",
+      "source_path": "vworld/T_W_BASE_ART_CULT_IDX.zip"
+    },
+    {
+      "file_name": "T_W_BASE_TRF_CULT_IDX.zip",
+      "file_type": "zip",
+      "size_bytes": 37932,
+      "classification": "교통·문화지수 비공간 통계 테이블",
+      "recommended_action": "의성군 시군구 배경지표로 별도 처리",
+      "status": "CONTEXT_ONLY",
+      "source_path": "vworld/T_W_BASE_TRF_CULT_IDX.zip"
+    },
+    {
+      "file_name": "Z_TMACS_T_W_BASE_ART_CULT_IDX.xlsx",
+      "file_type": "xlsx",
+      "size_bytes": 10268,
+      "classification": "정의서·제출서류·참조코드 문서",
+      "recommended_action": "분석 원자료가 아닌 메타데이터·제출 참고자료로 보관",
+      "status": "METADATA_OR_DOCUMENT",
+      "source_path": "vworld/Z_TMACS_T_W_BASE_ART_CULT_IDX.xlsx"
+    },
+    {
+      "file_name": "Z_TMACS_T_W_BASE_TRF_CULT_IDX.xlsx",
+      "file_type": "xlsx",
+      "size_bytes": 14837,
+      "classification": "정의서·제출서류·참조코드 문서",
+      "recommended_action": "분석 원자료가 아닌 메타데이터·제출 참고자료로 보관",
+      "status": "METADATA_OR_DOCUMENT",
+      "source_path": "vworld/Z_TMACS_T_W_BASE_TRF_CULT_IDX.xlsx"
+    },
+    {
+      "file_name": "Z_UPIS_C_UQ151.xlsx",
+      "file_type": "xlsx",
+      "size_bytes": 12605,
+      "classification": "도시계획도로 테이블 정의서",
+      "recommended_action": "실제 도로 SHP 확보 전까지 정의서로만 보관",
+      "status": "SCHEMA_ONLY_ROAD_NOT_AVAILABLE",
+      "source_path": "vworld/Z_UPIS_C_UQ151.xlsx"
+    }
+  ]
+}
