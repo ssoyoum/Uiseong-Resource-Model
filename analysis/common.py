@@ -27,7 +27,6 @@ DATA_NOT_AVAILABLE = "DATA_NOT_AVAILABLE"
 def ensure_output_dirs() -> None:
     for path in (
         RAW_DIR / "population",
-        RAW_DIR / "vworld",
         RAW_DIR / "facilities",
         RAW_DIR / "business",
         PROCESSED_DIR / "population",
@@ -131,4 +130,3 @@ def write_geojson(frame: gpd.GeoDataFrame, path: Path) -> None:
     """GeoJSON은 웹 전달용으로 항상 WGS84로 저장한다."""
     output = frame.to_crs(WGS84) if frame.crs and frame.crs.to_string() != WGS84 else frame
     output.to_file(path, driver="GeoJSON", encoding="utf-8")
-

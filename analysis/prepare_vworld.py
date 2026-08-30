@@ -25,7 +25,6 @@ try:
         GEOJSON_DIR,
         MANIFEST_DIR,
         PROCESSED_DIR,
-        RAW_DIR,
         ensure_output_dirs,
         load_geojson,
         write_json,
@@ -39,7 +38,6 @@ except ImportError:
         GEOJSON_DIR,
         MANIFEST_DIR,
         PROCESSED_DIR,
-        RAW_DIR,
         ensure_output_dirs,
         load_geojson,
         write_json,
@@ -66,10 +64,7 @@ def source_dir() -> Path:
     """Use the repository's existing root VWorld source package."""
     if ROOT_VWORLD_SOURCE_DIR.exists() and any(ROOT_VWORLD_SOURCE_DIR.iterdir()):
         return ROOT_VWORLD_SOURCE_DIR
-    local = RAW_DIR / "vworld"
-    if local.exists() and any(local.iterdir()):
-        return local
-    return local
+    return ROOT_VWORLD_SOURCE_DIR
 
 
 def source_path_label(path: Path | None) -> str:
