@@ -3,5 +3,8 @@ analysis/__pycache__/
 .venv/
 data/source/
 의성/
+data/raw/**
+!data/raw/**/
+vworld/
 data/geojson/boundary.geojson
 index_old.html
