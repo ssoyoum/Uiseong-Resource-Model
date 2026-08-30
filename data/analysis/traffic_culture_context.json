@@ -1,0 +1,51 @@
+{
+  "status": "AVAILABLE",
+  "municipality_code": "47730",
+  "municipality_name": "경북 의성군",
+  "datasets": [
+    {
+      "dataset": "교통문화지수 항목별 기초통계",
+      "status": "AVAILABLE",
+      "rows": 11,
+      "years": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ],
+      "latest_year": "2024",
+      "municipality_code": "47730",
+      "source_path": "vworld/T_W_BASE_ART_CULT_IDX.zip",
+      "definition_path": "vworld/Z_TMACS_T_W_BASE_ART_CULT_IDX.xlsx",
+      "note": "시군구 단위 배경지표이며 못별 Buffer·도로거리 지표가 아님"
+    },
+    {
+      "dataset": "교통문화지수 영역별 통계",
+      "status": "AVAILABLE",
+      "rows": 8,
+      "years": [
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ],
+      "latest_year": "2024",
+      "municipality_code": "47730",
+      "source_path": "vworld/T_W_BASE_TRF_CULT_IDX.zip",
+      "definition_path": "vworld/Z_TMACS_T_W_BASE_TRF_CULT_IDX.xlsx",
+      "note": "시군구 단위 배경지표이며 못별 Buffer·도로거리 지표가 아님"
+    }
+  ],
+  "use_policy": "의성군 전체 배경지표로만 사용; 개별 시설의 접근성·생활시설 개수로 복제하지 않음"
+}
