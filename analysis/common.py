@@ -7,6 +7,8 @@ from pathlib import Path
 
 import geopandas as gpd
 import pandas as pd
+from pyproj import Transformer
+from shapely.geometry import Point
 
 
 BASE_DIR = Path(__file__).resolve().parents[1]
@@ -18,6 +20,7 @@ ANALYSIS_DIR = DATA_DIR / "analysis"
 COMPETITION_DIR = ANALYSIS_DIR / "competition"
 FIGURES_DIR = BASE_DIR / "analysis" / "figures"
 MANIFEST_DIR = DATA_DIR / "manifests"
+COORDINATE_CORRECTION_PATH = ANALYSIS_DIR / "coordinate_correction_template.csv"
 
 WGS84 = "EPSG:4326"
 ANALYSIS_CRS = "EPSG:5174"
@@ -72,6 +75,38 @@ def load_ponds(target_crs: str | None = None) -> gpd.GeoDataFrame:
     ponds["id"] = ponds["id"].astype(str)
     ponds["capacity"] = pd.to_numeric(ponds["capacity"], errors="coerce")
     return ponds
+
+
+def apply_coordinate_corrections(ponds: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
+    """Apply only populated coordinate overrides from the audit template."""
+    result = ponds.copy()
+    result["coordinate_correction_applied"] = False
+    if not COORDINATE_CORRECTION_PATH.exists():
+        return result
+    corrections = pd.read_csv(COORDINATE_CORRECTION_PATH, dtype=str)
+    if "pond_id" not in corrections.columns:
+        return result
+    corrections["pond_id"] = corrections["pond_id"].astype(str)
+    transformer = Transformer.from_crs(WGS84, ANALYSIS_CRS, always_xy=True)
+    index_by_id = {str(value): index for index, value in result["id"].items()}
+    for row in corrections.to_dict(orient="records"):
+        index = index_by_id.get(str(row.get("pond_id", "")))
+        if index is None:
+            continue
+        x = pd.to_numeric(row.get("corrected_x_epsg5174"), errors="coerce")
+        y = pd.to_numeric(row.get("corrected_y_epsg5174"), errors="coerce")
+        if pd.notna(x) and pd.notna(y):
+            point = Point(float(x), float(y))
+        else:
+            lat = pd.to_numeric(row.get("corrected_lat_wgs84"), errors="coerce")
+            lng = pd.to_numeric(row.get("corrected_lng_wgs84"), errors="coerce")
+            if pd.isna(lat) or pd.isna(lng):
+                continue
+            corrected_x, corrected_y = transformer.transform(float(lng), float(lat))
+            point = Point(corrected_x, corrected_y)
+        result.at[index, "geometry"] = point
+        result.at[index, "coordinate_correction_applied"] = True
+    return result
 
 
 def find_data_file(directory: Path, patterns: tuple[str, ...]) -> Path | None:

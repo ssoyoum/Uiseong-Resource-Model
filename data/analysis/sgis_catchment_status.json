@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "year": 2024,
+  "drive_times_min": [
+    5,
+    10
+  ],
+  "requested_facilities": 427,
+  "output": "data/processed/population/sgis_drive_population.csv",
+  "counts": {
+    "AVAILABLE": 455,
+    "DATA_NOT_AVAILABLE": 399
+  },
+  "privacy_note": "SGIS 생활권역 값은 비밀보호 처리된 서비스 제공값이며 실제값과 차이가 있을 수 있음"
+}

@@ -1,0 +1,126 @@
+{
+  "checked_at": "2026-08-31",
+  "scope": {
+    "adm_cd": "47730",
+    "years": [
+      2020,
+      2024
+    ]
+  },
+  "authentication": "PASS",
+  "checks": [
+    {
+      "indicator": "population",
+      "endpoint": "https://sgisapi.mods.go.kr/OpenAPI3/stats/population.json",
+      "year": 2020,
+      "adm_cd": "47730",
+      "status": "DATA_NOT_AVAILABLE",
+      "errCd": -100,
+      "errMsg": "검색결과가 존재하지 않습니다.",
+      "record_count": null
+    },
+    {
+      "indicator": "age_population",
+      "endpoint": "https://sgisapi.mods.go.kr/OpenAPI3/stats/searchpopulation.json",
+      "year": 2020,
+      "adm_cd": "47730",
+      "status": "API_ERROR",
+      "errCd": -200,
+      "errMsg": "나이타입 코드를 확인해주세요",
+      "record_count": null
+    },
+    {
+      "indicator": "household",
+      "endpoint": "https://sgisapi.mods.go.kr/OpenAPI3/stats/household.json",
+      "year": 2020,
+      "adm_cd": "47730",
+      "status": "DATA_NOT_AVAILABLE",
+      "errCd": -100,
+      "errMsg": "검색결과가 존재하지 않습니다.",
+      "record_count": null
+    },
+    {
+      "indicator": "housing",
+      "endpoint": "https://sgisapi.mods.go.kr/OpenAPI3/stats/house.json",
+      "year": 2020,
+      "adm_cd": "47730",
+      "status": "DATA_NOT_AVAILABLE",
+      "errCd": -100,
+      "errMsg": "검색결과가 존재하지 않습니다.",
+      "record_count": null
+    },
+    {
+      "indicator": "company_workers",
+      "endpoint": "https://sgisapi.mods.go.kr/OpenAPI3/stats/company.json",
+      "year": 2020,
+      "adm_cd": "47730",
+      "status": "DATA_NOT_AVAILABLE",
+      "errCd": 0,
+      "errMsg": "Success",
+      "record_count": 0
+    },
+    {
+      "indicator": "population",
+      "endpoint": "https://sgisapi.mods.go.kr/OpenAPI3/stats/population.json",
+      "year": 2024,
+      "adm_cd": "47730",
+      "status": "DATA_NOT_AVAILABLE",
+      "errCd": -100,
+      "errMsg": "검색결과가 존재하지 않습니다.",
+      "record_count": null
+    },
+    {
+      "indicator": "age_population",
+      "endpoint": "https://sgisapi.mods.go.kr/OpenAPI3/stats/searchpopulation.json",
+      "year": 2024,
+      "adm_cd": "47730",
+      "status": "API_ERROR",
+      "errCd": -200,
+      "errMsg": "나이타입 코드를 확인해주세요",
+      "record_count": null
+    },
+    {
+      "indicator": "household",
+      "endpoint": "https://sgisapi.mods.go.kr/OpenAPI3/stats/household.json",
+      "year": 2024,
+      "adm_cd": "47730",
+      "status": "DATA_NOT_AVAILABLE",
+      "errCd": -100,
+      "errMsg": "검색결과가 존재하지 않습니다.",
+      "record_count": null
+    },
+    {
+      "indicator": "housing",
+      "endpoint": "https://sgisapi.mods.go.kr/OpenAPI3/stats/house.json",
+      "year": 2024,
+      "adm_cd": "47730",
+      "status": "DATA_NOT_AVAILABLE",
+      "errCd": -100,
+      "errMsg": "검색결과가 존재하지 않습니다.",
+      "record_count": null
+    },
+    {
+      "indicator": "company_workers",
+      "endpoint": "https://sgisapi.mods.go.kr/OpenAPI3/stats/company.json",
+      "year": 2024,
+      "adm_cd": "47730",
+      "status": "DATA_NOT_AVAILABLE",
+      "errCd": 0,
+      "errMsg": "Success",
+      "record_count": 0
+    }
+  ],
+  "summary": {
+    "checked": 10,
+    "available": 0,
+    "data_not_available": 8,
+    "api_error": 2
+  },
+  "selection": {
+    "primary_sgis_indicator": "SGIS 생활권역 serviceAreaStatistics: 2024년 5·10분 주행생활권 인구",
+    "primary_output": "data/processed/population/sgis_drive_population.csv",
+    "regional_census_indicators": "Use only when this check reports AVAILABLE for the requested Uiseong code/year.",
+    "no_result_rule": "DATA_NOT_AVAILABLE is retained as missing; it is never converted to zero or imputed."
+  },
+  "source": "SGIS OpenAPI documented census statistics endpoints"
+}
