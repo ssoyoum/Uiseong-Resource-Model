@@ -20,7 +20,7 @@ vworld/
 
 - `LSMD_CONT_UQ164_5174_경북.zip`: 공공·생활·문화·교육·안전시설 Polygon
 - `LSMD_CONT_UO601_5174_경북.zip`: 관광지·관광특구 Polygon
-- `LSMD_CONT_UQ151*.zip`: 도로 공간자료가 확보되면 사용
+- `C_UQ151.zip`: 도시계획시설 도로 현황 SHP. 의성군 Clip 후 최근접거리·Buffer 도로 geometry 길이에 사용
 - `gb_r032.zip`, `gb_r033.zip`: 생활SOC 2020 참고자료. 현재 파일은 의성군 범위 밖이라 분석에 사용하지 않음
 - `T_W_BASE_ART_CULT_IDX.zip`, `T_W_BASE_TRF_CULT_IDX.zip`: 교통문화지수 비공간 통계
 - 기타 HWP/XLS/XLSX: 테이블 정의서·제출 양식·참조 문서
@@ -67,6 +67,8 @@ data/
 ```bash
 python analysis/acquire_population.py       # 필요 시 인구 원본 다운로드
 python analysis/acquire_worldpop.py         # 필요 시 WorldPop 참고 raster 다운로드
+python analysis/check_sgis_indicators.py   # 의성군 SGIS 지역통계 endpoint 가용성 점검
+python analysis/acquire_sgis_catchment.py  # SGIS 5·10분 생활권역 인구 수집(.env 필요)
 python analysis/run_competition_pipeline.py
 ```
 
@@ -77,6 +79,10 @@ python analysis/run_competition_pipeline.py
 - `data/processed/population/uiseong_population.csv`: 읍·면별 인구·청년·고령 정제자료
 - `data/processed/facilities/uiseong_facilities.gpkg`: VWorld UQ164·UO601에서 추출한 의성군 시설자료
 - `data/analysis/`: population, context, accessibility, classification, traffic/culture, VWorld inventory, validation 결과
+- `data/analysis/sgis_indicator_availability.json`: SGIS 지역통계 endpoint별 의성군 가용성 점검 결과
+- `data/analysis/sgis_catchment_status.json`: SGIS 생활권역 수집 건수와 결측 상태
+- `data/analysis/sgis_policy_evidence.csv/json`: SGIS 도달인구와 기존 의성 자료를 연결한 비가중 정책 근거표
+- `data/analysis/policy_candidate_review_template.csv`: SGIS 근거 후보의 관리상태·보존가치·현장조사 수동 입력표
 - `data/analysis/competition/`: 공모전 제출·검토용 요약 JSON
 - `data/geojson/`: 시설·인구·Buffer·분류 지도 출력
 - `analysis/figures/`: 자동 생성 PNG 그림
@@ -87,7 +93,24 @@ python analysis/run_competition_pipeline.py
 2. 기존 `vworld/`에 VWorld에서 수동 다운로드한 원본과 정의서를 보존한다. 새 VWorld 원본도 이 저장소의 기존 위치 정책에 따라 `vworld/`에 둔다.
 3. `data/raw/population/`에 행정안전부 인구 CSV를 넣는다.
 4. 필요하면 `data/raw/population/worldpop/`에 WorldPop raster를 다시 다운로드한다.
-5. 다운로드일, 기준연도, CRS, 라이선스, 파일 해시를 해당 manifest에 기록한다.
-6. 저장소 루트에서 `python analysis/run_competition_pipeline.py`를 실행한다.
+5. SGIS를 재수집하려면 `.env.example`을 참고해 루트 `.env`에 발급받은 인증값을 넣는다. `.env`는 Git에 추가하지 않는다.
+6. 다운로드일, 기준연도, CRS, 라이선스, 파일 해시를 해당 manifest에 기록한다.
+7. 저장소 루트에서 SGIS 점검·수집 후 `python analysis/run_competition_pipeline.py`를 실행한다.
 
-원본 파일을 Git에 추가하지 않아도 정제 결과와 분석 결과는 스크립트로 재생성할 수 있다. VWorld 도로 원본이 없으면 도로 거리·접근성은 `DATA_NOT_AVAILABLE` 상태로 유지된다.
+원본 파일을 Git에 추가하지 않아도 정제 결과와 분석 결과는 스크립트로 재생성할 수 있다. 현재 UQ151 도로 원본은 `vworld/C_UQ151.zip`에 있으며, 정제 결과는 `data/processed/roads/uiseong_roads.gpkg`에 생성된다.
+
+## 공식 인구격자 입력과 Buffer 계산
+
+공식 인구격자를 확보하면 다음 위치에 둔다.
+
+```text
+data/raw/population/official_grid/
+```
+
+지원 형식은 GeoPackage, Shapefile, GeoJSON이며, 파일에는 공간 geometry와 총인구 필드(`population`, `total_population`, `tot_ppltn` 등)가 있어야 한다. 청년·고령 인구 필드는 선택사항이다. `analysis/pond_context_analysis.py`는 셀과 500m·1km Buffer의 교차면적 비율을 인구수에 곱해 합산하고, `official_population_500m`, `official_population_1km` 및 계산방법을 기록한다. 읍·면 총계만 있는 CSV는 격자자료로 취급하지 않는다.
+
+공식 격자가 없으면 해당 Buffer 인구는 임의 배분하지 않고 `DATA_NOT_AVAILABLE`로 유지한다. SGIS 생활권역 5분·10분 인구는 이 계산값과 다른 서비스 산출지표이므로 `sgis_drive_population_5min`, `sgis_drive_population_10min`처럼 별도 관리해야 한다.
+
+## SGIS 생활권역 결측 처리
+
+SGIS 5분·10분 생활권역 인구는 시설별 도달 규모를 나타내는 분석 지표다. 현재 427개 못에 대해 854개 시간대 조합을 점검했고 455개가 인구값을 반환했다. 나머지 399개는 위치 인식 실패 또는 생활권역은 생성됐으나 인구 필드가 없는 경우이므로 결측으로 남긴다. 이 값을 공식 인구격자, 읍·면 총계, WorldPop으로 대체하지 않는다.

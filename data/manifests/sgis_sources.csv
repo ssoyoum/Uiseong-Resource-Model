@@ -1,0 +1,3 @@
+dataset_name,provider,source_url,endpoint_or_method,reference_period,geographic_scope,fields_or_use,missing_value_rule,status
+SGIS 지역통계 API,SGIS,https://sgis.mods.go.kr/developer/html/newOpenApi/api/dataApi/census.html,population/searchpopulation/household/house/company,2020;2024,의성군 코드 47730,가용성 점검용; 실제 분석값 미사용,검색결과 없음·오류는 DATA_NOT_AVAILABLE 또는 API_ERROR로 보존,CHECKED_NO_USABLE_Uiseong_RECORD
+SGIS 생활권역 주행인구,SGIS,https://sgis.mods.go.kr/developer/html/newOpenApi/api/dataApi/authAndUseApi.html,serviceAreaGeometry + serviceAreaStatistics,2024,427개 못 5분·10분,sgis_drive_population_5min; sgis_drive_population_10min,미응답은 0으로 대체하지 않음,AVAILABLE_455_OF_854
