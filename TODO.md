@@ -1,6 +1,47 @@
-# VWorld 공모전 데이터 확보 TODO
+# 인구감소지역 유휴공간 정책매칭 모델 TODO
 
-최종 확인일: 2026-08-30
+최종 확인일: 2026-08-31
+
+> 기존 VWorld 공모전 데이터 확보 항목은 아래에 이력으로 보존한다. 현재 우선순위는 전국 전수분석이 아닌 SGIS 공모전용 의성 Case Study다. 상세 방향은 [`docs/sgis-uiseong-policy-proposal-guideline.md`](docs/sgis-uiseong-policy-proposal-guideline.md)를 따른다. 이전의 전국 정책매칭 확장안은 범위 축소로 보류한다.
+
+## 새 공모전 우선 작업
+
+### P0 — 문제 정의·분석 범위
+
+- [x] 인구감소지역 유휴자원 문제와 의성 Case Study 역할 확정
+- [x] 전국 전수분석·완성형 전국 추천시스템을 범위에서 제외
+- [ ] SGIS 정책판단용 최소 지표 목록 확정
+- [x] 의성 427개 전통 못을 실제 분석 중심 Case Study로 분리 표기
+
+### P1 — SGIS 지역 수요 분석
+
+- [ ] 인구·청년·고령·가구·주택·사업체 중 필요한 지표만 선정
+- [ ] 선정 지표의 기준연도와 공간단위 통일
+- [ ] 지역 수요 유형화 규칙과 `classification_reason` 근거 정의
+- [ ] SGIS 통계가 정책 판단을 어떻게 바꾸는지 비교표 작성
+- [ ] 결측·비밀보호·생활권 중복 처리방식 문서화
+
+### P1 — 의성 지역자원·공간분석
+
+- [x] 기존 427개 못 데이터와 현장조사·선행성과의 재사용 범위 정의
+- [ ] 도로·관광·생활 인프라와 못의 공간적 관계 중 필요한 분석만 선정
+- [ ] SGIS 지역통계와 427개 못 분석 결과를 정책 근거로 해석
+- [ ] 대표점·중복좌표 43개 보정자료 확보 후 SGIS 재추출
+
+### P2 — 정책 접근 프레임·보고서
+
+- [ ] 지역 특성·수요·못 특성·접근성에서 활용 가능성으로 이어지는 해석표 작성
+- [ ] 청년·관광·일자리·생활지원 정책 후보의 근거 정리
+- [ ] 정책을 먼저 정하지 않았음을 분석 흐름과 근거로 검증
+- [ ] SGIS 통계가 기존 의성 정책 제안에 추가한 근거 정리
+
+### P2 — 제출문서·시각화
+
+- [ ] SGIS 공모전 제출용 분석 흐름과 의성 사례 작성
+- [ ] 결과 수치·출처·기준연도 manifest 자동 대조
+- [ ] 의성 통계·못·공간분석 결과의 정책 중심 지도·그래프 작성
+- [ ] 전국 즉시 적용이 아니라 다른 인구감소지역에 적용 가능한 접근방향으로 표현
+- [ ] Web GIS·API·DB는 공모전 이후 확장 항목으로 유지
 
 ## 자료 출처 우선순위
 
@@ -11,7 +52,7 @@
 3. **수동 다운로드 자료**: VWorld 로그인이나 대용량 파일 문제로 자동 확보가 안 될 때 공식 링크에서 직접 확보
 4. **OSM·WorldPop**: 참고·교차검증·분포 시각화용. VWorld 또는 국내 공식 공공데이터를 확보한 것으로 간주하지 않음
 
-현재 상태: 행정안전부 인구는 공공데이터 원자료 확보·처리 완료. VWorld UQ164·UO601 시설 원자료는 의성군 68개를 처리했고, UQ151 도로 공간파일은 아직 미확보 상태다.
+현재 상태: 행정안전부 인구는 공공데이터 원자료 확보·처리 완료. VWorld UQ164·UO601 시설 원자료는 의성군 68개를 처리했고, UQ151 도로 공간파일은 확보하여 파이프라인 연결 중이다.
 
 ## 현재 확보·처리 완료
 
@@ -46,15 +87,15 @@ python analysis/run_competition_pipeline.py
 
 ### 1. VWorld 도로 데이터 — 최우선
 
-- [ ] VWorld 계정으로 로그인 후 도로 SHP 다운로드
+- [x] VWorld 계정으로 로그인 후 도로 SHP 다운로드
 - [ ] 공식 데이터 페이지: [국토교통부\_도로(현황)](https://www.vworld.kr/dtmk/dtmk_ntads_s002.do?dsId=30074)
-- [ ] 파일명: `C_UQ151.zip` 또는 다운로드 시점의 동일 도로 현황 파일
-- [ ] 다운로드 파일을 기존 `vworld/`에 보관
-- [ ] 압축 해제 후 SHP·SHX·DBF·PRJ가 모두 있는지 확인
-- [ ] 원본 좌표계가 EPSG:5174인지 확인
+- [x] 파일명: `C_UQ151.zip`
+- [x] 다운로드 파일을 기존 `vworld/`에 보관
+- [x] 압축 해제 후 SHP·SHX·DBF·PRJ가 모두 있는지 확인
+- [x] 원본 좌표계가 EPSG:5174인지 확인
 - [ ] VWorld 레이어명, 다운로드일, 제공기관, 이용조건을 `data/manifests/vworld_sources.csv`에 입력
-- [ ] 전국 원본이면 의성군 경계로 Clip하여 `data/processed/roads/uiseong_roads.gpkg` 생성
-- [ ] 도로 데이터 확보 후 `python analysis/run_competition_pipeline.py`를 실행하여 427개 최근접거리 계산
+- [x] 전국 원본을 의성군 경계로 Clip하여 `data/processed/roads/uiseong_roads.gpkg` 생성
+- [x] 도로 데이터 확보 후 파이프라인에서 427개 최근접거리 계산
 
 참고: 공공데이터포털 설명상 이 데이터는 무료 SHP이며 VWorld 다운로드 페이지로 연결되지만, 현재 확인 시 로그인 후 다운로드가 필요하다. 이용허락은 출처표시·상업적 이용금지·변경금지 조건을 확인해야 한다.
 
@@ -81,6 +122,14 @@ python analysis/run_competition_pipeline.py
 - [ ] 확보 시 `data/raw/population/`에 보관하고 `pond_context_analysis.py`에 격자 Intersection 추가
 
 비고: WorldPop 100m는 다운로드만 완료한 참고 raster다. 국내 공식 주민등록 격자와 기준·모형이 다르므로 현재 공식 Buffer 인구값은 계속 `DATA_NOT_AVAILABLE`로 둔다. WorldPop을 분석에 연결할 경우에도 `worldpop_population_500m`, `worldpop_population_1km`처럼 별도 필드명으로 구분한다.
+
+### SGIS 생활권역 주행시간 인구 — 별도 보조지표
+
+- [ ] SGIS 생활권역에서 5분·10분 주행권역 인구의 보고서·응답 추출 가능 여부 확인
+- [ ] SGIS 자료제공 또는 허용된 API/응답 방식으로 427개 시설 반복 처리가 가능한지 확인
+- [ ] 사용 시 `sgis_drive_population_5min`, `sgis_drive_population_10min`으로 별도 저장
+- [ ] 공식 인구격자 Buffer 값이나 행정안전부 주민등록 인구로 혼용하지 않음
+- [ ] SGIS 비밀보호 처리, 기준연도, 주행 네트워크, 이용조건을 manifest에 기록
 
 ### 4. 현장조사·관리상태 데이터 — 분류 고도화용
 
@@ -132,13 +181,19 @@ python analysis/run_competition_pipeline.py
 - [x] 실제 VWorld 자료의 레이어·파일·의성군 범위 확인
 - [x] VWorld 시설 CRS, geometry valid, 의성군 경계 밖 데이터 검증
 - [ ] VWorld 원자료의 최종 라이선스·재배포 조건 확인
-- [ ] 도로 거리 단위가 meter인지 확인
+- [x] 도로 거리 단위가 meter인지 확인
 - [x] 500m·1km 면적 단위가 m²/ha인지 확인
 - [ ] 인구 기준연도와 시설·도로 데이터 기준시점을 README에 함께 표시
 - [ ] 도로·생활시설 원자료를 GitHub에 올릴 수 있는지 이용조건 확인
 - [x] `data/analysis/validation_report.json`이 PASS인지 확인
 - [ ] 분류 결과가 실제 근거를 갖는지 `classification_reason` 표본 검토
 - [ ] `D_PRESERVATION` fallback 비율이 높으면 원자료 결측 원인과 개선방안 기록
+
+## 자동 점검
+
+- [x] `analysis/validate_submission_claims.py`로 제출문서의 검증 수치·산출물·미구현 주장 자동 점검
+- [x] `data/analysis/submission_claims_report.json` 생성 및 통합 파이프라인 연결
+- [ ] 제출 전 문서에 적힌 모든 수치와 manifest를 최종 대조
 
 ## 현재 판단
 
@@ -151,3 +206,17 @@ python analysis/run_competition_pipeline.py
 - 생활SOC 2020: 의성군 범위 자료 확보 전까지 아이디어로 보류
 - 교통문화지수: 의성군 시군구 배경지표 추출·결과파일 연결 완료
 - React/API/DB: 이번 데이터 확보 단계에서는 미적용
+
+## SGIS 중심 다음 작업
+
+- [x] SGIS 공식 지역통계 endpoint(인구·연령·가구·주택·사업체)의 의성군 `47730` 가용성 점검
+- [x] 실제 확보된 SGIS 생활권역 5분·10분 인구를 핵심 수요 지표로 선정
+- [x] SGIS 지역통계 API 점검 결과를 `data/analysis/sgis_indicator_availability.json`에 기록
+- [ ] `DATA_NOT_AVAILABLE` 399건은 원자료 좌표·SGIS 위치 인식 문제를 분리해 보고서에 표기
+- [ ] `coordinate_correction_template.csv`에 실제 좌표 출처가 확보된 못만 입력하고 SGIS 재수집
+- [ ] SGIS 응답의 기준연도·비밀보호·주행 네트워크·이용조건을 제출문서와 manifest에서 최종 대조
+- [ ] SGIS 지표가 `AVAILABLE`로 바뀌기 전에는 의성군 행정통계(MOIS)를 SGIS 지역통계로 오표기하지 않음
+- [x] SGIS 5·10분 도달인구와 읍·면 인구구조·주변환경을 연결한 정책 근거표 생성
+- [x] SGIS 10분 인구 확보 시설만 정책 검토 후보에 포함하도록 기준 정리
+- [x] 시설별 관리상태·보존가치·현장조사 입력 템플릿 생성
+- [ ] 정책 근거표 후보를 현장관리 상태·보존가치·실제 서비스 수요와 대조
