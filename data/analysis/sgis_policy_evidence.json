@@ -1,0 +1,54 @@
+{
+  "source": "data/analysis/sgis_catchment_analysis.csv",
+  "output": "data/analysis/sgis_policy_evidence.csv",
+  "review_template": "data/analysis/policy_candidate_review_template.csv",
+  "facility_count": 427,
+  "eligible_unique_coordinate_points": 380,
+  "eligible_with_10min_population": 190,
+  "eligible_with_5_and_10min_population": 175,
+  "manual_review_candidate_count": 116,
+  "thresholds_q25_q75": {
+    "sgis_population_10min": {
+      "q25": 78.0,
+      "q75": 348.0
+    },
+    "sgis_population_gain_5_to_10": {
+      "q25": 50.0,
+      "q75": 282.5
+    },
+    "emd_elderly_ratio": {
+      "q25": 55.41582150101419,
+      "q75": 58.15822002472187
+    },
+    "emd_youth_ratio": {
+      "q25": 6.088825214899714,
+      "q75": 7.47834506651609
+    },
+    "facility_count_1000m": {
+      "q25": 0.0,
+      "q75": 0.0
+    }
+  },
+  "policy_review_context_counts": {
+    "INSUFFICIENT_SGIS_10MIN": 190,
+    "CONTEXT_ONLY": 74,
+    "COMMUNITY_SUPPORT_REVIEW": 53,
+    "FIELD_REVIEW_REQUIRED": 47,
+    "YOUTH_PARTICIPATION_REVIEW": 43,
+    "ACCESS_AND_REACH_REVIEW": 20
+  },
+  "evidence_flag_counts": {
+    "HIGH_10MIN_REACH": 49,
+    "HIGH_5_TO_10_EXPANSION": 44,
+    "HIGH_ELDERLY_CONTEXT": 55,
+    "HIGH_YOUTH_CONTEXT": 43,
+    "NO_MAPPED_FACILITY_CONTEXT": 174
+  },
+  "method": "Descriptive quartile bands and explicit evidence flags; no weights, score, causal claim, or automatic policy recommendation.",
+  "caveats": [
+    "SGIS 5/10-minute values are route-based service-area population, not resident grid population.",
+    "The EMD youth/elderly context is based on the existing MOIS 2025 administrative summary, not an SGIS regional API response.",
+    "Mapped facility context reflects the partial VWorld facility layer and is not a complete service shortage measure.",
+    "Duplicate, administrative representative, and nearby coordinates remain excluded until source coordinates are verified."
+  ]
+}
