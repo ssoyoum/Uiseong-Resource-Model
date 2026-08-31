@@ -1,0 +1,233 @@
+{
+  "status": "PASS",
+  "year": 2024,
+  "facility_count": 427,
+  "coordinate_quality": {
+    "unique_coordinate_points": 386,
+    "duplicated_coordinate_groups": 2,
+    "facilities_in_duplicated_groups": 43,
+    "corrected_facilities": 0,
+    "unverified_admin_point_facilities": 41,
+    "unverified_nearby_point_facilities": 4,
+    "reliable_unique_points": 380,
+    "analysis_unit_for_rank_correlations_and_regional_summary": "unique_coordinate_point"
+  },
+  "coverage": {
+    "available_5min": 175,
+    "available_10min": 190,
+    "available_both": 175,
+    "none": 190
+  },
+  "raw_facility_coverage": {
+    "available_5min": 220,
+    "available_10min": 235,
+    "available_both": 220
+  },
+  "sgis_response_diagnostics": {
+    "data_not_available_rows": 399,
+    "unlocated_error_rows": 384,
+    "unlocated_error_facilities": 192,
+    "no_population_value_rows": 15,
+    "no_population_value_facilities": 15,
+    "interpretation": "unlocated rows are route-network input location failures; no-population rows received a service area but no population value"
+  },
+  "distributions": {
+    "sgis_population_5min": {
+      "count": 175,
+      "min": 5.0,
+      "max": 2298.0,
+      "mean": 91.07428571428571,
+      "median": 53.0
+    },
+    "sgis_population_10min": {
+      "count": 190,
+      "min": 0.0,
+      "max": 3877.0,
+      "mean": 302.38421052631577,
+      "median": 153.0
+    },
+    "sgis_population_gain_5_to_10": {
+      "count": 175,
+      "min": 0.0,
+      "max": 2517.0,
+      "mean": 232.26285714285714,
+      "median": 118.0
+    },
+    "sgis_population_ratio_10_to_5": {
+      "count": 175,
+      "min": 1.0,
+      "max": 69.89285714285714,
+      "mean": 4.985877735888209,
+      "median": 3.4882226980728053
+    },
+    "sgis_population_density_10min_per_km2": {
+      "count": 190,
+      "min": 0.0,
+      "max": 720.8426049547545,
+      "mean": 120.62269381058644,
+      "median": 102.15598665370874
+    }
+  },
+  "correlations_with_10min_population": {
+    "capacity": {
+      "n": 190,
+      "spearman_r": -0.016352627806724064,
+      "p_value": 0.8228094729064835
+    },
+    "facility_count_1000m": {
+      "n": 190,
+      "spearman_r": 0.36604430313237823,
+      "p_value": 2.0619491612528537e-07
+    },
+    "agricultural_ratio_1000m": {
+      "n": 190,
+      "spearman_r": 0.5657871042878769,
+      "p_value": 1.8023267298478578e-17
+    }
+  },
+  "regional_summary": [
+    {
+      "emd_name": "단북면",
+      "coordinate_point_count": 6,
+      "available_5min": 4,
+      "available_10min": 4,
+      "mean_5min": 951.0,
+      "median_5min": 571.5,
+      "mean_10min": 2672.5,
+      "median_10min": 2920.0,
+      "mean_gain_5_to_10": 1721.5
+    },
+    {
+      "emd_name": "안계면",
+      "coordinate_point_count": 32,
+      "available_5min": 15,
+      "available_10min": 16,
+      "mean_5min": 124.06666666666666,
+      "median_5min": 53.0,
+      "mean_10min": 678.0,
+      "median_10min": 264.0,
+      "mean_gain_5_to_10": 588.6
+    },
+    {
+      "emd_name": "다인면",
+      "coordinate_point_count": 37,
+      "available_5min": 17,
+      "available_10min": 19,
+      "mean_5min": 123.3529411764706,
+      "median_5min": 108.0,
+      "mean_10min": 362.3157894736842,
+      "median_10min": 218.0,
+      "mean_gain_5_to_10": 265.05882352941177
+    },
+    {
+      "emd_name": "단밀면",
+      "coordinate_point_count": 26,
+      "available_5min": 8,
+      "available_10min": 8,
+      "mean_5min": 58.625,
+      "median_5min": 53.0,
+      "mean_10min": 308.0,
+      "median_10min": 380.5,
+      "mean_gain_5_to_10": 249.375
+    },
+    {
+      "emd_name": "구천면",
+      "coordinate_point_count": 19,
+      "available_5min": 5,
+      "available_10min": 6,
+      "mean_5min": 139.0,
+      "median_5min": 98.0,
+      "mean_10min": 291.3333333333333,
+      "median_10min": 185.5,
+      "mean_gain_5_to_10": 202.0
+    },
+    {
+      "emd_name": "가음면",
+      "coordinate_point_count": 28,
+      "available_5min": 12,
+      "available_10min": 13,
+      "mean_5min": 86.83333333333333,
+      "median_5min": 78.0,
+      "mean_10min": 286.3076923076923,
+      "median_10min": 188.0,
+      "mean_gain_5_to_10": 223.33333333333334
+    },
+    {
+      "emd_name": "춘산면",
+      "coordinate_point_count": 28,
+      "available_5min": 14,
+      "available_10min": 17,
+      "mean_5min": 65.14285714285714,
+      "median_5min": 53.0,
+      "mean_10min": 245.76470588235293,
+      "median_10min": 213.0,
+      "mean_gain_5_to_10": 228.21428571428572
+    },
+    {
+      "emd_name": "점곡면",
+      "coordinate_point_count": 29,
+      "available_5min": 14,
+      "available_10min": 17,
+      "mean_5min": 57.42857142857143,
+      "median_5min": 48.0,
+      "mean_10min": 207.41176470588235,
+      "median_10min": 133.0,
+      "mean_gain_5_to_10": 187.0
+    },
+    {
+      "emd_name": "비안면",
+      "coordinate_point_count": 50,
+      "available_5min": 27,
+      "available_10min": 28,
+      "mean_5min": 56.51851851851852,
+      "median_5min": 53.0,
+      "mean_10min": 170.42857142857142,
+      "median_10min": 143.0,
+      "mean_gain_5_to_10": 117.14814814814815
+    },
+    {
+      "emd_name": "안평면",
+      "coordinate_point_count": 59,
+      "available_5min": 30,
+      "available_10min": 32,
+      "mean_5min": 50.233333333333334,
+      "median_5min": 45.5,
+      "mean_10min": 158.71875,
+      "median_10min": 93.5,
+      "mean_gain_5_to_10": 116.03333333333333
+    },
+    {
+      "emd_name": "단촌면",
+      "coordinate_point_count": 38,
+      "available_5min": 15,
+      "available_10min": 15,
+      "mean_5min": 38.86666666666667,
+      "median_5min": 39.0,
+      "mean_10min": 121.06666666666666,
+      "median_10min": 94.0,
+      "mean_gain_5_to_10": 82.2
+    },
+    {
+      "emd_name": "안사면",
+      "coordinate_point_count": 28,
+      "available_5min": 14,
+      "available_10min": 15,
+      "mean_5min": 45.57142857142857,
+      "median_5min": 20.5,
+      "mean_10min": 115.06666666666666,
+      "median_10min": 78.0,
+      "mean_gain_5_to_10": 75.0
+    }
+  ],
+  "method_notes": [
+    "SGIS route-based service-area population, separate from official-grid Buffer population.",
+    "Overlapping service areas mean facility populations are not additive.",
+    "SGIS privacy-protected service values and missing responses are preserved as provided.",
+    "Facilities with CLSS=시군구 좌표 or duplicated coordinates are excluded from inferential summaries until corrected."
+  ],
+  "figures": [
+    "analysis/figures/10_sgis_top_10min_population.png",
+    "analysis/figures/11_sgis_5_vs_10_population.png",
+    "analysis/figures/12_sgis_emd_mean_population.png"
+  ]
+}
