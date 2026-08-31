@@ -1,0 +1,4 @@
+{
+  "status": "FAIL",
+  "error": "SGIS population API failed: errCd=-100, errMsg=검색결과가 존재하지 않습니다."
+}

@@ -6,5 +6,8 @@ data/source/
 data/raw/**
 !data/raw/**/
 vworld/
+.env
+.env.*
+!.env.example
 data/geojson/boundary.geojson
 index_old.html
