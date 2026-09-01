@@ -1,0 +1,35 @@
+{
+  "input": "data/analysis/pond_classification.csv",
+  "output": "data/analysis/classification_reason_review.csv",
+  "facility_count": 427,
+  "classification_counts": {
+    "A_CULTURE_TOURISM": 55,
+    "B_ECO_EDUCATION": 43,
+    "C_COMMUNITY": 0,
+    "D_PRESERVATION": 329,
+    "E_MANAGEMENT_PRIORITY": 0
+  },
+  "fallback": {
+    "type": "D_PRESERVATION",
+    "count": 329,
+    "ratio": 0.7704918032786885
+  },
+  "sample_size_per_type": 5,
+  "sample_counts": {
+    "A_CULTURE_TOURISM": 5,
+    "B_ECO_EDUCATION": 5,
+    "C_COMMUNITY": 0,
+    "D_PRESERVATION": 5,
+    "E_MANAGEMENT_PRIORITY": 0
+  },
+  "review_status_counts": {
+    "PASS": 15
+  },
+  "unrepresented_types": [
+    "C_COMMUNITY",
+    "E_MANAGEMENT_PRIORITY"
+  ],
+  "agricultural_ratio_q3": 18.00897634265711,
+  "method": "Representative deterministic samples checked against existing rule inputs; no relabeling or imputation.",
+  "interpretation": "A high D_PRESERVATION ratio indicates missing or insufficient inputs under the conservative rule, not that all facilities have been proven preservation priorities."
+}

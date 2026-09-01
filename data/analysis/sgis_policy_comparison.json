@@ -1,0 +1,36 @@
+{
+  "source": "data/analysis/sgis_policy_evidence.csv",
+  "comparison_output": "data/analysis/sgis_policy_comparison.csv",
+  "facility_count": 427,
+  "sgis_eligible_unique_coordinate_points": 380,
+  "sgis_available_5min": 175,
+  "sgis_available_10min": 190,
+  "sgis_available_both": 175,
+  "insufficient_sgis_10min": 190,
+  "excluded_coordinate_quality": 47,
+  "policy_review_context_counts": {
+    "INSUFFICIENT_SGIS_10MIN": 190,
+    "CONTEXT_ONLY": 74,
+    "COMMUNITY_SUPPORT_REVIEW": 53,
+    "FIELD_REVIEW_REQUIRED": 47,
+    "YOUTH_PARTICIPATION_REVIEW": 43,
+    "ACCESS_AND_REACH_REVIEW": 20
+  },
+  "evidence_flag_counts": {
+    "HIGH_10MIN_REACH": 49,
+    "HIGH_5_TO_10_EXPANSION": 44
+  },
+  "evidence_flag_overlap_count": 42,
+  "policy_context_group_sum": 427,
+  "policy_context_groups_mutually_exclusive": true,
+  "sgis_missing_context_overlap_count": 0,
+  "classification_rows": 427,
+  "classification_unique_pond_ids": 427,
+  "classification_group_sum": 427,
+  "classification_counts": {
+    "보존·기록형": 329,
+    "문화·관광형": 55,
+    "생태·교육형": 43
+  },
+  "method": "Descriptive comparison only; no imputation, weights, score, causal claim, or automatic recommendation."
+}

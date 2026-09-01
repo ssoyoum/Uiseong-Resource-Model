@@ -1,0 +1,16 @@
+﻿pond_id,classification_type,classification_label,classification_reason,nearest_road_m,facility_count_1000m,agricultural_ratio_1000m,elderly_population_1000m,management,review_status,review_detail
+1,A_CULTURE_TOURISM,문화·관광형,도로 37m 이내이며 1km 생활시설 13개,36.65863957371669,13,1.236830620428024,,미기재,PASS,road <= 300m and mapped facility count > 0
+10,A_CULTURE_TOURISM,문화·관광형,도로 37m 이내이며 1km 생활시설 13개,36.65863957371669,13,1.236830620428024,,미기재,PASS,road <= 300m and mapped facility count > 0
+11,A_CULTURE_TOURISM,문화·관광형,도로 37m 이내이며 1km 생활시설 13개,36.65863957371669,13,1.236830620428024,,미기재,PASS,road <= 300m and mapped facility count > 0
+12,A_CULTURE_TOURISM,문화·관광형,도로 37m 이내이며 1km 생활시설 13개,36.65863957371669,13,1.236830620428024,,미기재,PASS,road <= 300m and mapped facility count > 0
+13,A_CULTURE_TOURISM,문화·관광형,도로 37m 이내이며 1km 생활시설 13개,36.65863957371669,13,1.236830620428024,,미기재,PASS,road <= 300m and mapped facility count > 0
+226,B_ECO_EDUCATION,생태·교육형,1km 농업지역 비율 상위 25%이고 도로 접근성이 낮음,753.7128387654487,0,21.704665791023057,,미기재,PASS,agricultural ratio Q3 and road > 500m
+227,B_ECO_EDUCATION,생태·교육형,1km 농업지역 비율 상위 25%이고 도로 접근성이 낮음,1000.1432678590284,1,23.503525341600216,,미기재,PASS,agricultural ratio Q3 and road > 500m
+228,B_ECO_EDUCATION,생태·교육형,1km 농업지역 비율 상위 25%이고 도로 접근성이 낮음,1073.0263944576268,1,23.87221848608312,,미기재,PASS,agricultural ratio Q3 and road > 500m
+383,B_ECO_EDUCATION,생태·교육형,1km 농업지역 비율 상위 25%이고 도로 접근성이 낮음,747.2889083830954,0,24.843802873255,,미기재,PASS,agricultural ratio Q3 and road > 500m
+385,B_ECO_EDUCATION,생태·교육형,1km 농업지역 비율 상위 25%이고 도로 접근성이 낮음,519.0193690492085,2,21.547766703310884,,미기재,PASS,agricultural ratio Q3 and road > 500m
+100,D_PRESERVATION,보존·기록형,현재 확보된 자료만으로 활동형 판정에 필요한 인구·도로·생활시설 근거가 부족하여 보존·기록형으로 보수적 표시,28.67508194209313,0,2.691902088234741,,미기재,PASS,conservative fallback reason explicitly states insufficient evidence
+101,D_PRESERVATION,보존·기록형,현재 확보된 자료만으로 활동형 판정에 필요한 인구·도로·생활시설 근거가 부족하여 보존·기록형으로 보수적 표시,178.03715089179803,0,28.72825399365325,,미기재,PASS,conservative fallback reason explicitly states insufficient evidence
+102,D_PRESERVATION,보존·기록형,현재 확보된 자료만으로 활동형 판정에 필요한 인구·도로·생활시설 근거가 부족하여 보존·기록형으로 보수적 표시,776.314431380537,0,7.01417763490341,,미기재,PASS,conservative fallback reason explicitly states insufficient evidence
+103,D_PRESERVATION,보존·기록형,현재 확보된 자료만으로 활동형 판정에 필요한 인구·도로·생활시설 근거가 부족하여 보존·기록형으로 보수적 표시,683.4342487002791,0,5.493977138430997,,미기재,PASS,conservative fallback reason explicitly states insufficient evidence
+188,D_PRESERVATION,보존·기록형,현재 확보된 자료만으로 활동형 판정에 필요한 인구·도로·생활시설 근거가 부족하여 보존·기록형으로 보수적 표시,42.62628747753454,0,2.2532075656571005,,미기재,PASS,conservative fallback reason explicitly states insufficient evidence
