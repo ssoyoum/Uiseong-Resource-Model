@@ -3,10 +3,12 @@
   "source_directory": "vworld",
   "available_layers": [
     "공공·생활·문화·교육시설",
-    "관광지·관광특구"
+    "관광지·관광특구",
+    "의성군 도로"
   ],
   "facility_count": 68,
-  "roads_status": "DATA_NOT_AVAILABLE",
+  "roads_status": "AVAILABLE",
+  "road_feature_count": 483,
   "facilities_status": "AVAILABLE",
-  "message": "VWorld UQ164·UO601의 의성군 범위만 처리했습니다. 도로는 실제 UQ151 공간파일이 없어 미산출입니다."
+  "message": "VWorld UQ164·UO601 시설과 UQ151 도로의 의성군 범위를 처리했습니다."
 }

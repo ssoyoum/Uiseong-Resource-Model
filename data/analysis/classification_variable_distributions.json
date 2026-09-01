@@ -10,14 +10,14 @@
     "status": "AVAILABLE"
   },
   "nearest_road_m": {
-    "min": null,
-    "max": null,
-    "mean": null,
-    "median": null,
-    "q1": null,
-    "q3": null,
-    "missing_count": 427,
-    "status": "DATA_NOT_AVAILABLE"
+    "min": 13.43949373329985,
+    "max": 3350.563539941192,
+    "mean": 739.3066352779002,
+    "median": 587.4146742006734,
+    "q1": 207.0924150434062,
+    "q3": 1119.3960490834102,
+    "missing_count": 0,
+    "status": "AVAILABLE"
   },
   "agricultural_ratio_500m": {
     "min": 0.0,
@@ -40,6 +40,16 @@
     "status": "AVAILABLE"
   },
   "population_500m": {
+    "min": null,
+    "max": null,
+    "mean": null,
+    "median": null,
+    "q1": null,
+    "q3": null,
+    "missing_count": 427,
+    "status": "DATA_NOT_AVAILABLE"
+  },
+  "population_1km": {
     "min": null,
     "max": null,
     "mean": null,

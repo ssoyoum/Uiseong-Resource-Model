@@ -11,6 +11,15 @@
       "source_path": "vworld/2. 제8회 공간정보 활용·아이디어 경진대회_제출서류 양식.hwp"
     },
     {
+      "file_name": "C_UQ151.zip",
+      "file_type": "zip",
+      "size_bytes": 280860346,
+      "classification": "도시계획시설 도로 현황 SHP",
+      "recommended_action": "의성군 범위 Clip 후 도로거리·Buffer 도로길이 산출",
+      "status": "USED",
+      "source_path": "vworld/C_UQ151.zip"
+    },
+    {
       "file_name": "gb_r032.zip",
       "file_type": "zip",
       "size_bytes": 28045185,

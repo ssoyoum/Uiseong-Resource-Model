@@ -105,8 +105,18 @@ def clip_to_uiseong(frame: gpd.GeoDataFrame, boundary: gpd.GeoDataFrame) -> gpd.
     frame = frame.to_crs(ANALYSIS_CRS)
     frame = frame.loc[frame.geometry.notna() & ~frame.geometry.is_empty].copy()
     boundary_geometry = boundary.geometry.union_all() if hasattr(boundary.geometry, "union_all") else boundary.geometry.unary_union
-    if "COL_ADM_SE" in frame.columns:
-        code_mask = frame["COL_ADM_SE"].astype(str).str.strip().eq("47730")
+    code_column = next(
+        (column for column in ("COL_ADM_SE", "SIGNGU_SE") if column in frame.columns),
+        None,
+    )
+    if code_column is not None:
+        code_mask = (
+            frame[code_column]
+            .astype(str)
+            .str.strip()
+            .str.replace(r"\.0$", "", regex=True)
+            .eq("47730")
+        )
         frame = frame.loc[code_mask].copy()
     else:
         frame = frame.loc[frame.intersects(boundary_geometry)].copy()
@@ -178,6 +188,25 @@ def normalize_gpkg_metadata(path: Path) -> None:
         connection.execute("VACUUM")
 
 
+def normalize_road_gpkg_metadata(path: Path) -> None:
+    """Remove run-time timestamps from the clipped road GeoPackage."""
+    with sqlite3.connect(path) as connection:
+        connection.execute(
+            "UPDATE gpkg_contents SET last_change = ? WHERE table_name = ?",
+            ("2000-01-01T00:00:00.000Z", "roads"),
+        )
+        connection.commit()
+    with sqlite3.connect(path) as connection:
+        connection.execute("VACUUM")
+
+
+def write_road_gpkg(frame: gpd.GeoDataFrame, output_path: Path) -> None:
+    """Persist the clipped UQ151 road layer with stable metadata."""
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    frame.to_file(output_path, layer="roads", driver="GPKG")
+    normalize_road_gpkg_metadata(output_path)
+
+
 def same_facilities(existing: gpd.GeoDataFrame, candidate: gpd.GeoDataFrame) -> bool:
     """Compare logical attributes and geometry, ignoring GPKG metadata bytes."""
     if list(existing.columns) != list(candidate.columns) or len(existing) != len(candidate):
@@ -208,6 +237,10 @@ def inventory_records(directory: Path) -> list[dict[str, object]]:
         elif name.startswith("LSMD_CONT_UQ164"):
             classification = "도시계획시설 관련 Polygon; 공공·교육·문화·안전시설 속성 포함"
             action = "의성군 feature를 생활·공공시설로 처리"
+            status = "USED"
+        elif name.startswith("C_UQ151"):
+            classification = "도시계획시설 도로 현황 SHP"
+            action = "의성군 범위 Clip 후 도로거리·Buffer 도로길이 산출"
             status = "USED"
         elif name == "Z_UPIS_C_UQ151.xlsx":
             classification = "도시계획도로 테이블 정의서"
@@ -305,18 +338,49 @@ def prepare() -> dict:
     else:
         facility_count = 0
 
-    records.append({
-        "dataset_name": "의성군 도로",
-        "provider": "VWorld",
-        "vworld_layer_or_api": "UQ151",
-        "accessed_at": "",
-        "source_crs": "",
-        "purpose": "못-도로 최근접거리",
-        "processing": "Z_UPIS_C_UQ151.xlsx 정의서만 확인; 실제 도로 공간파일 없음",
-        "license_conditions": "실제 도로 SHP 확보 후 사용조건 기록 필요",
-        "status": DATA_NOT_AVAILABLE,
-        "source_path": source_path_label(find_first(directory, "Z_UPIS_C_UQ151.xlsx")),
-    })
+    road_source = find_first(directory, "C_UQ151*.zip")
+    road_output = PROCESSED_DIR / "roads" / "uiseong_roads.gpkg"
+    road_feature_count = 0
+    roads_available = False
+    if road_source is None:
+        records.append({
+            "dataset_name": "의성군 도로",
+            "provider": "VWorld",
+            "vworld_layer_or_api": "UQ151",
+            "accessed_at": "",
+            "source_crs": "",
+            "purpose": "못-도로 최근접거리 및 Buffer 도로길이",
+            "processing": "C_UQ151.zip 원자료를 찾지 못해 산출하지 않음",
+            "license_conditions": "VWorld 원자료 이용조건·출처표시·재배포 조건 확인 필요",
+            "status": DATA_NOT_AVAILABLE,
+            "source_path": "",
+        })
+    else:
+        road_data = read_zipped_layer(road_source)
+        road_source_crs = road_data.crs.to_string() if road_data.crs else ""
+        clipped_roads = clip_to_uiseong(road_data, boundary)
+        if not clipped_roads.empty:
+            clipped_roads = clipped_roads.loc[
+                clipped_roads.geometry.notna() & ~clipped_roads.geometry.is_empty
+            ].copy()
+            clipped_roads = gpd.GeoDataFrame(
+                clipped_roads, geometry="geometry", crs=ANALYSIS_CRS
+            )
+            write_road_gpkg(clipped_roads, road_output)
+            road_feature_count = len(clipped_roads)
+            roads_available = True
+        records.append({
+            "dataset_name": "의성군 도로",
+            "provider": "VWorld",
+            "vworld_layer_or_api": "UQ151",
+            "accessed_at": "",
+            "source_crs": road_source_crs,
+            "purpose": "못-도로 최근접거리 및 Buffer 도로길이",
+            "processing": f"의성군 경계로 Clip; {ANALYSIS_CRS} 저장",
+            "license_conditions": "VWorld 원자료 이용조건·출처표시·재배포 조건 확인 필요",
+            "status": "AVAILABLE" if roads_available else "NO_UISEONG_FEATURES",
+            "source_path": source_path_label(road_source),
+        })
     records.extend([
         {
             "dataset_name": "의성군 행정경계",
@@ -361,14 +425,20 @@ def prepare() -> dict:
         "source_directory": source_path_label(directory),
         "available_layers": used_layers,
         "facility_count": facility_count,
-        "roads_status": DATA_NOT_AVAILABLE,
+        "roads_status": "AVAILABLE" if roads_available else DATA_NOT_AVAILABLE,
+        "road_feature_count": road_feature_count,
         "facilities_status": "AVAILABLE" if facility_count else DATA_NOT_AVAILABLE,
-        "message": "VWorld UQ164·UO601의 의성군 범위만 처리했습니다. 도로는 실제 UQ151 공간파일이 없어 미산출입니다.",
+        "message": (
+            "VWorld UQ164·UO601 시설과 UQ151 도로의 의성군 범위를 처리했습니다."
+            if roads_available
+            else "VWorld UQ164·UO601의 의성군 범위만 처리했습니다. 도로는 실제 UQ151 공간파일이 없어 미산출입니다."
+        ),
     })
     return {
         "source_directory": directory,
         "records": records,
-        "roads": False,
+        "roads": roads_available,
+        "road_feature_count": road_feature_count,
         "facilities": facility_count > 0,
         "facility_count": facility_count,
     }

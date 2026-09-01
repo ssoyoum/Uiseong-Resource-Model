@@ -1,9 +1,12 @@
 {
-  "status": "DATA_NOT_AVAILABLE",
+  "status": "AVAILABLE",
   "facility_count": 427,
   "class_counts": {
-    "DATA_NOT_AVAILABLE": 427
+    "500m 이상": 230,
+    "0–100m": 78,
+    "300–500m": 63,
+    "100–300m": 56
   },
-  "mean_nearest_road_m": null,
-  "median_nearest_road_m": null
+  "mean_nearest_road_m": 739.3066352779002,
+  "median_nearest_road_m": 587.4146742006734
 }

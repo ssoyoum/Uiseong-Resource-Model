@@ -1,2144 +1,3429 @@
 {
-  "status": "DATA_NOT_AVAILABLE",
+  "status": "AVAILABLE",
   "facility_count": 427,
-  "distance_unit": "DATA_NOT_AVAILABLE",
-  "class_thresholds_m": null,
+  "distance_unit": "meter",
+  "class_thresholds_m": [
+    100,
+    300,
+    500
+  ],
   "data": [
     {
       "pond_id": "1",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "2",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "3",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "4",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "5",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "6",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "7",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "8",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "9",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "10",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "11",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "12",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "13",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "14",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "15",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "16",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "17",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "18",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "19",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "20",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "21",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "22",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "23",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "24",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "25",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "26",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "27",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "28",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "29",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "30",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "31",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "32",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "33",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "34",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "35",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "36",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "37",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "38",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "39",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "40",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "41",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 36.65863957371669,
+      "distance_to_road_m": 36.65863957371669,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "42",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 60.850544685213805,
+      "distance_to_road_m": 60.850544685213805,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "43",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1147.8111522861113,
+      "distance_to_road_m": 1147.8111522861113,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "44",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 804.2920366380623,
+      "distance_to_road_m": 804.2920366380623,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "45",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 456.55785859335583,
+      "distance_to_road_m": 456.55785859335583,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "46",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 988.4484297647512,
+      "distance_to_road_m": 988.4484297647512,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "47",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 2690.8154924628975,
+      "distance_to_road_m": 2690.8154924628975,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "48",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 2550.480945401086,
+      "distance_to_road_m": 2550.480945401086,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "49",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1807.798847175446,
+      "distance_to_road_m": 1807.798847175446,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "50",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1456.7451906438848,
+      "distance_to_road_m": 1456.7451906438848,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "51",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 252.0325025424774,
+      "distance_to_road_m": 252.0325025424774,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "52",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1111.706207389217,
+      "distance_to_road_m": 1111.706207389217,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "53",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 911.6336232805374,
+      "distance_to_road_m": 911.6336232805374,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "54",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 164.74482170605643,
+      "distance_to_road_m": 164.74482170605643,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "55",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 478.4416481604723,
+      "distance_to_road_m": 478.4416481604723,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "56",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 433.006211465123,
+      "distance_to_road_m": 433.006211465123,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "57",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 3350.5635399411917,
+      "distance_to_road_m": 3350.5635399411917,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "58",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1021.3723198032562,
+      "distance_to_road_m": 1021.3723198032562,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "59",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 976.4241823379443,
+      "distance_to_road_m": 976.4241823379443,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "60",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1317.3497192150921,
+      "distance_to_road_m": 1317.3497192150921,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "61",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 603.8341189100003,
+      "distance_to_road_m": 603.8341189100003,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "62",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1355.4587107309871,
+      "distance_to_road_m": 1355.4587107309871,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "63",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1967.4847738110918,
+      "distance_to_road_m": 1967.4847738110918,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "64",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1280.940886198942,
+      "distance_to_road_m": 1280.940886198942,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "65",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1961.8134076022156,
+      "distance_to_road_m": 1961.8134076022156,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "66",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1978.4033602131694,
+      "distance_to_road_m": 1978.4033602131694,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "67",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1453.7998732154513,
+      "distance_to_road_m": 1453.7998732154513,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "68",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 2339.192920144543,
+      "distance_to_road_m": 2339.192920144543,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "69",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1287.2417842515715,
+      "distance_to_road_m": 1287.2417842515715,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "70",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 476.13981224016493,
+      "distance_to_road_m": 476.13981224016493,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "71",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 2021.233011687481,
+      "distance_to_road_m": 2021.233011687481,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "72",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 2645.913848562664,
+      "distance_to_road_m": 2645.913848562664,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "73",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1495.1941299486919,
+      "distance_to_road_m": 1495.1941299486919,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "74",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1014.6245308820247,
+      "distance_to_road_m": 1014.6245308820247,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "75",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1628.3660036993638,
+      "distance_to_road_m": 1628.3660036993638,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "76",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 2572.948940122804,
+      "distance_to_road_m": 2572.948940122804,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "77",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1615.45410011142,
+      "distance_to_road_m": 1615.45410011142,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "78",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1789.4638349890442,
+      "distance_to_road_m": 1789.4638349890442,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "79",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 954.7399751620007,
+      "distance_to_road_m": 954.7399751620007,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "80",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1523.2822987613279,
+      "distance_to_road_m": 1523.2822987613279,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "81",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 591.2883202553259,
+      "distance_to_road_m": 591.2883202553259,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "82",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1278.1837115248634,
+      "distance_to_road_m": 1278.1837115248634,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "83",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1653.0870149263435,
+      "distance_to_road_m": 1653.0870149263435,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "84",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1424.3714302878009,
+      "distance_to_road_m": 1424.3714302878009,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "85",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 356.311688685922,
+      "distance_to_road_m": 356.311688685922,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "86",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 780.5798664647082,
+      "distance_to_road_m": 780.5798664647082,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "87",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1731.9536080526857,
+      "distance_to_road_m": 1731.9536080526857,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "88",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1873.1851047270693,
+      "distance_to_road_m": 1873.1851047270693,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "89",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1362.4906872666481,
+      "distance_to_road_m": 1362.4906872666481,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "90",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 880.5604644211486,
+      "distance_to_road_m": 880.5604644211486,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "91",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1272.8387070356043,
+      "distance_to_road_m": 1272.8387070356043,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "92",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 2022.6584699523175,
+      "distance_to_road_m": 2022.6584699523175,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "93",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 2251.0237533116538,
+      "distance_to_road_m": 2251.0237533116538,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "94",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 823.8997975254061,
+      "distance_to_road_m": 823.8997975254061,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "95",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 403.04684932651827,
+      "distance_to_road_m": 403.04684932651827,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "96",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1458.9021544339969,
+      "distance_to_road_m": 1458.9021544339969,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "97",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 2604.023604265571,
+      "distance_to_road_m": 2604.023604265571,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "98",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 391.5291821688725,
+      "distance_to_road_m": 391.5291821688725,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "99",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 617.3888966366495,
+      "distance_to_road_m": 617.3888966366495,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "100",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 28.675081942093126,
+      "distance_to_road_m": 28.675081942093126,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "101",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 178.03715089179803,
+      "distance_to_road_m": 178.03715089179803,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "102",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 776.314431380537,
+      "distance_to_road_m": 776.314431380537,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "103",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 683.4342487002791,
+      "distance_to_road_m": 683.4342487002791,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "188",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 42.62628747753454,
+      "distance_to_road_m": 42.62628747753454,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "189",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 154.901560895212,
+      "distance_to_road_m": 154.901560895212,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "190",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 386.187573022391,
+      "distance_to_road_m": 386.187573022391,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "191",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 448.2153933634189,
+      "distance_to_road_m": 448.2153933634189,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "192",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 327.16935414066376,
+      "distance_to_road_m": 327.16935414066376,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "193",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 13.43949373329985,
+      "distance_to_road_m": 13.43949373329985,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "194",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 54.245554493952845,
+      "distance_to_road_m": 54.245554493952845,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "195",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 480.14625872131495,
+      "distance_to_road_m": 480.14625872131495,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "196",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 202.97908870804415,
+      "distance_to_road_m": 202.97908870804415,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "197",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 120.7768934345383,
+      "distance_to_road_m": 120.7768934345383,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "198",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 888.3573043463559,
+      "distance_to_road_m": 888.3573043463559,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "199",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 79.69303978792384,
+      "distance_to_road_m": 79.69303978792384,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "200",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 100.71962928601708,
+      "distance_to_road_m": 100.71962928601708,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "201",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 452.0707496930915,
+      "distance_to_road_m": 452.0707496930915,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "202",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 39.83773760368063,
+      "distance_to_road_m": 39.83773760368063,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "203",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 739.075213646959,
+      "distance_to_road_m": 739.075213646959,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "204",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1032.9768443068692,
+      "distance_to_road_m": 1032.9768443068692,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "213",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 935.4382299291867,
+      "distance_to_road_m": 935.4382299291867,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "214",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1060.6557949305306,
+      "distance_to_road_m": 1060.6557949305306,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "215",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 402.7780547954414,
+      "distance_to_road_m": 402.7780547954414,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "216",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 211.5342525632496,
+      "distance_to_road_m": 211.5342525632496,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "217",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 811.9102214250258,
+      "distance_to_road_m": 811.9102214250258,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "218",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 408.51611459426704,
+      "distance_to_road_m": 408.51611459426704,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "219",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1182.2915483358443,
+      "distance_to_road_m": 1182.2915483358443,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "220",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 184.67595244778846,
+      "distance_to_road_m": 184.67595244778846,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "221",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 563.9918765722579,
+      "distance_to_road_m": 563.9918765722579,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "222",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 858.525102287134,
+      "distance_to_road_m": 858.525102287134,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "223",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1121.997570178475,
+      "distance_to_road_m": 1121.997570178475,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "224",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 97.3730011009996,
+      "distance_to_road_m": 97.3730011009996,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "225",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 999.9660534803469,
+      "distance_to_road_m": 999.9660534803469,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "226",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 753.7128387654487,
+      "distance_to_road_m": 753.7128387654487,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "227",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1000.1432678590285,
+      "distance_to_road_m": 1000.1432678590285,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "228",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1073.0263944576268,
+      "distance_to_road_m": 1073.0263944576268,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "229",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 227.21221761283263,
+      "distance_to_road_m": 227.21221761283263,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "230",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1128.1812095106197,
+      "distance_to_road_m": 1128.1812095106197,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "231",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1155.6550553405004,
+      "distance_to_road_m": 1155.6550553405004,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "232",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1308.9470878043694,
+      "distance_to_road_m": 1308.9470878043694,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "233",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1760.2519970535063,
+      "distance_to_road_m": 1760.2519970535063,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "234",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 935.9352355227155,
+      "distance_to_road_m": 935.9352355227155,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "235",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1063.7157296832588,
+      "distance_to_road_m": 1063.7157296832588,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "236",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1052.9710677938533,
+      "distance_to_road_m": 1052.9710677938533,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "237",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 976.2865732124825,
+      "distance_to_road_m": 976.2865732124825,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "238",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1261.5921732226004,
+      "distance_to_road_m": 1261.5921732226004,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "239",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 358.9455937740365,
+      "distance_to_road_m": 358.9455937740365,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "240",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 348.98458176138604,
+      "distance_to_road_m": 348.98458176138604,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "241",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 425.23586859280414,
+      "distance_to_road_m": 425.23586859280414,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "242",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 476.0344241665311,
+      "distance_to_road_m": 476.0344241665311,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "243",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 517.1622973725229,
+      "distance_to_road_m": 517.1622973725229,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "244",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 684.8389309840558,
+      "distance_to_road_m": 684.8389309840558,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "245",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 2205.520591911621,
+      "distance_to_road_m": 2205.520591911621,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "246",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1472.8209247243615,
+      "distance_to_road_m": 1472.8209247243615,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "247",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1233.0289921552194,
+      "distance_to_road_m": 1233.0289921552194,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "248",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 101.27498708633438,
+      "distance_to_road_m": 101.27498708633438,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "249",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 339.9527354273007,
+      "distance_to_road_m": 339.9527354273007,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "250",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1889.3980841413547,
+      "distance_to_road_m": 1889.3980841413547,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "251",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 947.6578975805858,
+      "distance_to_road_m": 947.6578975805858,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "380",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 313.6489965530694,
+      "distance_to_road_m": 313.6489965530694,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "381",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1296.044807415359,
+      "distance_to_road_m": 1296.044807415359,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "382",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 339.96968959626133,
+      "distance_to_road_m": 339.96968959626133,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "383",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 747.2889083830954,
+      "distance_to_road_m": 747.2889083830954,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "384",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1393.8239394881984,
+      "distance_to_road_m": 1393.8239394881984,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "385",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 519.0193690492085,
+      "distance_to_road_m": 519.0193690492085,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "386",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 633.3642738951996,
+      "distance_to_road_m": 633.3642738951996,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "387",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 255.2349183693505,
+      "distance_to_road_m": 255.2349183693505,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "388",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 792.9954543335759,
+      "distance_to_road_m": 792.9954543335759,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "389",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 783.0298395152437,
+      "distance_to_road_m": 783.0298395152437,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "390",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 799.4207251174056,
+      "distance_to_road_m": 799.4207251174056,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "391",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 815.8924358086073,
+      "distance_to_road_m": 815.8924358086073,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "392",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1024.2577421031035,
+      "distance_to_road_m": 1024.2577421031035,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "393",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1621.8881336881752,
+      "distance_to_road_m": 1621.8881336881752,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "394",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 63.85412564338932,
+      "distance_to_road_m": 63.85412564338932,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "395",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 77.51915827688376,
+      "distance_to_road_m": 77.51915827688376,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "396",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 297.7598843268311,
+      "distance_to_road_m": 297.7598843268311,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "397",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 80.45002653832502,
+      "distance_to_road_m": 80.45002653832502,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "398",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 382.95022793371953,
+      "distance_to_road_m": 382.95022793371953,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "399",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 743.5165523758145,
+      "distance_to_road_m": 743.5165523758145,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "400",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 643.8737114617419,
+      "distance_to_road_m": 643.8737114617419,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "401",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 846.6276046173825,
+      "distance_to_road_m": 846.6276046173825,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "402",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 930.200433663621,
+      "distance_to_road_m": 930.200433663621,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "403",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 2281.84547541222,
+      "distance_to_road_m": 2281.84547541222,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "404",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 2372.307800277839,
+      "distance_to_road_m": 2372.307800277839,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "405",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 524.9515694343072,
+      "distance_to_road_m": 524.9515694343072,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "406",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 478.7623643557035,
+      "distance_to_road_m": 478.7623643557035,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "407",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 314.44570660126345,
+      "distance_to_road_m": 314.44570660126345,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "408",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 336.6029797483039,
+      "distance_to_road_m": 336.6029797483039,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "409",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 720.0878796272366,
+      "distance_to_road_m": 720.0878796272366,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "410",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 62.00466409531401,
+      "distance_to_road_m": 62.00466409531401,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "411",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 495.30433018975265,
+      "distance_to_road_m": 495.30433018975265,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "412",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 445.9132556815479,
+      "distance_to_road_m": 445.9132556815479,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "413",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1684.7988196649808,
+      "distance_to_road_m": 1684.7988196649808,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "414",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 2434.683997823539,
+      "distance_to_road_m": 2434.683997823539,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "415",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 478.7623643557035,
+      "distance_to_road_m": 478.7623643557035,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "416",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 211.20574137876827,
+      "distance_to_road_m": 211.20574137876827,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "417",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 606.1890868079895,
+      "distance_to_road_m": 606.1890868079895,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "418",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 811.2101628902229,
+      "distance_to_road_m": 811.2101628902229,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "419",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 481.44299007595663,
+      "distance_to_road_m": 481.44299007595663,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "420",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 925.1695956152118,
+      "distance_to_road_m": 925.1695956152118,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "421",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 550.1484048601505,
+      "distance_to_road_m": 550.1484048601505,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "422",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 517.2966970456507,
+      "distance_to_road_m": 517.2966970456507,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "423",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 433.4276791859828,
+      "distance_to_road_m": 433.4276791859828,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "424",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 369.3293580801191,
+      "distance_to_road_m": 369.3293580801191,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "425",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1913.7965637421528,
+      "distance_to_road_m": 1913.7965637421528,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "426",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 884.9549221256623,
+      "distance_to_road_m": 884.9549221256623,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "427",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 719.9363589956259,
+      "distance_to_road_m": 719.9363589956259,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "428",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1521.4380146916612,
+      "distance_to_road_m": 1521.4380146916612,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "429",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1917.1474024177842,
+      "distance_to_road_m": 1917.1474024177842,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "430",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 594.7462771862234,
+      "distance_to_road_m": 594.7462771862234,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "431",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1236.879338626987,
+      "distance_to_road_m": 1236.879338626987,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "432",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 650.3378767428047,
+      "distance_to_road_m": 650.3378767428047,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "433",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 527.368912280459,
+      "distance_to_road_m": 527.368912280459,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "434",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1142.379349917631,
+      "distance_to_road_m": 1142.379349917631,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "435",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 782.1456945433534,
+      "distance_to_road_m": 782.1456945433534,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "436",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1128.3549653582943,
+      "distance_to_road_m": 1128.3549653582943,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "437",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 199.69010087205092,
+      "distance_to_road_m": 199.69010087205092,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "438",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 484.59578146931455,
+      "distance_to_road_m": 484.59578146931455,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "439",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 424.40506495519907,
+      "distance_to_road_m": 424.40506495519907,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "440",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 643.7243607853126,
+      "distance_to_road_m": 643.7243607853126,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "441",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1295.7967840153233,
+      "distance_to_road_m": 1295.7967840153233,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "442",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1459.186706248204,
+      "distance_to_road_m": 1459.186706248204,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "443",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1648.407998152481,
+      "distance_to_road_m": 1648.407998152481,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "444",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 49.27426128531967,
+      "distance_to_road_m": 49.27426128531967,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "445",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 444.14693073262686,
+      "distance_to_road_m": 444.14693073262686,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "446",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1366.978454847304,
+      "distance_to_road_m": 1366.978454847304,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "447",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 528.2233187561761,
+      "distance_to_road_m": 528.2233187561761,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "448",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1099.4535667876899,
+      "distance_to_road_m": 1099.4535667876899,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "449",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 2143.13119319564,
+      "distance_to_road_m": 2143.13119319564,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "450",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 2251.895457826736,
+      "distance_to_road_m": 2251.895457826736,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "451",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 825.13740061215,
+      "distance_to_road_m": 825.13740061215,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "452",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 2538.2868659563137,
+      "distance_to_road_m": 2538.2868659563137,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "453",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 2474.106614365377,
+      "distance_to_road_m": 2474.106614365377,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "454",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 693.4266194373724,
+      "distance_to_road_m": 693.4266194373724,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "455",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 598.6910064333,
+      "distance_to_road_m": 598.6910064333,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "456",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 640.4694380504758,
+      "distance_to_road_m": 640.4694380504758,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "457",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1408.4675086605232,
+      "distance_to_road_m": 1408.4675086605232,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "458",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 339.86470272152474,
+      "distance_to_road_m": 339.86470272152474,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "459",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 704.2089828921252,
+      "distance_to_road_m": 704.2089828921252,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "460",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1051.7447238611737,
+      "distance_to_road_m": 1051.7447238611737,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "461",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 923.6756425844321,
+      "distance_to_road_m": 923.6756425844321,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "462",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1656.4569965319781,
+      "distance_to_road_m": 1656.4569965319781,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "463",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 713.0964491390649,
+      "distance_to_road_m": 713.0964491390649,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "464",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1553.523282384183,
+      "distance_to_road_m": 1553.523282384183,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "465",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 410.5459330314008,
+      "distance_to_road_m": 410.5459330314008,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "466",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 902.9822529938332,
+      "distance_to_road_m": 902.9822529938332,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "467",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 70.933746861064,
+      "distance_to_road_m": 70.933746861064,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "468",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 41.850470339970634,
+      "distance_to_road_m": 41.850470339970634,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "469",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 272.5118226124991,
+      "distance_to_road_m": 272.5118226124991,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "470",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1083.6153775612645,
+      "distance_to_road_m": 1083.6153775612645,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "471",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 587.4146742006734,
+      "distance_to_road_m": 587.4146742006734,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "472",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 467.4901592845908,
+      "distance_to_road_m": 467.4901592845908,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "473",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 170.11697125960052,
+      "distance_to_road_m": 170.11697125960052,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "474",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 65.96833834048813,
+      "distance_to_road_m": 65.96833834048813,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "475",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 103.46944347886766,
+      "distance_to_road_m": 103.46944347886766,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "476",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 220.74156318492888,
+      "distance_to_road_m": 220.74156318492888,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "477",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 79.84076967426157,
+      "distance_to_road_m": 79.84076967426157,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "478",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 216.13678596053902,
+      "distance_to_road_m": 216.13678596053902,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "479",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 574.5477656402027,
+      "distance_to_road_m": 574.5477656402027,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "480",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 600.7274344160893,
+      "distance_to_road_m": 600.7274344160893,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "481",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 684.2846552597445,
+      "distance_to_road_m": 684.2846552597445,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "482",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 48.13591469564095,
+      "distance_to_road_m": 48.13591469564095,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "483",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1076.9523854750926,
+      "distance_to_road_m": 1076.9523854750926,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "484",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 786.7498133115547,
+      "distance_to_road_m": 786.7498133115547,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "485",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1078.0036218727023,
+      "distance_to_road_m": 1078.0036218727023,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "486",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1969.1782366017508,
+      "distance_to_road_m": 1969.1782366017508,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "487",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1817.8891207049082,
+      "distance_to_road_m": 1817.8891207049082,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "488",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 61.18155625656455,
+      "distance_to_road_m": 61.18155625656455,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "489",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1188.5952810853187,
+      "distance_to_road_m": 1188.5952810853187,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "490",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 181.30713641213924,
+      "distance_to_road_m": 181.30713641213924,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "491",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 865.87499686315,
+      "distance_to_road_m": 865.87499686315,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "492",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 145.41342997323576,
+      "distance_to_road_m": 145.41342997323576,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "493",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 379.92689883339426,
+      "distance_to_road_m": 379.92689883339426,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "494",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 104.92602667148468,
+      "distance_to_road_m": 104.92602667148468,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "495",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 242.49962051410245,
+      "distance_to_road_m": 242.49962051410245,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "496",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1816.4613800604836,
+      "distance_to_road_m": 1816.4613800604836,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "497",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 837.8719942896424,
+      "distance_to_road_m": 837.8719942896424,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "498",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1472.322942159555,
+      "distance_to_road_m": 1472.322942159555,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "499",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1186.3037362046587,
+      "distance_to_road_m": 1186.3037362046587,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "500",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 455.1694079292639,
+      "distance_to_road_m": 455.1694079292639,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "501",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 521.006202592486,
+      "distance_to_road_m": 521.006202592486,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "502",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 822.6959779651746,
+      "distance_to_road_m": 822.6959779651746,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "503",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1553.017393448718,
+      "distance_to_road_m": 1553.017393448718,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "504",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1782.7235090053978,
+      "distance_to_road_m": 1782.7235090053978,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "505",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1257.3322662898381,
+      "distance_to_road_m": 1257.3322662898381,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "506",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 968.4761833400465,
+      "distance_to_road_m": 968.4761833400465,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "507",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 670.7886215835316,
+      "distance_to_road_m": 670.7886215835316,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "508",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 48.01584383060102,
+      "distance_to_road_m": 48.01584383060102,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "509",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 891.6431709977825,
+      "distance_to_road_m": 891.6431709977825,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "510",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1413.13657150444,
+      "distance_to_road_m": 1413.13657150444,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "511",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 518.4173887951677,
+      "distance_to_road_m": 518.4173887951677,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "512",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 375.93004973563404,
+      "distance_to_road_m": 375.93004973563404,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "513",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1148.80820337871,
+      "distance_to_road_m": 1148.80820337871,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "514",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1889.3922113014232,
+      "distance_to_road_m": 1889.3922113014232,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "515",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1743.957110261545,
+      "distance_to_road_m": 1743.957110261545,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "516",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 600.4514553821546,
+      "distance_to_road_m": 600.4514553821546,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "517",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1643.4383493170155,
+      "distance_to_road_m": 1643.4383493170155,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "518",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 452.6826490286776,
+      "distance_to_road_m": 452.6826490286776,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "519",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 713.7273442344938,
+      "distance_to_road_m": 713.7273442344938,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "543",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 287.8833181085647,
+      "distance_to_road_m": 287.8833181085647,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "544",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 233.59749895462303,
+      "distance_to_road_m": 233.59749895462303,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "545",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 116.60656866750787,
+      "distance_to_road_m": 116.60656866750787,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "546",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 834.3547558458766,
+      "distance_to_road_m": 834.3547558458766,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "547",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 363.7283906400054,
+      "distance_to_road_m": 363.7283906400054,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "548",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 286.1535226545262,
+      "distance_to_road_m": 286.1535226545262,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "549",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 223.8129852878876,
+      "distance_to_road_m": 223.8129852878876,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "550",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 225.6798924658576,
+      "distance_to_road_m": 225.6798924658576,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "551",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 361.17181487906316,
+      "distance_to_road_m": 361.17181487906316,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "556",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1438.0282864503079,
+      "distance_to_road_m": 1438.0282864503079,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "557",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 139.02976772004283,
+      "distance_to_road_m": 139.02976772004283,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "558",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1330.2220688121427,
+      "distance_to_road_m": 1330.2220688121427,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "559",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 42.761088017953675,
+      "distance_to_road_m": 42.761088017953675,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "560",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1193.8713529163058,
+      "distance_to_road_m": 1193.8713529163058,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "561",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 935.2748738745601,
+      "distance_to_road_m": 935.2748738745601,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "562",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1613.701897314126,
+      "distance_to_road_m": 1613.701897314126,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "563",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1162.1048869208112,
+      "distance_to_road_m": 1162.1048869208112,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "564",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 2427.1876531839607,
+      "distance_to_road_m": 2427.1876531839607,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "565",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 313.5273274880878,
+      "distance_to_road_m": 313.5273274880878,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "566",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1042.5820562038832,
+      "distance_to_road_m": 1042.5820562038832,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "567",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 847.6126288417505,
+      "distance_to_road_m": 847.6126288417505,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "568",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 399.5254319844161,
+      "distance_to_road_m": 399.5254319844161,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "569",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 609.051695732802,
+      "distance_to_road_m": 609.051695732802,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "570",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1270.952092035436,
+      "distance_to_road_m": 1270.952092035436,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "571",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 227.37745278939832,
+      "distance_to_road_m": 227.37745278939832,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "572",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 99.52031331863996,
+      "distance_to_road_m": 99.52031331863996,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "573",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 385.6734813531694,
+      "distance_to_road_m": 385.6734813531694,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "574",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1193.6446741156687,
+      "distance_to_road_m": 1193.6446741156687,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "575",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 578.013952239142,
+      "distance_to_road_m": 578.013952239142,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "576",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 597.7818856066569,
+      "distance_to_road_m": 597.7818856066569,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "587",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1355.682059449088,
+      "distance_to_road_m": 1355.682059449088,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "588",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 41.35275696296677,
+      "distance_to_road_m": 41.35275696296677,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "589",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 976.8888004546493,
+      "distance_to_road_m": 976.8888004546493,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "590",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1274.8511557343804,
+      "distance_to_road_m": 1274.8511557343804,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "591",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1145.828992486166,
+      "distance_to_road_m": 1145.828992486166,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "592",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 330.7694064595313,
+      "distance_to_road_m": 330.7694064595313,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "593",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 311.348315097762,
+      "distance_to_road_m": 311.348315097762,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "594",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 131.41693146537102,
+      "distance_to_road_m": 131.41693146537102,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "595",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 889.9444961253225,
+      "distance_to_road_m": 889.9444961253225,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "596",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 921.0583143036748,
+      "distance_to_road_m": 921.0583143036748,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "597",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 274.6698809751059,
+      "distance_to_road_m": 274.6698809751059,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "598",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1094.6256713436815,
+      "distance_to_road_m": 1094.6256713436815,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "599",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 2041.2636122040594,
+      "distance_to_road_m": 2041.2636122040594,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "600",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 168.6176968870523,
+      "distance_to_road_m": 168.6176968870523,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "601",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1509.9634833276218,
+      "distance_to_road_m": 1509.9634833276218,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "602",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 49.5492988358358,
+      "distance_to_road_m": 49.5492988358358,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "603",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1057.4206375014396,
+      "distance_to_road_m": 1057.4206375014396,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "604",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 439.67125717266197,
+      "distance_to_road_m": 439.67125717266197,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "605",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 796.4855341709506,
+      "distance_to_road_m": 796.4855341709506,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "606",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 434.4387470291004,
+      "distance_to_road_m": 434.4387470291004,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "607",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 123.26296500134653,
+      "distance_to_road_m": 123.26296500134653,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "608",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 247.02211570501174,
+      "distance_to_road_m": 247.02211570501174,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "609",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 353.13305598019775,
+      "distance_to_road_m": 353.13305598019775,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "610",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 404.16746735012526,
+      "distance_to_road_m": 404.16746735012526,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "611",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1028.5390293747396,
+      "distance_to_road_m": 1028.5390293747396,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "612",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 458.32590078760506,
+      "distance_to_road_m": 458.32590078760506,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "613",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1764.0981142173434,
+      "distance_to_road_m": 1764.0981142173434,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "614",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 160.21637781952427,
+      "distance_to_road_m": 160.21637781952427,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "615",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 68.70536420869345,
+      "distance_to_road_m": 68.70536420869345,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "616",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1116.7945279883456,
+      "distance_to_road_m": 1116.7945279883456,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "617",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 2249.0553471535663,
+      "distance_to_road_m": 2249.0553471535663,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "618",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1695.9839042631766,
+      "distance_to_road_m": 1695.9839042631766,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "619",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 516.8399083595034,
+      "distance_to_road_m": 516.8399083595034,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "620",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1229.3567451763138,
+      "distance_to_road_m": 1229.3567451763138,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "621",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 682.9107167249244,
+      "distance_to_road_m": 682.9107167249244,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "622",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1062.9601277850136,
+      "distance_to_road_m": 1062.9601277850136,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "623",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 57.36469863263996,
+      "distance_to_road_m": 57.36469863263996,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "624",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 48.096794085741195,
+      "distance_to_road_m": 48.096794085741195,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "625",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1046.349167657861,
+      "distance_to_road_m": 1046.349167657861,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "626",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 74.33346283091663,
+      "distance_to_road_m": 74.33346283091663,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "627",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 277.744046192897,
+      "distance_to_road_m": 277.744046192897,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "628",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 530.1984682382805,
+      "distance_to_road_m": 530.1984682382805,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "629",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 906.5552701521747,
+      "distance_to_road_m": 906.5552701521747,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "630",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1483.9900064376397,
+      "distance_to_road_m": 1483.9900064376397,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "631",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1550.982450884416,
+      "distance_to_road_m": 1550.982450884416,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "632",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 187.78588902060528,
+      "distance_to_road_m": 187.78588902060528,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "633",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1364.9741530516028,
+      "distance_to_road_m": 1364.9741530516028,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "634",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 822.697847179896,
+      "distance_to_road_m": 822.697847179896,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "635",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 266.00367888418975,
+      "distance_to_road_m": 266.00367888418975,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "636",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 441.6366948333842,
+      "distance_to_road_m": 441.6366948333842,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "637",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 312.19674946863313,
+      "distance_to_road_m": 312.19674946863313,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "638",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 819.3549451177801,
+      "distance_to_road_m": 819.3549451177801,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "639",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 312.5560807472166,
+      "distance_to_road_m": 312.5560807472166,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "640",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 394.1419204416919,
+      "distance_to_road_m": 394.1419204416919,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "641",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 384.31157633399243,
+      "distance_to_road_m": 384.31157633399243,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "642",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 278.0955734298283,
+      "distance_to_road_m": 278.0955734298283,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "643",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 215.5886349700572,
+      "distance_to_road_m": 215.5886349700572,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "644",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 60.46737338865544,
+      "distance_to_road_m": 60.46737338865544,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "645",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 580.7293692190474,
+      "distance_to_road_m": 580.7293692190474,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "646",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 564.9561152287623,
+      "distance_to_road_m": 564.9561152287623,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "647",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 177.55066721957144,
+      "distance_to_road_m": 177.55066721957144,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "656",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 179.88998479318468,
+      "distance_to_road_m": 179.88998479318468,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "657",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1174.7125051264547,
+      "distance_to_road_m": 1174.7125051264547,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "658",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 27.67506506006915,
+      "distance_to_road_m": 27.67506506006915,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "659",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 761.6677183847329,
+      "distance_to_road_m": 761.6677183847329,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "660",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 267.41774612767455,
+      "distance_to_road_m": 267.41774612767455,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "661",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 248.52694393939169,
+      "distance_to_road_m": 248.52694393939169,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "662",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 100.6462537342709,
+      "distance_to_road_m": 100.6462537342709,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "666",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 409.61271612858,
+      "distance_to_road_m": 409.61271612858,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "667",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 63.22362067131668,
+      "distance_to_road_m": 63.22362067131668,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "668",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 109.14366750893947,
+      "distance_to_road_m": 109.14366750893947,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "669",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 449.4739403499459,
+      "distance_to_road_m": 449.4739403499459,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "670",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 113.47076363788781,
+      "distance_to_road_m": 113.47076363788781,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "671",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 154.8104947742817,
+      "distance_to_road_m": 154.8104947742817,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "672",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 410.8163571626682,
+      "distance_to_road_m": 410.8163571626682,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "673",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 88.18528252200288,
+      "distance_to_road_m": 88.18528252200288,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "674",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 841.1219880373318,
+      "distance_to_road_m": 841.1219880373318,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "675",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 351.9397722087122,
+      "distance_to_road_m": 351.9397722087122,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "676",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1198.0014607717944,
+      "distance_to_road_m": 1198.0014607717944,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "677",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 74.40473416966091,
+      "distance_to_road_m": 74.40473416966091,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "678",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 74.17885021292514,
+      "distance_to_road_m": 74.17885021292514,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "679",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 77.44226605769346,
+      "distance_to_road_m": 77.44226605769346,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "680",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 59.38072486735462,
+      "distance_to_road_m": 59.38072486735462,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "681",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 591.1632720018548,
+      "distance_to_road_m": 591.1632720018548,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "682",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 257.5343493907396,
+      "distance_to_road_m": 257.5343493907396,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "683",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 103.134935331447,
+      "distance_to_road_m": 103.134935331447,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "684",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 709.532586143598,
+      "distance_to_road_m": 709.532586143598,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "685",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 267.90350153717316,
+      "distance_to_road_m": 267.90350153717316,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "686",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 461.5233376400492,
+      "distance_to_road_m": 461.5233376400492,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "300–500m"
     },
     {
       "pond_id": "687",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 775.7416370077633,
+      "distance_to_road_m": 775.7416370077633,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "688",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 932.3975516440581,
+      "distance_to_road_m": 932.3975516440581,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "689",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 82.32214499988913,
+      "distance_to_road_m": 82.32214499988913,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "0–100m"
     },
     {
       "pond_id": "690",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 880.7961186723858,
+      "distance_to_road_m": 880.7961186723858,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "691",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 239.7955125699464,
+      "distance_to_road_m": 239.7955125699464,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "692",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 719.3479864212226,
+      "distance_to_road_m": 719.3479864212226,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "693",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 111.68004878375558,
+      "distance_to_road_m": 111.68004878375558,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "100–300m"
     },
     {
       "pond_id": "695",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1411.4892531226328,
+      "distance_to_road_m": 1411.4892531226328,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     },
     {
       "pond_id": "696",
-      "nearest_road_m": null,
-      "accessibility_class": "DATA_NOT_AVAILABLE"
+      "nearest_road_m": 1160.9057223785353,
+      "distance_to_road_m": 1160.9057223785353,
+      "road_access_status": "AVAILABLE",
+      "road_source_year": null,
+      "accessibility_class": "500m 이상"
     }
   ],
-  "message": "도로 원자료가 없어 거리를 산출하지 않았습니다."
+  "message": "EPSG:5174에서 점-도로 최소 유클리드거리를 계산했습니다. 도로 원자료의 기준연도는 별도 확인이 필요합니다."
 }
