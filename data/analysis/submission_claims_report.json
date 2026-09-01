@@ -1,0 +1,139 @@
+{
+  "status": "PASS",
+  "pass_count": 17,
+  "warn_count": 0,
+  "fail_count": 0,
+  "documents_checked": [
+    "README.md",
+    "TODO.md",
+    "docs/methodology.md",
+    "docs/implementation-status.md"
+  ],
+  "checks": [
+    {
+      "name": "document_pond_count_427",
+      "status": "PASS",
+      "details": {
+        "actual": 427,
+        "document_contains": true
+      }
+    },
+    {
+      "name": "document_vworld_facility_count_68",
+      "status": "PASS",
+      "details": {
+        "actual": 68,
+        "document_contains": true
+      }
+    },
+    {
+      "name": "validation_report_pass",
+      "status": "PASS",
+      "details": {
+        "status": "PASS",
+        "fail_count": 0
+      }
+    },
+    {
+      "name": "roads_claim_status",
+      "status": "PASS",
+      "details": {
+        "accessibility": "AVAILABLE",
+        "vworld_roads": "AVAILABLE",
+        "distance_value_count": 427
+      }
+    },
+    {
+      "name": "official_population_grid_status",
+      "status": "PASS",
+      "details": {
+        "official_grid_status": "DATA_NOT_AVAILABLE"
+      }
+    },
+    {
+      "name": "output_exists:data/analysis/validation_report.json",
+      "status": "PASS",
+      "details": {
+        "path": "data/analysis/validation_report.json"
+      }
+    },
+    {
+      "name": "output_exists:data/analysis/competition/competition_metrics.json",
+      "status": "PASS",
+      "details": {
+        "path": "data/analysis/competition/competition_metrics.json"
+      }
+    },
+    {
+      "name": "output_exists:data/analysis/competition/pond_classification.json",
+      "status": "PASS",
+      "details": {
+        "path": "data/analysis/competition/pond_classification.json"
+      }
+    },
+    {
+      "name": "output_exists:data/analysis/competition/pond_context.json",
+      "status": "PASS",
+      "details": {
+        "path": "data/analysis/competition/pond_context.json"
+      }
+    },
+    {
+      "name": "output_exists:data/analysis/competition/population_summary.json",
+      "status": "PASS",
+      "details": {
+        "path": "data/analysis/competition/population_summary.json"
+      }
+    },
+    {
+      "name": "output_exists:data/geojson/ponds_classified.geojson",
+      "status": "PASS",
+      "details": {
+        "path": "data/geojson/ponds_classified.geojson"
+      }
+    },
+    {
+      "name": "output_exists:data/geojson/ponds_context.geojson",
+      "status": "PASS",
+      "details": {
+        "path": "data/geojson/ponds_context.geojson"
+      }
+    },
+    {
+      "name": "output_exists:data/manifests/vworld_sources.csv",
+      "status": "PASS",
+      "details": {
+        "path": "data/manifests/vworld_sources.csv"
+      }
+    },
+    {
+      "name": "unsupported_claim:unverified_accuracy",
+      "status": "PASS",
+      "details": {
+        "match_count": 0
+      }
+    },
+    {
+      "name": "unsupported_claim:unverified_field_reduction",
+      "status": "PASS",
+      "details": {
+        "match_count": 0
+      }
+    },
+    {
+      "name": "unsupported_claim:unverified_rf_completion",
+      "status": "PASS",
+      "details": {
+        "match_count": 0
+      }
+    },
+    {
+      "name": "unsupported_claim:unverified_realtime_completion",
+      "status": "PASS",
+      "details": {
+        "match_count": 0
+      }
+    }
+  ],
+  "note": "미확보 데이터는 DATA_NOT_AVAILABLE 상태를 유지하는지 함께 점검합니다."
+}
