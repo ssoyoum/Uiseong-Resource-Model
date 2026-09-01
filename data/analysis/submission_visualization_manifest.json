@@ -1,0 +1,100 @@
+{
+  "status": "READY_WITH_DOCUMENTED_LIMITATIONS",
+  "scope": "Uiseong 427 traditional ponds SGIS case study",
+  "facility_count": 427,
+  "sgis_eligible_unique_coordinate_points": 380,
+  "sgis_available_5min": 175,
+  "sgis_available_10min": 190,
+  "sgis_available_both": 175,
+  "sgis_missing_10min": 190,
+  "sgis_missing_context_overlap": 0,
+  "coordinate_quality_excluded": 47,
+  "vworld_facility_count": 68,
+  "vworld_road_count": 483,
+  "classification_counts": [
+    {
+      "classification_type": "D_PRESERVATION",
+      "facility_count": 329
+    },
+    {
+      "classification_type": "A_CULTURE_TOURISM",
+      "facility_count": 55
+    },
+    {
+      "classification_type": "B_ECO_EDUCATION",
+      "facility_count": 43
+    }
+  ],
+  "validation_status": "PASS",
+  "validation_fail_count": 0,
+  "submission_claims_status": "PASS",
+  "submission_claims_pass_count": 17,
+  "submission_claims_warn_count": 0,
+  "submission_claims_fail_count": 0,
+  "figures": [
+    {
+      "file": "analysis/figures/06_pond_distribution.png",
+      "purpose": "427개 전통 못의 공간 분포",
+      "source": "data/processed/ponds.csv",
+      "interpretation": "분포 현황 지도; 정책 우선순위 자체를 의미하지 않음",
+      "status": "AVAILABLE",
+      "size_bytes": 29967
+    },
+    {
+      "file": "analysis/figures/07_pond_road_accessibility.png",
+      "purpose": "못-도로 최근접거리 접근성",
+      "source": "data/analysis/pond_accessibility.csv",
+      "interpretation": "EPSG:5174 유클리드 최근접거리; 주행시간·네트워크 거리가 아님",
+      "status": "AVAILABLE",
+      "size_bytes": 22113
+    },
+    {
+      "file": "analysis/figures/08_pond_buffer_analysis.png",
+      "purpose": "500m·1km 주변 농업·시설 맥락",
+      "source": "data/analysis/pond_context.csv",
+      "interpretation": "주변환경 맥락; 공식 인구격자 Buffer 인구는 포함하지 않음",
+      "status": "AVAILABLE",
+      "size_bytes": 34200
+    },
+    {
+      "file": "analysis/figures/09_pond_classification.png",
+      "purpose": "규칙기반 활용유형 분류",
+      "source": "data/analysis/pond_classification.csv",
+      "interpretation": "분류근거와 결측 fallback을 포함한 기술적 분류; ML 정확도가 아님",
+      "status": "AVAILABLE",
+      "size_bytes": 46624
+    },
+    {
+      "file": "analysis/figures/10_sgis_top_10min_population.png",
+      "purpose": "SGIS 10분 생활권 인구 상위 검토 후보",
+      "source": "data/analysis/sgis_catchment_analysis.csv",
+      "interpretation": "응답이 확인된 검증좌표 중 비교; 미응답은 0명으로 처리하지 않음",
+      "status": "AVAILABLE",
+      "size_bytes": 75968
+    },
+    {
+      "file": "analysis/figures/11_sgis_5_vs_10_population.png",
+      "purpose": "SGIS 5분·10분 생활권 인구 비교",
+      "source": "data/analysis/sgis_catchment_analysis.csv",
+      "interpretation": "시설별 도달 규모 비교; 시설 간 인구 합산이 아님",
+      "status": "AVAILABLE",
+      "size_bytes": 100822
+    },
+    {
+      "file": "analysis/figures/12_sgis_emd_mean_population.png",
+      "purpose": "읍면별 SGIS 생활권 인구 평균",
+      "source": "data/analysis/sgis_catchment_analysis.csv",
+      "interpretation": "고유 검증좌표 기준 요약; 행정 읍면 총인구와 다름",
+      "status": "AVAILABLE",
+      "size_bytes": 38428
+    },
+    {
+      "file": "analysis/figures/10_2025_2026_model_diagram.png",
+      "purpose": "분석 흐름 개념도",
+      "source": "analysis/generate_figures.py",
+      "interpretation": "방법론 설명용 그림; 분석 결과 수치가 아님",
+      "status": "AVAILABLE",
+      "size_bytes": 37323
+    }
+  ]
+}
