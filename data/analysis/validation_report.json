@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "pass_count": 12,
+  "pass_count": 16,
   "fail_count": 0,
   "checks": [
     {
@@ -83,10 +83,34 @@
       }
     },
     {
-      "name": "distance_unit_meter",
-      "status": "DATA_NOT_AVAILABLE",
+      "name": "vworld_roads_crs",
+      "status": "PASS",
       "details": {
-        "message": "도로 원자료 없음"
+        "crs": "EPSG:5174",
+        "expected": "EPSG:5174"
+      }
+    },
+    {
+      "name": "vworld_roads_geometry_valid",
+      "status": "PASS",
+      "details": {
+        "invalid_count": 0
+      }
+    },
+    {
+      "name": "vworld_roads_inside_boundary",
+      "status": "PASS",
+      "details": {
+        "feature_count": 483,
+        "outside_count": 0,
+        "boundary_tolerance_m": 0.01
+      }
+    },
+    {
+      "name": "distance_unit_meter",
+      "status": "PASS",
+      "details": {
+        "unit": "meter"
       }
     },
     {

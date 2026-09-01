@@ -41,9 +41,23 @@ def run() -> pd.DataFrame:
         road_union = roads.geometry.union_all() if hasattr(roads.geometry, "union_all") else roads.geometry.unary_union
         for _, pond in ponds.iterrows():
             distance = float(pond.geometry.distance(road_union)) if not road_union.is_empty else None
-            values.append({"pond_id": str(pond.id), "nearest_road_m": distance, "accessibility_class": classify_distance(distance)})
+            values.append({
+                "pond_id": str(pond.id),
+                "nearest_road_m": distance,
+                "distance_to_road_m": distance,
+                "road_access_status": "AVAILABLE" if distance is not None else DATA_NOT_AVAILABLE,
+                "road_source_year": None,
+                "accessibility_class": classify_distance(distance),
+            })
     else:
-        values = [{"pond_id": str(pond.id), "nearest_road_m": None, "accessibility_class": DATA_NOT_AVAILABLE} for _, pond in ponds.iterrows()]
+        values = [{
+            "pond_id": str(pond.id),
+            "nearest_road_m": None,
+            "distance_to_road_m": None,
+            "road_access_status": DATA_NOT_AVAILABLE,
+            "road_source_year": None,
+            "accessibility_class": DATA_NOT_AVAILABLE,
+        } for _, pond in ponds.iterrows()]
 
     result = pd.DataFrame(values)
     result.to_csv(ANALYSIS_DIR / "pond_accessibility.csv", index=False, encoding="utf-8-sig")
@@ -53,7 +67,7 @@ def run() -> pd.DataFrame:
         "distance_unit": "meter" if status == "AVAILABLE" else DATA_NOT_AVAILABLE,
         "class_thresholds_m": [100, 300, 500] if status == "AVAILABLE" else None,
         "data": frame_records(result),
-        "message": "도로 원자료가 없어 거리를 산출하지 않았습니다." if status != "AVAILABLE" else "EPSG:5174에서 점-도로 최소거리를 계산했습니다.",
+        "message": "도로 원자료가 없어 거리를 산출하지 않았습니다." if status != "AVAILABLE" else "EPSG:5174에서 점-도로 최소 유클리드거리를 계산했습니다. 도로 원자료의 기준연도는 별도 확인이 필요합니다.",
     }
     write_json(ANALYSIS_DIR / "pond_accessibility.json", summary)
     write_json(ANALYSIS_DIR / "accessibility_summary.json", {

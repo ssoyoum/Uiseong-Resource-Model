@@ -4,7 +4,15 @@
   "types": [
     {
       "classification_type": "D_PRESERVATION",
-      "facility_count": 427
+      "facility_count": 329
+    },
+    {
+      "classification_type": "A_CULTURE_TOURISM",
+      "facility_count": 55
+    },
+    {
+      "classification_type": "B_ECO_EDUCATION",
+      "facility_count": 43
     }
   ],
   "missing_data_policy": "DATA_NOT_AVAILABLE"

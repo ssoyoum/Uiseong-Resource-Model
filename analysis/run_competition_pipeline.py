@@ -19,6 +19,7 @@ from classify_ponds import run as run_classification
 from build_competition_outputs import run as build_outputs
 from generate_figures import run as generate_figures
 from validate_outputs import run as validate_outputs
+from validate_submission_claims import run as validate_submission_claims
 
 
 def main() -> None:
@@ -40,9 +41,13 @@ def main() -> None:
     build_outputs()
     print("[9/10] figures")
     generate_figures()
-    print("[10/10] validation")
+    print("[10/11] validation")
     report = validate_outputs()
-    print(f"pipeline complete: {report['status']}")
+    print(f"validation: {report['status']}")
+    print("[11/11] submission claim validation")
+    claims = validate_submission_claims()
+    print(f"submission claims: {claims['status']}")
+    print(f"pipeline complete: {'PASS' if report['status'] == 'PASS' and claims['status'] == 'PASS' else 'FAIL'}")
 
 
 if __name__ == "__main__":
