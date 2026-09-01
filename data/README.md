@@ -82,8 +82,13 @@ python analysis/run_competition_pipeline.py
 - `data/analysis/sgis_indicator_availability.json`: SGIS 지역통계 endpoint별 의성군 가용성 점검 결과
 - `data/analysis/sgis_catchment_status.json`: SGIS 생활권역 수집 건수와 결측 상태
 - `data/analysis/sgis_policy_evidence.csv/json`: SGIS 도달인구와 기존 의성 자료를 연결한 비가중 정책 근거표
+- `data/analysis/sgis_policy_comparison.csv/json`: SGIS 연결 전후 정책 검토 근거의 범위·결측·해석 차이 비교표
+- `data/analysis/submission_visualization_manifest.json`: 제출용 시각화 파일·출처·상태·해석 주의점 목록
 - `data/analysis/policy_candidate_review_template.csv`: SGIS 근거 후보의 관리상태·보존가치·현장조사 수동 입력표
+- `data/analysis/classification_reason_review.csv/json`: 규칙기반 분류근거의 유형별 표본 검토 결과
 - `data/analysis/competition/`: 공모전 제출·검토용 요약 JSON
+- `docs/submission/sgis-uiseong-submission-report.md`: 검증 수치·정책 해석·데이터 품질 한계를 묶은 제출 보고서 초안(로컬 전용)
+- `docs/submission/sgis-uiseong-excellent-use-case-submission.docx`: SGIS 활용 우수사례 공모전 5페이지 제출 양식 문서(로컬 전용)
 - `data/geojson/`: 시설·인구·Buffer·분류 지도 출력
 - `analysis/figures/`: 자동 생성 PNG 그림
 

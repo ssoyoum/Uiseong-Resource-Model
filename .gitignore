@@ -6,6 +6,10 @@ data/source/
 data/raw/**
 !data/raw/**/
 vworld/
+# Competition submission artifacts are kept locally and are not part of the public repository.
+submission/
+docs/submission/
+docs/drafts/
 .env
 .env.*
 !.env.example
