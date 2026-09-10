@@ -225,6 +225,8 @@ def write_report(output: pd.DataFrame, summary: dict) -> None:
         "",
         "이 문서는 SGIS 생활권역 인구와 기존 의성군 못·읍면·주변환경 자료를 연결한 기술통계형 정책 검토표다. 자동 추천점수나 정책 확정 결과가 아니다.",
         "",
+        "SGIS 연결 전후에 정책 검토 근거의 범위와 해석이 어떻게 달라지는지는 [`sgis-policy-comparison.md`](sgis-policy-comparison.md)에서 별도로 비교한다.",
+        "",
         f"- 전체 못: `{summary['facility_count']}`개",
         f"- 좌표 품질 검증 후 고유 좌표: `{summary['eligible_unique_coordinate_points']}`개",
         f"- 10분 인구 확보 고유 좌표: `{summary['eligible_with_10min_population']}`개",
