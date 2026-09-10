@@ -356,4 +356,5 @@ def build():
 
 
 if __name__ == "__main__":
-    build()
+    from build_sgis_final_document import build as build_final
+    build_final()
