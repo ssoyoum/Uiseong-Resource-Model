@@ -1,13 +1,35 @@
 {
   "status": "PASS",
-  "pass_count": 17,
+  "pass_count": 65,
   "warn_count": 0,
   "fail_count": 0,
   "documents_checked": [
     "README.md",
     "TODO.md",
     "docs/methodology.md",
-    "docs/implementation-status.md"
+    "docs/implementation-status.md",
+    "docs/submission/sgis-uiseong-final-draft.md"
+  ],
+  "link_documents_checked": [
+    "AGENTS.md",
+    "docs/classification-reason-review.md",
+    "docs/coordinate-correction.md",
+    "docs/data-quality.md",
+    "docs/implementation-status.md",
+    "docs/methodology.md",
+    "docs/policy-matching-model-guideline.md",
+    "docs/sgis-api.md",
+    "docs/sgis-catchment-analysis.md",
+    "docs/sgis-policy-comparison.md",
+    "docs/sgis-policy-evidence.md",
+    "docs/sgis-uiseong-policy-proposal-guideline.md",
+    "docs/submission/policy-review-context-detail.md",
+    "docs/submission/sgis-uiseong-final-draft.md",
+    "docs/submission/sgis-uiseong-submission-report.md",
+    "docs/vworld-competition-development-guideline.md",
+    "README.md",
+    "TODO.md",
+    "WORKLOG.md"
   ],
   "checks": [
     {
@@ -133,7 +155,454 @@
       "details": {
         "match_count": 0
       }
+    },
+    {
+      "name": "local_sgis_submission_present",
+      "status": "PASS",
+      "details": {
+        "path": "docs/submission/sgis-uiseong-final-draft.md",
+        "required": false
+      }
+    },
+    {
+      "name": "sgis_submission:table:분석 목록",
+      "status": "PASS",
+      "details": {
+        "expected": 427,
+        "actual": [
+          427
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:table:좌표 품질 조건 통과",
+      "status": "PASS",
+      "details": {
+        "expected": 380,
+        "actual": [
+          380
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:table:5분 인구 확보",
+      "status": "PASS",
+      "details": {
+        "expected": 175,
+        "actual": [
+          175
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:table:10분 인구 확보",
+      "status": "PASS",
+      "details": {
+        "expected": 190,
+        "actual": [
+          190
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:table:5분·10분 모두 확보",
+      "status": "PASS",
+      "details": {
+        "expected": 175,
+        "actual": [
+          175
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:table:10분 인구 미확보",
+      "status": "PASS",
+      "details": {
+        "expected": 190,
+        "actual": [
+          190
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:table:현장 확인 필요",
+      "status": "PASS",
+      "details": {
+        "expected": 47,
+        "actual": [
+          47
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:table:SGIS 10분 인구 미확보",
+      "status": "PASS",
+      "details": {
+        "expected": 190,
+        "actual": [
+          190
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:table:공동체 지원 검토",
+      "status": "PASS",
+      "details": {
+        "expected": 53,
+        "actual": [
+          53
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:table:청년참여 검토",
+      "status": "PASS",
+      "details": {
+        "expected": 43,
+        "actual": [
+          43
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:table:접근·도달 검토",
+      "status": "PASS",
+      "details": {
+        "expected": 20,
+        "actual": [
+          20
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:table:맥락 참고",
+      "status": "PASS",
+      "details": {
+        "expected": 74,
+        "actual": [
+          74
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:table:보존·기록형",
+      "status": "PASS",
+      "details": {
+        "expected": 329,
+        "actual": [
+          329
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:table:문화·관광형",
+      "status": "PASS",
+      "details": {
+        "expected": 55,
+        "actual": [
+          55
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:table:생태·교육형",
+      "status": "PASS",
+      "details": {
+        "expected": 43,
+        "actual": [
+          43
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:facility_id_joins",
+      "status": "PASS",
+      "details": {
+        "facility_count": 427
+      }
+    },
+    {
+      "name": "sgis_submission:summary_cohorts",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "sgis_submission:saved_response_values",
+      "status": "PASS",
+      "details": {
+        "response_rows": 854
+      }
+    },
+    {
+      "name": "sgis_submission:population_2024",
+      "status": "PASS",
+      "details": {
+        "expected": 48690.0,
+        "actual": [
+          48690.0
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:population_2025",
+      "status": "PASS",
+      "details": {
+        "expected": 47902.0,
+        "actual": [
+          47902.0
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:population_decrease",
+      "status": "PASS",
+      "details": {
+        "expected": 788.0,
+        "actual": [
+          788.0
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:road_objects",
+      "status": "PASS",
+      "details": {
+        "expected": 483.0,
+        "actual": [
+          483.0
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:facility_objects",
+      "status": "PASS",
+      "details": {
+        "expected": 68.0,
+        "actual": [
+          68.0
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:reach_flag",
+      "status": "PASS",
+      "details": {
+        "expected": 49.0,
+        "actual": [
+          49.0
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:gain_flag",
+      "status": "PASS",
+      "details": {
+        "expected": 44.0,
+        "actual": [
+          44.0
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:flag_overlap",
+      "status": "PASS",
+      "details": {
+        "expected": 42.0,
+        "actual": [
+          42.0
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:reach_threshold",
+      "status": "PASS",
+      "details": {
+        "expected": 348.0,
+        "actual": [
+          348.0
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:gain_threshold",
+      "status": "PASS",
+      "details": {
+        "expected": 282.5,
+        "actual": [
+          282.5
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:raw_requests",
+      "status": "PASS",
+      "details": {
+        "expected": 854.0,
+        "actual": [
+          854.0
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:raw_missing",
+      "status": "PASS",
+      "details": {
+        "expected": 399.0,
+        "actual": [
+          399.0
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:raw_5min",
+      "status": "PASS",
+      "details": {
+        "expected": 220.0,
+        "actual": [
+          220.0
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:raw_10min",
+      "status": "PASS",
+      "details": {
+        "expected": 235.0,
+        "actual": [
+          235.0
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:unlocated_rows",
+      "status": "PASS",
+      "details": {
+        "expected": 384.0,
+        "actual": [
+          384.0
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:unlocated_facilities",
+      "status": "PASS",
+      "details": {
+        "expected": 192.0,
+        "actual": [
+          192.0
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:no_population_rows",
+      "status": "PASS",
+      "details": {
+        "expected": 15.0,
+        "actual": [
+          15.0
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:unique_coordinates",
+      "status": "PASS",
+      "details": {
+        "expected": 386.0,
+        "actual": [
+          386.0
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:review_template_ids",
+      "status": "PASS",
+      "details": {
+        "candidate_count": 116
+      }
+    },
+    {
+      "name": "sgis_submission:review_count",
+      "status": "PASS",
+      "details": {
+        "expected": 116.0,
+        "actual": [
+          116.0
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:review_pending",
+      "status": "PASS",
+      "details": {
+        "scope": "Recorded review status; not proof of completed field review"
+      }
+    },
+    {
+      "name": "sgis_submission:evidence_thresholds",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "sgis_submission:source_years",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "sgis_submission:scatter_cohort",
+      "status": "PASS",
+      "details": {
+        "expected_count": 175,
+        "actual_count": 175,
+        "unexpected_ids": [],
+        "missing_ids": []
+      }
+    },
+    {
+      "name": "sgis_submission:figure_input_and_output_hashes",
+      "status": "PASS",
+      "details": {
+        "stale_files": []
+      }
+    },
+    {
+      "name": "sgis_submission:validation_PASS",
+      "status": "PASS",
+      "details": {
+        "expected": 16.0,
+        "actual": [
+          16.0
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:validation_WARN",
+      "status": "PASS",
+      "details": {
+        "expected": 1.0,
+        "actual": [
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:validation_FAIL",
+      "status": "PASS",
+      "details": {
+        "expected": 0.0,
+        "actual": [
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "sgis_submission:markdown_paths_and_url_format",
+      "status": "PASS",
+      "details": {
+        "links_checked": 61,
+        "errors": [],
+        "scope": "Local paths and external URL format; no HTTP or heading-anchor check"
+      }
     }
   ],
-  "note": "미확보 데이터는 DATA_NOT_AVAILABLE 상태를 유지하는지 함께 점검합니다."
+  "note": "명시된 수치·표·그림 입력 해시·시설 ID·로컬 경로·URL 형식을 검사합니다. 모든 자유서술의 사실성, 외부 URL 응답, 제목 앵커, 현장 정확도, 정책효과, DOCX 페이지 수는 검증 범위가 아닙니다."
 }
