@@ -71,6 +71,33 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   });
   let allPondFeatures = [];
+  let policyEvidenceMap = {};
+  let activePolicyFilter = 'all';
+  let activeRegionFilter = 'all';
+  let activeCapacityFilter = 'all';
+  let activeClassificationFilter = 'all';
+  let activeSearch = '';
+  let activeSgisMapFilter = 'all';
+  let activeRoadMapFilter = 'all';
+  let policyConfig = {};
+  let mapReady = false;
+  const selectedIds = { sgis: null, road: null };
+  const dashboardModule = import('./def-dashboard.mjs');
+  const markerById = new Map();
+  const pondId = feature => String(feature.properties?.pond_id || feature.properties?.id || '');
+  const sgisMapLabels = {
+    all: 'D 전체 시설',
+    reach: 'D 10분 인구 상위',
+    gain: 'D 증가폭 상위',
+    both: 'D 두 조건 동시 충족',
+  };
+  const roadMapLabels = {
+    all: 'F 전체 거리',
+    0: 'F 100m 이하',
+    1: 'F 100m 초과–300m 이하',
+    2: 'F 300m 초과–500m 이하',
+    3: 'F 500m 초과',
+  };
 
   // Leaflet의 레이어 컨트롤은 내부적으로 addLayer()/removeLayer()를 사용한다.
   // 체크하면 레이어를 지도에 추가하고, 해제하면 지도에서 제거한다.
@@ -137,11 +164,21 @@ document.addEventListener('DOMContentLoaded', () => {
   function popupHtml(feature) {
     const properties = feature.properties || {};
     const [lng, lat] = feature.geometry.coordinates;
+    const evidence = policyEvidenceMap[pondId(feature)] || {};
+    const context = policyConfig[evidence.policy_review_context];
+    const value = (v, unit = '') => v !== null && v !== undefined && String(v).trim() !== '' && Number.isFinite(Number(v)) ? `${formatNumber(v)}${unit}` : '미확보';
 
     return `
       <div class="popup-card">
         <h4>${escapeHtml(properties.address || '못')}</h4>
+        <p class="map-context-label" style="--context-color:${context?.color || '#9ca3af'}">${escapeHtml(context?.label || '정책 자료 미확보')} · ID ${escapeHtml(pondId(feature))}</p>
         <table style="width:100%; border-collapse:collapse;">
+          <tr><th>SGIS 5분 인구</th><td>${value(evidence.sgis_population_5min, '명')}</td></tr>
+          <tr><th>SGIS 10분 인구</th><td>${value(evidence.sgis_population_10min, '명')}</td></tr>
+          <tr><th>도로 직선거리</th><td>${value(properties.distance_to_road_m, 'm')}</td></tr>
+          <tr><th>1km 주변시설</th><td>${value(properties.facility_count_1000m, '개')}</td></tr>
+          <tr><th>규칙기반 활용유형</th><td>${escapeHtml(properties.classification_label)}</td></tr>
+          <tr><th>활용유형 판정 근거</th><td>${escapeHtml(properties.classification_reason || '미확보')}</td></tr>
           <tr>
             <td style="padding:2px; color:#666;">지역</td>
             <td style="padding:2px; font-weight:bold;">${escapeHtml(properties.region)}</td>
@@ -155,6 +192,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <td style="padding:2px;">${lat.toFixed(5)}, ${lng.toFixed(5)}</td>
           </tr>
         </table>
+        <div class="popup-review-note"><strong>정책 검토 근거</strong><p>${escapeHtml(context?.rule || '정책 검토 자료 미확보')}</p><strong>다음 확인</strong><p>${escapeHtml(context?.next || '원자료와 현장 상태를 추가 확인합니다.')}</p></div>
+        <small>출처: SGIS 2024년 기준 응답 · VWorld 저장 공간자료 · 읍·면 인구 ${escapeHtml(properties.emd_year || '2025')}년. 생활권 인구는 실제 방문객 수가 아닙니다.</small>
       </div>
     `;
   }
@@ -169,13 +208,14 @@ document.addEventListener('DOMContentLoaded', () => {
           radius: Math.max(5, Math.min(11, capacity * 0.55)),
           color: '#ffffff',
           weight: 1.5,
-          fillColor: pondColor(capacity),
+          fillColor: policyConfig[policyEvidenceMap[pondId(feature)]?.policy_review_context]?.color || '#9ca3af',
           fillOpacity: 0.9,
         });
       },
       onEachFeature: (feature, layer) => {
         // bindPopup(): 해당 못을 클릭했을 때 상세 정보를 보여준다.
         layer.bindPopup(popupHtml(feature));
+        markerById.set(pondId(feature), layer);
       },
     });
   }
@@ -183,10 +223,123 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderPonds(features) {
     // clearLayers(): 현재 표시된 못 레이어를 비운다.
     pondLayer.clearLayers();
+    markerById.clear();
 
     // addLayer(): 새로 만든 GeoJSON 못 레이어를 그룹에 추가한다.
     pondLayer.addLayer(createPondGeoJson(features));
   }
+
+  function parseCsv(text) {
+    const rows = [];
+    let row = [], cell = '', quoted = false;
+    const source = String(text || '').replace(/^\uFEFF/, '');
+    for (let i = 0; i < source.length; i += 1) {
+      const ch = source[i];
+      if (ch === '"') {
+        if (quoted && source[i + 1] === '"') { cell += '"'; i += 1; }
+        else quoted = !quoted;
+      } else if (ch === ',' && !quoted) { row.push(cell); cell = ''; }
+      else if ((ch === '\n' || ch === '\r') && !quoted) {
+        if (ch === '\r' && source[i + 1] === '\n') i += 1;
+        row.push(cell); if (row.some((v) => v !== '')) rows.push(row); row = []; cell = '';
+      } else cell += ch;
+    }
+    row.push(cell); if (row.some((v) => v !== '')) rows.push(row);
+    const headers = rows.shift() || [];
+    return rows.map((values) => Object.fromEntries(headers.map((key, i) => [key, values[i] ?? ''])));
+  }
+
+  async function loadCsv(path) {
+    const response = await fetch(path);
+    if (!response.ok) throw new Error(`${path} fetch failed: ${response.status}`);
+    return parseCsv(await response.text());
+  }
+
+  function applyMapFilters() {
+    if (!mapReady) return;
+    const filtered = allPondFeatures.filter((feature) => {
+      const props = feature.properties || {};
+      const id = String(props.pond_id || props.id || '');
+      const evidence = policyEvidenceMap[id] || {};
+      if (Object.values(selectedIds).some(ids => ids && !ids.has(id))) return false;
+      if (activeClassificationFilter !== 'all' && props.classification_label !== activeClassificationFilter) return false;
+      if (activeSearch && !String(props.address || props.address_context || '').toLocaleLowerCase('ko').includes(activeSearch)) return false;
+      if (activePolicyFilter !== 'all' && evidence.policy_review_context !== activePolicyFilter) return false;
+      if (activeRegionFilter !== 'all' && (props.region || props.emd_name) !== activeRegionFilter) return false;
+      if (activeCapacityFilter !== 'all') {
+        const capacity = Number(props.capacity || 0);
+        if (activeCapacityFilter === 'small' && capacity >= 5) return false;
+        if (activeCapacityFilter === 'medium' && (capacity < 5 || capacity >= 10)) return false;
+        if (activeCapacityFilter === 'large' && capacity < 10) return false;
+      }
+      return true;
+    });
+    renderPonds(filtered);
+    const count = document.getElementById('filtered-count');
+    if (count) count.textContent = String(filtered.length);
+    document.querySelectorAll('[data-policy-filter]').forEach(item => item.setAttribute('aria-pressed', String(item.dataset.policyFilter === activePolicyFilter)));
+    for (const [id, value] of [['policy-context-filter', activePolicyFilter], ['region-filter', activeRegionFilter], ['classification-filter', activeClassificationFilter], ['capacity-filter', activeCapacityFilter]]) {
+      const select = document.getElementById(id);
+      if (select) [...select.options].forEach(option => { option.selected = option.value === value; });
+    }
+    const status = document.getElementById('map-analysis-status');
+    const policyLabel = policyConfig[activePolicyFilter]?.label || '전체 정책 맥락';
+    if (status) status.textContent = `${sgisMapLabels[activeSgisMapFilter]} · E ${policyLabel} · ${roadMapLabels[activeRoadMapFilter]} · ${activeRegionFilter === 'all' ? '전체 읍·면' : activeRegionFilter} · ${filtered.length}개 표시${filtered.length ? '' : ' — 조건을 해제하거나 초기화하세요.'}`;
+    const policySummary = document.getElementById('map-policy-summary');
+    if (policySummary) policySummary.textContent = `${policyLabel} · ${filtered.length}개 표시`;
+  }
+
+  function sgisIdsFor(code) {
+    if (code === 'all') return null;
+    return Object.values(policyEvidenceMap).filter((row) => {
+      const flags = String(row.policy_evidence_flags || '');
+      if (code === 'reach') return flags.includes('HIGH_10MIN_REACH');
+      if (code === 'gain') return flags.includes('HIGH_5_TO_10_EXPANSION');
+      return flags.includes('HIGH_10MIN_REACH') && flags.includes('HIGH_5_TO_10_EXPANSION');
+    }).map((row) => String(row.pond_id));
+  }
+
+  function roadIdsFor(code) {
+    if (code === 'all') return null;
+    return allPondFeatures.filter((feature) => {
+      const distance = Number(feature.properties?.distance_to_road_m ?? feature.properties?.nearest_road_m);
+      if (!Number.isFinite(distance) || distance < 0) return false;
+      if (code === '0') return distance <= 100;
+      if (code === '1') return distance > 100 && distance <= 300;
+      if (code === '2') return distance > 300 && distance <= 500;
+      return distance > 500;
+    }).map(pondId);
+  }
+
+  function setSgisMapFilter(code, notifyDashboard = true) {
+    activeSgisMapFilter = sgisMapLabels[code] ? code : 'all';
+    const ids = sgisIdsFor(activeSgisMapFilter);
+    selectedIds.sgis = ids === null ? null : new Set(ids);
+    const select = document.getElementById('sgis-map-filter');
+    if (select) select.value = activeSgisMapFilter;
+    applyMapFilters();
+    if (notifyDashboard) document.dispatchEvent(new CustomEvent('sgis:map-sgis-filter', {detail: activeSgisMapFilter}));
+  }
+
+  function setRoadMapFilter(code, notifyDashboard = true) {
+    activeRoadMapFilter = roadMapLabels[code] ? code : 'all';
+    const ids = roadIdsFor(activeRoadMapFilter);
+    selectedIds.road = ids === null ? null : new Set(ids);
+    const select = document.getElementById('road-map-filter');
+    if (select) select.value = activeRoadMapFilter;
+    applyMapFilters();
+    if (notifyDashboard) document.dispatchEvent(new CustomEvent('sgis:map-road-filter', {detail: activeRoadMapFilter}));
+  }
+
+  document.addEventListener('sgis:policy-filter', (event) => {
+    activePolicyFilter = event.detail || 'all';
+    document.querySelectorAll('[data-policy-filter]').forEach((item) => item.setAttribute('aria-pressed', String(item.dataset.policyFilter === activePolicyFilter)));
+    applyMapFilters();
+  });
+  document.addEventListener('sgis:region-filter', (event) => {
+    activeRegionFilter = event.detail || 'all';
+    applyMapFilters();
+  });
 
   async function loadJson(path) {
     const response = await fetch(path);
@@ -535,10 +688,75 @@ document.addEventListener('DOMContentLoaded', () => {
       map.setMaxBounds(bounds.pad(0.06));
 
       // 5. 변환·검증이 끝난 못 GeoJSON을 읽는다.
-      const pondsGeoJson = await loadJson('data/geojson/ponds.geojson');
+      const pondsGeoJson = await loadJson('data/geojson/ponds_classified.geojson');
       allPondFeatures = Array.isArray(pondsGeoJson.features)
         ? pondsGeoJson.features
         : [];
+      const filter = document.getElementById('capacity-filter');
+      try {
+        const evidenceRows = await loadCsv('data/analysis/sgis_policy_evidence.csv');
+        policyEvidenceMap = Object.fromEntries(evidenceRows.map((row) => [String(row.pond_id || row.id || ''), row]));
+      } catch (error) {
+        console.warn('SGIS policy evidence unavailable', error);
+      }
+      policyConfig = (await dashboardModule).POLICY;
+      // 핵심 시설·정책 데이터가 준비되는 즉시 필터를 활성화한다.
+      // 부가 레이어를 읽는 동안 사용자가 조작해도 선택 상태가 유실되지 않는다.
+      mapReady = true;
+      document.getElementById('map')?.setAttribute('data-ready', 'true');
+      const policyCodes = [['all', {label: '전체', color: '#475569'}], ...Object.entries(policyConfig)];
+      const contextCounts = Object.values(policyEvidenceMap).reduce((counts, row) => {
+        counts[row.policy_review_context] = (counts[row.policy_review_context] || 0) + 1;
+        return counts;
+      }, {});
+      const policySelect = document.getElementById('policy-context-filter');
+      if (policySelect) {
+        policySelect.innerHTML = policyCodes.map(([code, config]) => `<option value="${code}">${escapeHtml(config.label)} (${code === 'all' ? allPondFeatures.length : contextCounts[code] || 0}개)</option>`).join('');
+        policySelect.addEventListener('change', event => document.dispatchEvent(new CustomEvent('sgis:policy-filter', {detail: event.target.value})));
+      }
+      document.getElementById('classification-filter')?.addEventListener('change', event => { activeClassificationFilter = event.target.value; applyMapFilters(); });
+      document.getElementById('pond-search-input')?.addEventListener('input', event => { activeSearch = event.target.value.trim().toLocaleLowerCase('ko'); applyMapFilters(); });
+      document.getElementById('sgis-map-filter')?.addEventListener('change', event => setSgisMapFilter(event.target.value));
+      document.getElementById('road-map-filter')?.addEventListener('change', event => setRoadMapFilter(event.target.value));
+      const legend = document.querySelector('.map-legend-row');
+      if (legend) {
+        legend.setAttribute('role', 'group');
+        legend.setAttribute('aria-label', '정책 검토 맥락 지도 범례');
+        legend.innerHTML = `<div class="map-legend-heading"><strong>마커 색상 · 분석 E</strong><span>규칙기반 정책 검토 맥락을 선택하세요</span></div><div class="map-legend-items">${policyCodes.map(([code, config]) => `<button type="button" class="legend-badge-item" data-policy-filter="${code}" style="--context-color:${config.color}" aria-pressed="${code === activePolicyFilter}"><i class="dot" style="background:${config.color}" aria-hidden="true"></i><span>${escapeHtml(config.label)}</span><strong>${code === 'all' ? allPondFeatures.length : contextCounts[code] || 0}개</strong></button>`).join('')}</div>`;
+        legend.addEventListener('click', (event) => {
+          const button = event.target.closest('[data-policy-filter]');
+          if (!button) return;
+          activePolicyFilter = activePolicyFilter === button.dataset.policyFilter ? 'all' : button.dataset.policyFilter;
+          legend.querySelectorAll('[data-policy-filter]').forEach((item) => item.setAttribute('aria-pressed', String(item.dataset.policyFilter === activePolicyFilter)));
+          applyMapFilters();
+          document.dispatchEvent(new CustomEvent('sgis:policy-filter', { detail: activePolicyFilter }));
+        });
+      }
+      const regionFilter = document.getElementById('region-filter');
+      if (regionFilter) {
+        const regions = [...new Set(allPondFeatures.map((feature) => feature.properties?.region || feature.properties?.emd_name).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'ko'));
+        regionFilter.innerHTML = '<option value="all">전체 읍·면</option>' + regions.map((region) => `<option value="${escapeHtml(region)}">${escapeHtml(region)}</option>`).join('');
+        regionFilter.addEventListener('change', (event) => { activeRegionFilter = event.target.value; applyMapFilters(); document.dispatchEvent(new CustomEvent('sgis:region-filter', { detail: activeRegionFilter })); });
+      }
+      document.getElementById('pond-search-reset')?.addEventListener('click', () => {
+        activePolicyFilter = 'all'; activeRegionFilter = 'all'; activeCapacityFilter = 'all';
+        activeClassificationFilter = 'all'; activeSearch = '';
+        activeSgisMapFilter = 'all'; activeRoadMapFilter = 'all';
+        selectedIds.sgis = null; selectedIds.road = null;
+        const search = document.getElementById('pond-search-input');
+        if (search) search.value = '';
+        if (regionFilter) regionFilter.value = 'all';
+        if (filter) filter.value = 'all';
+        const sgisMapFilter = document.getElementById('sgis-map-filter');
+        const roadMapFilter = document.getElementById('road-map-filter');
+        if (sgisMapFilter) sgisMapFilter.value = 'all';
+        if (roadMapFilter) roadMapFilter.value = 'all';
+        legend?.querySelectorAll('[data-policy-filter]').forEach((item) => item.setAttribute('aria-pressed', String(item.dataset.policyFilter === 'all')));
+        applyMapFilters();
+        document.dispatchEvent(new CustomEvent('sgis:policy-filter', { detail: 'all' }));
+        document.dispatchEvent(new CustomEvent('sgis:region-filter', { detail: 'all' }));
+        document.dispatchEvent(new CustomEvent('sgis:reset'));
+      });
 
       // 분석 C와 농업환경 분석에 사용한 농경지 Polygon을 지도에 올린다.
       const agricultureGeoJson = await loadJson('data/geojson/agricultural_areas.geojson');
@@ -546,10 +764,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const regionGeoJson = await loadJson('data/geojson/uiseong_emd.geojson');
       regionLayer.addData(regionGeoJson);
 
-      // 6~7. 의성군 지도 위에 못을 표시하고 클릭 Popup을 연결한다.
-      renderPonds(allPondFeatures);
-
-      const filter = document.getElementById('capacity-filter');
       const allOption = filter?.querySelector('option[value="all"]');
       if (allOption) {
         allOption.textContent = `의성군 내 전체 (${allPondFeatures.length}개)`;
@@ -557,18 +771,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // 기존 용량 필터는 핵심 지도 확인 뒤에도 동작하는 가장 단순한 필터다.
       filter?.addEventListener('change', (event) => {
-        const value = event.target.value;
-        const filtered = value === 'all'
-          ? allPondFeatures
-          : allPondFeatures.filter((feature) => {
-              const capacity = Number(feature.properties?.capacity || 0);
-              if (value === 'small') return capacity < 5;
-              if (value === 'medium') return capacity >= 5 && capacity < 10;
-              if (value === 'large') return capacity >= 10;
-              return true;
-            });
-        renderPonds(filtered);
+        activeCapacityFilter = event.target.value;
+        applyMapFilters();
       });
+
+      applyMapFilters();
 
       console.info(`의성군 지도 준비 완료: 경계 1개, 못 ${allPondFeatures.length}개`);
     } catch (error) {
@@ -636,4 +843,43 @@ document.addEventListener('DOMContentLoaded', () => {
   initializeScrollExperience();
   initializeMap();
   initializeAnalysis();
+  dashboardModule.then(({ initDefDashboard }) => initDefDashboard({
+    loadJson,
+    loadCsv,
+    onPolicySelect: (value) => {
+      activePolicyFilter = value || 'all';
+      document.dispatchEvent(new CustomEvent('sgis:policy-filter', { detail: activePolicyFilter }));
+    },
+    onRegionSelect: (value) => {
+      activeRegionFilter = value || 'all';
+      document.dispatchEvent(new CustomEvent('sgis:region-filter', { detail: activeRegionFilter }));
+    },
+    onSgisSelect: (ids, code = 'all') => {
+      activeSgisMapFilter = code;
+      selectedIds.sgis = ids === null ? null : new Set(ids.map(String));
+      const select = document.getElementById('sgis-map-filter');
+      if (select) select.value = code;
+      applyMapFilters();
+    },
+    onRoadSelect: (ids, code = 'all') => {
+      activeRoadMapFilter = code;
+      selectedIds.road = ids === null ? null : new Set(ids.map(String));
+      const select = document.getElementById('road-map-filter');
+      if (select) select.value = code;
+      applyMapFilters();
+    },
+    onFacilitySelect: id => {
+      const feature = allPondFeatures.find(item => pondId(item) === String(id));
+      if (!feature) return;
+      const marker = markerById.get(String(id));
+      if (marker) {
+        map.setView?.([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], 13);
+        marker.openPopup?.();
+        document.getElementById('map')?.scrollIntoView?.({behavior: 'smooth', block: 'center'});
+      } else {
+        const status = document.getElementById('map-analysis-status');
+        if (status) status.textContent = `못 ${id}는 다른 지도 조건에서 제외되어 있습니다. 초기화 후 선택하세요.`;
+      }
+    },
+  })).catch((error) => console.error('D/E/F dashboard load failed', error));
 });
