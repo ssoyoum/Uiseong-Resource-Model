@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "paired_count": 175,
+  "extreme_value": {
+    "pond_id": "474",
+    "address": "단북면 노연리 348-2유",
+    "coordinate_group_size": 1,
+    "coordinate_validation": "RELIABLE_POINT",
+    "sgis_population_5min": 2298.0,
+    "sgis_population_10min": 3877.0,
+    "sgis_area_5min_m2": 2002500.0,
+    "sgis_area_10min_m2": 8255625.0
+  },
+  "raw_response_match": true,
+  "excluded_due_to_magnitude": 0,
+  "decision": "Retain the maximum; x-axis log scale; annotate ID. No evidence of transcription error or duplicate coordinate.",
+  "causal_limit": "The saved area and population confirm the high statistic, but do not identify which residential area caused it. No causal spatial explanation is asserted.",
+  "mean_5min_all": 91.07428571428571,
+  "mean_5min_without_max_sensitivity_only": 78.39080459770115,
+  "median_5min_all": 53.0,
+  "source_hashes": {
+    "data\\analysis\\sgis_catchment_analysis.csv": "1b4073235395d44b186da3d59b1fdfdeeb3972934853b763d6fc6e0ec03eeea9",
+    "data\\processed\\population\\sgis_drive_population.csv": "2526e89e134cb42269a471d73c8981450b45ca0c0cb3061d723b10f1f3067c56"
+  }
+}
