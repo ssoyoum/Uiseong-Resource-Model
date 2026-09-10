@@ -1,5 +1,14 @@
 # WORKLOG
 
+## 2026-09-09
+
+- 사용자 제공 SGIS 심사기준(충실성 30·효과성 30·확산가능성 30·창의성 10)을 기준으로 로컬 최종 원고 `docs/submission/sgis-uiseong-final-draft.md` 수정. SGIS 활용 전후 비교, 연구·정책검토 준비 성과, 지역별 재사용·변경사항을 보강하고 상세 분류·검증은 별첨으로 분리.
+- 저장된 SGIS 응답과 기존 원자료로 재분석: 전체 427개, 좌표 조건 통과 380개, 양쪽 인구 비교 175개, 현장검토 양식 116개를 재확인. 신규 API 수집·좌표 추정·현장검토 결과 입력은 수행하지 않음.
+- `validate_submission_claims.py`에 실제 최종 초안과 `--require-submission` 추가. `validate_sgis_submission.py`에서 표·주요 수치, SGIS 원응답 값, 그림의 시설 ID·입출력 해시, 로컬 링크·URL 형식을 검사. 제출근거 검증 65 PASS / 0 WARN / 0 FAIL, 회귀 테스트 5개 통과. 자동검증은 모든 자유서술·정책효과·외부 URL 응답·DOCX 페이지 수 검증을 의미하지 않음.
+- 제출 그림 3개 재생성·육안 확인. 산점도는 좌표 조건을 통과하고 5분·10분 인구가 모두 확보된 175개 ID만 사용. SGIS 읍면 그래프의 한글 폰트 설정 및 정책 근거 문서 재생성 시 비교문서 링크 보존을 보완.
+- 전체 파이프라인 PASS; 공간 검증 16 PASS / 1 WARN / 0 FAIL(중복좌표). 원자료 출처·기준연도·이용조건의 미확인 사항은 유지. 기존 사용자 Web GIS 변경과 루트 원자료는 편집·커밋하지 않음.
+- 다음 작업: 이번 Markdown 원고를 제출 서식에 반영하고 5쪽 본문·별첨을 실제 렌더링으로 확인. 기존 DOCX는 이전 편집본이며 이번 수정 내용·페이지 검증이 반영되지 않았음. 좌표·현장자료·타 지역 재현 확인도 남아 있음.
+
 ## 2026-09-01
 
 - Submission artifacts are now local-only: final DOCX and Markdown draft are stored under `docs/submission/`, ignored by Git. Reproducible analysis code, validation outputs, and the visualization manifest remain public repository candidates.

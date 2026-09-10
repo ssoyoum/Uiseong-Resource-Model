@@ -1,6 +1,6 @@
 # 인구감소지역 유휴공간 정책매칭 모델 TODO
 
-최종 확인일: 2026-09-01 09:07:22 KST
+최종 확인일: 2026-09-09 KST
 
 > 기존 VWorld 공모전 데이터 확보 항목은 아래에 이력으로 보존한다. 현재 우선순위는 전국 전수분석이 아닌 SGIS 공모전용 의성 Case Study다. 상세 방향은 [`docs/sgis-uiseong-policy-proposal-guideline.md`](docs/sgis-uiseong-policy-proposal-guideline.md)를 따른다. 이전의 전국 정책매칭 확장안은 범위 축소로 보류한다.
 
@@ -19,6 +19,8 @@
 - [x] 공모전 지도·그래프 최종 제작 (`docs/submission/sgis-uiseong-submission-report.md`의 시각화 목록)
 - [x] 제출 보고서 작성 (`docs/submission/sgis-uiseong-submission-report.md`, `docs/submission/sgis-uiseong-excellent-use-case-submission.docx`; 로컬 전용)
 - [x] 제출 수치 자동 검증
+- [x] SGIS 심사기준에 맞춘 최종 Markdown 원고 수정 및 실제 초안 포함 제출근거 65개 검증 (`docs/submission/sgis-uiseong-final-draft.md`; 로컬 전용)
+- [ ] 수정 원고를 Word 제출 서식에 반영하고 본문 5쪽·별첨의 실제 렌더링 확인 (기존 DOCX는 이전 편집본)
 
 첫 화면의 상위 작업은 제출에 직접 영향을 주는 묶음만 보여준다. 외부 자료가 필요한 세부 항목과 완료된 검증 이력은 아래 접힌 목록에서 유지한다.
 
