@@ -167,6 +167,8 @@ def correlation(frame: pd.DataFrame, x: str, y: str) -> dict[str, float | int | 
 
 
 def make_figures(frame: pd.DataFrame) -> list[str]:
+    plt.rcParams["font.family"] = ["Malgun Gothic", "DejaVu Sans"]
+    plt.rcParams["axes.unicode_minus"] = False
     FIGURES_DIR.mkdir(parents=True, exist_ok=True)
     outputs: list[str] = []
     point_frame = frame[frame["sgis_analysis_eligible"]].drop_duplicates(
