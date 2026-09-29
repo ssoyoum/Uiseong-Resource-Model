@@ -795,8 +795,10 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', updateProgress);
     updateProgress();
 
+    // Tall sections may never reach an intersection threshold on narrow screens.
+    // Keep analysis and map content visible; reveal only compact cards.
     const revealTargets = document.querySelectorAll(
-      '.section > .container, .career-card, .learning-card, .outcome-card, .analysis-block'
+      '.career-card, .learning-card, .outcome-card'
     );
     revealTargets.forEach((target, index) => {
       target.classList.add('scroll-reveal');

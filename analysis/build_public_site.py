@@ -23,6 +23,14 @@ SOURCE_FILES = {
     'data/manifests/population_sources.csv',
     'data/analysis/validation_report.json',
 }
+PUBLIC_VENDOR_FILES = {
+    'vendor/leaflet/LICENSE',
+    'vendor/leaflet/images/layers.png',
+    'vendor/leaflet/images/layers-2x.png',
+    'vendor/leaflet/images/marker-icon.png',
+    'vendor/leaflet/images/marker-icon-2x.png',
+    'vendor/leaflet/images/marker-shadow.png',
+}
 
 
 class PageReferences(HTMLParser):
@@ -100,7 +108,7 @@ def check_saved_results():
 def site_files():
     parser = PageReferences()
     parser.feed((ROOT / 'index.html').read_text(encoding='utf-8'))
-    files = {'index.html', 'app.js', 'styles.css', 'def-dashboard.mjs', '.nojekyll', *SOURCE_FILES}
+    files = {'index.html', 'app.js', 'styles.css', 'def-dashboard.mjs', '.nojekyll', *SOURCE_FILES, *PUBLIC_VENDOR_FILES}
     for reference in parser.references:
         parsed = urlsplit(reference)
         if parsed.scheme or parsed.netloc:

@@ -2770,3 +2770,94 @@ nav a.is-active {
   .public-metrics > div { padding: 1rem; }
   .public-actions { gap: .75rem; }
 }
+
+/* SGIS policy model: clear entry point, case evidence, and mobile navigation. */
+body { font-family: 'Noto Sans KR', 'Malgun Gothic', 'Apple SD Gothic Neo', 'Segoe UI', sans-serif; }
+.container { width: min(1180px, calc(100% - 3rem)); }
+.site-header { background: rgba(255, 253, 248, .96); }
+.nav { gap: 2rem; }
+.brand { display: inline-flex; align-items: baseline; gap: .45rem; flex-shrink: 0; color: #194737; font-size: 1.05rem; font-weight: 800; letter-spacing: -.03em; }
+.brand span { color: var(--text); font-size: .87rem; font-weight: 650; }
+.site-header nav { gap: .3rem; }
+.site-header nav a { padding: .45rem .65rem; border-radius: 7px; border-bottom: 0; color: #475650; font-size: .84rem; white-space: nowrap; }
+.site-header nav a:hover, .site-header nav a.is-active { color: #174b35; background: #e6f0e7; }
+.site-header a:focus-visible, .public-actions a:focus-visible, .policy-hero-card a:focus-visible, .model-quicklinks a:focus-visible { outline: 3px solid #c58b22; outline-offset: 3px; }
+
+.about-hero { padding: clamp(3rem, 6vw, 5.3rem) 0 2.4rem; background: radial-gradient(circle at 78% 14%, #d7e8dc 0, transparent 38%), linear-gradient(145deg, #f3f8f0 0%, #f8f4eb 100%); }
+.about-hero .container { text-align: left; }
+.policy-hero-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(330px, .85fr); gap: clamp(2rem, 5vw, 5.5rem); align-items: center; }
+.about-hero .section-kicker { display: inline-flex; align-items: center; gap: .55rem; padding: .45rem .75rem; border: 1px solid #bdd7c4; border-radius: 999px; background: #edf5ed; font-size: .73rem; letter-spacing: .035em; }
+.about-hero h1 { max-width: 790px; margin: .75rem 0 1.1rem; color: #153e31; font-size: clamp(2.55rem, 4.5vw, 4.35rem); line-height: 1.19; letter-spacing: -.065em; word-break: keep-all; }
+.about-hero h1 em { color: #27785b; font-style: normal; }
+.hero-model-name { max-width: 620px; margin: 0 0 1rem; color: #235e49; font-size: clamp(.95rem, 1.5vw, 1.13rem); font-weight: 700; line-height: 1.55; word-break: keep-all; }
+.about-hero .intro-description { max-width: 615px; margin: 0; color: #45574e; font-size: .97rem; line-height: 1.9; word-break: keep-all; }
+.about-hero .public-actions { margin: 1.7rem 0 0; gap: .65rem; }
+.public-button { justify-content: center; gap: 1rem; border-radius: 8px; box-shadow: 0 4px 11px rgba(20, 63, 48, .12); }
+.public-button.secondary { background: rgba(255, 255, 255, .74); box-shadow: none; }
+.policy-hero-card { padding: clamp(1.4rem, 3vw, 2rem); border: 1px solid #1b503d; border-radius: 18px; background: linear-gradient(160deg, #174b39, #123c32 75%); color: #fff; box-shadow: 0 24px 48px rgba(17, 58, 44, .18); }
+.policy-card-top { display: flex; justify-content: space-between; gap: 1rem; color: #c9e3d2; font-size: .7rem; font-weight: 650; letter-spacing: .05em; }
+.policy-card-top span:first-child { color: #ffdc8c; font-weight: 800; }
+.policy-hero-card h2 { margin: 1.65rem 0 1.2rem; color: #fff; font-size: clamp(1.65rem, 2.5vw, 2rem); line-height: 1.4; letter-spacing: -.045em; }
+.policy-steps { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
+.policy-steps li { display: flex; gap: .9rem; padding: .9rem 0; border-top: 1px solid rgba(255,255,255,.18); }
+.policy-steps li > span { color: #e9bd63; font-size: .78rem; font-weight: 800; font-variant-numeric: tabular-nums; }
+.policy-steps div { display: grid; gap: .15rem; }
+.policy-steps strong { font-size: .94rem; font-weight: 700; }
+.policy-steps small { color: #c9ded1; font-size: .78rem; line-height: 1.6; }
+.policy-hero-card > a { display: flex; justify-content: space-between; margin-top: 1.1rem; padding: .85rem 1rem; border: 1px solid rgba(255,255,255,.28); border-radius: 7px; color: #fff; font-size: .84rem; font-weight: 700; text-decoration: none; }
+.policy-hero-card > a:hover { background: rgba(255,255,255,.12); }
+.about-hero .public-metrics { max-width: none; margin-top: clamp(2rem, 4vw, 3rem); background: transparent; border: 1px solid #d4e3d6; border-radius: 12px; gap: 0; box-shadow: 0 10px 30px rgba(34, 68, 52, .07); }
+.about-hero .public-metrics > div { gap: .15rem; padding: 1.1rem 1.4rem; background: rgba(255,255,255,.8); border-right: 1px solid #e1e9e0; }
+.about-hero .public-metrics > div:last-child { border-right: 0; }
+.about-hero .public-metrics strong { color: #1b6248; font-size: 2rem; letter-spacing: -.04em; }
+.about-hero .public-metrics > div > span { color: #52645a; font-size: .78rem; font-weight: 600; }
+.about-hero .public-data-note { max-width: none; margin: .85rem 0 0; color: #52645a; font-size: .77rem; line-height: 1.65; }
+
+.project-intro-section { padding-top: 4.5rem; padding-bottom: 4.5rem; background: #f9faf7; }
+.policy-section-heading { display: flex; justify-content: space-between; align-items: end; gap: 2rem; margin-bottom: 1.5rem; }
+.policy-section-heading h2 { margin: 0; color: #183e31; font-size: clamp(1.8rem, 3vw, 2.55rem); line-height: 1.38; letter-spacing: -.04em; word-break: keep-all; }
+.policy-section-heading > p { max-width: 330px; margin: 0 0 .25rem; color: #56665d; font-size: .9rem; line-height: 1.75; word-break: keep-all; }
+.model-stage-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .9rem; }
+.model-stage-grid article { padding: 1.55rem; border: 1px solid #d7e3d8; border-radius: 12px; background: #fff; box-shadow: 0 5px 17px rgba(23, 66, 47, .035); }
+.model-stage-grid article > span { color: #a26c16; font-size: .76rem; font-weight: 800; }
+.model-stage-grid h3 { margin: .9rem 0 .6rem; color: #184634; font-size: 1.14rem; }
+.model-stage-grid p { margin: 0; color: #58675e; font-size: .85rem; line-height: 1.8; word-break: keep-all; }
+.model-evidence-note { display: grid; grid-template-columns: 150px 1fr; gap: 1.3rem; margin-top: 1.2rem; padding: 1.15rem 1.35rem; border-left: 3px solid #c68d34; background: #f6f2e8; }
+.model-evidence-note strong { color: #70511e; font-size: .85rem; }
+.model-evidence-note p { margin: 0; color: #4e584f; font-size: .84rem; line-height: 1.8; word-break: keep-all; }
+.model-evidence-note a { color: #185c42; text-underline-offset: 3px; }
+.model-quicklinks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .9rem; margin-top: 1.2rem; }
+.model-quicklinks a { display: flex; justify-content: space-between; gap: .5rem; padding: .85rem 1rem; border: 1px solid #d8e2d8; border-radius: 8px; color: #20513d; background: #fff; font-size: .78rem; text-decoration: none; }
+.model-quicklinks a:hover { border-color: #7aab8b; background: #edf5ed; }
+.model-quicklinks span { color: #607266; }
+#project, #webgis, #analysis-d, #analysis-e, #analysis-f, #archive { scroll-margin-top: 90px; }
+.analysis-def-block .def-panel { box-shadow: 0 4px 18px rgba(33, 62, 44, .045); }
+.analysis-def-block .def-heading h3 { color: #164a36; }
+
+@media (max-width: 900px) {
+  .policy-hero-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .policy-hero-card { max-width: 680px; }
+  .policy-section-heading { align-items: start; flex-direction: column; gap: .8rem; }
+  .policy-section-heading > p { max-width: 660px; }
+}
+@media (max-width: 800px) {
+  .site-header .nav { display: block; padding-top: .55rem; }
+  .site-header nav { display: flex; overflow-x: auto; margin-top: .3rem; padding-bottom: .4rem; scrollbar-width: thin; }
+  .site-header nav a { flex-shrink: 0; }
+  .model-stage-grid { grid-template-columns: 1fr; }
+  #project, #webgis, #analysis-d, #analysis-e, #analysis-f, #archive { scroll-margin-top: 120px; }
+}
+@media (max-width: 600px) {
+  .container { width: min(100% - 2rem, 1180px); }
+  .about-hero { padding-top: 2.7rem; }
+  .about-hero h1 { font-size: clamp(2.25rem, 9vw, 3.1rem); }
+  .about-hero .public-actions { display: grid; grid-template-columns: 1fr; }
+  .about-hero .public-metrics > div { padding: .85rem; }
+  .about-hero .public-metrics > div:nth-child(2) { border-right: 0; }
+  .about-hero .public-metrics > div:nth-child(-n+2) { border-bottom: 1px solid #e1e9e0; }
+  .about-hero .public-metrics strong { font-size: 1.6rem; }
+  .policy-card-top { flex-wrap: wrap; }
+  .policy-hero-card h2 { margin-top: 1rem; }
+  .model-evidence-note { grid-template-columns: 1fr; gap: .35rem; }
+  .model-quicklinks { grid-template-columns: 1fr; gap: .5rem; }
+}

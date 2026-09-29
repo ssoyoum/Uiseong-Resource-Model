@@ -3,22 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="의성군 전통수리시설 427개의 공간환경과 SGIS 2024년 5분·10분 주행생활권 인구를 탐색하는 공개 Web GIS" />
-    <title>의성 지역자원 분석 | SGIS 생활권 Web GIS</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-    <link rel="stylesheet" href="styles.css?v=20260930-sgis-public" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&display=swap" />
+    <meta name="description" content="SGIS 지역통계로 인구감소지역 유휴자원의 정책 검토 근거를 만드는 모델. 의성군 전통수리시설 못 427개를 첫 사례로 생활권 인구, 접근성, 데이터 품질을 살펴봅니다." />
+    <title>SGIS 유휴자원 정책검토 모델 | 의성 못 사례</title>
+    <link rel="stylesheet" href="vendor/leaflet/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="styles.css?v=20260930-policy-model" />
   </head>
   <body>
     <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
     <!-- HEADER & NAVIGATION -->
     <header class="site-header">
       <div class="container nav">
-        <a class="brand" href="#about">의성 지역자원 분석</a>
+        <a class="brand" href="#about">SGIS <span>유휴자원 정책검토 모델</span></a>
         <nav aria-label="주요 메뉴">
-          <a href="#about">프로젝트</a>
+          <a href="#project">모델 소개</a>
           <a href="#webgis">지도</a>
-          <a href="#analysis-d">SGIS 분석</a>
+          <a href="#analysis-d">생활권 분석</a>
           <a href="#analysis-e">정책 검토</a>
           <a href="#analysis-f">도로·인구</a>
           <a href="#archive">출처</a>
@@ -28,32 +27,38 @@
 
     <main>
 
-      <!-- ============================================
-           SECTION 00: ABOUT ME
-           ============================================ -->
+      <!-- SGIS policy model and first case -->
       <section id="about" class="section hero about-hero">
         <div class="container">
-          <div class="hero-content">
-            <span class="section-kicker">UISEONG RESOURCE MODEL · SGIS WEB GIS</span>
-            <h1>의성의 못을,<br>생활권 데이터로 읽다.</h1>
-            <p class="intro-subtitle">전통수리시설 × SGIS 주행생활권 × 지역 공간환경</p>
-            <p class="intro-description">2025년 의성 청년연구에서 구축한 못 데이터를 바탕으로,<br>
-              시설별 주변 환경과 5분·10분 주행생활권 인구를 함께 탐색합니다.<br>
-              지도에서 못을 선택하고, SGIS 인구 비교와 정책 검토 근거를 확인하세요.</p>
-            <div class="public-actions">
-              <a class="public-button" href="#analysis-d">SGIS 분석 보기 ↓</a>
-              <a class="public-button secondary" href="#webgis">427개 시설 지도 보기</a>
-              <a class="public-text-link" href="https://github.com/ssoyoum/Uiseong-Resource-Model" target="_blank" rel="noopener">코드·분석자료 ↗</a>
+          <div class="policy-hero-grid">
+            <div class="hero-content">
+              <span class="section-kicker">SGIS 지역통계 활용 · 의성 실증 사례</span>
+              <h1>인구감소지역의<br><em>유휴자원 정책을</em><br>데이터로 검토하다</h1>
+              <p class="hero-model-name">SGIS 지역통계를 활용한 인구감소지역 유휴자원 정책검토 모델</p>
+              <p class="intro-description">지역자원을 일괄적으로 활용 대상으로 정하지 않고, 생활권 인구·주변 여건·데이터 품질을 함께 살펴 시설별로 다음 검토 방향을 구분합니다. 의성군의 전통수리시설 ‘못’ 427개가 첫 적용 사례입니다.</p>
+              <div class="public-actions">
+                <a class="public-button" href="#analysis-d">SGIS 분석 살펴보기 <span aria-hidden="true">↘</span></a>
+                <a class="public-button secondary" href="#analysis-e">정책 검토 결과 보기</a>
+              </div>
             </div>
-            <div class="public-metrics" aria-label="분석 표본 요약">
-              <div><strong>427<span>개</span></strong><span>의성군 경계 내 시설</span></div>
-              <div><strong>380<span>개</span></strong><span>좌표 품질 조건 통과</span></div>
-              <div><strong>175<span>개</span></strong><span>5분·10분 인구 비교</span></div>
-              <div><strong>190<span>개</span></strong><span>10분 인구 확보</span></div>
-            </div>
-            <p class="public-data-note">SGIS 인구 기준: 2024년 · 저장된 서비스 응답을 표시합니다.<br>
-              미확보값은 0명이 아니며, 생활권 인구는 실제 이용자 수가 아닙니다.</p>
+            <aside class="policy-hero-card" aria-label="의성 사례 분석 흐름">
+              <div class="policy-card-top"><span>CASE 01</span><span>경북 의성군 · 전통수리시설 ‘못’</span></div>
+              <h2>시설의 존재에서<br>정책 검토 근거까지</h2>
+              <ol class="policy-steps">
+                <li><span>01</span><div><strong>자원 목록 정리</strong><small>의성군 경계 내 고유 시설 427개</small></div></li>
+                <li><span>02</span><div><strong>생활권·주변 여건 확인</strong><small>SGIS 주행생활권 인구와 공간자료 결합</small></div></li>
+                <li><span>03</span><div><strong>검토 방향 구분</strong><small>6개 정책 맥락과 데이터 보완 대상 분리</small></div></li>
+              </ol>
+              <a href="#webgis">의성 사례 지도에서 확인 <span aria-hidden="true">↗</span></a>
+            </aside>
           </div>
+          <div class="public-metrics" aria-label="의성 사례 검증 수치">
+            <div><strong>427<span>개</span></strong><span>분석 대상 못</span></div>
+            <div><strong>380<span>개</span></strong><span>좌표 조건 통과</span></div>
+            <div><strong>190<span>개</span></strong><span>SGIS 10분 인구 확보</span></div>
+            <div><strong>6<span>개</span></strong><span>상호배타적 정책 검토 맥락</span></div>
+            </div>
+          <p class="public-data-note">SGIS 인구 기준연도 2024년 · 5분·10분 인구를 모두 확보한 시설은 175개입니다. 미확보값은 0명으로 대체하지 않았으며, 생활권 인구는 실제 방문객 수가 아닙니다.</p>
         </div>
       </section>
 
@@ -66,30 +71,17 @@
            ============================================ -->
       <section id="project" class="section project-intro-section">
         <div class="container">
-          <span class="section-kicker">PROJECT BACKGROUND</span>
-          <h2>청년연구에서 생활권 분석으로</h2>
-          <p class="project-lead">기존 공간분석에 SGIS 생활권 인구와 정책 검토 근거를 연결했습니다</p>
-          <div class="project-intro-grid">
-            <div>
-              <p>
-                2025년 의성 청년연구자로 수행했던 전통수리시설 '못' 연구를 기반으로
-                기존 GIS 데이터를 Python으로 분석하고 Leaflet 기반 Web GIS로 재구성한
-                지역자원 분석 프로젝트입니다.
-              </p>
-              <p>
-                이 프로젝트에서 저는 수자원·GIS 도메인 경험을 데이터 전처리, 공간분석,
-                인터랙티브 지도와 연결해 실제 사용자가 탐색할 수 있는 웹 결과물로 확장했습니다.
-              </p>
-            </div>
-            <div class="project-highlight-card">
-              <strong>핵심 흐름</strong>
-              <span>현장·주소 데이터</span>
-              <span>→ 좌표 변환·검증</span>
-              <span>→ Python / GeoPandas 공간분석</span>
-              <span>→ SGIS 5분·10분 생활권 인구 비교</span>
-              <span>→ Leaflet Web GIS</span>
-            </div>
+          <div class="policy-section-heading">
+            <div><span class="section-kicker">MODEL &amp; FIRST CASE</span><h2>의성에서 검토하고,<br>다른 지역에 적용할 절차를 설계했습니다</h2></div>
+            <p>자원 발굴부터 정책 제안 전 검증까지, 데이터가 설명할 수 있는 범위를 단계별로 구분합니다.</p>
           </div>
+          <div class="model-stage-grid">
+            <article><span>01 / 발굴</span><h3>지역자원 목록화</h3><p>시설 ID와 위치를 정리하고 좌표 품질을 점검합니다. 의성 사례에서는 전통수리시설 못 427개를 분석 단위로 관리합니다.</p></article>
+            <article><span>02 / 결합</span><h3>SGIS 생활권 분석</h3><p>5분·10분 주행생활권 인구에 읍·면 인구구조, 도로·주변시설 자료를 결합합니다. 미응답은 수요 0명과 구분합니다.</p></article>
+            <article><span>03 / 검토</span><h3>정책 맥락 구분</h3><p>접근·도달, 청년참여, 공동체 지원 등 6개 맥락으로 현장 검토 대상을 정리합니다. 정책 채택이나 효과 검증을 뜻하지 않습니다.</p></article>
+          </div>
+          <div class="model-evidence-note"><strong>연구의 연결</strong><p>2025년 의성 청년연구에서 ‘못’ 기반 정책을 제안했고, 이번에는 SGIS를 더해 다른 인구감소지역의 유휴·저활용 자원에도 적용할 수 있는 검토 절차를 구성했습니다. <a href="https://www.mafra.go.kr/bbs/home/792/578423/artclView.do" target="_blank" rel="noopener">2026년 의성 청년 참여 활동</a>은 별도 사업의 사례이며, 이 모델의 정책 실행 성과로 계산하지 않습니다.</p></div>
+          <div class="model-quicklinks" aria-label="주요 결과 바로가기"><a href="#analysis-d"><strong>생활권 수요</strong><span>5분·10분 인구 비교 ↗</span></a><a href="#analysis-e"><strong>정책 검토</strong><span>6개 검토 맥락 ↗</span></a><a href="#webgis"><strong>시설 지도</strong><span>427개 못 탐색 ↗</span></a></div>
         </div>
       </section>
 
@@ -846,7 +838,7 @@
       </div>
     </footer>
 
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-    <script src="app.js?v=20260930-sgis-public"></script>
+    <script src="vendor/leaflet/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="app.js?v=20260930-policy-model"></script>
   </body>
 </html>
