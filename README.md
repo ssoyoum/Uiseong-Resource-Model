@@ -12,7 +12,7 @@
 | 생활권·지역 맥락 | SGIS 도달인구에 지역 인구구조와 공간환경 결합 | 2024년 SGIS 5분·10분 주행생활권 인구, 행정안전부 읍·면 인구, VWorld 도로·주변시설 |
 | 정책 검토 | 근거가 있는 후보와 현장·데이터 보완 대상을 분리 | 6개 상호배타적 정책 검토 맥락 및 시설별 근거표 |
 
-2025년 의성 청년연구자 활동에서 ‘못’ 기반 정책을 제안한 것이 출발점입니다. 이번 프로젝트는 저장된 SGIS 응답을 결합해 **다른 인구감소지역의 유휴·저활용 자원을 검토할 수 있는 절차**로 정리했습니다. 의성 외 지역에서의 적용은 아직 검증하지 않았습니다. [2026년 의성의 대학생 참여 활동](https://www.mafra.go.kr/bbs/home/792/578423/artclView.do)은 유사한 방향의 **별도 사업**이며, 이 모델이 해당 사업을 발생시켰거나 정책 성과를 실증했다는 뜻은 아닙니다. [연구·출처·관련 보도 정리](docs/submission/sgis-achievements-and-sources.md)
+2025년 의성 청년연구자 활동에서 ‘못’ 기반 정책을 제안한 것이 출발점입니다. 이번 프로젝트는 저장된 SGIS 응답을 결합해 **다른 인구감소지역의 유휴·저활용 자원을 검토할 수 있는 절차**로 정리했습니다. 의성 외 지역에서의 적용은 아직 검증하지 않았습니다. [2026년 의성의 대학생 참여 활동](https://www.mafra.go.kr/bbs/home/792/578423/artclView.do)은 유사한 방향의 **별도 사업**이며, 이 모델이 해당 사업을 발생시켰거나 정책 성과를 실증했다는 뜻은 아닙니다. [공개 정책 근거와 해석 범위](docs/sgis-policy-evidence.md)
 
 ## 확인된 결과
 
@@ -41,7 +41,7 @@
 
 | 자료 | 사용 범위 | 기록 |
 | --- | --- | --- |
-| 작성자의 2025년 의성 청년연구 못 목록 | 시설 위치·속성의 출발점 | [정제 목록](data/processed/ponds.csv), [선행자료·출처](docs/submission/sgis-source-and-press-evidence.md) |
+| 작성자의 2025년 의성 청년연구 못 목록 | 시설 위치·속성의 출발점 | [정제 목록](data/processed/ponds.csv), [의성 사례 제안 지침](docs/sgis-uiseong-policy-proposal-guideline.md) |
 | SGIS 생활권역 통계지도·개발지원센터 OpenAPI | 2024년 5분·10분 주행생활권 인구 | [출처 manifest](data/manifests/sgis_sources.csv), [저장 응답](data/processed/population/sgis_drive_population.csv) |
 | VWorld UQ151·UQ164·UO601 | 도로 객체와 주변 시설 맥락 | [출처 manifest](data/manifests/vworld_sources.csv), [접근성 표](data/analysis/pond_accessibility.csv) |
 | 행정안전부 주민등록 인구 | 2024·2025년 12월, 18개 읍·면 청년·고령 인구 | [출처 manifest](data/manifests/population_sources.csv), [요약](data/analysis/population_summary.json) |
