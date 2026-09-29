@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let policyConfig = {};
   let mapReady = false;
   const selectedIds = { sgis: null, road: null };
-  const dashboardModule = import('./def-dashboard.mjs');
+  const dashboardModule = import('./def-dashboard.mjs?v=20260930-sgis-public');
   const markerById = new Map();
   const pondId = feature => String(feature.properties?.pond_id || feature.properties?.id || '');
   const sgisMapLabels = {

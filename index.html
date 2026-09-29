@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="토목·GIS 도메인 경험을 웹과 AI로 확장하는 개발자 박소영의 포트폴리오" />
-    <title>박소영 | 토목·GIS 데이터 기반 개발자 포트폴리오</title>
+    <meta name="description" content="의성군 전통수리시설 427개의 공간환경과 SGIS 2024년 5분·10분 주행생활권 인구를 탐색하는 공개 Web GIS" />
+    <title>의성 지역자원 분석 | SGIS 생활권 Web GIS</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-    <link rel="stylesheet" href="styles.css?v=20260910-webgis" />
+    <link rel="stylesheet" href="styles.css?v=20260930-sgis-public" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&display=swap" />
   </head>
   <body>
@@ -14,16 +14,14 @@
     <!-- HEADER & NAVIGATION -->
     <header class="site-header">
       <div class="container nav">
-        <div class="brand">박소영 Portfolio</div>
-        <nav>
-          <a href="#about">00 ABOUT ME</a>
-          <a href="#career">01 CAREER</a>
-          <a href="#project">02 PROJECT</a>
-          <a href="#data">03 DATA</a>
-          <a href="#webgis">04 WEB GIS</a>
-          <a href="#analysis">05 DATA ANALYSIS</a>
-          <a href="#development">06 DEVELOPMENT</a>
-          <a href="#archive">07 ARCHIVE</a>
+        <a class="brand" href="#about">의성 지역자원 분석</a>
+        <nav aria-label="주요 메뉴">
+          <a href="#about">프로젝트</a>
+          <a href="#webgis">지도</a>
+          <a href="#analysis-d">SGIS 분석</a>
+          <a href="#analysis-e">정책 검토</a>
+          <a href="#analysis-f">도로·인구</a>
+          <a href="#archive">출처</a>
         </nav>
       </div>
     </header>
@@ -36,36 +34,25 @@
       <section id="about" class="section hero about-hero">
         <div class="container">
           <div class="hero-content">
-            <span class="section-kicker">00. ABOUT ME</span>
-            <h1>토목·GIS 데이터를 다루던 경험을<br>웹과 AI로 확장하는 개발자,<br>박소영입니다.</h1>
-            <p class="intro-subtitle">Domain experience in Civil Engineering, GIS &amp; Water Resources</p>
-            
-            <p class="intro-description">
-              토목공학과 환경공학을 전공하고, 수자원 분야에서 하천·수자원 데이터와 GIS를 다뤄왔습니다.<br>
-              이후 Python, LLM, RAG, HTML, JavaScript 등을 학습하며<br>
-              기존의 도메인 경험을 데이터와 웹 기술로 확장하는 개발자를 목표로 하고 있습니다.<br><br>
-              이 포트폴리오는 과거 의성 청년연구자로 수행했던 전통수리시설 '못' 연구를<br>
-              개발 기술을 활용해 웹 서비스로 재구성한 프로젝트입니다.
-            </p>
-
-            <div class="project-meta">
-              <div class="meta-item">
-                <span class="meta-label">DOMAIN</span>
-                <span class="meta-value">토목 · 수자원 · GIS</span>
-              </div>
-              <div class="meta-item">
-                <span class="meta-label">BACKGROUND</span>
-                <span class="meta-value">건설시스템공학 · 환경공학</span>
-              </div>
-              <div class="meta-item">
-                <span class="meta-label">CURRENTLY LEARNING</span>
-                <span class="meta-value">HTML · CSS · JavaScript · Web GIS</span>
-              </div>
-              <div class="meta-item">
-                <span class="meta-label">GOAL</span>
-                <span class="meta-value">데이터 기반 웹서비스 개발</span>
-              </div>
+            <span class="section-kicker">UISEONG RESOURCE MODEL · SGIS WEB GIS</span>
+            <h1>의성의 못을,<br>생활권 데이터로 읽다.</h1>
+            <p class="intro-subtitle">전통수리시설 × SGIS 주행생활권 × 지역 공간환경</p>
+            <p class="intro-description">2025년 의성 청년연구에서 구축한 못 데이터를 바탕으로,<br>
+              시설별 주변 환경과 5분·10분 주행생활권 인구를 함께 탐색합니다.<br>
+              지도에서 못을 선택하고, SGIS 인구 비교와 정책 검토 근거를 확인하세요.</p>
+            <div class="public-actions">
+              <a class="public-button" href="#analysis-d">SGIS 분석 보기 ↓</a>
+              <a class="public-button secondary" href="#webgis">427개 시설 지도 보기</a>
+              <a class="public-text-link" href="https://github.com/ssoyoum/Uiseong-Resource-Model" target="_blank" rel="noopener">코드·분석자료 ↗</a>
             </div>
+            <div class="public-metrics" aria-label="분석 표본 요약">
+              <div><strong>427<span>개</span></strong><span>의성군 경계 내 시설</span></div>
+              <div><strong>380<span>개</span></strong><span>좌표 품질 조건 통과</span></div>
+              <div><strong>175<span>개</span></strong><span>5분·10분 인구 비교</span></div>
+              <div><strong>190<span>개</span></strong><span>10분 인구 확보</span></div>
+            </div>
+            <p class="public-data-note">SGIS 인구 기준: 2024년 · 저장된 서비스 응답을 표시합니다.<br>
+              미확보값은 0명이 아니며, 생활권 인구는 실제 이용자 수가 아닙니다.</p>
           </div>
         </div>
       </section>
@@ -73,59 +60,21 @@
       <!-- ============================================
            SECTION 01: CAREER / BACKGROUND
            ============================================ -->
-      <section id="career" class="section alt">
-        <div class="container">
-          <span class="section-kicker">01. CAREER / BACKGROUND</span>
-          <h2>현장 데이터와 공간정보를 다뤄온 경험</h2>
-          <div class="career-grid">
-            <article class="career-card">
-              <span class="career-period">2018.01 — 2018.03</span>
-              <h3>온실가스종합정보센터</h3>
-              <p>NGMS 시스템 사용자 상담과 일반 문의를 대응했습니다.</p>
-              <div class="career-skills"><strong>얻은 역량</strong><span>시스템 이해</span><span>사용자 관점의 문제 대응</span></div>
-            </article>
-            <article class="career-card">
-              <span class="career-period">2020.08 — 2020.10</span>
-              <h3>한국시설안전공단</h3>
-              <p>FMS 점검·진단 보고서 56건의 외관조사 및 재료시험 결과를 입력·검토했습니다.</p>
-              <div class="career-skills"><strong>얻은 역량</strong><span>데이터 품질 검토</span><span>구조화된 기록 관리</span></div>
-            </article>
-            <article class="career-card">
-              <span class="career-period">2021.04 — 2021.12</span>
-              <h3>한국수자원조사기술원</h3>
-              <p>국가하천 유역조사, 유량·유사량 측정, 홍수피해조사와 데이터 정리를 수행했습니다.</p>
-              <div class="career-skills"><strong>얻은 역량</strong><span>현장 데이터 수집</span><span>수자원 데이터 해석</span></div>
-            </article>
-            <article class="career-card">
-              <span class="career-period">2022.06 — 2025.07</span>
-              <h3>동부엔지니어링</h3>
-              <p>하천기본계획, 홍수위험지도, 해외 ODA 사업의 조사자료 분석과 보고서 작성을 담당했습니다.</p>
-              <div class="career-skills"><strong>얻은 역량</strong><span>프로젝트 문서화</span><span>GIS/BIM/CAD 기반 공간정보 활용</span></div>
-            </article>
-          </div>
-          <div class="education-strip">
-            <strong>서울과학기술대학교</strong>
-            <span>건설시스템공학과 · 환경공학과 복수전공</span>
-            <span>토목기사</span>
-            <span>주요 기술: BIM · ArcGIS · QGIS · CAD</span>
-          </div>
-        </div>
-      </section>
 
       <!-- ============================================
            SECTION 02: PROJECT INTRO
            ============================================ -->
       <section id="project" class="section project-intro-section">
         <div class="container">
-          <span class="section-kicker">02. PROJECT</span>
-          <h2>의성 농업유산 Web GIS</h2>
-          <p class="project-lead">기존 연구 데이터를 웹과 데이터 분석으로 재구성하다</p>
+          <span class="section-kicker">PROJECT BACKGROUND</span>
+          <h2>청년연구에서 생활권 분석으로</h2>
+          <p class="project-lead">기존 공간분석에 SGIS 생활권 인구와 정책 검토 근거를 연결했습니다</p>
           <div class="project-intro-grid">
             <div>
               <p>
                 2025년 의성 청년연구자로 수행했던 전통수리시설 '못' 연구를 기반으로
                 기존 GIS 데이터를 Python으로 분석하고 Leaflet 기반 Web GIS로 재구성한
-                개인 포트폴리오 프로젝트입니다.
+                지역자원 분석 프로젝트입니다.
               </p>
               <p>
                 이 프로젝트에서 저는 수자원·GIS 도메인 경험을 데이터 전처리, 공간분석,
@@ -136,7 +85,8 @@
               <strong>핵심 흐름</strong>
               <span>현장·주소 데이터</span>
               <span>→ 좌표 변환·검증</span>
-              <span>→ Python / GeoPandas 분석</span>
+              <span>→ Python / GeoPandas 공간분석</span>
+              <span>→ SGIS 5분·10분 생활권 인구 비교</span>
               <span>→ Leaflet Web GIS</span>
             </div>
           </div>
@@ -262,7 +212,7 @@
            ============================================ -->
       <section id="data" class="section alt">
         <div class="container">
-          <span class="section-kicker">03. DATA · RESEARCH DATA PIPELINE</span>
+          <span class="section-kicker">DATA · RESEARCH DATA PIPELINE</span>
           <h2>연구를 분석 가능한 데이터로 바꾸다</h2>
           
           <div class="data-pipeline">
@@ -392,7 +342,7 @@
            ============================================ -->
       <section id="webgis" class="section">
         <div class="container">
-          <span class="section-kicker">04. WEB GIS</span>
+          <span class="section-kicker">INTERACTIVE WEB GIS</span>
           <h2>데이터를 직접 탐색하는 화면</h2>
           
           <p style="color: var(--muted); text-align: center; margin-bottom: 1.5rem;">
@@ -515,7 +465,7 @@
         <div class="container">
           <div class="analysis-overview">
             <div class="analysis-intro-wave">
-              <span class="section-kicker">05. DATA ANALYSIS</span>
+              <span class="section-kicker">DATA ANALYSIS · A–F</span>
               <h2>문제를 정의하고 분석한 결과를 웹에 연결했습니다</h2>
               <p>
                 각 분석은 문제 → 데이터 → 전처리 → 분석 → 핵심 결과의 흐름으로 정리했습니다.<br>
@@ -632,10 +582,10 @@
             <!-- ============================================
                  분석 D. SGIS 생활권역 주행시간 인구 분석
                  ============================================ -->
-            <div class="analysis-block">
+            <div id="analysis-d" class="analysis-block">
               <h3>분석 D. SGIS 생활권역 주행시간 인구 분석</h3>
               <p class="analysis-note">
-                SGIS 오픈API의 주행시간 등시선 알고리즘을 활용해 각 못에서 5분·10분 내 도달 가능한 인구를 수집하고, 생활권 확장에 따른 잠재 배후수요를 입체적으로 분석했습니다.
+                SGIS 2024년 생활권역 서비스의 저장 응답으로 5분·10분 인구를 비교합니다. 전체 427개 중 좌표 품질 조건을 통과한 380개를 분석하며, 5분 175개·10분 190개에서 인구값을 확보했습니다.
               </p>
 
               <!-- SGIS 파이프라인 다이어그램 -->
@@ -653,7 +603,7 @@
                 </div>
                 <div class="method-spec">
                   <span class="method-spec-label">SGIS METHOD</span>
-                  <p>SGIS 생활권역 통계 API(<code>serviceAreaGeometry</code>, <code>serviceAreaStatistics</code>)를 연동하여 반경 직선거리가 아닌 실제 도로 주행시간 기반의 유효 인구를 산출했습니다.</p>
+                  <p>SGIS 생활권역 통계 API(<code>serviceAreaGeometry</code>, <code>serviceAreaStatistics</code>)를 연동하여 서비스가 생성한 주행시간 권역의 인구값을 수집했습니다. 실제 현장 이동시간을 측정한 결과는 아닙니다.</p>
                 </div>
               </div>
 
@@ -696,7 +646,7 @@
             <!-- ============================================
                  분석 E. 6대 정책 검토 맥락 모델
                  ============================================ -->
-            <div class="analysis-block">
+            <div id="analysis-e" class="analysis-block">
               <h3>분석 E. 6대 상호배타적 정책 검토 맥락 분류</h3>
               <p class="analysis-note">
                 427개 못을 중복·누락 없이 체계화하기 위해 6단계 순차 필터링 알고리즘을 적용했습니다. 모든 시설은 명확한 단 하나의 정책 검토 맥락에만 배정됩니다.
@@ -824,7 +774,7 @@
             <!-- ============================================
                  분석 F. VWorld 도로접근성 및 인구구조 공간결합
                  ============================================ -->
-            <div class="analysis-block">
+            <div id="analysis-f" class="analysis-block">
               <h3>분석 F. VWorld 도로 접근성(UQ151) 및 읍·면 인구구조</h3>
               <p class="analysis-note">
                 국토교통부 VWorld 도로망(UQ151)과의 물리적 최근접 거리 및 행정안전부 18개 읍·면 주민등록 인구구조(청년 vs 고령)를 결합하여 입체적으로 해석했습니다.
@@ -851,100 +801,38 @@
       <!-- ============================================
            SECTION 06: DEVELOPMENT / LEARNING
            ============================================ -->
-      <section id="development" class="section">
-        <div class="container">
-          <span class="section-kicker">06. DEVELOPMENT / LEARNING</span>
-          <h2>토목·GIS 경험을 개발 역량으로 확장하는 과정</h2>
-
-          <p class="development-lead">
-            현장에서 다루던 데이터를 새로운 방식으로 활용하고 싶었습니다.<br>
-            수자원 분야에서 GIS와 현장 데이터를 다루며 쌓은 경험을 바탕으로 Python을 이용한 데이터 분석과 LLM/RAG 프로젝트를 경험했고,<br>
-            현재는 HTML, CSS, JavaScript를 학습하며 데이터를 실제 사용자가 경험할 수 있는 웹 서비스로 구현하는 개발자를 목표로 역량을 확장하고 있습니다.
-          </p>
-
-          <div class="development-flow" aria-label="토목 도메인에서 개발자로 전환하는 흐름">
-            <span>토목·수자원</span><b>↓</b><span>GIS / 공간데이터</span><b>↓</b><span>의성 청년연구자</span><b>↓</b><span>Python / Jupyter / RAG / LLM</span><b>↓</b><span>HTML / CSS / JavaScript</span><b>↓</b><span>Web GIS / 데이터 기반 웹서비스</span><b>↓</b><span>개발자 커리어 전환</span>
-          </div>
-
-          <div class="learning-grid">
-            <article class="learning-card">
-              <span class="learning-status">PROJECT</span>
-              <h3>오르미캠프 AI 모델링</h3>
-              <span>2025.10.20 — 2025.12.29</span>
-              <p>Python · Jupyter Notebook · RAG · LLM<br>제주 신화자료를 활용한 관광 콘텐츠 프로젝트</p>
-            </article>
-            <article class="learning-card">
-              <span class="learning-status">EDUCATION</span>
-              <h3>포항 포스코 LLM 교육</h3>
-              <span>2026.07.29 — 2026.11.11</span>
-              <p>LLM 기반 Smart Factory AI Assistant 개발 교육</p>
-            </article>
-            <article class="learning-card currently-learning">
-              <span class="learning-status">CURRENTLY LEARNING</span>
-              <h3>Web Development</h3>
-              <p>HTML · CSS · JavaScript<br>Web GIS · Leaflet</p>
-            </article>
-          </div>
-
-          <div class="tech-breakdown">
-            <div class="tech-item">
-              <h4>GIS / DOMAIN</h4>
-              <p>QGIS · ArcGIS · CAD · BIM<br>공간정보와 수자원 도메인</p>
-            </div>
-            <div class="tech-item">
-              <h4>DATA</h4>
-              <p>Python · pandas · GeoPandas · Jupyter<br>전처리·집계·공간분석</p>
-            </div>
-            <div class="tech-item">
-              <h4>AI</h4>
-              <p>RAG · LLM · ChromaDB<br>학습 및 프로젝트 경험</p>
-            </div>
-            <div class="tech-item">
-              <h4>WEB</h4>
-              <p>HTML · CSS · JavaScript · Leaflet<br>현재 학습하며 구현 중</p>
-            </div>
-            <div class="tech-item">
-              <h4>TOOLS</h4>
-              <p>Git · GitHub<br>버전관리와 배포</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <!-- ============================================
            SECTION 07: PROJECT ARCHIVE
            ============================================ -->
       <section id="archive" class="section alt">
         <div class="container">
-          <span class="section-kicker">07. PROJECT ARCHIVE</span>
-          <h2>프로젝트 아카이브</h2>
-          
-          <div class="archive-info">
-            <div class="archive-item">
-              <strong>PROJECT</strong>
-              <p>의성 농업유산 데이터 Web GIS</p>
-            </div>
-            <div class="archive-item">
-              <strong>PERIOD</strong>
-              <p>2025년 연구<br>+ 2026년 프로젝트<br>+ 2026년 웹 포트폴리오 재구성</p>
-            </div>
-            <div class="archive-item">
-              <strong>ROLE</strong>
-              <p>청년연구자<br>+ 개발/데이터 시각화</p>
-            </div>
-            <div class="archive-item">
-              <strong>DATA</strong>
-              <p>못 데이터 (경계 내 427개)<br>+ 농지·농업진흥지역<br>+ 행정경계·읍면 Polygon</p>
-            </div>
-            <div class="archive-item">
-              <strong>TOOLS</strong>
-              <p>QGIS · Python · GeoPandas<br>HTML · CSS · JavaScript<br>Leaflet · GitHub</p>
-            </div>
-            <div class="archive-item">
-              <strong>REPOSITORY</strong>
-              <p><a href="https://github.com/ssoyoum/Uiseong-Young-Researchers" target="_blank" rel="noreferrer">GitHub Repository</a><br><a href="https://ssoyoum.github.io/Uiseong-Young-Researchers/" target="_blank" rel="noreferrer">Live Portfolio</a></p>
-            </div>
+          <span class="section-kicker">DATA SOURCES &amp; LIMITATIONS</span>
+          <h2>출처와 해석 범위</h2>
+          <p>서로 다른 공간 단위의 지표를 구분해 읽고, 미확보 자료와 좌표 품질 문제를 함께 확인합니다.</p>
+          <div class="public-source-grid">
+            <article class="public-source-card"><h3>SGIS 생활권 인구 · 2024년</h3>
+              <p>5분·10분 주행생활권 서비스 응답. 중복·대표·인근좌표 47개를 비교에서 제외했습니다. 권역이 겹치므로 시설별 인구를 합산하지 않습니다.</p>
+              <a href="data/analysis/sgis_catchment_analysis.json">분석 요약 JSON ↗</a> · <a href="data/analysis/sgis_catchment_analysis.csv">시설별 분석 CSV ↗</a><br>
+              <a href="data/manifests/sgis_sources.csv">SGIS 출처 목록 ↗</a></article>
+            <article class="public-source-card"><h3>VWorld 공간환경</h3>
+              <p>UQ151 도로 최근접거리는 미터 단위의 유클리드거리입니다. UQ164·UO601 시설 68개는 확보한 레이어의 범위이며, 모든 생활시설을 포괄하지 않습니다.</p>
+              <a href="data/manifests/vworld_sources.csv">레이어·기준연도·출처 목록 ↗</a></article>
+            <article class="public-source-card"><h3>행정안전부 읍·면 인구</h3>
+              <p>2024·2025년 12월 주민등록 인구. 18개 읍·면의 지역 배경지표이며 못 주변 인구격자 분석과 구분합니다. 청년 만 19~39세, 고령 만 65세 이상.</p>
+              <a href="data/analysis/population_summary.json">읍·면 인구 요약 ↗</a> · <a href="data/manifests/population_sources.csv">출처 목록 ↗</a></article>
+            <article class="public-source-card"><h3>정책 검토 근거</h3>
+              <p>규칙과 사분위 기준으로 6개 검토 맥락을 표시합니다. 사업 우선순위 점수나 정책효과를 검증한 결과는 아니며 실제 이용·관리 상태의 확인이 필요합니다.</p>
+              <a href="data/analysis/sgis_policy_evidence.csv">427개 시설의 검토 근거표 ↗</a></article>
           </div>
+          <details class="public-figure-details"><summary>저장된 SGIS 결과 그림 보기</summary>
+            <figure><img loading="lazy" src="analysis/figures/11_sgis_5_vs_10_population.png" alt="SGIS 2024년 5분·10분 생활권 인구 비교 결과"><figcaption>5분·10분 모두 인구값을 확보한 175개 분석 표본.</figcaption></figure>
+            <figure><img loading="lazy" src="analysis/figures/12_sgis_emd_mean_population.png" alt="읍면별 SGIS 생활권 인구 분석 결과"><figcaption>읍·면별 확보 표본의 생활권 인구 요약. 전체 읍·면 주민등록 인구와 다른 지표입니다.</figcaption></figure>
+          </details>
+          <p class="public-data-note">국내 공식 인구격자에 의한 500m·1km 인구는 DATA_NOT_AVAILABLE입니다.<br>
+            공개 화면은 <a href="https://github.com/ssoyoum/Uiseong-Young-Researchers" target="_blank" rel="noopener">Uiseong-Young-Researchers</a>의 연구·화면 구조를 바탕으로 확장했습니다.</p>
+          <div class="public-actions"><a class="public-button" href="https://github.com/ssoyoum/Uiseong-Resource-Model" target="_blank" rel="noopener">프로젝트 저장소 ↗</a>
+            <a class="public-text-link" href="https://ssoyoum.github.io/Uiseong-Resource-Model/">공개 분석 페이지</a></div>
         </div>
       </section>
 
@@ -953,12 +841,12 @@
     <!-- FOOTER -->
     <footer class="site-footer">
       <div class="container">
-        <p>&copy; 2025-2026 박소영 · 토목·GIS 데이터 기반 개발자 포트폴리오</p>
-        <p style="font-size: 0.85rem; color: var(--muted);">의성군의 지원을 받아 실시한 연구를 데이터 분석과 Web GIS로 확장한 개인 프로젝트입니다.</p>
+        <p>&copy; 2025-2026 박소영 · 의성 지역자원 분석</p>
+        <p style="font-size: 0.85rem; color: var(--muted);">의성군의 지원을 받아 실시한 연구를 데이터 분석과 Web GIS로 확장한 지역자원 분석 프로젝트입니다.</p>
       </div>
     </footer>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-    <script src="app.js?v=20260910-webgis"></script>
+    <script src="app.js?v=20260930-sgis-public"></script>
   </body>
 </html>
