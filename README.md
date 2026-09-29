@@ -1,240 +1,63 @@
-# 의성 농업유산 Web GIS
+﻿# 의성 지역자원 생활권 분석 · SGIS Web GIS
 
-> **GIS Research Data → Python Analysis → Interactive Web GIS**
+[공개 데모에서 SGIS 분석 보기](https://ssoyoum.github.io/Uiseong-Resource-Model/#analysis-d) · [전체 Web GIS](https://ssoyoum.github.io/Uiseong-Resource-Model/) · [분석 방법](docs/sgis-catchment-analysis.md)
 
-2025년 의성 청년연구자로 수행했던 전통수리시설 **'못' 연구 데이터를 웹 서비스 형태로 재구성한 개인 프로젝트**입니다.
+의성군 전통수리시설 **못 427개**를 공간정보로 탐색하는 프로젝트입니다. [Uiseong-Young-Researchers](https://github.com/ssoyoum/Uiseong-Young-Researchers)의 연구·화면 구조를 바탕으로, 저장된 SGIS 주행생활권 인구 응답과 VWorld 주변 환경, 행정안전부 읍·면 인구를 연결했습니다. 화면은 HTML·CSS·JavaScript·Leaflet으로 만든 정적 Web GIS이며, SGIS API 호출은 사전 수집 과정에서만 수행합니다.
 
-기존 GIS 분석 결과를 정적인 지도와 보고서에 머무르게 하지 않고,
-Python으로 데이터를 전처리·분석한 뒤 **Leaflet 기반 Interactive Web GIS**로 구현했습니다.
+## 공개 화면에서 확인할 수 있는 것
 
-**[🌐 Live Demo](https://ssoyoum.github.io/Uiseong-Young-Researchers/)**
+- **지도:** 의성군 경계 내 못 427개, 읍·면 및 활용유형 필터, 시설별 상세정보.
+- **SGIS 분석 D:** 2024년 5분·10분 주행생활권 인구 비교, 시설별 산점도, 10분 인구 및 5→10분 증가폭 조건에 따른 지도 필터.
+- **정책 검토 E:** 6개 규칙기반 검토 맥락과 시설별 근거. 후보 탐색용이며 정책 우선순위 점수는 아닙니다.
+- **도로·인구 F:** VWorld UQ151 최근접 도로까지의 유클리드거리와 행정안전부 읍·면 인구 변화. 도로거리는 네트워크 이동거리가 아닙니다.
+- **출처·상태:** SGIS, VWorld, 행정안전부 자료의 출처와 기준연도, 미확보값의 의미.
 
----
+분석 D는 화면 상단의 **SGIS 분석 보기** 또는 [직접 링크](https://ssoyoum.github.io/Uiseong-Resource-Model/#analysis-d)로 이동할 수 있습니다. 그래프의 점을 선택한 뒤 **지도에서 이 못 보기**를 누르면 해당 시설을 지도에서 확인할 수 있습니다.
 
-## 1. Project Overview
+## 검증된 SGIS 결과
 
-의성의 전통수리시설인 '못'을 대상으로 구축했던 위치·규모·용량·관리주체 등의 GIS 데이터를 웹에서 직접 탐색할 수 있도록 재구성했습니다.
+| 항목 | 결과 | 해석 범위 |
+| --- | ---: | --- |
+| 의성군 경계 내 시설 | 427개 | 원 조사 시설 696개 중 분석에 사용한 시설 |
+| 좌표 품질 조건 통과 | 380개 | 대표·인근·중복좌표 47개 제외 |
+| 5분 생활권 인구 확보 | 175개 | 조건 통과 시설 기준 |
+| 10분 생활권 인구 확보 | 190개 | 조건 통과 시설 기준 |
+| 5분·10분 모두 확보 | 175개 | 산점도 비교 표본 |
+| 두 생활권 모두 미확보 | 190개 | 0명으로 대체하지 않음 |
+| 10분 생활권 인구 중앙값 | 153명 | 응답이 있는 190개 표본의 중앙값 |
 
-이 프로젝트의 핵심 목표는 다음과 같습니다.
+SGIS 기준연도는 **2024년**입니다. 생활권은 서비스가 생성한 5분·10분 주행시간 권역이며, 수치는 해당 권역의 **저장된 인구 응답**입니다. 시설별 권역이 겹치므로 인구를 합산하지 않습니다. 시설 이용자·방문객 수 또는 실제 현장 주행시간을 측정한 값으로 해석하지 않습니다. 상세한 좌표 품질 및 미응답 진단은 [분석 기록](docs/sgis-catchment-analysis.md)과 [저장된 분석 요약](data/analysis/sgis_catchment_analysis.json)을 참고하세요.
 
-> **기존 GIS 분석 데이터를 실제 사용자가 탐색할 수 있는 웹 결과물로 확장할 수 있을까?**
+![SGIS 5분·10분 생활권 인구 비교](analysis/figures/11_sgis_5_vs_10_population.png)
 
-### Project Flow
+## 자료와 산출물
 
-```text
-Research Data
-      ↓
-GIS Data Validation
-      ↓
-Python / GeoPandas
-      ↓
-Spatial Analysis
-      ↓
-GeoJSON
-      ↓
-Leaflet Web GIS
-      ↓
-GitHub Pages
+| 자료 | 용도 | 근거 |
+| --- | --- | --- |
+| 의성 청년연구 못 위치·속성 | 시설 427개 공간 분석 | [시설 GeoJSON](data/geojson/ponds_classified.geojson) |
+| SGIS 생활권역 서비스 · 2024년 | 5분·10분 주행생활권 인구 | [출처 manifest](data/manifests/sgis_sources.csv), [분석 CSV](data/analysis/sgis_catchment_analysis.csv) |
+| VWorld UQ151·UQ164·UO601 | 도로 접근·주변 시설 맥락 | [출처 manifest](data/manifests/vworld_sources.csv), [접근성 CSV](data/analysis/pond_accessibility.csv) |
+| 행정안전부 주민등록 인구 · 2024·2025년 12월 | 18개 읍·면 청년·고령 인구와 인구 변화 | [출처 manifest](data/manifests/population_sources.csv), [요약 JSON](data/analysis/population_summary.json) |
+
+VWorld 주변시설 68개는 확보한 레이어의 의성군 범위 자료입니다. 읍·면 인구는 지역 배경지표이며 개별 못의 주변 인구가 아닙니다. 청년은 만 19~39세, 고령은 만 65세 이상으로 집계했습니다. 국내 공식 인구격자 기반의 시설별 500m·1km 인구는 `DATA_NOT_AVAILABLE`입니다. WorldPop 참고자료를 국내 공식 인구격자로 간주하지 않습니다.
+
+정책 맥락은 [시설별 근거표](data/analysis/sgis_policy_evidence.csv)와 [분석 규칙](docs/sgis-policy-comparison.md)에서 확인할 수 있습니다. 규칙기반 분류는 현장 확인 대상을 정리하기 위한 것이며 자동 정책 선정이나 효과 검증을 뜻하지 않습니다.
+
+## 실행과 검증
+
+공개 화면만 실행할 때는 Python 3의 표준 라이브러리로 필요한 정적 파일을 모을 수 있습니다.
+
+```powershell
+python analysis/build_public_site.py --output _site
+python -m http.server 8000 --bind 127.0.0.1 --directory _site
 ```
 
----
+브라우저에서 `http://127.0.0.1:8000/`을 열면 됩니다. `build_public_site.py`는 SGIS 시설 ID·좌표 조건·응답 건수·정책 그룹 및 검증 보고서를 대조하고, 공개 화면에 필요한 파일만 `_site/`에 복사합니다. GitHub Pages 배포 설정은 [.github/workflows/pages.yml](.github/workflows/pages.yml)에 있습니다.
 
-## 2. What I Did
+공간분석 산출물 전체를 재생성할 때는 저장소의 실제 원자료와 GIS 라이브러리가 필요합니다. 공개 저장소에 없는 원자료를 임의로 생성하지 않습니다.
 
-### Data Processing
-
-기존 연구에서 구축한 데이터를 웹에서 활용할 수 있도록 정리했습니다.
-
-* 위치 데이터 검토
-* 결측값 및 오류 확인
-* 의성군 행정경계 기준 데이터 선별
-* 좌표계 변환
-* CSV / GIS 데이터를 GeoJSON으로 변환
-* 농업지역 공간데이터 전처리
-
-분석 및 Web GIS에는 **의성군 행정경계 내부에서 확인된 427개 시설**을 활용했습니다.
-
----
-
-### GIS / Spatial Analysis
-
-QGIS와 Python을 이용해 기존 공간정보를 웹에서 활용할 수 있는 데이터로 다시 구성했습니다.
-
-주요 분석:
-
-* 행정구역별 시설 분포
-* 시설 규모 및 용량 분포
-* 관리주체별 시설 비교
-* 시설 간 거리 및 공간 분포
-* 못 주변 농업지역 분석
-* 시설 용량과 주변 농업지역의 관계
-
-분석 결과가 강하지 않은 경우 과도한 결론을 내리기보다 데이터 특성과 분석 과정을 함께 기록했습니다.
-
----
-
-### Python Data Processing
-
-Python은 Backend 서버가 아니라 **GIS 데이터를 전처리하고 분석하여 Web GIS에 전달하기 위한 데이터 처리 도구**로 사용했습니다.
-
-```text
-CSV / GIS Data
-      ↓
-Data Cleaning
-      ↓
-Coordinate Transformation
-      ↓
-Spatial Join / Intersection
-      ↓
-Statistical Analysis
-      ↓
-JSON / GeoJSON
-      ↓
-Web Visualization
+```powershell
+python analysis/run_competition_pipeline.py
 ```
 
-주요 라이브러리:
-
-`pandas` `GeoPandas` `pyproj` `scipy`
-
----
-
-## 3. Web GIS
-
-QGIS에서 확인하던 공간정보를 브라우저에서 직접 탐색할 수 있도록 Leaflet으로 구현했습니다.
-
-### 주요 기능
-
-* 의성군 중심 지도
-* 전통수리시설 위치 표시
-* 시설 용량을 반영한 Marker
-* 시설별 상세정보 Popup
-* 용량 기준 Filter
-* 의성군 행정경계 표시
-* 농업지역 Layer
-* Polygon 정보 확인
-* Layer ON / OFF
-
-사용자는 정적인 지도 이미지를 보는 대신 지도에서 시설을 직접 클릭하고 공간 데이터를 탐색할 수 있습니다.
-
----
-
-## 4. Data Pipeline
-
-웹 지도에서 공간데이터를 사용하기 위해 기존 좌표 데이터를 웹 환경에 맞게 변환했습니다.
-
-```text
-Original GIS Data
-      ↓
-Validation
-      ↓
-EPSG:5174
-      ↓
-WGS84
-      ↓
-GeoJSON Feature
-      ↓
-Leaflet
-```
-
-이 과정에서:
-
-* 좌표계 차이
-* 행정경계 외 데이터
-* 결측값
-* 중복 데이터
-* 극단값
-
-등을 함께 검토했습니다.
-
----
-
-## 5. Key Results
-
-| 항목                     |           결과 |
-| ---------------------- | -----------: |
-| 원본 조사 시설               |         696개 |
-| Web GIS 활용 시설          |         427개 |
-| 총 저수 용량                | 39,578.75 천톤 |
-| 평균 용량                  |     56.89 천톤 |
-| 1km 주변 농업지역 평균         |   약 40.63 ha |
-| 용량 × 1km 농업지역 Spearman |    ρ = 0.219 |
-
-상관관계가 강하지 않은 분석 결과는 강한 결론으로 해석하지 않고, GIS 데이터를 공간분석으로 변환하고 검토하는 과정 자체에 초점을 맞췄습니다.
-
----
-
-## 6. Tech Stack
-
-### GIS / Spatial Data
-
-`QGIS` `ArcGIS` `GeoJSON`
-
-### Data Analysis
-
-`Python` `pandas` `GeoPandas` `pyproj` `scipy` `Jupyter Notebook`
-
-### Web
-
-`HTML` `CSS` `JavaScript` `Leaflet`
-
-### Development
-
-`Git` `GitHub` `GitHub Pages`
-
----
-
-## 7. Project Structure
-
-```text
-Uiseong-Young-Researchers/
-├── index.html
-├── styles.css
-├── app.js
-│
-├── analysis/
-│
-├── data/
-│   ├── geojson/
-│   │   ├── ponds.geojson
-│   │   ├── uiseong_boundary.geojson
-│   │   ├── uiseong_emd.geojson
-│   │   └── agricultural_areas.geojson
-│   │
-│   └── analysis/
-│       ├── region_summary.json
-│       ├── distance_cluster_summary.json
-│       └── advanced_analysis.json
-│
-└── .github/
-    └── workflows/
-```
-
----
-
-## 8. What I Learned
-
-이 프로젝트에서는 새로운 도메인을 선택하기보다, **기존에 가지고 있던 GIS·공간데이터 경험을 개발 기술로 확장하는 과정**에 집중했습니다.
-
-### Data
-
-GIS 데이터를 브라우저가 사용할 수 있는 형태로 바꾸기 위해 데이터 정제, 좌표 변환과 GeoJSON 구조를 직접 다뤘습니다.
-
-### Python
-
-pandas와 GeoPandas를 이용해 실제 공간데이터를 전처리하고 분석 결과를 웹에서 사용할 수 있는 데이터로 변환했습니다.
-
-### Web
-
-HTML, CSS, JavaScript를 이용해 분석 결과를 실제 사용자 화면으로 구현했습니다.
-
-### Web GIS
-
-Leaflet을 이용해 정적인 GIS 결과를 사용자가 직접 탐색할 수 있는 Interactive Map으로 확장했습니다.
-
----
-
-## 9. Links
-
-* **Live Demo:** https://ssoyoum.github.io/Uiseong-Young-Researchers/
-* **Repository:** https://github.com/ssoyoum/Uiseong-Young-Researchers
+검증 근거는 [파이프라인 보고서](data/analysis/validation_report.json)와 [SGIS 제출 검증 코드](analysis/validate_sgis_submission.py)에 있습니다. 현장 위치 확인, 공식 인구격자 확보, 정책 검토 결과의 후속 확인은 남아 있습니다.
