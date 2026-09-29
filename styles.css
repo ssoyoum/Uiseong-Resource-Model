@@ -2742,3 +2742,31 @@ nav a.is-active {
     transform: none;
   }
 }
+
+/* Public project overview and data provenance. */
+.brand { color: var(--text); text-decoration: none; }
+.public-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin: 1.8rem 0; }
+.public-button { display: inline-flex; align-items: center; min-height: 48px; padding: .8rem 1.2rem; border: 1px solid var(--primary); border-radius: 10px; background: var(--primary); color: white; text-decoration: none; font-weight: 700; }
+.public-button.secondary { background: var(--panel); color: var(--primary); }
+.public-button:hover { filter: brightness(.94); }
+.public-text-link { color: var(--primary); font-weight: 600; text-underline-offset: 4px; }
+.public-metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; max-width: 900px; background: var(--border); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; margin-top: 2rem; }
+.public-metrics > div { display: flex; flex-direction: column; gap: .35rem; padding: 1.4rem; background: var(--panel); }
+.public-metrics strong { font-size: 2rem; line-height: 1.3; color: var(--primary); }
+.public-metrics strong span { font-size: .85rem; margin-left: .35rem; font-weight: 600; }
+.public-metrics > div > span, .public-data-note { font-size: .88rem; color: var(--muted); }
+.public-data-note { margin-top: 1rem; }
+.public-source-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1.8rem; }
+.public-source-card { padding: 1.5rem; background: var(--panel); border: 1px solid var(--border); border-radius: 12px; }
+.public-source-card h3 { margin-top: 0; }
+.public-source-card a { color: var(--primary); text-underline-offset: 3px; }
+.public-figure-details { margin-top: 1.5rem; border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.5rem; background: var(--panel); }
+.public-figure-details summary { cursor: pointer; font-weight: 700; }
+.public-figure-details figure { margin: 1.5rem 0; }
+.public-figure-details figcaption { color: var(--muted); font-size: .9rem; }
+@media (max-width: 700px) {
+  .public-metrics { grid-template-columns: repeat(2, 1fr); }
+  .public-source-grid { grid-template-columns: 1fr; }
+  .public-metrics > div { padding: 1rem; }
+  .public-actions { gap: .75rem; }
+}

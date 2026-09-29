@@ -15,3 +15,4 @@ docs/drafts/
 !.env.example
 data/geojson/boundary.geojson
 index_old.html
+_site/

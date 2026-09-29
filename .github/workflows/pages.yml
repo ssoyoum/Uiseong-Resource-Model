@@ -1,4 +1,4 @@
-name: Deploy portfolio to GitHub Pages
+name: Deploy Uiseong SGIS Web GIS to GitHub Pages
 
 on:
   push:
@@ -23,17 +23,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          enablement: true
-
+          python-version: '3.12'
+      - name: Build and validate public site
+        run: python analysis/build_public_site.py --output _site
       - name: Upload static site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
-
+          path: _site
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
