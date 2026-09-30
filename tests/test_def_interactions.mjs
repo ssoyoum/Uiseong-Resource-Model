@@ -14,6 +14,11 @@ const {parseHTML} = await import(pathToFileURL(path.join(runtime, 'node_modules/
 const {document, window} = parseHTML(await readFile(path.join(root, 'index.html'), 'utf8'));
 
 // linkedom exposes select.value as a getter; browsers also provide its setter.
+const optionPrototype = Object.getPrototypeOf(document.querySelector('option'));
+Object.defineProperty(optionPrototype, 'selected', {get() {return this.hasAttribute('selected');}, set(value) {
+  if (value) this.setAttribute('selected', '');
+  else this.removeAttribute('selected');
+}});
 const selectPrototype = Object.getPrototypeOf(document.querySelector('select'));
 const selectGetter = Object.getOwnPropertyDescriptor(selectPrototype, 'value').get;
 Object.defineProperty(selectPrototype, 'value', {get: selectGetter, set(value) {
@@ -80,14 +85,23 @@ test('D/E/F controls select, reset, and synchronize with actual map filter resul
 
   click('#analysis-e [data-policy-code="YOUTH_PARTICIPATION_REVIEW"]');
   assert.equal(document.querySelector('#filtered-count').textContent, '43');
+  assert.equal(selectedValue('#map-policy-filter'), 'YOUTH_PARTICIPATION_REVIEW');
   assert.equal(document.querySelector('.map-legend-row [data-policy-filter="YOUTH_PARTICIPATION_REVIEW"]').getAttribute('aria-pressed'), 'true');
   assert.match(document.querySelector('#def-policy-detail').textContent, /청년참여 검토/);
 
+  changeSelect('#map-policy-filter', 'ACCESS_AND_REACH_REVIEW');
+  assert.equal(document.querySelector('#filtered-count').textContent, '20');
+  assert.equal(selectedValue('#policy-context-filter'), 'ACCESS_AND_REACH_REVIEW');
+  assert.equal(document.querySelector('.map-legend-row [data-policy-filter="ACCESS_AND_REACH_REVIEW"]').getAttribute('aria-pressed'), 'true');
+  assert.equal(document.querySelector('#analysis-e [data-policy-code="ACCESS_AND_REACH_REVIEW"]').getAttribute('aria-pressed'), 'true');
+
   click('.map-legend-row [data-policy-filter="COMMUNITY_SUPPORT_REVIEW"]');
   assert.equal(document.querySelector('#filtered-count').textContent, '53');
+  assert.equal(selectedValue('#map-policy-filter'), 'COMMUNITY_SUPPORT_REVIEW');
   assert.equal(document.querySelector('#analysis-e [data-policy-code="COMMUNITY_SUPPORT_REVIEW"]').getAttribute('aria-pressed'), 'true');
   click('.map-legend-row [data-policy-filter="COMMUNITY_SUPPORT_REVIEW"]');
   assert.equal(document.querySelector('#filtered-count').textContent, '427');
+  assert.equal(selectedValue('#map-policy-filter'), 'all');
 
   changeSelect('#road-map-filter', '3');
   assert.equal(document.querySelector('#filtered-count').textContent, '230');

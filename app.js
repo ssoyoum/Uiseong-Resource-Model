@@ -278,15 +278,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const count = document.getElementById('filtered-count');
     if (count) count.textContent = String(filtered.length);
     document.querySelectorAll('[data-policy-filter]').forEach(item => item.setAttribute('aria-pressed', String(item.dataset.policyFilter === activePolicyFilter)));
-    for (const [id, value] of [['policy-context-filter', activePolicyFilter], ['region-filter', activeRegionFilter], ['classification-filter', activeClassificationFilter], ['capacity-filter', activeCapacityFilter]]) {
+    for (const [id, value] of [['policy-context-filter', activePolicyFilter], ['map-policy-filter', activePolicyFilter], ['region-filter', activeRegionFilter], ['classification-filter', activeClassificationFilter], ['capacity-filter', activeCapacityFilter]]) {
       const select = document.getElementById(id);
       if (select) [...select.options].forEach(option => { option.selected = option.value === value; });
     }
     const status = document.getElementById('map-analysis-status');
     const policyLabel = policyConfig[activePolicyFilter]?.label || '전체 정책 맥락';
     if (status) status.textContent = `${sgisMapLabels[activeSgisMapFilter]} · E ${policyLabel} · ${roadMapLabels[activeRoadMapFilter]} · ${activeRegionFilter === 'all' ? '전체 읍·면' : activeRegionFilter} · ${filtered.length}개 표시${filtered.length ? '' : ' — 조건을 해제하거나 초기화하세요.'}`;
-    const policySummary = document.getElementById('map-policy-summary');
-    if (policySummary) policySummary.textContent = `${policyLabel} · ${filtered.length}개 표시`;
   }
 
   function sgisIdsFor(code) {
@@ -600,10 +598,6 @@ document.addEventListener('DOMContentLoaded', () => {
       maximumCapacity,
     });
 
-    document.getElementById('c-research-note').textContent =
-      '시설 간 최근린거리 및 공간적 군집성을 추가적으로 검토했으나, ' +
-      '통계적 유의성이 낮아 강한 군집 패턴은 확인되지 않았다.';
-
     document.getElementById('centroid-summary').innerHTML = [
       ['전체 용량 가중 중심', centroid.weighted_centroid],
       ['전체 단순 중심', centroid.unweighted_centroid],
@@ -709,8 +703,9 @@ document.addEventListener('DOMContentLoaded', () => {
         counts[row.policy_review_context] = (counts[row.policy_review_context] || 0) + 1;
         return counts;
       }, {});
-      const policySelect = document.getElementById('policy-context-filter');
-      if (policySelect) {
+      for (const id of ['policy-context-filter', 'map-policy-filter']) {
+        const policySelect = document.getElementById(id);
+        if (!policySelect) continue;
         policySelect.innerHTML = policyCodes.map(([code, config]) => `<option value="${code}">${escapeHtml(config.label)} (${code === 'all' ? allPondFeatures.length : contextCounts[code] || 0}개)</option>`).join('');
         policySelect.addEventListener('change', event => document.dispatchEvent(new CustomEvent('sgis:policy-filter', {detail: event.target.value})));
       }
