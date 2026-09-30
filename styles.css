@@ -1,12 +1,12 @@
 :root {
-  --bg: #f5f3ee;
-  --panel: #fffdf8;
+  --bg: #f6f8f5;
+  --panel: #fff;
   --text: #1f2a37;
   --muted: #53627a;
   --primary: #2d6a4f;
   --secondary: #e0efe6;
   --accent: #d59d2d;
-  --border: #dfe3e8;
+  --border: #dce6de;
   --shadow: 0 12px 30px rgba(31, 42, 55, 0.08);
 }
 
@@ -2760,10 +2760,6 @@ nav a.is-active {
 .public-source-card { padding: 1.5rem; background: var(--panel); border: 1px solid var(--border); border-radius: 12px; }
 .public-source-card h3 { margin-top: 0; }
 .public-source-card a { color: var(--primary); text-underline-offset: 3px; }
-.public-figure-details { margin-top: 1.5rem; border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.5rem; background: var(--panel); }
-.public-figure-details summary { cursor: pointer; font-weight: 700; }
-.public-figure-details figure { margin: 1.5rem 0; }
-.public-figure-details figcaption { color: var(--muted); font-size: .9rem; }
 @media (max-width: 700px) {
   .public-metrics { grid-template-columns: repeat(2, 1fr); }
   .public-source-grid { grid-template-columns: 1fr; }
@@ -2871,3 +2867,35 @@ body { font-family: 'Noto Sans KR', 'Malgun Gothic', 'Apple SD Gothic Neo', 'Seg
 @media (max-width: 540px) {
   .analysis-def-block #road-distance-chart { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* One background and one card surface throughout the project sections. */
+main > .section:not(.about-hero) { background: var(--bg); }
+main > .section:not(.about-hero) + .section { border-top: 1px solid #e7eee8; }
+.result-stat,
+.outcome-card,
+.webgis-filter-container,
+.map-def-panel,
+.map-def-card,
+.analysis-overview,
+.analysis-block,
+.public-source-card,
+.stat-card,
+.analysis-def-block .def-stat,
+.analysis-def-block .def-panel,
+.analysis-def-block .def-road-row,
+.analysis-def-block .def-method-detail {
+  background: var(--panel);
+  border-color: var(--border);
+}
+.result-stat,
+.outcome-card,
+.webgis-filter-container,
+.map-def-panel,
+.analysis-overview,
+.analysis-block,
+.public-source-card {
+  box-shadow: 0 8px 24px rgba(24, 66, 45, .045);
+}
+.result-text-panel,
+.webgis-map-info,
+.map-analysis-status { background: #f0f6f1; }
