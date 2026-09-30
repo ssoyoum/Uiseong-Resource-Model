@@ -1,0 +1,2 @@
+vendor/leaflet/*.css text eol=lf
+vendor/leaflet/*.js text eol=lf

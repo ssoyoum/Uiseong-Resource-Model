@@ -5,6 +5,7 @@ Uses Python's standard library. Validates saved results; does not collect data.
 from __future__ import annotations
 
 import argparse
+import base64
 import csv
 import hashlib
 import json
@@ -37,6 +38,7 @@ class PageReferences(HTMLParser):
     def __init__(self):
         super().__init__()
         self.references = []
+        self.integrities = []
         self.ids = set()
 
     def handle_starttag(self, tag, attributes):
@@ -48,6 +50,11 @@ class PageReferences(HTMLParser):
         for attribute in ('src', 'href'):
             if attrs.get(attribute):
                 self.references.append(attrs[attribute])
+        reference = attrs.get('src') or attrs.get('href')
+        if reference and attrs.get('integrity'):
+            parsed = urlsplit(reference)
+            if not parsed.scheme and not parsed.netloc and parsed.path:
+                self.integrities.append((parsed.path, attrs['integrity']))
 
 
 def read_json(relative):
@@ -131,6 +138,11 @@ def site_files():
             raise ValueError(f'Unexpected source/private path in public artifact: {relative}')
         if not (ROOT / relative).is_file():
             raise FileNotFoundError(f'Missing public site input: {relative}')
+    for relative, expected in parser.integrities:
+        digest = base64.b64encode(hashlib.sha256((ROOT / relative).read_bytes()).digest()).decode()
+        actual = f'sha256-{digest}'
+        if expected != actual:
+            raise ValueError(f'Public asset integrity mismatch: {relative}')
     return files
 
 
