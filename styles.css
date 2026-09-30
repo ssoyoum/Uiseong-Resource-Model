@@ -2861,3 +2861,13 @@ body { font-family: 'Noto Sans KR', 'Malgun Gothic', 'Apple SD Gothic Neo', 'Seg
   .model-evidence-note { grid-template-columns: 1fr; gap: .35rem; }
   .model-quicklinks { grid-template-columns: 1fr; gap: .5rem; }
 }
+
+/* Road and population panels: full-width rows avoid unused left-side space. */
+.analysis-def-block .def-road-layout { grid-template-columns: minmax(0, 1fr); }
+.analysis-def-block #road-distance-chart { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 900px) {
+  .analysis-def-block #road-distance-chart { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 540px) {
+  .analysis-def-block #road-distance-chart { grid-template-columns: minmax(0, 1fr); }
+}
