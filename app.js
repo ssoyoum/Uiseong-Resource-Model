@@ -699,6 +699,15 @@ document.addEventListener('DOMContentLoaded', () => {
       mapReady = true;
       document.getElementById('map')?.setAttribute('data-ready', 'true');
       const policyCodes = [['all', {label: '전체', color: '#475569'}], ...Object.entries(policyConfig)];
+      const shortPolicyLabels = {
+        all: '전체',
+        FIELD_REVIEW_REQUIRED: '현장',
+        INSUFFICIENT_SGIS_10MIN: '미확보',
+        COMMUNITY_SUPPORT_REVIEW: '공동체',
+        YOUTH_PARTICIPATION_REVIEW: '청년',
+        ACCESS_AND_REACH_REVIEW: '접근',
+        CONTEXT_ONLY: '맥락',
+      };
       const contextCounts = Object.values(policyEvidenceMap).reduce((counts, row) => {
         counts[row.policy_review_context] = (counts[row.policy_review_context] || 0) + 1;
         return counts;
@@ -717,7 +726,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (legend) {
         legend.setAttribute('role', 'group');
         legend.setAttribute('aria-label', '정책 검토 맥락 지도 범례');
-        legend.innerHTML = `<div class="map-legend-heading"><strong>마커 색상 · 분석 E</strong><span>규칙기반 정책 검토 맥락을 선택하세요</span></div><div class="map-legend-items">${policyCodes.map(([code, config]) => `<button type="button" class="legend-badge-item" data-policy-filter="${code}" style="--context-color:${config.color}" aria-pressed="${code === activePolicyFilter}"><i class="dot" style="background:${config.color}" aria-hidden="true"></i><span>${escapeHtml(config.label)}</span><strong>${code === 'all' ? allPondFeatures.length : contextCounts[code] || 0}개</strong></button>`).join('')}</div>`;
+        legend.innerHTML = `<div class="map-legend-heading"><strong>마커 색상 · 분석 E</strong><span>정책 맥락 선택</span></div><div class="map-legend-items">${policyCodes.map(([code, config]) => { const count = code === 'all' ? allPondFeatures.length : contextCounts[code] || 0; return `<button type="button" class="legend-badge-item" data-policy-filter="${code}" style="--context-color:${config.color}" aria-label="${escapeHtml(config.label)} ${count}개" title="${escapeHtml(config.label)} ${count}개" aria-pressed="${code === activePolicyFilter}"><i class="dot" style="background:${config.color}" aria-hidden="true"></i><span class="legend-label-full">${escapeHtml(config.label)}</span><span class="legend-label-short" aria-hidden="true">${escapeHtml(shortPolicyLabels[code] || config.label)}</span><strong aria-hidden="true">${count}개</strong></button>`; }).join('')}</div>`;
         legend.addEventListener('click', (event) => {
           const button = event.target.closest('[data-policy-filter]');
           if (!button) return;

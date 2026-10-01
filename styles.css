@@ -2461,7 +2461,14 @@ nav a.is-active {
 
 .map-legend-heading strong { color: var(--primary); }
 .map-legend-heading span { color: var(--muted); font-size: 0.74rem; }
-.map-legend-items { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.map-legend-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  min-width: 0;
+}
+.map-legend-items .legend-badge-item { white-space: nowrap; }
+.map-legend-items .legend-label-short { display: none; }
 
 .map-stage {
   position: relative;
@@ -2655,15 +2662,21 @@ nav a.is-active {
 .map-legend-row button.legend-badge-item[aria-pressed="true"] { border-color: var(--primary); background: var(--secondary); }
 .map-legend-row button.legend-badge-item:hover { border-color: var(--primary); }
 @media (max-width: 900px) {
+  .map-legend-items { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .map-legend-items button.legend-badge-item { justify-content: center; min-width: 0; width: 100%; padding: .5rem .35rem; }
+  .map-legend-items .legend-label-full { display: none; }
+  .map-legend-items .legend-label-short { display: inline; }
   .map-def-grid { grid-template-columns: 1fr; }
   .map-def-heading { align-items: flex-start; flex-direction: column; }
   .analysis-def-block .def-chart-layout, .analysis-def-block .def-policy-layout, .analysis-def-block .def-road-layout { grid-template-columns: minmax(0, 1fr); }
   .analysis-def-block .def-policy-overview { display: grid; grid-template-columns: minmax(130px, .65fr) minmax(0, 1fr); align-items: center; gap: 1rem; }
 }
 @media (max-width: 540px) {
-  .map-legend-heading { align-items: flex-start; flex-direction: column; }
-  .map-legend-items { display: grid; grid-template-columns: 1fr 1fr; }
-  .map-legend-items .legend-badge-item { width: 100%; }
+  .map-legend-heading { align-items: center; gap: 0.35rem; }
+  .map-legend-heading span { font-size: 0.68rem; white-space: nowrap; }
+  .map-legend-items button.legend-badge-item { gap: .18rem; padding: .45rem .15rem; font-size: .68rem; }
+  .map-legend-items .legend-badge-item strong { display: none; }
+  .map-legend-row .dot { flex-basis: 7px; width: 7px; height: 7px; }
   .map-stage { min-height: 520px; }
   .map-stage #map { height: 520px; }
   .webgis-filter-container { padding: .85rem; }
