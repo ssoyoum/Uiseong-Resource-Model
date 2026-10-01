@@ -2483,10 +2483,9 @@ nav a.is-active {
 
 .webgis-map-info {
   margin-top: 1rem;
-  padding: 1rem 1.1rem;
-  background: var(--secondary);
-  border-left: 4px solid var(--primary);
-  border-radius: 8px;
+  padding: 1rem 0 0;
+  background: transparent;
+  border-top: 1px solid var(--border);
   color: var(--text);
   font-size: 0.88rem;
   line-height: 1.75;
@@ -2861,12 +2860,10 @@ main > .section:not(.about-hero) + .section { border-top: 1px solid #e7eee8; }
   border-color: var(--border);
 }
 .result-text-panel,
-.webgis-map-info,
 .map-analysis-status { background: #f0f6f1; }
 
-#map .leaflet-control,
-#map .leaflet-popup-content-wrapper,
-#map .leaflet-popup-tip { box-shadow: none; }
+/* All panels and map controls use flat surfaces, including vendor UI. */
+*, *::before, *::after { box-shadow: none !important; }
 
 /* Keep the result metrics and Web GIS callout on the page surface. */
 #result .result-stats {
