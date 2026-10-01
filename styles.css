@@ -2854,3 +2854,27 @@ main > .section:not(.about-hero) + .section { border-top: 1px solid #e7eee8; }
 #map .leaflet-control,
 #map .leaflet-popup-content-wrapper,
 #map .leaflet-popup-tip { box-shadow: none; }
+
+/* Keep the result metrics and Web GIS callout on the page surface. */
+#result .result-stats {
+  gap: 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+#result .result-stat {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+#result .result-stat + .result-stat { border-left: 1px solid var(--border); }
+#result .result-text-panel {
+  background: transparent;
+  border-radius: 0;
+  padding: 0.75rem 0 0.75rem 1rem;
+}
+@media (max-width: 900px) {
+  #result .result-stat + .result-stat {
+    border-left: 0;
+    border-top: 1px solid var(--border);
+  }
+}
