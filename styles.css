@@ -164,7 +164,6 @@ nav a.is-active {
   background: var(--panel);
   padding: 1.2rem 1.5rem;
   border-radius: 12px;
-  border-left: 4px solid var(--primary);
   text-align: left;
 }
 
@@ -433,7 +432,6 @@ nav a.is-active {
   margin-top: 1.5rem;
   padding: 1.2rem;
   background: #faf9f5;
-  border-left: 4px solid var(--primary);
   border-radius: 8px;
 }
 
@@ -503,7 +501,6 @@ nav a.is-active {
 
 .proposal-list li {
   background: var(--panel);
-  border-left: 4px solid var(--accent);
   padding: 1rem 1.2rem;
   margin-bottom: 1rem;
   border-radius: 8px;
@@ -540,7 +537,6 @@ nav a.is-active {
   background: #f9f8f6;
   padding: 0.8rem 1rem;
   border-radius: 8px;
-  border-left: 3px solid var(--primary);
 }
 
 .tech-category strong {
@@ -871,7 +867,6 @@ nav a.is-active {
 .result-text-panel {
   margin-top: 1.5rem;
   padding: 1.25rem 1.5rem;
-  border-left: 4px solid var(--primary);
   border-radius: 8px;
   background: var(--secondary);
 }
@@ -1029,7 +1024,6 @@ nav a.is-active {
   align-items: center;
   margin-top: 1.5rem;
   padding: 1rem 1.2rem;
-  border-left: 4px solid var(--accent);
   background: var(--secondary);
   border-radius: 8px;
   color: var(--muted);
@@ -1066,7 +1060,6 @@ nav a.is-active {
 .project-highlight-card {
   display: grid;
   gap: 0.55rem;
-  border-left: 4px solid var(--primary);
 }
 
 .project-highlight-card strong {
@@ -1143,7 +1136,6 @@ nav a.is-active {
 .analysis-callout {
   margin: 1rem 0;
   padding: 0.8rem 1rem;
-  border-left: 4px solid var(--primary);
   background: var(--secondary);
   line-height: 1.6;
 }
@@ -1173,7 +1165,6 @@ nav a.is-active {
 .compact-callout {
   margin-top: 0.75rem;
   padding: 0.65rem 0.8rem;
-  border-left: 3px solid var(--accent);
   border-radius: 6px;
   background: #fffaf0;
   color: var(--muted);
@@ -1454,7 +1445,6 @@ nav a.is-active {
 
 .management-insight {
   background: var(--secondary);
-  border-left-color: var(--primary);
 }
 
 .density-dotplot {
@@ -1696,7 +1686,6 @@ nav a.is-active {
   align-items: center;
   margin-top: 0.7rem;
   padding: 0.75rem 1rem;
-  border-left: 3px solid var(--accent);
   border-radius: 8px;
   background: #fffaf0;
 }
@@ -2054,13 +2043,11 @@ nav a.is-active {
   padding: 0.75rem;
   background: var(--panel);
   border: 1px solid var(--border);
-  border-left: 4px solid var(--primary);
   border-radius: 6px;
 }
 
 .signal-card-theme.signal-card-overlap {
   background: #f0fdf4;
-  border-left-color: #059669;
 }
 
 .signal-theme-tag {
@@ -2570,8 +2557,8 @@ nav a.is-active {
 .map-legend-row button.legend-badge-item { display: inline-flex; align-items: center; gap: .45rem; padding: .65rem .8rem; background: white; border-radius: 9px; }
 .map-legend-row .dot { flex: 0 0 10px; width: 10px; height: 10px; border-radius: 50%; }
 .map-legend-row button:focus-visible, .analysis-def-block button:focus-visible { outline: 3px solid #2563eb; outline-offset: 3px; }
-.map-analysis-status { padding: .7rem .9rem; border-left: 3px solid var(--primary); background: var(--secondary); font-size: .85rem; line-height: 1.6; }
-.map-context-label { border-left: 4px solid var(--context-color); padding-left: .6rem; font-weight: 700; }
+.map-analysis-status { padding: .7rem .9rem; background: var(--secondary); font-size: .85rem; line-height: 1.6; }
+.map-context-label { font-weight: 700; }
 .popup-card th { text-align: left; font-weight: 500; padding: .25rem; color: #526058; }
 .popup-card td { padding: .25rem; }
 .analysis-def-block .def-heading { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; }
@@ -2809,7 +2796,7 @@ body { font-family: 'Noto Sans KR', 'Malgun Gothic', 'Apple SD Gothic Neo', 'Seg
 .model-stage-grid article > span { color: #a26c16; font-size: .76rem; font-weight: 800; }
 .model-stage-grid h3 { margin: .9rem 0 .6rem; color: #184634; font-size: 1.14rem; }
 .model-stage-grid p { margin: 0; color: #58675e; font-size: .85rem; line-height: 1.8; word-break: keep-all; }
-.model-evidence-note { display: grid; grid-template-columns: 195px 1fr; gap: 1.3rem; margin-top: 1.2rem; padding: 1.15rem 1.35rem; border-left: 3px solid #c68d34; background: #f6f2e8; }
+.model-evidence-note { display: grid; grid-template-columns: 195px 1fr; gap: 1.3rem; margin-top: 1.2rem; padding: 1.15rem 1.35rem; background: #f6f2e8; }
 .model-evidence-note > strong { color: #70511e; font-size: 1rem; line-height: 1.5; }
 .model-evidence-note p { margin: 0; color: #4e584f; font-size: .88rem; line-height: 1.8; word-break: keep-all; }
 .model-evidence-note p strong { color: #70511e; }
@@ -2899,7 +2886,7 @@ main > .section:not(.about-hero) + .section { border-top: 1px solid #e7eee8; }
 #result .result-text-panel {
   background: transparent;
   border-radius: 0;
-  padding: 0.75rem 0 0.75rem 1rem;
+  padding: 0.75rem 0;
 }
 @media (max-width: 900px) {
   #result .result-stat + .result-stat {
