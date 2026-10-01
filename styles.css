@@ -1151,7 +1151,6 @@ nav a.is-active {
 .analysis-insight {
   margin-top: 0.9rem;
   padding: 0.8rem 0.9rem;
-  border-left: 3px solid var(--primary);
   border-radius: 7px;
   background: #f1f7f2;
   color: var(--muted);
@@ -2606,6 +2605,26 @@ nav a.is-active {
 .analysis-def-block button:hover { border-color: var(--primary); }
 .analysis-def-block button:focus-visible, .analysis-def-block select:focus-visible, .analysis-def-block summary:focus-visible, .map-legend-row button:focus-visible { outline: 3px solid #d59d2d; outline-offset: 3px; }
 .analysis-def-block .def-chart-status { color: var(--primary); font-size: .77rem; min-height: 1.5em; margin: .8rem 0 .15rem; }
+.analysis-def-block .def-plot-wrap { position: relative; }
+.analysis-def-block .def-point-tooltip {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: .15rem;
+  width: max-content;
+  max-width: min(260px, calc(100% - 16px));
+  padding: .55rem .7rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--panel);
+  color: var(--text);
+  font-size: .76rem;
+  line-height: 1.5;
+  pointer-events: none;
+}
+.analysis-def-block .def-point-tooltip[hidden] { display: none; }
+.analysis-def-block .def-point-tooltip strong { color: var(--primary); }
 .analysis-def-block .def-scatter { display: block; width: 100%; height: auto; overflow: visible; }
 .analysis-def-block .def-scatter text { fill: var(--muted); font-size: 13px; }
 .analysis-def-block .def-grid { stroke: #e6ebe7; stroke-width: 1; }

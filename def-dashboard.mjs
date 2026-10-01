@@ -116,10 +116,10 @@ function renderD(block, model, evidence, onSgisSelect, onFacilitySelect) {
     <div class="def-chart-layout"><div class="def-panel">
       <div class="def-panel-title"><h4>[그림 D-1. 5분·10분 주행생활권 인구 비교]</h4><span>단위: 명</span></div>
       <div class="def-controls" role="group" aria-label="SGIS 비교 대상">${filters.map(filter => `<button type="button" data-sgis-filter="${filter.code}" aria-pressed="${filter.code === 'all'}">${filter.label}<strong>${filter.count}</strong></button>`).join('')}</div>
-      <p class="def-chart-status" id="def-sgis-count" aria-live="polite"></p><div id="sgis-scatter-plot"></div>
-      <p class="def-muted">두 축은 log10(인구+1) 척도이며 눈금은 실제 인구입니다. 조건을 누르면 지도도 필터링됩니다. 점 선택 후 ‘지도에서 보기’를 누르면 해당 못을 확인할 수 있습니다.</p>
+      <p class="def-chart-status" id="def-sgis-count" aria-live="polite"></p><div class="def-plot-wrap"><div id="sgis-scatter-plot"></div><div id="def-point-tooltip" class="def-point-tooltip" role="tooltip" hidden></div></div>
+      <p class="def-muted">두 축은 log10(인구+1) 척도이며 눈금은 실제 인구입니다. 조건을 누르면 지도도 필터링됩니다. 점에 마우스를 올리거나 선택하면 시설 정보를 볼 수 있습니다.</p>
       <p class="def-muted">최대값 ID 474: 5분 2,298명·10분 3,877명. 저장 응답과 일치하고 단일 좌표이므로 유지했습니다. 대표·인근·중복좌표 47개는 비교에서 제외했습니다.</p>
-      <div class="def-selected" id="def-point-detail" aria-live="polite">점 하나를 선택해 5분·10분 인구와 증가폭을 확인하세요.</div>
+      <div class="def-selected" id="def-point-detail" aria-live="polite">점에 마우스를 올리거나 선택해 5분·10분 인구와 증가폭을 확인하세요.</div>
     </div><aside class="def-panel def-reading"><h4>비교 기준과 읽는 방법</h4>
       ${table(['지표', '중앙값', '표본'], [
         ['5분 인구', summary.distributions.sgis_population_5min, '명'],
@@ -132,6 +132,10 @@ function renderD(block, model, evidence, onSgisSelect, onFacilitySelect) {
       <p class="def-muted">버튼 수치는 그래프에서 비교 가능한 표본 수입니다. 미확보값은 0명으로 바꾸지 않으며 시설별 생활권 인구를 합산하지 않습니다. [표 D-1. 생활권 인구 요약]</p>
     </aside></div>` + source(`SGIS 생활권역 · ${summary.year}년 인구 · 저장된 응답`, 'data/analysis/sgis_catchment_analysis.json');
   let selected = 'all';
+  const pairedById = new Map(paired.map(row => [String(row.pond_id), row]));
+  const scatter = block.querySelector('#sgis-scatter-plot');
+  const tooltip = block.querySelector('#def-point-tooltip');
+  const plotWrap = block.querySelector('.def-plot-wrap');
   const draw = () => {
     const filter = filters.find(item => item.code === selected);
     const points = paired.filter(filter.test);
@@ -145,18 +149,40 @@ function renderD(block, model, evidence, onSgisSelect, onFacilitySelect) {
     const y = value => bottom - scale(value) * (bottom - top);
     const ticks = [0, 10, 100, 1000, 10000, 100000].filter(value => value <= domain);
     const guides = ticks.map(value => `<line x1="${x(value)}" x2="${x(value)}" y1="${top}" y2="${bottom}" class="def-grid"/><line x1="${left}" x2="${right}" y1="${y(value)}" y2="${y(value)}" class="def-grid"/><text x="${x(value)}" y="${bottom + 22}" text-anchor="middle">${fmt(value)}</text><text x="${left - 10}" y="${y(value) + 4}" text-anchor="end">${fmt(value)}</text>`).join('');
-    block.querySelector('#sgis-scatter-plot').innerHTML = `<svg class="def-scatter" viewBox="0 0 ${width} ${height}" aria-label="SGIS 인구 산점도 ${points.length}개">
+    scatter.innerHTML = `<svg class="def-scatter" viewBox="0 0 ${width} ${height}" aria-label="SGIS 인구 산점도 ${points.length}개">
       ${guides}<line x1="${x(0)}" x2="${x(domain)}" y1="${y(0)}" y2="${y(domain)}" class="def-diagonal"/>
-      ${points.map(row => `<circle cx="${x(row.p5)}" cy="${y(row.p10)}" r="5" class="def-point" tabindex="0" role="button" data-pond-point="${html(row.pond_id)}" aria-label="못 ${html(row.pond_id)}, 5분 ${fmt(row.p5)}명, 10분 ${fmt(row.p10)}명"><title>못 ${html(row.pond_id)} · ${html(row.address)} · 5분 ${fmt(row.p5)}명 / 10분 ${fmt(row.p10)}명</title></circle>`).join('')}
+      ${points.map(row => `<circle cx="${x(row.p5)}" cy="${y(row.p10)}" r="5" class="def-point" tabindex="0" role="button" data-pond-point="${html(row.pond_id)}" aria-label="못 ${html(row.pond_id)}, 5분 ${fmt(row.p5)}명, 10분 ${fmt(row.p10)}명, 증가 ${fmt(row.p10 - row.p5)}명"></circle>`).join('')}
       <text x="${(left + right) / 2}" y="390" text-anchor="middle">5분 생활권 인구 (명)</text><text transform="translate(17 180) rotate(-90)" text-anchor="middle">10분 생활권 인구 (명)</text></svg>`;
-    block.querySelector('#def-point-detail').textContent = '점 하나를 선택해 5분·10분 인구와 증가폭을 확인하세요.';
+    tooltip.hidden = true;
+    block.querySelector('#def-point-detail').textContent = '점에 마우스를 올리거나 선택해 5분·10분 인구와 증가폭을 확인하세요.';
   };
   const selectPoint = target => {
-    const row = paired.find(item => String(item.pond_id) === target.dataset.pondPoint);
+    const row = pairedById.get(target.dataset.pondPoint);
     if (!row) return;
     block.querySelectorAll('.def-point').forEach(point => point.classList.toggle('is-selected', point === target));
     block.querySelector('#def-point-detail').innerHTML = `<strong>못 ${html(row.pond_id)} · ${html(row.address)}</strong><span>5분 ${fmt(row.p5)}명 → 10분 ${fmt(row.p10)}명 · 증가 ${fmt(row.p10 - row.p5)}명</span><button type="button" class="def-map-link" data-locate-pond="${html(row.pond_id)}">지도에서 이 못 보기 ↑</button>`;
   };
+  const positionTooltip = event => {
+    if (!Number.isFinite(event.clientX) || !Number.isFinite(event.clientY)) return;
+    const bounds = plotWrap.getBoundingClientRect();
+    tooltip.style.left = `${Math.min(Math.max(8, event.clientX - bounds.left + 12), Math.max(8, bounds.width - tooltip.offsetWidth - 8))}px`;
+    tooltip.style.top = `${Math.min(Math.max(8, event.clientY - bounds.top + 12), Math.max(8, bounds.height - tooltip.offsetHeight - 8))}px`;
+  };
+  scatter.addEventListener('pointerover', event => {
+    const point = event.target.closest?.('[data-pond-point]');
+    if (!point) { tooltip.hidden = true; return; }
+    const row = pairedById.get(point.dataset.pondPoint);
+    if (!row) return;
+    selectPoint(point);
+    tooltip.innerHTML = `<strong>못 ${html(row.pond_id)} · ${html(row.address)}</strong><span>5분 ${fmt(row.p5)}명 · 10분 ${fmt(row.p10)}명 · 증가 ${fmt(row.p10 - row.p5)}명</span>`;
+    tooltip.hidden = false;
+    positionTooltip(event);
+  });
+  scatter.addEventListener('pointermove', event => {
+    if (!event.target.closest?.('[data-pond-point]')) { tooltip.hidden = true; return; }
+    positionTooltip(event);
+  });
+  scatter.addEventListener('pointerleave', () => { tooltip.hidden = true; });
   block.addEventListener('click', event => {
     const filter = event.target.closest('[data-sgis-filter]');
     if (filter) { selected = filter.dataset.sgisFilter; draw(); onSgisSelect(selected === 'all' ? null : paired.filter(filters.find(item => item.code === selected).test).map(row => row.pond_id), selected); }
@@ -169,6 +195,9 @@ function renderD(block, model, evidence, onSgisSelect, onFacilitySelect) {
   document.addEventListener('sgis:map-sgis-filter', event => { selected = filters.some(item => item.code === event.detail) ? event.detail : 'all'; draw(); });
   block.addEventListener('keydown', event => {
     if (event.target.matches('[data-pond-point]') && ['Enter', ' '].includes(event.key)) { event.preventDefault(); selectPoint(event.target); }
+  });
+  block.addEventListener('focusin', event => {
+    if (event.target.matches('[data-pond-point]')) selectPoint(event.target);
   });
   draw();
 }

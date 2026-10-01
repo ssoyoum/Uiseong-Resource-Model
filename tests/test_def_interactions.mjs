@@ -80,6 +80,9 @@ test('D/E/F controls select, reset, and synchronize with actual map filter resul
   assert.equal(document.querySelector('[data-sgis-filter="both"]').getAttribute('aria-pressed'), 'true');
   changeSelect('#sgis-map-filter', 'all');
   assert.equal(document.querySelector('#filtered-count').textContent, '427');
+  document.querySelector('.def-point').dispatchEvent(new window.Event('pointerover', {bubbles: true}));
+  assert.match(document.querySelector('#def-point-tooltip').textContent, /5분.*10분.*증가/);
+  assert.match(document.querySelector('#def-point-detail').textContent, /5분.*10분.*증가/);
   click('.def-point');
   assert.match(document.querySelector('#def-point-detail').textContent, /5분.*10분.*증가/);
 
