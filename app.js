@@ -819,9 +819,9 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       // 분석 C와 농업환경 분석에 사용한 농경지 Polygon을 지도에 올린다.
-      const agricultureGeoJson = await loadJson('data/geojson/agricultural_areas.geojson');
+      const agricultureGeoJson = await loadJson('data/geojson/agricultural_areas_web.geojson');
       agricultureLayer.addData(agricultureGeoJson);
-      const regionGeoJson = await loadJson('data/geojson/uiseong_emd.geojson');
+      const regionGeoJson = await loadJson('data/geojson/uiseong_emd_web.geojson');
       regionLayer.addData(regionGeoJson);
       loadCoordinateCandidates().catch((error) => console.warn('Coordinate candidates unavailable', error));
 
@@ -945,7 +945,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     },
   })).catch((error) => console.error('D/E/F dashboard load failed', error));
-  import('./quality-dashboard.mjs?v=20261003-repro')
+  import('./quality-dashboard.mjs?v=20261003-weblayers')
     .then(({ initQualityDashboard }) => initQualityDashboard({ loadJson, loadCsv }))
     .catch((error) => console.error('G–J quality dashboard load failed', error));
 });
