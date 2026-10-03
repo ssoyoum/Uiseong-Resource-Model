@@ -1,4 +1,4 @@
-﻿"""Build a public Pages artifact using only files referenced by the Web GIS.
+"""Build a public Pages artifact using only files referenced by the Web GIS.
 
 Uses Python's standard library. Validates saved results; does not collect data.
 """
@@ -24,6 +24,7 @@ SOURCE_FILES = {
     'data/manifests/population_sources.csv',
     'data/analysis/validation_report.json',
 }
+MODULES = ('def-dashboard.mjs', 'quality-dashboard.mjs')
 PUBLIC_VENDOR_FILES = {
     'vendor/leaflet/LICENSE',
     'vendor/leaflet/images/layers.png',
@@ -99,6 +100,9 @@ def check_saved_results():
         raise ValueError('Policy group counts differ from the saved summary.')
     if summary['status'] != 'PASS' or validation['status'] != 'PASS' or validation['fail_count'] != 0:
         raise ValueError('Saved analysis validation must be PASS with zero failures.')
+    audit = read_json('data/analysis/data_quality_audit.json')
+    if audit['status'] != 'PASS':
+        raise ValueError('Data quality audit must PASS before publishing.')
     if summary['year'] != 2024:
         raise ValueError('Update the public source-year labels before changing the SGIS year.')
     return {
@@ -109,13 +113,14 @@ def check_saved_results():
         'sgis_coverage': coverage,
         'policy_review_context_counts': counts,
         'pipeline_validation': {key: validation[key] for key in ('status', 'pass_count', 'fail_count')},
+        'data_quality_audit': audit['status_counts'],
     }
 
 
 def site_files():
     parser = PageReferences()
     parser.feed((ROOT / 'index.html').read_text(encoding='utf-8'))
-    files = {'index.html', 'app.js', 'styles.css', 'def-dashboard.mjs', '.nojekyll', *SOURCE_FILES, *PUBLIC_VENDOR_FILES}
+    files = {'index.html', 'app.js', 'styles.css', *MODULES, '.nojekyll', *SOURCE_FILES, *PUBLIC_VENDOR_FILES}
     for reference in parser.references:
         parsed = urlsplit(reference)
         if parsed.scheme or parsed.netloc:
@@ -127,7 +132,7 @@ def site_files():
         if parsed.path.startswith('/') or '..' in Path(parsed.path).parts:
             raise ValueError(f'Non-relative public file reference: {reference}')
         files.add(parsed.path)
-    for script in ('app.js', 'def-dashboard.mjs'):
+    for script in ('app.js', *MODULES):
         text = (ROOT / script).read_text(encoding='utf-8')
         files.update(re.findall(r'''(?:loadJson|loadCsv)\(['"]([^'"]+)['"]\)''', text))
         for reference in re.findall(r'''import\(['"]([^'"]+)['"]\)''', text):
