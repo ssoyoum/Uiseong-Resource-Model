@@ -10,6 +10,12 @@ vworld/
 submission/
 docs/submission/
 docs/drafts/
+# Local-only DOCX builders for submission documents.
+analysis/build_*_docx.py
+# Raw VWorld files belong in vworld/ only.
+/C_UQ151.zip
+/Z_UPIS_C_UQ151.xlsx
+.claude-flow/
 .env
 .env.*
 !.env.example
