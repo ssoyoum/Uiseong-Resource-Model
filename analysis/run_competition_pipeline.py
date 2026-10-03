@@ -17,6 +17,7 @@ from pond_context_analysis import run as run_context
 from worldpop_reference_analysis import run as run_worldpop_reference
 from traffic_culture_analysis import run as run_traffic_culture
 from classify_ponds import run as run_classification
+from policy_priority_scenarios import run as run_policy_priority
 from build_competition_outputs import run as build_outputs
 from generate_figures import run as generate_figures
 from build_source_manifest import run as build_source_manifest
@@ -41,6 +42,8 @@ def main() -> None:
     run_traffic_culture()
     print("[7/10] rule-based classification")
     run_classification()
+    priority = run_policy_priority()
+    print(f"policy priority scenarios: {priority['status']}")
     print("[8/10] competition outputs")
     build_outputs()
     print("[9/10] figures")
