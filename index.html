@@ -12,7 +12,7 @@
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232d6a4f'/%3E%3Cellipse cx='32' cy='38' rx='19' ry='11' fill='%238bc9a8'/%3E%3Cellipse cx='32' cy='36' rx='12' ry='6' fill='%23e0efe6'/%3E%3C/svg%3E" />
     <title>SGIS 유휴자원 정책검토 모델 | 의성 못 사례</title>
     <link rel="stylesheet" href="vendor/leaflet/leaflet.css" integrity="sha256-M3v8pcq9A7OYFbJwD+vis7ft9VkhxZzUn4jssyghIwM=" crossorigin="" />
-    <link rel="stylesheet" href="styles.css?v=20261003-weblayers" />
+    <link rel="stylesheet" href="styles.css?v=20261003-license" />
   </head>
   <body>
     <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
@@ -821,7 +821,7 @@
                       <span>SGIS 생활권 재조회 시 <code>.env.example</code>을 <code>.env</code>로 복사해 인증키 입력</span></li>
                     <li><strong>전체 실행</strong><code>python analysis/run_competition_pipeline.py</code><span>마지막 줄 <code>pipeline complete: PASS</code> 확인</span></li>
                   </ol>
-                  <p class="def-muted">원자료 파일은 이용조건 확인 전까지 저장소에 올리지 않습니다. 원자료가 바뀌면 SHA-256 점검(분석 G)이 실패로 표시됩니다.</p>
+                  <p class="def-muted">원자료 파일은 각 기관의 이용조건에 따라 저장소에 올리지 않으므로 직접 내려받아야 합니다. 원자료가 바뀌면 SHA-256 점검(분석 G)이 실패로 표시됩니다.</p>
                 </div>
                 <aside class="def-panel def-reading"><h4>공개 결과 파일</h4>
                   <ul class="download-list">
@@ -834,7 +834,7 @@
                     <li><a href="data/analysis/worldpop_reference_buffer.csv" download>worldpop_reference_buffer.csv</a><span>WorldPop 참고 인구 (분석 J)</span></li>
                     <li><a href="data/manifests/source_manifest.csv" download>source_manifest.csv</a><span>출처·기준연도 목록 (분석 H)</span></li>
                   </ul>
-                  <p class="def-muted">VWorld 원자료에서 잘라 낸 GPKG 공간파일은 이용조건 확인 전이라 이 페이지에서 배포하지 않습니다.</p>
+                  <p class="def-muted">VWorld 자료는 CC BY-NC-ND(변경금지)라 잘라 낸 공간파일은 배포하지 않고, 계산된 거리·개수 결과만 공개합니다.</p>
                 </aside>
               </div>
             </div>
@@ -860,7 +860,7 @@
               <a href="data/analysis/sgis_catchment_analysis.json">분석 요약 JSON ↗</a> · <a href="data/analysis/sgis_catchment_analysis.csv">시설별 분석 CSV ↗</a><br>
               <a href="data/manifests/sgis_sources.csv">SGIS 출처 목록 ↗</a></article>
             <article class="public-source-card"><h3>VWorld 공간환경</h3>
-              <p>UQ151 도로 최근접거리는 미터 단위의 유클리드거리입니다. UQ164·UO601 시설 68개는 확보한 레이어의 범위이며, 모든 생활시설을 포괄하지 않습니다.</p>
+              <p>UQ151 도로 최근접거리는 미터 단위의 유클리드거리입니다. UQ164·UO601 시설 68개는 확보한 레이어의 범위이며, 모든 생활시설을 포괄하지 않습니다. 출처: 국토교통부(VWorld), CC BY-NC-ND.</p>
               <a href="data/manifests/vworld_sources.csv">레이어·기준연도·출처 목록 ↗</a></article>
             <article class="public-source-card"><h3>행정안전부 읍·면 인구</h3>
               <p>2024·2025년 12월 주민등록 인구. 18개 읍·면의 지역 배경지표이며 못 주변 인구격자 분석과 구분합니다. 청년 만 19~39세, 고령 만 65세 이상.</p>
@@ -887,6 +887,6 @@
     </footer>
 
     <script src="vendor/leaflet/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-    <script src="app.js?v=20261003-weblayers"></script>
+    <script src="app.js?v=20261003-license"></script>
   </body>
 </html>

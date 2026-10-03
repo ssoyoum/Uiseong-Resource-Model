@@ -945,7 +945,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     },
   })).catch((error) => console.error('D/E/F dashboard load failed', error));
-  import('./quality-dashboard.mjs?v=20261003-weblayers')
+  import('./quality-dashboard.mjs?v=20261003-license')
     .then(({ initQualityDashboard }) => initQualityDashboard({ loadJson, loadCsv }))
     .catch((error) => console.error('G–J quality dashboard load failed', error));
 });
