@@ -1,0 +1,15 @@
+{
+  "note": "제출문서 기준 수치. 의도적으로 변경할 때만 갱신한다.",
+  "numbers": {
+    "pond_count": 427,
+    "vworld_facility_count": 68,
+    "vworld_road_feature_count": 483,
+    "sgis_request_count": 854,
+    "sgis_available_count": 455,
+    "sgis_eligible_unique_coordinate_points": 380,
+    "sgis_eligible_with_10min_population": 190,
+    "coordinate_review_count": 47,
+    "emd_count": 18,
+    "population_total_latest": 47902
+  }
+}

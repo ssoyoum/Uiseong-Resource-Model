@@ -1,0 +1,216 @@
+{
+  "status": "PASS",
+  "status_counts": {
+    "PASS": 22,
+    "INFO": 1,
+    "WARN": 1
+  },
+  "checks": [
+    {
+      "name": "population_emd_count_18",
+      "status": "PASS",
+      "details": {
+        "rows": 18
+      }
+    },
+    {
+      "name": "population_subgroups_within_total",
+      "status": "PASS",
+      "details": {
+        "violations": 0
+      }
+    },
+    {
+      "name": "population_ratio_recompute",
+      "status": "PASS",
+      "details": {
+        "max_abs_error": 1.7763568394002505e-15
+      }
+    },
+    {
+      "name": "population_emd_sum_equals_county_total",
+      "status": "PASS",
+      "details": {
+        "year": 2025,
+        "emd_sum": 47902,
+        "county_total_in_raw": 47902
+      }
+    },
+    {
+      "name": "sgis_rows_unique_427x2",
+      "status": "PASS",
+      "details": {
+        "rows": 854,
+        "duplicate_keys": 0
+      }
+    },
+    {
+      "name": "sgis_available_population_present",
+      "status": "PASS",
+      "details": {
+        "available": 455
+      }
+    },
+    {
+      "name": "sgis_population_non_negative",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "sgis_missing_not_zero_filled",
+      "status": "PASS",
+      "details": {
+        "missing_rows": 399
+      }
+    },
+    {
+      "name": "sgis_5min_not_greater_than_10min",
+      "status": "PASS",
+      "details": {
+        "ponds_with_both": 220,
+        "population_violations": [],
+        "service_area_violations": []
+      }
+    },
+    {
+      "name": "sgis_displayed_vs_api_total",
+      "status": "INFO",
+      "details": {
+        "compared": 451,
+        "max_relative_diff": 0.625,
+        "over_5_percent": 180,
+        "note": "SGIS 화면 표시값(비밀보호 처리)과 API 합계의 차이; 분석은 표시값 사용"
+      }
+    },
+    {
+      "name": "context_rows_427_unique",
+      "status": "PASS",
+      "details": {
+        "rows": 427
+      }
+    },
+    {
+      "name": "facility_count_500m_le_1km",
+      "status": "PASS",
+      "details": {
+        "violations": 0
+      }
+    },
+    {
+      "name": "road_length_500m_le_1km",
+      "status": "PASS",
+      "details": {
+        "violations": 0
+      }
+    },
+    {
+      "name": "agricultural_area_500m_le_1km",
+      "status": "PASS",
+      "details": {
+        "violations": 0
+      }
+    },
+    {
+      "name": "agricultural_ratio_500m_in_0_100",
+      "status": "PASS",
+      "details": {
+        "min": 0.0,
+        "max": 82.53505611065532
+      }
+    },
+    {
+      "name": "agricultural_ratio_1000m_in_0_100",
+      "status": "PASS",
+      "details": {
+        "min": 0.0,
+        "max": 78.7265729028892
+      }
+    },
+    {
+      "name": "official_population_fields_empty_without_grid",
+      "status": "PASS",
+      "details": {
+        "filled_columns": {},
+        "note": "공식 인구격자 미확보 상태에서 값이 생기면 혼용 오류"
+      }
+    },
+    {
+      "name": "worldpop_500m_le_1km",
+      "status": "PASS",
+      "details": {
+        "rows": 427,
+        "violations": 0
+      }
+    },
+    {
+      "name": "road_distance_complete_non_negative",
+      "status": "PASS",
+      "details": {
+        "rows": 427,
+        "missing": 0,
+        "min_m": 13.43949373329985,
+        "max_m": 3350.5635399411917
+      }
+    },
+    {
+      "name": "road_source_year_recorded",
+      "status": "WARN",
+      "details": {
+        "values": [
+          "None"
+        ],
+        "note": "UQ151 공식 기준연도 확인 후 accessibility_analysis.py에서 채우고 제출 그림을 재생성해야 함"
+      }
+    },
+    {
+      "name": "classification_complete_with_reason",
+      "status": "PASS",
+      "details": {
+        "rows": 427,
+        "missing_reason": 0,
+        "type_counts": {
+          "D_PRESERVATION": 329,
+          "A_CULTURE_TOURISM": 55,
+          "B_ECO_EDUCATION": 43
+        }
+      }
+    },
+    {
+      "name": "coordinate_corrections_not_applied",
+      "status": "PASS",
+      "details": {
+        "template_rows": 47,
+        "rows_with_correction": 0,
+        "note": "보정 반영 시 SGIS·제출 수치가 바뀌므로 반영 여부를 명시적으로 결정해야 함"
+      }
+    },
+    {
+      "name": "submission_numbers_frozen",
+      "status": "PASS",
+      "details": {
+        "changed": {},
+        "checked": [
+          "pond_count",
+          "vworld_facility_count",
+          "vworld_road_feature_count",
+          "sgis_request_count",
+          "sgis_available_count",
+          "sgis_eligible_unique_coordinate_points",
+          "sgis_eligible_with_10min_population",
+          "coordinate_review_count",
+          "emd_count",
+          "population_total_latest"
+        ]
+      }
+    },
+    {
+      "name": "raw_checksums_unchanged",
+      "status": "PASS",
+      "details": {
+        "changed": [],
+        "missing_local": []
+      }
+    }
+  ],
+  "note": "validation_report.json과 별도 보고서. 산출값을 수정하지 않고 점검만 수행."
+}

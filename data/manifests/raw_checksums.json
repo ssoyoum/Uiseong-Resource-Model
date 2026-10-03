@@ -1,0 +1,14 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "vworld/C_UQ151.zip": "869f114c7434629c288a127dea0e165d13d78dbe73cc7fa15a42e99dc5f5700f",
+    "vworld/Z_UPIS_C_UQ151.xlsx": "ea6d7a1bb2e2d7ba89c8e15ed5e162c55c43f0d4bd04f5571aee705cf6b95832",
+    "vworld/LSMD_CONT_UQ164_5174_경북.zip": "fcc73d8d4b9ee7e58f638af5639a8f62609195f8e5221bcef45f53ee2a843227",
+    "vworld/LSMD_CONT_UO601_5174_경북.zip": "f33aae9fa5c589561b2db9421225369b43a9169e4ed93745aa0105e0867119ed",
+    "vworld/T_W_BASE_ART_CULT_IDX.zip": "c58515f981f3ac385406b4335529dd28de0b18ef509b835b33f55a489a0a4e3b",
+    "vworld/T_W_BASE_TRF_CULT_IDX.zip": "1e097498f1f38bedb5d6b9969553379694dda303ba44dbbf2d99da07cda13dab",
+    "data/raw/population/mois_age_2024_1year.csv": "de1ee00e53869f703be20ec569ac669733a0f4c17c97ff238cd827d9ba9867a5",
+    "data/raw/population/mois_age_2025_1year.csv": "8c4c200f7e88d43b2e55e4584322cbf044e3e607c876b21b7232218c82dc9e28",
+    "data/raw/population/worldpop/kor_pop_2020_CN_100m_R2025A_v1.tif": "3666c7275c29051bf91bc1cdfabf056b14b42217235a41b1af82ad15784120e4"
+  }
+}
