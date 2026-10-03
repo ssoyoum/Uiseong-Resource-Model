@@ -19,6 +19,8 @@ const valueCell = value => {
   if (value === 'NOT_APPLICABLE') return '<span class="def-muted">해당 없음</span>';
   return (!value || value === NA) ? '<span class="quality-badge quality-badge-na">미확인</span>' : html(value);
 };
+// 긴 API 경로는 '/'·'+' 뒤에서 줄바꿈되게 한다(값이 있는 경우에만).
+const layerCell = value => (!value || value === NA || value === 'NOT_APPLICABLE') ? valueCell(value) : html(value).replace(/([/+])/g, '$1<wbr>');
 
 const CHECK_LABELS = {
   population_emd_count_18: ['인구', '읍·면 18개, 코드 중복 없음'],
@@ -91,7 +93,7 @@ function renderSources(block, rows) {
   const notRedistributed = rows.filter(row => String(row.redistribution_status).startsWith('RAW_NOT_REDISTRIBUTED')).length;
   block.innerHTML = heading('H', '데이터 출처와 기준연도', '분석에 쓴 자료를 같은 12개 항목으로 정리했습니다. 원본에서 확인되지 않은 값은 추정하지 않고 ‘미확인’으로 표시합니다.') + `
     <div class="def-stat-grid">${card('정리한 자료', `${rows.length}건`, 'VWorld·행정안전부·SGIS·교통문화지수·WorldPop')}${card('기준연도 확인', `${confirmedYear}건`, `미확인 ${rows.length - confirmedYear}건`)}${card('원자료 미공개', `${notRedistributed}건`, '이용조건 확인 전 저장소에 올리지 않음')}</div>
-    <div class="def-panel">${table(['자료', '제공', '레이어·API', '기준연도', '좌표계', '분석 산출물'], rows.map(row => `<tr><th scope="row">${html(row.dataset_name)}</th><td>${valueCell(row.provider)}</td><td>${valueCell(row.layer_id)}</td><td>${valueCell(row.reference_year)}</td><td>${valueCell(row.crs === 'NOT_SPATIAL_TABLE' ? '표 자료' : row.crs)}</td><td><code>${html(String(row.processed_output).split('/').pop())}</code></td></tr>`))}
+    <div class="def-panel">${table(['자료', '제공', '레이어·API', '기준연도', '좌표계', '분석 산출물'], rows.map(row => `<tr><th scope="row">${html(row.dataset_name)}</th><td>${valueCell(row.provider)}</td><td>${layerCell(row.layer_id)}</td><td>${valueCell(row.reference_year)}</td><td>${valueCell(row.crs === 'NOT_SPATIAL_TABLE' ? '표 자료' : row.crs)}</td><td><code>${html(String(row.processed_output).split('/').pop())}</code></td></tr>`))}
     <p class="def-muted">VWorld UQ164·UO601의 기준연도는 내려받은 파일명의 데이터 버전(202608)에서 읽었습니다. UQ151 도로는 파일 작성일만 확인되어 기준연도를 비워 두었습니다. 행정경계·농업지역은 기존 프로젝트 자료로 원 출처를 추가로 확인하고 있습니다.</p></div>` +
     source('표준 출처 목록 · 원본 목록에서 자동 생성', [['출처 목록 CSV', 'data/manifests/source_manifest.csv']]);
 }
@@ -113,8 +115,10 @@ function renderCoordinates(block, summary) {
     </div><aside class="def-panel def-reading"><h4>읽는 방법</h4>
       <p>기존 좌표가 군 대표점으로 기록된 시설은 실제 위치와 수 km 차이가 날 수 있습니다. 후보는 필지의 대표 좌표이므로 못 수면의 위치와 다를 수 있습니다.</p>
       <div class="analysis-insight"><strong>현재 결과에 반영하지 않은 이유</strong>후보를 반영하면 SGIS 생활권을 다시 조회해야 합니다. 공개 화면의 수치(380개·190개)는 검증을 마친 현재 좌표를 기준으로 유지합니다.</div>
+      <button type="button" class="def-map-link" data-show-candidates>지도에서 후보 위치 보기 ↑</button>
     </aside></div>` +
     source('SGIS 주소 지오코딩 API · 검토용 후보', [['후보 요약 JSON', 'data/analysis/coordinate_geocode_candidates.json'], ['시설별 후보 CSV', 'data/analysis/coordinate_geocode_candidates.csv']]);
+  block.querySelector('[data-show-candidates]')?.addEventListener('click', () => document.dispatchEvent(new CustomEvent('quality:show-candidates')));
 }
 
 function renderSensitivity(block, scenarios, worldpop, policyRows) {

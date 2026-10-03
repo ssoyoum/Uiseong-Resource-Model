@@ -2904,8 +2904,13 @@ main > .section:not(.about-hero) + .section { border-top: 1px solid #e7eee8; }
 .analysis-def-block .quality-badge-fail { background: #fde2e2; color: #a61b1b; }
 .analysis-def-block .quality-badge-info { background: #e6eefb; color: #2453a6; }
 .analysis-def-block .quality-badge-na { background: #eef0ec; color: var(--muted); }
-.analysis-def-block .def-table code { font-size: .72rem; color: var(--muted); word-break: break-all; }
+.analysis-def-block .def-table code { font-size: .72rem; color: var(--muted); white-space: nowrap; }
 .quality-blocks .def-table th[scope="row"] { font-weight: 550; }
 @media (max-width: 900px) {
   .quality-blocks .def-chart-layout { grid-template-columns: 1fr; }
+}
+@media (max-width: 700px) {
+  /* 좁은 화면에서는 표를 세로로 늘리지 않고 가로 스크롤로 읽는다. */
+  .quality-blocks .def-table { min-width: 620px; }
+  .quality-blocks .def-stat-grid { grid-template-columns: 1fr; }
 }
