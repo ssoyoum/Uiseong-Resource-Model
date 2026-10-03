@@ -35,11 +35,11 @@
   "data_not_available_by_field": {
     "dataset_name": 0,
     "provider": 2,
-    "layer_id": 5,
+    "layer_id": 2,
     "reference_year": 3,
     "download_url": 7,
     "accessed_at": 9,
-    "crs": 1,
+    "crs": 0,
     "license_url": 11,
     "local_source_path": 0,
     "processed_output": 0,

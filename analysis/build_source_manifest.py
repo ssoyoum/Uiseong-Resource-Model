@@ -35,6 +35,7 @@ STANDARD_COLUMNS = [
 EXTRA_COLUMNS = ["source_manifest", "source_status", "local_source_status", "raw_file_date"]
 OUTPUT_PATH = MANIFEST_DIR / "source_manifest.csv"
 NOT_SPATIAL = "NOT_SPATIAL_TABLE"
+NOT_APPLICABLE = "NOT_APPLICABLE"
 
 VWORLD_OUTPUTS = {
     "UQ164": "data/processed/facilities/uiseong_facilities.gpkg",
@@ -158,7 +159,7 @@ def population_rows() -> list[dict]:
         rows.append({
             "dataset_name": f"{row['dataset_name']} ({period})",
             "provider": value(row.get("provider")),
-            "layer_id": DATA_NOT_AVAILABLE,
+            "layer_id": NOT_APPLICABLE,
             "reference_year": period[:4] if period[:4].isdigit() else period,
             "download_url": value(row.get("source_url")),
             "accessed_at": value(row.get("downloaded_at")),
@@ -227,11 +228,12 @@ def worldpop_rows() -> list[dict]:
         rows.append({
             "dataset_name": row["dataset_name"],
             "provider": value(row.get("provider")),
-            "layer_id": DATA_NOT_AVAILABLE,
+            "layer_id": NOT_APPLICABLE,
             "reference_year": value(row.get("reference_period")),
             "download_url": value(row.get("source_url")),
             "accessed_at": value(row.get("accessed_at")),
-            "crs": DATA_NOT_AVAILABLE,
+            # GeoTIFF GeoKey에서 읽은 CRS(worldpop_reference_analysis.py)
+            "crs": value((read_json(ANALYSIS_DIR / "worldpop_reference_buffer.json", {}) or {}).get("raster_crs")),
             "license_url": value(row.get("license_url")),
             "local_source_path": rel(row.get("local_path", "")),
             "processed_output": "data/analysis/worldpop_reference_buffer.csv",
