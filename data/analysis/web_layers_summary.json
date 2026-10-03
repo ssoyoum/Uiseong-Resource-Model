@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "purpose": "Leaflet 표시 전용. 분석은 원본 GeoJSON을 사용한다.",
+  "simplify_tolerance_m": 5.0,
+  "simplify_crs": "EPSG:5174",
+  "coordinate_decimals": 5,
+  "layers": [
+    {
+      "source": "data/geojson/agricultural_areas.geojson",
+      "output": "data/geojson/agricultural_areas_web.geojson",
+      "feature_count": 1755,
+      "kept_unsnapped_small_features": 31,
+      "source_kb": 5398.1,
+      "output_kb": 1595.5,
+      "area_change_pct": -0.0793
+    },
+    {
+      "source": "data/geojson/uiseong_emd.geojson",
+      "output": "data/geojson/uiseong_emd_web.geojson",
+      "feature_count": 18,
+      "kept_unsnapped_small_features": 0,
+      "source_kb": 862.2,
+      "output_kb": 172.1,
+      "area_change_pct": 0.0002
+    }
+  ]
+}

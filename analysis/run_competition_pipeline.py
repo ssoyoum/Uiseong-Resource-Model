@@ -15,6 +15,7 @@ from population_analysis import run as run_population
 from accessibility_analysis import run as run_accessibility
 from pond_context_analysis import run as run_context
 from worldpop_reference_analysis import run as run_worldpop_reference
+from build_web_layers import run as run_web_layers
 from traffic_culture_analysis import run as run_traffic_culture
 from classify_ponds import run as run_classification
 from policy_priority_scenarios import run as run_policy_priority
@@ -37,6 +38,8 @@ def main() -> None:
     run_accessibility()
     print("[5/10] context/buffer analysis")
     run_context()
+    web_layers = run_web_layers()
+    print(f"web map layers: {web_layers['status']}")
     worldpop = run_worldpop_reference()
     print(f"WorldPop reference buffer: {worldpop['status']}")
     print("[6/10] traffic/culture context")
