@@ -75,10 +75,13 @@ def run() -> dict:
     ponds = load_ponds(ANALYSIS_CRS)
     to_wgs84 = Transformer.from_crs(ANALYSIS_CRS, "EPSG:4326", always_xy=True)
     lon_min, lat_min, lon_max, lat_max = ponds.to_crs("EPSG:4326").total_bounds
-    window = read_window((
-        lon_min - WINDOW_MARGIN_DEG, lat_min - WINDOW_MARGIN_DEG,
-        lon_max + WINDOW_MARGIN_DEG, lat_max + WINDOW_MARGIN_DEG,
-    ))
+    try:
+        window = read_window((
+            lon_min - WINDOW_MARGIN_DEG, lat_min - WINDOW_MARGIN_DEG,
+            lon_max + WINDOW_MARGIN_DEG, lat_max + WINDOW_MARGIN_DEG,
+        ))
+    except ValueError as exc:  # 예: LZW 압축 해제에 imagecodecs가 없을 때
+        return unavailable(f"WorldPop 격자를 읽지 못함: {exc}")
     if window["crs"] != "EPSG:4326":
         return unavailable(f"예상하지 않은 WorldPop CRS: {window['crs']}")
 
