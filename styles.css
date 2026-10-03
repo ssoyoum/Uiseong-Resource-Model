@@ -2914,3 +2914,14 @@ main > .section:not(.about-hero) + .section { border-top: 1px solid #e7eee8; }
   .quality-blocks .def-table { min-width: 620px; }
   .quality-blocks .def-stat-grid { grid-template-columns: 1fr; }
 }
+
+/* Map popup: per-facility data status (analysis G·I) */
+.popup-quality { margin: .6rem 0; padding: .55rem .65rem; border: 1px solid var(--border); border-radius: 8px; background: #fbfcfa; }
+.popup-quality > strong { display: block; margin-bottom: .3rem; font-size: .74rem; color: var(--muted); }
+.popup-quality p { display: flex; gap: .5rem; align-items: baseline; margin: .15rem 0; font-size: .76rem; }
+.popup-quality p > span { flex: 0 0 4.2rem; color: var(--muted); }
+.popup-quality i { font-style: normal; padding: .05rem .45rem; border-radius: 999px; }
+.popup-quality-ok { background: #e3f2ea; color: #1f6b46; }
+.popup-quality-warn { background: #fdf1d8; color: #8a5a00; }
+.popup-quality-info { background: #e6eefb; color: #2453a6; }
+.popup-quality-na { background: #eef0ec; color: var(--muted); }
