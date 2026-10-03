@@ -1,0 +1,31 @@
+{
+  "status": "REFERENCE_ONLY",
+  "source": "data/raw/population/worldpop/kor_pop_2020_CN_100m_R2025A_v1.tif",
+  "source_manifest": "data/manifests/worldpop_sources.csv",
+  "reference_year": "2020",
+  "raster_crs": "EPSG:4326",
+  "pixel_size_deg": [
+    0.00083333333,
+    0.00083333333
+  ],
+  "nodata": -99999.0,
+  "analysis_crs": "EPSG:5174",
+  "method": "격자 중심점이 못 기준 반경(유클리드) 안에 있는 셀의 인구 합계; 면적가중 아님",
+  "pond_count": 427,
+  "summary": {
+    "500m": {
+      "min": 0.0,
+      "median": 14.886846059537902,
+      "max": 4588.832265853882,
+      "zero_population_ponds": 15
+    },
+    "1km": {
+      "min": 0.023351999327132944,
+      "median": 69.83621573954588,
+      "max": 9579.991504210382,
+      "zero_population_ponds": 0
+    }
+  },
+  "use_policy": "참고·비교용. 국내 공식 인구격자(official_population_*)를 대체하지 않으며 제출문서의 공식 Buffer 인구로 표기하지 않는다.",
+  "output": "data/analysis/worldpop_reference_buffer.csv"
+}

@@ -14,6 +14,7 @@ from prepare_vworld import prepare as prepare_vworld
 from population_analysis import run as run_population
 from accessibility_analysis import run as run_accessibility
 from pond_context_analysis import run as run_context
+from worldpop_reference_analysis import run as run_worldpop_reference
 from traffic_culture_analysis import run as run_traffic_culture
 from classify_ponds import run as run_classification
 from build_competition_outputs import run as build_outputs
@@ -34,6 +35,8 @@ def main() -> None:
     run_accessibility()
     print("[5/10] context/buffer analysis")
     run_context()
+    worldpop = run_worldpop_reference()
+    print(f"WorldPop reference buffer: {worldpop['status']}")
     print("[6/10] traffic/culture context")
     run_traffic_culture()
     print("[7/10] rule-based classification")
