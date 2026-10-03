@@ -1,0 +1,33 @@
+{
+  "status": "CANDIDATES_ONLY_NOT_APPLIED",
+  "source": "SGIS OpenAPI addr/geocode (통계청)",
+  "input": "data/analysis/coordinate_correction_template.csv",
+  "output": "data/analysis/coordinate_geocode_candidates.csv",
+  "record_count": 47,
+  "status_counts": {
+    "EXACT_PARCEL_MATCH": 44,
+    "NO_RESULT": 3
+  },
+  "exact_match_inside_boundary": 44,
+  "emd_mismatch_ponds": [],
+  "suggested_confidence_counts": {
+    "MEDIUM": 44,
+    "NONE": 3
+  },
+  "shared_candidate_ponds": [
+    "406",
+    "415"
+  ],
+  "shift_from_current_m": {
+    "count": 44.0,
+    "mean": 3514.9,
+    "std": 1447.8,
+    "min": 4.6,
+    "25%": 2753.7,
+    "50%": 3582.0,
+    "75%": 4388.4,
+    "max": 5636.0
+  },
+  "method": "지목 약어를 제거한 지번주소를 조회하고, 반환된 리·본번·부번이 입력과 모두 일치할 때만 후보로 채택",
+  "note": "지번(필지) 대표좌표이며 못 수면 위치와 다를 수 있다. 템플릿에 자동 반영하지 않으며, 검토 후 반영 시 SGIS 주행인구 재수집이 필요하다."
+}
