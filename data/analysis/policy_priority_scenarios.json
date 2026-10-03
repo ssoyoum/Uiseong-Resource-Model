@@ -1,0 +1,122 @@
+{
+  "status": "EXPERIMENTAL_POLICY_ASSUMPTION",
+  "model_version": "policy-priority-scenarios-0.1",
+  "random_seed": 42,
+  "eligible_count": 190,
+  "excluded_count": 237,
+  "excluded_by_reason": {
+    "SGIS_10MIN_NOT_AVAILABLE": 190,
+    "COORDINATE_REVIEW_TARGET": 47
+  },
+  "indicators": [
+    {
+      "column": "sgis_drive_population_10min",
+      "direction": "higher_is_priority",
+      "group": "demand"
+    },
+    {
+      "column": "distance_to_road_m",
+      "direction": "lower_is_priority",
+      "group": "access"
+    },
+    {
+      "column": "facility_count_1000m",
+      "direction": "higher_is_priority",
+      "group": "amenity"
+    },
+    {
+      "column": "emd_youth_ratio",
+      "direction": "higher_is_priority",
+      "group": "youth"
+    },
+    {
+      "column": "capacity",
+      "direction": "higher_is_priority",
+      "group": "resource"
+    },
+    {
+      "column": "agricultural_ratio_1000m",
+      "direction": "higher_is_priority",
+      "group": "resource"
+    }
+  ],
+  "groups": {
+    "demand": "SGIS 생활권역 10분 주행 도달인구",
+    "access": "VWorld UQ151 최근접 도로 유클리드거리(m)",
+    "amenity": "VWorld UQ164·UO601 시설 1km 내 개수",
+    "youth": "행정안전부 주민등록 읍·면 청년(19~39세) 비율",
+    "resource": "못 저수용량과 1km 내 농업지역 비율"
+  },
+  "normalization": "적격 시설 내 백분위 순위(동순위 평균); 그룹 내 복수 지표는 단순평균. Min-Max는 비교용(score_base_minmax)",
+  "missing_rule": "결측 지표가 있는 시설은 대체하지 않고 점수 산정에서 제외",
+  "weights": {
+    "base": {
+      "demand": 0.2,
+      "access": 0.2,
+      "amenity": 0.2,
+      "youth": 0.2,
+      "resource": 0.2
+    },
+    "access_emphasis": {
+      "demand": 0.1333,
+      "access": 0.3,
+      "amenity": 0.3,
+      "youth": 0.1333,
+      "resource": 0.1333
+    },
+    "preservation_emphasis": {
+      "demand": 0.15,
+      "access": 0.15,
+      "amenity": 0.15,
+      "youth": 0.15,
+      "resource": 0.4
+    },
+    "youth_activity_emphasis": {
+      "demand": 0.15,
+      "access": 0.15,
+      "amenity": 0.15,
+      "youth": 0.4,
+      "resource": 0.15
+    }
+  },
+  "weight_rationale": "행정 기준 가중치가 없어 기본은 균등가중; 나머지는 강조 그룹 0.4 이상을 주는 정책 가정 시나리오",
+  "sensitivity": {
+    "spearman_vs_base": {
+      "access_emphasis": 0.9639,
+      "preservation_emphasis": 0.9592,
+      "youth_activity_emphasis": 0.9342
+    },
+    "spearman_base_percentile_vs_minmax": 0.9493,
+    "top20_overlap_with_base": {
+      "access_emphasis": 17,
+      "preservation_emphasis": 16,
+      "youth_activity_emphasis": 17
+    },
+    "top20_overlap_minmax_vs_base": 14,
+    "random_weight_draws": 1000,
+    "random_weight_distribution": "Dirichlet(1,1,1,1,1)",
+    "stable_candidates_frequency_ge_0_8": [
+      "475",
+      "477",
+      "488",
+      "667",
+      "670",
+      "671",
+      "673",
+      "677",
+      "678",
+      "679",
+      "683"
+    ],
+    "base_top_k_with_frequency_lt_0_5": [
+      "508",
+      "660",
+      "675"
+    ]
+  },
+  "outputs": [
+    "data/analysis/policy_priority_scenarios.csv",
+    "data/analysis/policy_priority_excluded.csv"
+  ],
+  "use_policy": "상위 20개는 '정책 우선후보 예시'이며 행정적으로 확정된 순위가 아니다. 현장 관리상태·보존가치·주민 수요는 반영되지 않았다."
+}
