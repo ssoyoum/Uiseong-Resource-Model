@@ -23,6 +23,7 @@ from generate_figures import run as generate_figures
 from build_source_manifest import run as build_source_manifest
 from validate_outputs import run as validate_outputs
 from validate_submission_claims import run as validate_submission_claims
+from data_quality_audit import run as run_data_quality_audit
 
 
 def main() -> None:
@@ -57,7 +58,10 @@ def main() -> None:
     print("[11/11] submission claim validation")
     claims = validate_submission_claims()
     print(f"submission claims: {claims['status']}")
-    passed = all(item["status"] == "PASS" for item in (manifest, report, claims))
+    print("[11b] data quality audit")
+    audit = run_data_quality_audit()
+    print(f"data quality audit: {audit['status']} {audit['status_counts']}")
+    passed = all(item["status"] == "PASS" for item in (manifest, report, claims, audit))
     print(f"pipeline complete: {'PASS' if passed else 'FAIL'}")
 
 
