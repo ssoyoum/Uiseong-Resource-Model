@@ -18,6 +18,7 @@ from traffic_culture_analysis import run as run_traffic_culture
 from classify_ponds import run as run_classification
 from build_competition_outputs import run as build_outputs
 from generate_figures import run as generate_figures
+from build_source_manifest import run as build_source_manifest
 from validate_outputs import run as validate_outputs
 from validate_submission_claims import run as validate_submission_claims
 
@@ -41,13 +42,17 @@ def main() -> None:
     build_outputs()
     print("[9/10] figures")
     generate_figures()
+    print("[9b] source manifest")
+    manifest = build_source_manifest()
+    print(f"source manifest: {manifest['status']} ({manifest['record_count']} records)")
     print("[10/11] validation")
     report = validate_outputs()
     print(f"validation: {report['status']}")
     print("[11/11] submission claim validation")
     claims = validate_submission_claims()
     print(f"submission claims: {claims['status']}")
-    print(f"pipeline complete: {'PASS' if report['status'] == 'PASS' and claims['status'] == 'PASS' else 'FAIL'}")
+    passed = all(item["status"] == "PASS" for item in (manifest, report, claims))
+    print(f"pipeline complete: {'PASS' if passed else 'FAIL'}")
 
 
 if __name__ == "__main__":

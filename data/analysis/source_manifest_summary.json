@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "standard_fields_filled",
+      "status": "PASS",
+      "details": {
+        "blank_cells": 0
+      }
+    },
+    {
+      "name": "local_sources_present",
+      "status": "WARN",
+      "details": {
+        "missing_local": [
+          "data/raw/population/worldpop/kor_pop_2020_CN_100m_R2025A_v1.tif"
+        ]
+      }
+    }
+  ],
+  "output": "data/manifests/source_manifest.csv",
+  "record_count": 12,
+  "standard_columns": [
+    "dataset_name",
+    "provider",
+    "layer_id",
+    "reference_year",
+    "download_url",
+    "accessed_at",
+    "crs",
+    "license_url",
+    "local_source_path",
+    "processed_output",
+    "usage_note",
+    "redistribution_status"
+  ],
+  "data_not_available_by_field": {
+    "dataset_name": 0,
+    "provider": 2,
+    "layer_id": 5,
+    "reference_year": 7,
+    "download_url": 7,
+    "accessed_at": 9,
+    "crs": 1,
+    "license_url": 11,
+    "local_source_path": 0,
+    "processed_output": 1,
+    "usage_note": 0,
+    "redistribution_status": 0
+  },
+  "note": "DATA_NOT_AVAILABLE는 원본 manifest에 기록되지 않은 값이며 추정으로 채우지 않았다."
+}
