@@ -2925,3 +2925,14 @@ main > .section:not(.about-hero) + .section { border-top: 1px solid #e7eee8; }
 .popup-quality-warn { background: #fdf1d8; color: #8a5a00; }
 .popup-quality-info { background: #e6eefb; color: #2453a6; }
 .popup-quality-na { background: #eef0ec; color: var(--muted); }
+
+/* Analysis K: reproduction steps and downloads */
+.repro-steps { margin: 0; padding-left: 1.2rem; display: grid; gap: .8rem; font-size: .84rem; }
+.repro-steps li > strong { display: block; color: var(--primary); }
+.repro-steps code { display: block; margin-top: .25rem; padding: .35rem .55rem; border-radius: 6px; background: #f3f5f1; font-size: .76rem; overflow-x: auto; white-space: nowrap; }
+.repro-steps span { display: block; margin-top: .3rem; color: var(--muted); font-size: .78rem; }
+.repro-steps span code { display: inline; padding: .05rem .35rem; margin: 0 .15rem; }
+.download-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .55rem; }
+.download-list li { display: flex; flex-direction: column; padding-bottom: .5rem; border-bottom: 1px solid #e7eae5; }
+.download-list a { color: var(--primary); font-size: .8rem; font-weight: 600; word-break: break-all; text-underline-offset: 3px; }
+.download-list span { color: var(--muted); font-size: .74rem; }

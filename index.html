@@ -11,7 +11,7 @@
     <meta property="og:locale" content="ko_KR" />
     <title>SGIS 유휴자원 정책검토 모델 | 의성 못 사례</title>
     <link rel="stylesheet" href="vendor/leaflet/leaflet.css" integrity="sha256-M3v8pcq9A7OYFbJwD+vis7ft9VkhxZzUn4jssyghIwM=" crossorigin="" />
-    <link rel="stylesheet" href="styles.css?v=20261003-popup" />
+    <link rel="stylesheet" href="styles.css?v=20261003-repro" />
   </head>
   <body>
     <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
@@ -806,6 +806,37 @@
             <div id="quality-h" class="analysis-block analysis-def-block"><h3>분석 H. 데이터 출처와 기준연도</h3><p class="analysis-note">저장된 출처 목록을 불러오는 중입니다.</p></div>
             <div id="quality-i" class="analysis-block analysis-def-block"><h3>분석 I. 좌표 품질 보완 후보</h3><p class="analysis-note">저장된 후보 요약을 불러오는 중입니다.</p></div>
             <div id="quality-j" class="analysis-block analysis-def-block"><h3>분석 J. 가정에 대한 민감도와 참고 인구</h3><p class="analysis-note">저장된 민감도 결과를 불러오는 중입니다.</p></div>
+            <div id="quality-k" class="analysis-block analysis-def-block">
+              <div class="def-heading"><span class="def-letter">K</span><div><h3>직접 재현하고 결과 내려받기</h3><p class="analysis-note">같은 원자료와 코드로 누구나 A–J의 결과를 다시 만들 수 있습니다. 한 번의 실행으로 분석·검증·품질 점검이 순서대로 진행됩니다.</p></div></div>
+              <div class="def-chart-layout">
+                <div class="def-panel"><h4>재현 순서</h4>
+                  <ol class="repro-steps">
+                    <li><strong>코드 내려받기</strong><code>git clone https://github.com/ssoyoum/Uiseong-Resource-Model.git</code></li>
+                    <li><strong>패키지 설치</strong> (Python 3.12)<code>pip install -r requirements.txt</code></li>
+                    <li><strong>원자료 준비</strong>
+                      <span>행정안전부 인구 <code>python analysis/acquire_population.py</code></span>
+                      <span>WorldPop 참고격자 <code>python analysis/acquire_worldpop.py</code></span>
+                      <span>VWorld UQ151·UQ164·UO601은 로그인 후 내려받아 <code>vworld/</code>에 저장</span>
+                      <span>SGIS 생활권 재조회 시 <code>.env.example</code>을 <code>.env</code>로 복사해 인증키 입력</span></li>
+                    <li><strong>전체 실행</strong><code>python analysis/run_competition_pipeline.py</code><span>마지막 줄 <code>pipeline complete: PASS</code> 확인</span></li>
+                  </ol>
+                  <p class="def-muted">원자료 파일은 이용조건 확인 전까지 저장소에 올리지 않습니다. 원자료가 바뀌면 SHA-256 점검(분석 G)이 실패로 표시됩니다.</p>
+                </div>
+                <aside class="def-panel def-reading"><h4>공개 결과 파일</h4>
+                  <ul class="download-list">
+                    <li><a href="data/analysis/sgis_policy_evidence.csv" download>sgis_policy_evidence.csv</a><span>427개 시설의 정책 검토 근거 (분석 E)</span></li>
+                    <li><a href="data/analysis/sgis_catchment_analysis.csv" download>sgis_catchment_analysis.csv</a><span>SGIS 5·10분 생활권 인구 (분석 D)</span></li>
+                    <li><a href="data/analysis/pond_accessibility.csv" download>pond_accessibility.csv</a><span>UQ151 최근접 도로거리 (분석 F)</span></li>
+                    <li><a href="data/geojson/ponds_classified.geojson" download>ponds_classified.geojson</a><span>지도 표시용 시설 공간자료</span></li>
+                    <li><a href="data/analysis/coordinate_geocode_candidates.csv" download>coordinate_geocode_candidates.csv</a><span>좌표 보완 후보 (분석 I)</span></li>
+                    <li><a href="data/analysis/policy_priority_scenarios.csv" download>policy_priority_scenarios.csv</a><span>가중치 민감도 실험 (분석 J)</span></li>
+                    <li><a href="data/analysis/worldpop_reference_buffer.csv" download>worldpop_reference_buffer.csv</a><span>WorldPop 참고 인구 (분석 J)</span></li>
+                    <li><a href="data/manifests/source_manifest.csv" download>source_manifest.csv</a><span>출처·기준연도 목록 (분석 H)</span></li>
+                  </ul>
+                  <p class="def-muted">VWorld 원자료에서 잘라 낸 GPKG 공간파일은 이용조건 확인 전이라 이 페이지에서 배포하지 않습니다.</p>
+                </aside>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -855,6 +886,6 @@
     </footer>
 
     <script src="vendor/leaflet/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-    <script src="app.js?v=20261003-popup"></script>
+    <script src="app.js?v=20261003-repro"></script>
   </body>
 </html>
