@@ -32,7 +32,7 @@ STANDARD_COLUMNS = [
     "usage_note",
     "redistribution_status",
 ]
-EXTRA_COLUMNS = ["source_manifest", "source_status", "local_source_status", "raw_file_date"]
+EXTRA_COLUMNS = ["license", "source_manifest", "source_status", "local_source_status", "raw_file_date"]
 OUTPUT_PATH = MANIFEST_DIR / "source_manifest.csv"
 NOT_SPATIAL = "NOT_SPATIAL_TABLE"
 NOT_APPLICABLE = "NOT_APPLICABLE"
@@ -41,6 +41,14 @@ VWORLD_OUTPUTS = {
     "UQ164": "data/processed/facilities/uiseong_facilities.gpkg",
     "UO601": "data/processed/facilities/uiseong_facilities.gpkg",
     "UQ151": "data/processed/roads/uiseong_roads.gpkg",
+}
+# VWorld 데이터셋 페이지에서 확인한 제공기관·이용조건(2026-10-03 확인).
+# 페이지의 기준일자는 현재 배포본 기준이므로 내려받은 파일의 기준연도로 쓰지 않는다.
+VWORLD_LICENSE_CHECKED_AT = "2026-10-03"
+VWORLD_DATASETS = {
+    "UQ151": {"page": "https://www.vworld.kr/dtmk/dtmk_ntads_s002.do?dsId=30074", "provider": "국토교통부 (VWorld 제공)", "license": "CC BY-NC-ND"},
+    "UQ164": {"page": "https://www.vworld.kr/dtmk/dtmk_ntads_s002.do?dsId=30290", "provider": "국토교통부 (VWorld 제공)", "license": "CC BY-NC-ND"},
+    "UO601": {"page": "https://www.vworld.kr/dtmk/dtmk_ntads_s002.do?dsId=30276", "provider": "국토교통부 (VWorld 제공)", "license": "CC BY-NC-ND"},
 }
 SGIS_OUTPUTS = {
     "SGIS 지역통계 API": "data/analysis/sgis_indicator_availability.json",
@@ -128,15 +136,17 @@ def vworld_rows() -> list[dict]:
         layer = value(row.get("vworld_layer_or_api"))
         source_path = rel(row.get("source_path", ""))
         version = zip_data_version(source_path)
+        dataset = VWORLD_DATASETS.get(layer, {})
         rows.append({
             "dataset_name": row["dataset_name"],
-            "provider": value(row.get("provider")),
+            "provider": dataset.get("provider") or value(row.get("provider")),
             "layer_id": layer,
             "reference_year": version[:4] if version != DATA_NOT_AVAILABLE else DATA_NOT_AVAILABLE,
-            "download_url": DATA_NOT_AVAILABLE,
+            "download_url": dataset.get("page", DATA_NOT_AVAILABLE),
             "accessed_at": value(row.get("accessed_at")),
             "crs": value(row.get("source_crs")),
-            "license_url": DATA_NOT_AVAILABLE,
+            "license_url": dataset.get("page", DATA_NOT_AVAILABLE),
+            "license": dataset.get("license", DATA_NOT_AVAILABLE),
             "local_source_path": source_path,
             "processed_output": VWORLD_OUTPUTS.get(layer, source_path),
             "usage_note": "; ".join(filter(None, [
@@ -251,12 +261,17 @@ def run() -> dict:
         path = record["local_source_path"]
         record["local_source_status"] = "API_RESPONSE" if path == "API_RESPONSE" else local_status(path)
         record["raw_file_date"] = zip_raw_file_date(path)
+        record.setdefault("license", DATA_NOT_AVAILABLE)
+        license_note = record.pop("license_note", "")
         if path == "API_RESPONSE":
             record["redistribution_status"] = "API_TERMS_UNVERIFIED"
+        elif record["license"] == "CC BY-NC-ND":
+            # 변경금지: 원자료뿐 아니라 잘라 내거나 변환한 공간파일도 재배포하지 않는다.
+            record["redistribution_status"] = f"RAW_NOT_REDISTRIBUTED; CC BY-NC-ND (비영리·변경금지, {VWORLD_LICENSE_CHECKED_AT} 확인) - 가공 공간파일 재배포 불가"
         else:
             record["redistribution_status"] = redistribution(path, record["license_url"])
-        if "확인 필요" in record.pop("license_note", ""):
-            record["redistribution_status"] += "; 원본 manifest: 이용조건 확인 필요"
+            if "확인 필요" in license_note:
+                record["redistribution_status"] += "; 원본 manifest: 이용조건 확인 필요"
 
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     with OUTPUT_PATH.open("w", encoding="utf-8-sig", newline="") as handle:
