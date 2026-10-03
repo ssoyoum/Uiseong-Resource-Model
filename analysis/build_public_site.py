@@ -25,6 +25,8 @@ SOURCE_FILES = {
     'data/analysis/validation_report.json',
 }
 MODULES = ('def-dashboard.mjs', 'quality-dashboard.mjs')
+# 링크 공유 미리보기(og:image)는 절대 URL이라 참조 수집에 잡히지 않아 직접 포함한다.
+SHARE_FILES = {'assets/og-image.png'}
 PUBLIC_VENDOR_FILES = {
     'vendor/leaflet/LICENSE',
     'vendor/leaflet/images/layers.png',
@@ -120,7 +122,7 @@ def check_saved_results():
 def site_files():
     parser = PageReferences()
     parser.feed((ROOT / 'index.html').read_text(encoding='utf-8'))
-    files = {'index.html', 'app.js', 'styles.css', *MODULES, '.nojekyll', *SOURCE_FILES, *PUBLIC_VENDOR_FILES}
+    files = {'index.html', 'app.js', 'styles.css', *MODULES, '.nojekyll', *SOURCE_FILES, *PUBLIC_VENDOR_FILES, *SHARE_FILES}
     for reference in parser.references:
         parsed = urlsplit(reference)
         if parsed.scheme or parsed.netloc:
