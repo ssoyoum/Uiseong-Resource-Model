@@ -266,8 +266,8 @@ def run() -> dict:
         if path == "API_RESPONSE":
             record["redistribution_status"] = "API_TERMS_UNVERIFIED"
         elif record["license"] == "CC BY-NC-ND":
-            # 변경금지: 원자료뿐 아니라 잘라 내거나 변환한 공간파일도 재배포하지 않는다.
-            record["redistribution_status"] = f"RAW_NOT_REDISTRIBUTED; CC BY-NC-ND (비영리·변경금지, {VWORLD_LICENSE_CHECKED_AT} 확인) - 가공 공간파일 재배포 불가"
+            # 전국 원자료는 올리지 않고, 분석 재현용 의성군 추출본만 출처표시·비영리로 저장소에 둔다.
+            record["redistribution_status"] = f"RAW_NOT_REDISTRIBUTED; CC BY-NC-ND ({VWORLD_LICENSE_CHECKED_AT} 확인) - 의성군 추출본은 출처표시·비영리 조건으로 저장소에 포함"
         else:
             record["redistribution_status"] = redistribution(path, record["license_url"])
             if "확인 필요" in license_note:
