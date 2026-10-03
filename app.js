@@ -72,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   // 분석 I의 좌표 보완 후보. 분석 결과에는 반영하지 않은 검토용 레이어라 기본은 꺼 둔다.
   const coordinateCandidateLayer = L.layerGroup();
+  const coordinateCandidates = new Map();
   let allPondFeatures = [];
   let policyEvidenceMap = {};
   let activePolicyFilter = 'all';
@@ -123,8 +124,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const lng = Number(row.candidate_lng_wgs84);
       const from = current.get(String(row.pond_id));
       if (!Number.isFinite(lat) || !Number.isFinite(lng) || !from) return;
+      coordinateCandidates.set(String(row.pond_id), row);
       const popup = `<strong>못 ${escapeHtml(row.pond_id)} · 좌표 보완 후보</strong><br>${escapeHtml(row.address)}<br>` +
-        `SGIS 지번 일치: ${escapeHtml(row.returned_lot)}<br>현재 좌표와 ${formatNumber(row.shift_from_current_m)}m 차이<br>` +
+        `SGIS 지번 일치: ${escapeHtml(row.returned_lot)}<br>현재 좌표와 ${formatNumber(Math.round(Number(row.shift_from_current_m)))}m 차이<br>` +
         '<small>분석 D·E에는 반영하지 않은 검토용 후보</small>';
       L.polyline([[from[1], from[0]], [lat, lng]], { color: '#8a5a00', weight: 1.4, dashArray: '4 4', opacity: 0.75 }).addTo(coordinateCandidateLayer);
       L.circleMarker([lat, lng], { radius: 5, color: '#8a5a00', weight: 2, fillColor: '#fdf1d8', fillOpacity: 1 }).bindPopup(popup).addTo(coordinateCandidateLayer);
@@ -187,6 +189,32 @@ document.addEventListener('DOMContentLoaded', () => {
     return '#397bb8';
   }
 
+  const coordinateLabels = {
+    RELIABLE_POINT: ['ok', '단일 좌표 확인'],
+    UNVERIFIED_ADMIN_POINT: ['warn', '군 대표점 좌표 · 생활권 분석 제외'],
+    UNVERIFIED_NEARBY_POINT: ['warn', '인근 좌표 · 생활권 분석 제외'],
+    DUPLICATED_COORDINATE: ['warn', '다른 못과 같은 좌표 · 생활권 분석 제외'],
+  };
+
+  // 분석 G·I와 같은 기준으로 시설별 데이터 상태를 보여준다.
+  function qualityHtml(evidence) {
+    const hasValue = (v) => v !== null && v !== undefined && String(v).trim() !== '' && Number.isFinite(Number(v));
+    const [coordinateKind, coordinateText] = coordinateLabels[evidence.coordinate_validation] || ['na', '좌표 검증 자료 미확보'];
+    const sgisCount = [evidence.sgis_population_5min, evidence.sgis_population_10min].filter(hasValue).length;
+    const reliable = coordinateKind === 'ok';
+    let sgisKind = sgisCount === 2 ? 'ok' : sgisCount === 1 ? 'warn' : 'na';
+    let sgisText = sgisCount === 2 ? '5분·10분 응답 확보' : sgisCount === 1 ? '한 시간대만 응답' : '응답 미확보 (0명으로 해석하지 않음)';
+    // 대표점·중복좌표의 응답은 실제 위치가 아닌 좌표 기준이므로 분석에 쓰지 않는다.
+    if (!reliable && sgisCount) { sgisKind = 'warn'; sgisText = '응답은 있으나 좌표 확인 전이라 분석 제외'; }
+    const candidate = coordinateCandidates.get(pondId({ properties: evidence }));
+    const rows = [
+      ['좌표', coordinateKind, coordinateText],
+      ['SGIS', sgisKind, sgisText],
+    ];
+    if (candidate) rows.push(['보완 후보', 'info', `SGIS 지번 일치 · ${formatNumber(Math.round(Number(candidate.shift_from_current_m)))}m 차이 · 미반영`]);
+    return `<div class="popup-quality"><strong>데이터 상태 · 분석 G·I</strong>${rows.map(([label, kind, text]) => `<p><span>${label}</span><i class="popup-quality-${kind}">${escapeHtml(text)}</i></p>`).join('')}</div>`;
+  }
+
   function popupHtml(feature) {
     const properties = feature.properties || {};
     const [lng, lat] = feature.geometry.coordinates;
@@ -218,6 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <td style="padding:2px;">${lat.toFixed(5)}, ${lng.toFixed(5)}</td>
           </tr>
         </table>
+        ${qualityHtml(evidence)}
         <div class="popup-review-note"><strong>정책 검토 근거</strong><p>${escapeHtml(context?.rule || '정책 검토 자료 미확보')}</p><strong>다음 확인</strong><p>${escapeHtml(context?.next || '원자료와 현장 상태를 추가 확인합니다.')}</p></div>
         <small>출처: SGIS 2024년 기준 응답 · VWorld 저장 공간자료 · 읍·면 인구 ${escapeHtml(properties.emd_year || '2025')}년. 생활권 인구는 실제 방문객 수가 아닙니다.</small>
       </div>
@@ -240,7 +269,8 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       onEachFeature: (feature, layer) => {
         // bindPopup(): 해당 못을 클릭했을 때 상세 정보를 보여준다.
-        layer.bindPopup(popupHtml(feature));
+        // 함수로 넘겨 열 때마다 최신 상태(늦게 불러오는 좌표 후보 포함)로 만든다.
+        layer.bindPopup(() => popupHtml(feature));
         markerById.set(pondId(feature), layer);
       },
     });
@@ -915,7 +945,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     },
   })).catch((error) => console.error('D/E/F dashboard load failed', error));
-  import('./quality-dashboard.mjs?v=20261003-candidates')
+  import('./quality-dashboard.mjs?v=20261003-popup')
     .then(({ initQualityDashboard }) => initQualityDashboard({ loadJson, loadCsv }))
     .catch((error) => console.error('G–J quality dashboard load failed', error));
 });
