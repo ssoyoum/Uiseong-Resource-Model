@@ -29,6 +29,16 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Check Python syntax
+        run: python -m compileall -q analysis
+      - name: Run web dashboard tests
+        run: |
+          npm install --prefix "$RUNNER_TEMP/dom" linkedom --no-save --silent
+          SGIS_DOM_RUNTIME="$RUNNER_TEMP/dom" node --test tests/test_def_dashboard.mjs tests/test_def_interactions.mjs tests/test_quality_dashboard.mjs
       - name: Build and validate public site
         run: python analysis/build_public_site.py --output _site
       - name: Upload static site
