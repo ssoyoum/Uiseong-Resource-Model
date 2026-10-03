@@ -10,11 +10,9 @@
     },
     {
       "name": "local_sources_present",
-      "status": "WARN",
+      "status": "PASS",
       "details": {
-        "missing_local": [
-          "data/raw/population/worldpop/kor_pop_2020_CN_100m_R2025A_v1.tif"
-        ]
+        "missing_local": []
       }
     }
   ],
@@ -38,13 +36,13 @@
     "dataset_name": 0,
     "provider": 2,
     "layer_id": 5,
-    "reference_year": 7,
+    "reference_year": 3,
     "download_url": 7,
     "accessed_at": 9,
     "crs": 1,
     "license_url": 11,
     "local_source_path": 0,
-    "processed_output": 1,
+    "processed_output": 0,
     "usage_note": 0,
     "redistribution_status": 0
   },

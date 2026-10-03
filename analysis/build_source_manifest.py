@@ -7,13 +7,15 @@
 from __future__ import annotations
 
 import csv
+import re
 import subprocess
+import zipfile
 from pathlib import Path
 
 try:
-    from common import BASE_DIR, DATA_NOT_AVAILABLE, MANIFEST_DIR, write_json, ANALYSIS_DIR
+    from common import ANALYSIS_DIR, BASE_DIR, DATA_NOT_AVAILABLE, MANIFEST_DIR, read_json, write_json
 except ImportError:
-    from analysis.common import BASE_DIR, DATA_NOT_AVAILABLE, MANIFEST_DIR, write_json, ANALYSIS_DIR
+    from analysis.common import ANALYSIS_DIR, BASE_DIR, DATA_NOT_AVAILABLE, MANIFEST_DIR, read_json, write_json
 
 
 STANDARD_COLUMNS = [
@@ -30,7 +32,7 @@ STANDARD_COLUMNS = [
     "usage_note",
     "redistribution_status",
 ]
-EXTRA_COLUMNS = ["source_manifest", "source_status", "local_source_status"]
+EXTRA_COLUMNS = ["source_manifest", "source_status", "local_source_status", "raw_file_date"]
 OUTPUT_PATH = MANIFEST_DIR / "source_manifest.csv"
 NOT_SPATIAL = "NOT_SPATIAL_TABLE"
 
@@ -83,23 +85,64 @@ def redistribution(path: str, license_url: str) -> str:
     return f"{raw}; {licence}"
 
 
+def zip_members(path: str) -> list[zipfile.ZipInfo]:
+    full = BASE_DIR / path
+    if full.suffix.lower() != ".zip" or not full.exists():
+        return []
+    with zipfile.ZipFile(full) as archive:
+        return archive.infolist()
+
+
+def zip_data_version(path: str) -> str:
+    """VWorld LSMD 파일명 끝의 YYYYMM 데이터 버전(예: ..._47_202608.shp)."""
+    for member in zip_members(path):
+        match = re.search(r"_(\d{6})\.(shp|dbf)$", member.filename)
+        if match:
+            return match.group(1)
+    return DATA_NOT_AVAILABLE
+
+
+def zip_raw_file_date(path: str) -> str:
+    """압축 내부 주 데이터파일의 수정일. 기준연도가 아니라 파일 작성일로만 사용한다."""
+    for member in zip_members(path):
+        if member.filename.lower().endswith((".shp", ".txt")):
+            year, month, day = member.date_time[:3]
+            return f"{year:04d}-{month:02d}-{day:02d}"
+    return DATA_NOT_AVAILABLE
+
+
+def traffic_years() -> dict[str, str]:
+    context = read_json(ANALYSIS_DIR / "traffic_culture_context.json", {}) or {}
+    years = {}
+    for dataset in context.get("datasets", []):
+        values = sorted(dataset.get("years") or [])
+        if values:
+            years[rel(dataset.get("source_path", ""))] = f"{values[0]}-{values[-1]}"
+    return years
+
+
 def vworld_rows() -> list[dict]:
     rows = []
     for row in read_rows("vworld_sources.csv"):
         layer = value(row.get("vworld_layer_or_api"))
         source_path = rel(row.get("source_path", ""))
+        version = zip_data_version(source_path)
         rows.append({
             "dataset_name": row["dataset_name"],
             "provider": value(row.get("provider")),
             "layer_id": layer,
-            "reference_year": DATA_NOT_AVAILABLE,
+            "reference_year": version[:4] if version != DATA_NOT_AVAILABLE else DATA_NOT_AVAILABLE,
             "download_url": DATA_NOT_AVAILABLE,
             "accessed_at": value(row.get("accessed_at")),
             "crs": value(row.get("source_crs")),
             "license_url": DATA_NOT_AVAILABLE,
             "local_source_path": source_path,
             "processed_output": VWORLD_OUTPUTS.get(layer, source_path),
-            "usage_note": f"{row.get('purpose', '')}; {row.get('processing', '')}".strip("; "),
+            "usage_note": "; ".join(filter(None, [
+                row.get("purpose", ""),
+                row.get("processing", ""),
+                f"파일명 데이터버전 {version}" if version != DATA_NOT_AVAILABLE else "",
+            ])),
             "license_note": row.get("license_conditions", ""),
             "source_manifest": "data/manifests/vworld_sources.csv",
             "source_status": value(row.get("status")),
@@ -156,13 +199,14 @@ def sgis_rows() -> list[dict]:
 
 def traffic_rows() -> list[dict]:
     rows = []
+    years = traffic_years()
     for row in read_rows("traffic_culture_sources.csv"):
         source_path = rel(row.get("source_table", ""))
         rows.append({
             "dataset_name": row["dataset_name"],
             "provider": DATA_NOT_AVAILABLE,
             "layer_id": Path(source_path).stem if source_path else DATA_NOT_AVAILABLE,
-            "reference_year": DATA_NOT_AVAILABLE,
+            "reference_year": years.get(source_path, DATA_NOT_AVAILABLE),
             "download_url": DATA_NOT_AVAILABLE,
             "accessed_at": DATA_NOT_AVAILABLE,
             "crs": NOT_SPATIAL,
@@ -190,8 +234,8 @@ def worldpop_rows() -> list[dict]:
             "crs": DATA_NOT_AVAILABLE,
             "license_url": value(row.get("license_url")),
             "local_source_path": rel(row.get("local_path", "")),
-            "processed_output": DATA_NOT_AVAILABLE,
-            "usage_note": f"참고자료 전용; 국내 공식 인구격자를 대체하지 않음; {row.get('note', '')}",
+            "processed_output": "data/analysis/worldpop_reference_buffer.csv",
+            "usage_note": f"참고자료 전용; worldpop_population_500m·1km 별도 필드; 국내 공식 인구격자를 대체하지 않음; {row.get('note', '')}",
             "license_note": "",
             "source_manifest": "data/manifests/worldpop_sources.csv",
             "source_status": value(row.get("status")),
@@ -204,6 +248,7 @@ def run() -> dict:
     for record in records:
         path = record["local_source_path"]
         record["local_source_status"] = "API_RESPONSE" if path == "API_RESPONSE" else local_status(path)
+        record["raw_file_date"] = zip_raw_file_date(path)
         if path == "API_RESPONSE":
             record["redistribution_status"] = "API_TERMS_UNVERIFIED"
         else:
