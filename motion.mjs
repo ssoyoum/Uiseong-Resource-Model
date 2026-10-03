@@ -62,7 +62,8 @@ function splitHeadline(heading) {
 function countUp(elements) {
   const targets = [...elements].map((element) => {
     const node = [...element.childNodes].find((child) => child.nodeType === Node.TEXT_NODE && /\d/.test(child.textContent));
-    if (!node) return null;
+    // 'EPSG:5174'처럼 숫자가 코드의 일부인 값은 세지 않는다.
+    if (!node || !/^[\d,.\s]+$/.test(node.textContent.trim())) return null;
     const match = node.textContent.match(/[\d,]+(\.\d+)?/);
     const value = Number(match[0].replace(/,/g, ''));
     return Number.isFinite(value) ? {element, node, value, original: node.textContent, token: match[0]} : null;
@@ -132,17 +133,60 @@ function pinModelSteps() {
   trackProgress(track, pinnedProgress);
 }
 
-// RESEARCH: 타임라인 선이 스크롤을 따라 내려가며 각 단계를 켠다.
-function drawTimeline() {
-  const timeline = document.querySelector('#research .timeline');
-  if (!timeline) return;
-  const items = [...timeline.querySelectorAll('.timeline-item')];
-  items.forEach((item, index) => {
-    item.style.setProperty('--k', (index / items.length).toFixed(3));
-    item.style.setProperty('--n', String(items.length));
+// WHY: 화면에 고정해 두고 스크롤에 따라 문장 속 단어를 하나씩 켠다.
+function scrubWords() {
+  const section = document.getElementById('why');
+  if (!section) return;
+  const words = [];
+  section.querySelectorAll('p').forEach((paragraph) => {
+    const walker = document.createTreeWalker(paragraph, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach((node) => {
+      const fragment = document.createDocumentFragment();
+      node.textContent.split(/(\s+)/).forEach((part) => {
+        if (!part) return;
+        if (/^\s+$/.test(part)) { fragment.append(part); return; }
+        const span = document.createElement('span');
+        span.className = 'm-word';
+        span.textContent = part;
+        words.push(span);
+        fragment.append(span);
+      });
+      node.replaceWith(fragment);
+    });
   });
-  timeline.classList.add('m-timeline');
-  trackProgress(timeline, viewportProgress);
+  section.classList.add('m-scrub');
+  trackProgress(section, (element) => {
+    const progress = pinnedProgress(element);
+    const lit = Math.round(progress * 1.15 * words.length);
+    words.forEach((word, index) => word.classList.toggle('on', index < lit));
+    return progress;
+  });
+}
+
+// RESEARCH: 타임라인을 가로로 펼쳐 세로 스크롤만큼 옆으로 흘려보낸다.
+function horizontalTimeline() {
+  const section = document.getElementById('research');
+  const container = section?.querySelector('.container');
+  const timeline = section?.querySelector('.timeline');
+  if (!container || !timeline) return;
+  const items = [...timeline.querySelectorAll('.timeline-item')];
+  items.forEach((item, index) => item.style.setProperty('--k', (index / (items.length + 1)).toFixed(3)));
+  section.classList.add('m-hscroll');
+  let shift = 0;
+  const measure = () => {
+    timeline.style.transform = '';
+    shift = Math.max(0, timeline.scrollWidth - container.clientWidth + 48);
+    section.style.height = `${window.innerHeight + shift * 1.1}px`;
+  };
+  measure();
+  window.addEventListener('resize', measure);
+  trackProgress(section, (element) => {
+    const progress = pinnedProgress(element);
+    timeline.style.transform = `translate3d(${(-progress * shift).toFixed(1)}px, 0, 0)`;
+    return progress;
+  });
 }
 
 // DATA: 처리 단계가 왼쪽부터 순서대로 점등된다.
@@ -153,6 +197,15 @@ function lightPipeline() {
   parts.forEach((part, index) => part.style.setProperty('--k', (index / (parts.length + 1)).toFixed(3)));
   pipeline.classList.add('m-pipeline');
   trackProgress(pipeline, viewportProgress);
+}
+
+// WEBGIS: 지도 창이 스크롤에 따라 넓어진다.
+function growMap() {
+  const stage = document.querySelector('#webgis .map-stage');
+  if (!stage) return;
+  delete stage.dataset.m;
+  stage.classList.add('m-map-grow');
+  trackProgress(stage, viewportProgress);
 }
 
 // A–F, G–K 목차: 지금 읽는 분석을 강조한다.
@@ -203,6 +256,7 @@ export function initMotion() {
   splitHeadline(document.querySelector('#about h1'));
   countUp(document.querySelectorAll('.public-metrics strong, #result .stat-number'));
   revealOnView(mark(document.querySelectorAll('.policy-hero-card, .public-metrics'), 'rise'));
+  revealOnView(mark(document.querySelectorAll('main section:not(#about) h2'), 'wipe', {stagger: false}), {threshold: 0.6});
 
   const why = document.querySelectorAll('#why .two-col > div');
   if (why[0]) why[0].dataset.m = 'left';
@@ -211,23 +265,25 @@ export function initMotion() {
 
   revealOnView(mark(document.querySelectorAll('#project .model-evidence-note, #project .model-quicklinks'), 'up'));
   revealOnView(mark(document.querySelectorAll('#data .data-structure-card'), 'flip'));
-  revealOnView(mark(document.querySelectorAll('.analysis-part'), 'up', {stagger: false}));
-  revealOnView(mark(document.querySelectorAll('#analysis .analysis-block'), 'up', {stagger: false}), {threshold: 0.08});
-  revealOnView(mark(document.querySelectorAll('#result .result-stat'), 'pop'));
+  revealOnView(mark(document.querySelectorAll('.analysis-part'), 'slide', {stagger: false}), {threshold: 0.4});
+  revealOnView(mark(document.querySelectorAll('#analysis .analysis-block'), 'zoom', {stagger: false}), {threshold: 0.08});
+  revealOnView(mark(document.querySelectorAll('#result .result-stat'), 'pop'), {threshold: 0.4});
   revealOnView(mark(document.querySelectorAll('#webgis .map-stage'), 'open', {stagger: false}), {threshold: 0.25});
   const qualityBlocks = mark(document.querySelectorAll('#quality .analysis-block'), 'rows', {stagger: false});
   staggerRows(qualityBlocks);
   revealOnView(qualityBlocks, {threshold: 0.08});
-  revealOnView(mark(document.querySelectorAll('#archive .public-source-card'), 'up'));
+  revealOnView(mark(document.querySelectorAll('#archive .public-source-card'), 'fan'));
   tiltCards([...document.querySelectorAll('.outcome-card')]);
   followChapters();
 
   // 고정·진행률 연출은 넓은 화면에서만 쓴다. 좁은 화면은 위의 등장 효과만 남긴다.
   if (wide.matches) {
     document.documentElement.classList.add('motion-wide');
+    scrubWords();
     pinModelSteps();
-    drawTimeline();
+    horizontalTimeline();
     lightPipeline();
+    growMap();
     window.addEventListener('scroll', requestProgress, {passive: true});
     window.addEventListener('resize', requestProgress);
     updateProgress();

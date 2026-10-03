@@ -2942,10 +2942,10 @@ main > .section:not(.about-hero) + .section { border-top: 1px solid #e7eee8; }
 /* ============================================
    Chapter navigation (A–F, G–K) and part headers
    ============================================ */
-.chapter-toc { position: sticky; top: var(--header-h, 64px); z-index: 20; display: flex; gap: .45rem; overflow-x: auto; margin: 1rem 0 .4rem; padding: .55rem; border: 1px solid var(--border); border-radius: 14px; background: rgba(255, 253, 248, .94); backdrop-filter: blur(6px); scrollbar-width: none; }
+.chapter-toc { position: sticky; top: var(--header-h, 64px); z-index: 20; display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: .35rem; margin: 1rem 0 .4rem; padding: .55rem; border: 1px solid var(--border); border-radius: 14px; background: rgba(255, 253, 248, .94); backdrop-filter: blur(6px); scrollbar-width: none; }
 .chapter-toc::-webkit-scrollbar { display: none; }
-.chapter-toc a { flex: 1 0 auto; display: flex; align-items: center; gap: .5rem; padding: .45rem .7rem; border-radius: 10px; color: var(--muted); text-decoration: none; font-size: .8rem; transition: background .25s ease, color .25s ease; }
-.chapter-toc a b { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 7px; background: var(--secondary); color: var(--primary); font-size: .78rem; transition: background .25s ease, color .25s ease; }
+.chapter-toc a { min-width: 0; display: flex; align-items: center; gap: .45rem; padding: .45rem .55rem; line-height: 1.3; border-radius: 10px; color: var(--muted); text-decoration: none; font-size: .8rem; transition: background .25s ease, color .25s ease; }
+.chapter-toc a b { flex: 0 0 24px; display: grid; place-items: center; width: 24px; height: 24px; border-radius: 7px; background: var(--secondary); color: var(--primary); font-size: .78rem; transition: background .25s ease, color .25s ease; }
 .chapter-toc a:hover, .chapter-toc a.is-current { background: #eef5f0; color: var(--text); }
 .chapter-toc a.is-current b { background: var(--primary); color: #fff; }
 .analysis-part { margin-top: 1.4rem; padding: 1.1rem 0 .2rem; border-top: 2px solid var(--primary); }
@@ -2956,47 +2956,82 @@ main > .section:not(.about-hero) + .section { border-top: 1px solid #e7eee8; }
 #analysis-a, #analysis-b, #analysis-c, #quality-g, #quality-h, #quality-i, #quality-j, #quality-k, #why, #data, #analysis, #quality { scroll-margin-top: calc(var(--header-h, 64px) + 70px); }
 @media (max-width: 700px) {
   .chapter-toc a span { display: none; }
-  .chapter-toc a { flex: 0 0 auto; }
+  .chapter-toc a { justify-content: center; }
 }
 
 /* ============================================
    Section interactions (motion.mjs). Only active with html.motion.
+   Each section has its own effect; wide screens add pinned/scrubbed scenes.
    ============================================ */
-html.motion [data-m] { transition: opacity .8s cubic-bezier(.22,.61,.36,1) calc(var(--i, 0) * 90ms), transform .8s cubic-bezier(.22,.61,.36,1) calc(var(--i, 0) * 90ms), clip-path 1.1s cubic-bezier(.22,.61,.36,1); }
+html.motion [data-m] { transition: opacity .9s cubic-bezier(.22,.61,.36,1) calc(var(--i, 0) * 110ms), transform 1s cubic-bezier(.22,.61,.36,1) calc(var(--i, 0) * 110ms), filter .9s ease calc(var(--i, 0) * 110ms), clip-path 1.1s cubic-bezier(.22,.61,.36,1); }
 html.motion [data-m]:not(.m-in) { opacity: 0; }
-html.motion [data-m="up"]:not(.m-in), html.motion [data-m="rows"]:not(.m-in) { transform: translateY(26px); }
-html.motion [data-m="rise"]:not(.m-in) { transform: translateY(36px); }
-html.motion [data-m="left"]:not(.m-in) { transform: translateX(-56px); }
-html.motion [data-m="right"]:not(.m-in) { transform: translateX(56px); }
-html.motion [data-m="pop"]:not(.m-in) { transform: scale(.86); }
+html.motion [data-m="rise"]:not(.m-in) { transform: translateY(60px); }
+html.motion [data-m="left"]:not(.m-in) { transform: translateX(-140px); filter: blur(6px); }
+html.motion [data-m="right"]:not(.m-in) { transform: translateX(140px); filter: blur(6px); }
+html.motion [data-m="up"]:not(.m-in) { transform: translateY(60px); }
+/* 분석 블록: 흐릿하게 축소된 상태에서 확대되며 선명해진다 */
+html.motion [data-m="zoom"] { transform-origin: 50% 0; }
+html.motion [data-m="zoom"]:not(.m-in) { transform: translateY(90px) scale(.9); filter: blur(10px); }
+/* PART 머리말: 오른쪽에서 크게 밀려 들어온다 */
+html.motion [data-m="slide"]:not(.m-in) { transform: translateX(22%); }
+/* 결과 숫자: 튕기듯 커진다 */
+html.motion [data-m="pop"] { transition-timing-function: cubic-bezier(.34,1.7,.5,1); }
+html.motion [data-m="pop"]:not(.m-in) { transform: scale(.4) translateY(40px); }
+/* 데이터 구조 카드: 아래 축을 기준으로 뒤집혀 선다 */
 html.motion [data-m="flip"] { transform-origin: 50% 100%; }
-html.motion [data-m="flip"]:not(.m-in) { transform: perspective(700px) rotateX(-28deg) translateY(18px); }
-html.motion [data-m="open"]:not(.m-in) { opacity: 1; clip-path: inset(6% 42% 6% 42% round 18px); }
+html.motion [data-m="flip"]:not(.m-in) { transform: perspective(600px) rotateX(-80deg); }
+/* 출처 카드: 부채꼴로 흩어졌다 모인다 */
+html.motion [data-m="fan"]:not(.m-in) { transform: translateY(120px) rotate(-9deg); }
+html.motion [data-m="fan"]:nth-child(even):not(.m-in) { transform: translateY(120px) rotate(9deg); }
+/* 품질 표: 블록은 아래에서, 행은 왼쪽에서 순서대로 */
+html.motion [data-m="rows"]:not(.m-in) { transform: translateY(50px); }
+html.motion [data-m="rows"].m-in .def-table tbody tr { animation: m-row .6s cubic-bezier(.22,.61,.36,1) both; animation-delay: calc(var(--i, 0) * 45ms); }
+@keyframes m-row { from { opacity: 0; transform: translateX(-60px); } to { opacity: 1; transform: none; } }
+/* 지도(좁은 화면): 가운데에서 열린다 */
+html.motion [data-m="open"]:not(.m-in) { opacity: 1; clip-path: inset(10% 45% 10% 45% round 24px); }
 html.motion [data-m="open"].m-in { clip-path: inset(0 0 0 0 round 0); }
+/* 섹션 제목: 왼쪽부터 지워지듯 드러난다(clip-path는 관찰 면적을 0으로 만들어 mask를 쓴다) */
+html.motion [data-m="wipe"] { -webkit-mask-image: linear-gradient(90deg, #000 40%, transparent 60%); mask-image: linear-gradient(90deg, #000 40%, transparent 60%); -webkit-mask-size: 260% 100%; mask-size: 260% 100%; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; transition: -webkit-mask-position 1.1s cubic-bezier(.7,0,.2,1), mask-position 1.1s cubic-bezier(.7,0,.2,1); }
+html.motion [data-m="wipe"]:not(.m-in) { opacity: 1; -webkit-mask-position: 100% 0; mask-position: 100% 0; }
+html.motion [data-m="wipe"].m-in { -webkit-mask-position: 0 0; mask-position: 0 0; }
 
 /* HERO: 글자 단위 등장 */
-html.motion .m-char { display: inline-block; opacity: 0; transform: translateY(.55em) rotate(5deg); animation: m-char .6s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: calc(120ms + var(--i) * 26ms); }
+html.motion .m-char { display: inline-block; opacity: 0; transform: translateY(.9em) rotate(8deg); animation: m-char .7s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: calc(150ms + var(--i) * 32ms); }
 @keyframes m-char { to { opacity: 1; transform: none; } }
-
-/* QUALITY: 표 행이 순서대로 들어온다 */
-html.motion [data-m="rows"].m-in .def-table tbody tr { animation: m-row .5s cubic-bezier(.22,.61,.36,1) both; animation-delay: calc(var(--i, 0) * 38ms); }
-@keyframes m-row { from { opacity: 0; transform: translateX(-14px); } to { opacity: 1; transform: none; } }
 
 /* OUTCOME: 마우스 기울기 */
 html.motion .m-tilt { transform: perspective(800px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform .25s ease-out, box-shadow .25s ease-out; will-change: transform; }
-html.motion .m-tilt:hover { box-shadow: 0 14px 30px rgba(31, 42, 55, .1); }
-html.motion .m-tilt.scroll-reveal:not(.is-visible) { transform: perspective(800px) translateY(24px); }
+html.motion .m-tilt:hover { box-shadow: 0 18px 36px rgba(31, 42, 55, .14); }
+html.motion .m-tilt.scroll-reveal:not(.is-visible) { transform: perspective(800px) translateY(40px) rotateX(18deg); }
 
-/* MODEL: 고정 무대에서 단계가 하나씩 연결된다(넓은 화면) */
-html.motion-wide .m-pin-track { height: 230vh; }
+/* WHY(넓은 화면): 화면에 고정된 채 스크롤에 따라 단어가 하나씩 켜진다 */
+html.motion-wide #why.m-scrub { height: 260vh; padding: 0; }
+html.motion-wide #why.m-scrub > .container { position: sticky; top: var(--header-h, 64px); min-height: calc(100vh - var(--header-h, 64px)); display: flex; flex-direction: column; justify-content: center; }
+html.motion-wide #why.m-scrub p { font-size: 1.12rem; line-height: 1.85; }
+html.motion-wide .m-word { color: #c9cfd3; transition: color .35s ease; }
+html.motion-wide .m-word.on { color: inherit; }
+html.motion-wide strong .m-word.on { color: var(--primary); }
+
+/* MODEL(넓은 화면): 고정 무대에서 단계가 하나씩 날아와 연결된다 */
+html.motion-wide .m-pin-track { height: 260vh; }
 html.motion-wide .m-pin-stage { position: sticky; top: var(--header-h, 64px); min-height: calc(100vh - var(--header-h, 64px)); display: flex; flex-direction: column; justify-content: center; }
-html.motion-wide .m-model-line { height: 3px; margin: 1.6rem 0 1rem; border-radius: 3px; background: linear-gradient(90deg, var(--primary), var(--accent)); transform-origin: left; transform: scaleX(var(--p, 0)); }
-html.motion-wide .m-pin-stage .model-stage-grid > * { opacity: clamp(0, calc((var(--p, 0) - var(--k)) * 7), 1); transform: translateY(calc((1 - clamp(0, calc((var(--p, 0) - var(--k)) * 7), 1)) * 34px)); transition: opacity .25s linear, transform .25s ease-out; }
+html.motion-wide .m-model-line { height: 4px; margin: 1.6rem 0 1rem; border-radius: 4px; background: linear-gradient(90deg, var(--primary), var(--accent)); transform-origin: left; transform: scaleX(var(--p, 0)); }
+html.motion-wide .m-pin-stage .model-stage-grid > * { --on: clamp(0, calc((var(--p, 0) - var(--k)) * 6), 1); opacity: var(--on); transform: translateY(calc((1 - var(--on)) * 160px)) scale(calc(.8 + var(--on) * .2)) rotate(calc((1 - var(--on)) * -6deg)); }
 
-/* RESEARCH: 타임라인 선 그리기 */
-html.motion-wide .m-timeline .timeline-item { --on: clamp(0, calc((var(--p, 0) - var(--k)) * 9), 1); opacity: calc(.25 + var(--on) * .75); transition: opacity .3s linear; }
-html.motion-wide .m-timeline .timeline-marker { transform: scale(calc(.7 + var(--on) * .3)); transition: transform .3s ease-out; }
-html.motion-wide .m-timeline .timeline-item:not(:last-child)::after { transform-origin: top; transform: scaleY(clamp(0, calc((var(--p, 0) - var(--k)) * var(--n)), 1)); }
+/* RESEARCH(넓은 화면): 타임라인이 가로로 흘러간다 */
+html.motion-wide #research.m-hscroll { padding: 0; }
+html.motion-wide #research.m-hscroll > .container { position: sticky; top: var(--header-h, 64px); min-height: calc(100vh - var(--header-h, 64px)); display: flex; flex-direction: column; justify-content: center; overflow: hidden; }
+html.motion-wide .m-hscroll .timeline { display: flex; gap: 1.2rem; width: max-content; margin-top: 2.4rem; will-change: transform; }
+html.motion-wide .m-hscroll .timeline-item { --on: clamp(0, calc((var(--p, 0) - var(--k)) * 10), 1); flex: 0 0 260px; flex-direction: column; gap: 1rem; margin: 0; padding: 1.3rem; border: 1px solid var(--border); border-radius: 16px; background: #fff; opacity: calc(.3 + var(--on) * .7); transform: translateY(calc((1 - var(--on)) * 40px)); transition: opacity .3s linear, transform .4s ease-out; }
+html.motion-wide .m-hscroll .timeline-item:not(:last-child)::after { left: calc(100% + 1px); top: 37px; width: 1.2rem; height: 2px; transform-origin: left; transform: scaleX(var(--on)); }
+html.motion-wide .m-hscroll .timeline-marker { transform: scale(calc(.6 + var(--on) * .4)); }
+html.motion-wide .m-hscroll .timeline-content h4 { font-size: 1.05rem; }
 
-/* DATA: 파이프라인 점등 */
-html.motion-wide .m-pipeline > * { --on: clamp(0, calc((var(--p, 0) - var(--k)) * 8), 1); opacity: calc(.2 + var(--on) * .8); transform: translateY(calc((1 - var(--on)) * 16px)); transition: opacity .3s linear, transform .3s ease-out; }
+/* DATA(넓은 화면): 파이프라인 단계가 차례로 점등된다 */
+html.motion-wide .m-pipeline > * { --on: clamp(0, calc((var(--p, 0) - var(--k)) * 7), 1); opacity: calc(.15 + var(--on) * .85); transform: translateY(calc((1 - var(--on)) * 50px)) scale(calc(.85 + var(--on) * .15)); transition: opacity .3s linear, transform .35s ease-out; }
+
+/* WEBGIS(넓은 화면): 스크롤할수록 지도 창이 넓어진다 */
+html.motion-wide .m-map-grow { --q: min(1, calc(var(--p, 0) * 1.7)); clip-path: inset(calc((1 - var(--q)) * 18%) calc((1 - var(--q)) * 30%) round calc((1 - var(--q)) * 60px + 12px)); }
+
+/* 옆에서 들어오는 연출이 가로 스크롤을 만들지 않게 한다(clip은 sticky를 깨지 않는다) */
+html.motion main { overflow-x: clip; }
