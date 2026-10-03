@@ -70,6 +70,8 @@ document.addEventListener('DOMContentLoaded', () => {
       );
     },
   });
+  // 분석 I의 좌표 보완 후보. 분석 결과에는 반영하지 않은 검토용 레이어라 기본은 꺼 둔다.
+  const coordinateCandidateLayer = L.layerGroup();
   let allPondFeatures = [];
   let policyEvidenceMap = {};
   let activePolicyFilter = 'all';
@@ -108,9 +110,33 @@ document.addEventListener('DOMContentLoaded', () => {
       '못 위치': pondLayer,
       '농경지·농업진흥지역': agricultureLayer,
       '읍면별 시설 밀도': regionLayer,
+      'I. 좌표 보완 후보(미반영)': coordinateCandidateLayer,
     },
     { collapsed: false }
   ).addTo(map);
+
+  async function loadCoordinateCandidates() {
+    const rows = await loadCsv('data/analysis/coordinate_geocode_candidates.csv');
+    const current = new Map(allPondFeatures.map((feature) => [pondId(feature), feature.geometry?.coordinates]));
+    rows.filter((row) => row.geocode_status === 'EXACT_PARCEL_MATCH').forEach((row) => {
+      const lat = Number(row.candidate_lat_wgs84);
+      const lng = Number(row.candidate_lng_wgs84);
+      const from = current.get(String(row.pond_id));
+      if (!Number.isFinite(lat) || !Number.isFinite(lng) || !from) return;
+      const popup = `<strong>못 ${escapeHtml(row.pond_id)} · 좌표 보완 후보</strong><br>${escapeHtml(row.address)}<br>` +
+        `SGIS 지번 일치: ${escapeHtml(row.returned_lot)}<br>현재 좌표와 ${formatNumber(row.shift_from_current_m)}m 차이<br>` +
+        '<small>분석 D·E에는 반영하지 않은 검토용 후보</small>';
+      L.polyline([[from[1], from[0]], [lat, lng]], { color: '#8a5a00', weight: 1.4, dashArray: '4 4', opacity: 0.75 }).addTo(coordinateCandidateLayer);
+      L.circleMarker([lat, lng], { radius: 5, color: '#8a5a00', weight: 2, fillColor: '#fdf1d8', fillOpacity: 1 }).bindPopup(popup).addTo(coordinateCandidateLayer);
+    });
+  }
+
+  document.addEventListener('quality:show-candidates', () => {
+    if (!map.hasLayer(coordinateCandidateLayer)) coordinateCandidateLayer.addTo(map);
+    const bounds = L.featureGroup(coordinateCandidateLayer.getLayers()).getBounds();
+    if (bounds.isValid()) map.fitBounds(bounds, { padding: [30, 30] });
+    document.getElementById('map')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
 
   function escapeHtml(value) {
     return String(value ?? '-').replace(/[&<>'"]/g, (character) => ({
@@ -767,6 +793,7 @@ document.addEventListener('DOMContentLoaded', () => {
       agricultureLayer.addData(agricultureGeoJson);
       const regionGeoJson = await loadJson('data/geojson/uiseong_emd.geojson');
       regionLayer.addData(regionGeoJson);
+      loadCoordinateCandidates().catch((error) => console.warn('Coordinate candidates unavailable', error));
 
       const allOption = filter?.querySelector('option[value="all"]');
       if (allOption) {
@@ -888,7 +915,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     },
   })).catch((error) => console.error('D/E/F dashboard load failed', error));
-  import('./quality-dashboard.mjs?v=20261003-quality')
+  import('./quality-dashboard.mjs?v=20261003-candidates')
     .then(({ initQualityDashboard }) => initQualityDashboard({ loadJson, loadCsv }))
     .catch((error) => console.error('G–J quality dashboard load failed', error));
 });
