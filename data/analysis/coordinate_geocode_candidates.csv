@@ -1,0 +1,48 @@
+﻿pond_id,address,review_reason,query_address,geocode_status,candidate_x_epsg5174,candidate_y_epsg5174,candidate_lat_wgs84,candidate_lng_wgs84,returned_lot,shift_from_current_m,inside_uiseong_boundary,candidate_emd,emd_matches_address,suggested_confidence,shares_candidate_with_other_pond,correction_source
+1,의성읍 중리리 82유,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 중리리 82,EXACT_PARCEL_MATCH,356254.563,318603.034,36.3556025,128.7415658,중리리 82,3998.7,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+2,의성읍 중리리 237-1유,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 중리리 237-1,EXACT_PARCEL_MATCH,354692.378,320753.038,36.3752211,128.7245963,중리리 237-1,3507.2,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+3,의성읍 중리리 산 46-2 임,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 중리리 산 46-2,EXACT_PARCEL_MATCH,355016.487,320487.967,36.3727813,128.7281538,중리리 산 46-2,3563.1,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+4,의성읍 중리리 산60-5구,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 중리리 산 60-5,EXACT_PARCEL_MATCH,355471.801,321061.717,36.377876,128.7333398,중리리 산 60-5,4282.6,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+5,의성읍 상리리 43유,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 상리리 43,EXACT_PARCEL_MATCH,357510.74,316590.027,36.3372657,128.7551477,상리리 43,5481.2,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+6,의성읍 상리리 50-3유,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 상리리 50-3,EXACT_PARCEL_MATCH,357420.062,316339.702,36.3350257,128.7540877,상리리 50-3,5475.1,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+7,의성읍 상리리 16-1유,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 상리리 16-1,EXACT_PARCEL_MATCH,357332.833,316659.065,36.3379167,128.753181,상리리 16-1,5290.9,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+8,의성읍 상리리 296답,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 상리리 296,EXACT_PARCEL_MATCH,355016.165,318073.878,36.3510362,128.7276697,상리리 296,2744.6,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+9,의성읍 도동리 27유,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 도동리 27,EXACT_PARCEL_MATCH,354378.226,317132.371,36.3426578,128.7203796,도동리 27,2364.1,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+10,의성읍 오로리 716-1유,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 오로리 716-1,EXACT_PARCEL_MATCH,353038.165,314770.837,36.3215993,128.7049957,오로리 716-1,3524.8,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+11,의성읍 오로리 895유,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 오로리 895,EXACT_PARCEL_MATCH,353793.037,313145.185,36.3068358,128.7130782,오로리 895,5289.3,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+12,의성읍 비봉리 570-1유,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 비봉리 570-1,EXACT_PARCEL_MATCH,351504.303,314147.045,36.3162224,128.6878006,비봉리 570-1,4137.4,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+13,의성읍 비봉리 1009유,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 비봉리 1009,EXACT_PARCEL_MATCH,350052.29,313553.341,36.3111013,128.6715246,비봉리 1009,5161.7,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+14,의성읍 비봉리 105-1유,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 비봉리 105-1,EXACT_PARCEL_MATCH,352564.751,313240.66,36.3078907,128.699427,비봉리 105-1,4979.8,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+15,의성읍 비봉리 360유,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 비봉리 360,EXACT_PARCEL_MATCH,352129.005,312577.861,36.3019891,128.6944483,비봉리 360,5636.0,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+16,의성읍 비봉리 697유,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 비봉리 697,EXACT_PARCEL_MATCH,351104.154,312853.526,36.3046333,128.6830964,비봉리 697,5484.9,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+17,의성읍 비봉리 535유,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 비봉리 535,EXACT_PARCEL_MATCH,351216.173,313626.879,36.311582,128.6844928,비봉리 535,4705.8,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+18,의성읍 비봉리 894-3유,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 비봉리 894-3,EXACT_PARCEL_MATCH,350345.387,313878.649,36.3139861,128.6748494,비봉리 894-3,4743.6,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+19,의성읍 팔성리 449,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 팔성리 449,EXACT_PARCEL_MATCH,351093.605,315214.52,36.3259026,128.6834359,팔성리 449,3221.9,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+20,의성읍 팔성리 560유,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 팔성리 560,EXACT_PARCEL_MATCH,349996.99,315423.372,36.3279551,128.6712684,팔성리 560,3600.8,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+21,의성읍 팔성리 321유,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 팔성리 321,EXACT_PARCEL_MATCH,351586.052,316051.582,36.3333654,128.6890805,팔성리 321,2267.6,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+22,의성읍 팔성리 395유,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 팔성리 395,EXACT_PARCEL_MATCH,351031.877,315423.269,36.3277926,128.6827891,팔성리 395,3053.3,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+23,의성읍 오로리 847-4,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 오로리 847-4,EXACT_PARCEL_MATCH,353211.72,314494.387,36.3190816,128.7068733,오로리 847-4,3833.8,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+24,의성읍 팔성리 730,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 팔성리 730,EXACT_PARCEL_MATCH,350331.119,314488.406,36.3194809,128.674808,팔성리 730,4200.5,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+25,의성읍 팔성리 846답,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 팔성리 846,EXACT_PARCEL_MATCH,350885.309,314289.686,36.3176043,128.6809383,팔성리 846,4161.2,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+26,의성읍 용연리 512유,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 용연리 512,EXACT_PARCEL_MATCH,349875.411,316483.745,36.3375258,128.6701187,용연리 512,2957.2,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+27,의성읍 용연리 151유,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 용연리 151,EXACT_PARCEL_MATCH,350584.538,317283.182,36.3446165,128.6781683,용연리 151,1928.8,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+28,의성읍 용연리 296답,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 용연리 296,EXACT_PARCEL_MATCH,351160.406,316684.072,36.3391296,128.6844643,용연리 296,1891.3,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+29,의성읍 상리리 210,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 상리리 210,EXACT_PARCEL_MATCH,356373.108,317563.529,36.3462199,128.7426774,상리리 210,4149.1,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+30,의성읍 철파리 502유,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 철파리 502,EXACT_PARCEL_MATCH,349692.057,320204.576,36.3710712,128.668792,철파리 502,3262.2,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+31,의성읍 철파리 36유,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 철파리 36,EXACT_PARCEL_MATCH,351727.31,319481.178,36.3642364,128.6913207,철파리 36,1382.3,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+32,의성읍 업리 202유,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 업리 202,EXACT_PARCEL_MATCH,352650.763,322065.44,36.3873688,128.7021124,업리 202,3871.7,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+33,의성읍 업리 470유,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 업리 470,EXACT_PARCEL_MATCH,351945.219,322460.876,36.3910425,128.6943293,업리 470,4261.7,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+34,의성읍 업리 850유,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 업리 850,EXACT_PARCEL_MATCH,351203.668,320991.946,36.3779275,128.685782,업리 850,2979.2,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+35,의성읍 업리 244유,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 업리 244,EXACT_PARCEL_MATCH,352879.319,321298.657,36.3804255,128.704508,업리 244,3145.3,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+36,의성읍 업리 306답,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 업리 306,EXACT_PARCEL_MATCH,352744.374,320928.414,36.3771119,128.7029321,업리 306,2756.7,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+37,의성읍 업리 922-1유,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 업리 922-1,EXACT_PARCEL_MATCH,351516.889,320190.022,36.3706546,128.6891151,업리 922-1,2118.3,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+38,의성읍 업리 871유,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 업리 871,EXACT_PARCEL_MATCH,351139.789,320609.83,36.3744955,128.6849963,업리 871,2653.0,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+39,의성읍 업리 148유,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 업리 148,EXACT_PARCEL_MATCH,352489.801,323169.014,36.397335,128.7005355,업리 148,4961.7,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+40,의성읍 업리 1141유,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 업리 1141,EXACT_PARCEL_MATCH,349978.297,321595.726,36.3835579,128.6722484,업리 1141,4089.6,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+41,의성읍 업리 393,ADMIN_POINT_UNVERIFIED,경상북도 의성군 의성읍 업리 393,EXACT_PARCEL_MATCH,352283.248,321697.051,36.3841087,128.6979459,업리 393,3485.1,True,의성읍,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+215,춘산면 사미리 645-1답,NEARBY_POINT_UNVERIFIED,경상북도 의성군 춘산면 사미리 645-1,NO_RESULT,,,,,,,,,,,False,
+548,안평면 평팔리 산186,NEARBY_POINT_UNVERIFIED,경상북도 의성군 안평면 평팔리 산 186,NO_RESULT,,,,,,,,,,,False,
+658,구천면 노연리 185,NEARBY_POINT_UNVERIFIED,경상북도 의성군 구천면 노연리 185,NO_RESULT,,,,,,,,,,,False,
+685,다인면 삼분리 1310-01,NEARBY_POINT_UNVERIFIED,경상북도 의성군 다인면 삼분리 1310-1,EXACT_PARCEL_MATCH,326078.345,326413.428,36.4303885,128.4067533,삼분리 1310-1,42.9,True,다인면,True,MEDIUM,False,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+406,비안면 산제리 185유,DUPLICATE_ADDRESS_REVIEW,경상북도 의성군 비안면 산제리 185,EXACT_PARCEL_MATCH,339235.933,317551.471,36.3487399,128.551847,산제리 185,4.6,True,비안면,True,MEDIUM,True,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
+415,비안면 산제리 185유,DUPLICATE_ADDRESS_REVIEW,경상북도 의성군 비안면 산제리 185,EXACT_PARCEL_MATCH,339235.933,317551.471,36.3487399,128.551847,산제리 185,4.6,True,비안면,True,MEDIUM,True,SGIS 주소 지오코딩 API(addr/geocode) 지번 일치
