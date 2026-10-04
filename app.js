@@ -932,7 +932,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 2. Leaflet 지도는 위에서 생성했고, 데이터는 경계부터 순서대로 불러온다.
   initializeScrollExperience();
-  import('./motion.mjs?v=20261004-print')
+  import('./motion.mjs?v=20261004-criteria')
     .then(({ initMotion }) => initMotion())
     .catch((error) => console.warn('Section motion unavailable', error));
   initializeMap();
@@ -976,7 +976,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     },
   })).catch((error) => console.error('D/E/F dashboard load failed', error));
-  import('./quality-dashboard.mjs?v=20261004-print')
+  import('./quality-dashboard.mjs?v=20261004-criteria')
     .then(({ initQualityDashboard }) => initQualityDashboard({ loadJson, loadCsv }))
     .catch((error) => console.error('G–J quality dashboard load failed', error));
 });
