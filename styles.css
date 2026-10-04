@@ -3056,3 +3056,34 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
 @media (max-width: 800px) {
   .motion-toggle { position: absolute; top: .5rem; right: 0; padding: .3rem .6rem; font-size: .72rem; }
 }
+
+/* ============================================
+   인쇄·PDF 저장: 연출을 모두 끄고 내용만 차례로 싣는다.
+   (나타나기 전 요소가 투명하게, 고정 구간이 빈 쪽으로 인쇄되는 것을 막는다)
+   ============================================ */
+@media print {
+  .skip-link, .scroll-progress, .motion-toggle, .site-header, .chapter-toc, .leaflet-control-container, .noscript-note { display: none !important; }
+  html, body { background: #fff !important; }
+  html.motion [data-m], html.motion .m-char, .scroll-reveal, .m-tilt,
+  html.motion-wide .m-pin-stage .model-stage-grid > *, html.motion-wide .m-hscroll .timeline-item,
+  html.motion-wide .m-pipeline > *, html.motion [data-m="rows"] .def-table tbody tr {
+    opacity: 1 !important; transform: none !important; filter: none !important; clip-path: none !important;
+    -webkit-mask-image: none !important; mask-image: none !important; animation: none !important; transition: none !important;
+  }
+  html.motion-wide .m-word { color: inherit !important; }
+  html.motion-wide strong .m-word { color: var(--primary) !important; }
+  html.motion-wide #why.m-scrub, html.motion-wide #research.m-hscroll { height: auto !important; padding: 2rem 0 !important; }
+  html.motion-wide #why.m-scrub > .container, html.motion-wide #research.m-hscroll > .container,
+  html.motion-wide .m-pin-stage { position: static !important; min-height: 0 !important; overflow: visible !important; }
+  html.motion-wide .m-pin-track { height: auto !important; }
+  html.motion-wide .m-model-line { transform: none !important; }
+  html.motion-wide .m-hscroll .timeline { transform: none !important; width: auto !important; flex-wrap: wrap; }
+  html.motion-wide .m-hscroll .timeline-item { flex: 1 1 200px; }
+  html.motion-wide .m-hscroll .timeline-item::after { display: none; }
+  html.motion-wide .m-map-grow { clip-path: none !important; }
+  .section { padding: 1.6rem 0 !important; }
+  .analysis-block, .outcome-card, .public-source-card, .result-stat, .timeline-item, .data-structure-card, .def-panel { break-inside: avoid; }
+  h2, h3 { break-after: avoid; }
+  .def-table-wrap::before, .scatter-plot-wrap::before { display: none !important; }
+  a[href^="http"]::after { content: none; }
+}

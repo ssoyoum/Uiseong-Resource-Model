@@ -610,6 +610,12 @@ document.addEventListener('DOMContentLoaded', () => {
       { id: 'max-capacity', value: values.maximumCapacity, format: (value) => `${formatNumber(value)} 천톤` },
     ];
 
+    // 실제 값을 먼저 채운다. 화면에 들어오기 전에 인쇄하거나 읽어도 '-'로 남지 않는다.
+    targets.forEach((target) => {
+      const element = document.getElementById(target.id);
+      if (element) element.textContent = target.format(target.value);
+    });
+
     const play = () => {
       targets.forEach((target, index) => {
         const element = document.getElementById(target.id);
@@ -926,7 +932,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 2. Leaflet 지도는 위에서 생성했고, 데이터는 경계부터 순서대로 불러온다.
   initializeScrollExperience();
-  import('./motion.mjs?v=20261004-toggle')
+  import('./motion.mjs?v=20261004-print')
     .then(({ initMotion }) => initMotion())
     .catch((error) => console.warn('Section motion unavailable', error));
   initializeMap();
@@ -970,7 +976,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     },
   })).catch((error) => console.error('D/E/F dashboard load failed', error));
-  import('./quality-dashboard.mjs?v=20261004-toggle')
+  import('./quality-dashboard.mjs?v=20261004-print')
     .then(({ initQualityDashboard }) => initQualityDashboard({ loadJson, loadCsv }))
     .catch((error) => console.error('G–J quality dashboard load failed', error));
 });
