@@ -720,6 +720,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // 지도 영역이 화면에 가까워지면 한 번만 실행한다. 관찰을 못 쓰는 환경에서는 바로 실행한다.
+  function whenNearMap(callback) {
+    const target = document.getElementById('map');
+    if (!target || !('IntersectionObserver' in window)) { callback(); return; }
+    const observer = new IntersectionObserver((entries) => {
+      if (!entries.some((entry) => entry.isIntersecting)) return;
+      observer.disconnect();
+      callback();
+    }, { rootMargin: '1200px 0px' });
+    observer.observe(target);
+  }
+
+  async function loadSupportLayers() {
+    try {
+      // 분석 C와 농업환경 분석에 사용한 농경지 Polygon을 지도에 올린다.
+      const agricultureGeoJson = await loadJson('data/geojson/agricultural_areas_web.geojson');
+      agricultureLayer.addData(agricultureGeoJson);
+      const regionGeoJson = await loadJson('data/geojson/uiseong_emd_web.geojson');
+      regionLayer.addData(regionGeoJson);
+    } catch (error) {
+      console.error('보조 지도 레이어를 불러오지 못했습니다.', error);
+    }
+  }
+
   async function initializeMap() {
     try {
       // 1. 의성군 행정경계 GeoJSON을 먼저 읽는다.
@@ -818,11 +842,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.dispatchEvent(new CustomEvent('sgis:reset'));
       });
 
-      // 분석 C와 농업환경 분석에 사용한 농경지 Polygon을 지도에 올린다.
-      const agricultureGeoJson = await loadJson('data/geojson/agricultural_areas_web.geojson');
-      agricultureLayer.addData(agricultureGeoJson);
-      const regionGeoJson = await loadJson('data/geojson/uiseong_emd_web.geojson');
-      regionLayer.addData(regionGeoJson);
+      // 농경지·읍면 밀도는 보조 레이어라 지도에 가까워질 때 불러온다(첫 화면 속도).
+      // 좌표 후보는 분석 D에서 시설을 고를 때 팝업에 쓰이므로 바로 불러온다.
+      whenNearMap(loadSupportLayers);
       loadCoordinateCandidates().catch((error) => console.warn('Coordinate candidates unavailable', error));
 
       const allOption = filter?.querySelector('option[value="all"]');
@@ -904,7 +926,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 2. Leaflet 지도는 위에서 생성했고, 데이터는 경계부터 순서대로 불러온다.
   initializeScrollExperience();
-  import('./motion.mjs?v=20261003-motion2')
+  import('./motion.mjs?v=20261004-lazy')
     .then(({ initMotion }) => initMotion())
     .catch((error) => console.warn('Section motion unavailable', error));
   initializeMap();
@@ -948,7 +970,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     },
   })).catch((error) => console.error('D/E/F dashboard load failed', error));
-  import('./quality-dashboard.mjs?v=20261003-motion2')
+  import('./quality-dashboard.mjs?v=20261004-lazy')
     .then(({ initQualityDashboard }) => initQualityDashboard({ loadJson, loadCsv }))
     .catch((error) => console.error('G–J quality dashboard load failed', error));
 });
