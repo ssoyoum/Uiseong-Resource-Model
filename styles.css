@@ -2959,6 +2959,27 @@ main > .section:not(.about-hero) + .section { border-top: 1px solid #e7eee8; }
   .chapter-toc a { justify-content: center; }
 }
 
+/* 평가 기준별 바로가기 */
+.criteria-section { padding: 3.4rem 0 3.2rem; background: #fff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.criteria-head { max-width: 760px; margin-bottom: 1.6rem; }
+.criteria-head h2 { margin: .4rem 0 .5rem; }
+.criteria-head p { margin: 0; color: var(--muted); }
+.criteria-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; counter-reset: criteria; }
+.criteria-card { position: relative; display: flex; flex-direction: column; padding: 1.25rem 1.25rem 1.1rem; border: 1px solid var(--border); border-radius: 16px; background: linear-gradient(180deg, #fbfdfb 0%, #fff 100%); transition: border-color .25s ease, box-shadow .25s ease, translate .25s ease; }
+.criteria-card::before { counter-increment: criteria; content: '0' counter(criteria); position: absolute; top: 1.1rem; right: 1.2rem; color: #c9d8cd; font-size: 1.5rem; font-weight: 800; letter-spacing: -.04em; }
+.criteria-card:hover { border-color: #9cc2ab; box-shadow: 0 14px 30px rgba(23, 75, 53, .08); translate: 0 -3px; }
+.criteria-tag { align-self: flex-start; padding: .22rem .6rem; border-radius: 999px; background: #e6f0e7; color: #174b35; font-size: .76rem; font-weight: 800; }
+.criteria-card h3, .criteria-card p, .criteria-head p { word-break: keep-all; }
+.criteria-card h3 { margin: .8rem 2.2rem .55rem 0; color: #164a36; font-size: 1.05rem; line-height: 1.45; }
+.criteria-card p { flex: 1; margin: 0 0 1rem; color: var(--muted); font-size: .88rem; line-height: 1.7; }
+.criteria-links { display: flex; flex-wrap: wrap; gap: .4rem; }
+.criteria-links a { padding: .38rem .7rem; border: 1px solid #c9d8cd; border-radius: 9px; color: #174b35; font-size: .8rem; font-weight: 700; text-decoration: none; transition: background .2s ease, color .2s ease, border-color .2s ease; }
+.criteria-links a::after { content: ' →'; }
+.criteria-links a:hover { background: var(--primary); border-color: var(--primary); color: #fff; }
+#criteria { scroll-margin-top: calc(var(--header-h, 64px) + 10px); }
+@media (max-width: 980px) { .criteria-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .criteria-grid { grid-template-columns: 1fr; } .criteria-section { padding: 2.4rem 0; } }
+
 /* ============================================
    Section interactions (motion.mjs). Only active with html.motion.
    Each section has its own effect; wide screens add pinned/scrubbed scenes.
@@ -2980,6 +3001,11 @@ html.motion [data-m="pop"]:not(.m-in) { transform: scale(.4) translateY(40px); }
 /* 데이터 구조 카드: 아래 축을 기준으로 뒤집혀 선다 */
 html.motion [data-m="flip"] { transform-origin: 50% 100%; }
 html.motion [data-m="flip"]:not(.m-in) { transform: perspective(600px) rotateX(-80deg); }
+/* 평가 기준 카드: 아래에서 기울어진 채 올라와 똑바로 선다 */
+html.motion [data-m="deal"] { transform-origin: 50% 100%; transition: opacity .9s cubic-bezier(.22,.61,.36,1) calc(var(--i, 0) * 110ms), transform 1s cubic-bezier(.22,.61,.36,1) calc(var(--i, 0) * 110ms), translate .25s ease, box-shadow .25s ease, border-color .25s ease; }
+html.motion [data-m="deal"]:not(.m-in) { transform: translateY(70px) rotate(-4deg) scale(.94); }
+html.motion [data-m="deal"]:nth-child(3n+2):not(.m-in) { transform: translateY(90px) scale(.94); }
+html.motion [data-m="deal"]:nth-child(3n):not(.m-in) { transform: translateY(70px) rotate(4deg) scale(.94); }
 /* 출처 카드: 부채꼴로 흩어졌다 모인다 */
 html.motion [data-m="fan"]:not(.m-in) { transform: translateY(120px) rotate(-9deg); }
 html.motion [data-m="fan"]:nth-child(even):not(.m-in) { transform: translateY(120px) rotate(9deg); }

@@ -300,6 +300,7 @@ export function initMotion() {
   if (why[1]) why[1].dataset.m = 'right';
   revealOnView(why, {threshold: 0.3});
 
+  revealOnView(mark(document.querySelectorAll('#criteria .criteria-card'), 'deal'));
   revealOnView(mark(document.querySelectorAll('#project .model-evidence-note, #project .model-quicklinks'), 'up'));
   revealOnView(mark(document.querySelectorAll('#data .data-structure-card'), 'flip'));
   revealOnView(mark(document.querySelectorAll('.analysis-part'), 'slide', {stagger: false}), {threshold: 0.4});
