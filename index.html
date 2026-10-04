@@ -21,6 +21,7 @@
   </head>
   <body>
     <noscript><p class="noscript-note">이 페이지의 지도와 분석 그래프는 JavaScript로 표시됩니다. 분석 결과 원본은 아래 ‘직접 재현하고 결과 내려받기’의 CSV·GeoJSON 링크에서 바로 확인할 수 있습니다.</p></noscript>
+    <a class="skip-link" href="#main">본문으로 건너뛰기</a>
     <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
     <!-- HEADER & NAVIGATION -->
     <header class="site-header">
@@ -37,7 +38,7 @@
       </div>
     </header>
 
-    <main>
+    <main id="main" tabindex="-1">
 
       <!-- HERO -->
       <section id="about" class="section hero about-hero">
@@ -141,63 +142,63 @@
             <div class="timeline-item">
               <span class="timeline-marker">1</span>
               <div class="timeline-content">
-                <h4>2025.06 — 연구 시작</h4>
+                <h3>2025.06 — 연구 시작</h3>
                 <p>의성군 청년연구자 활동 시작</p>
               </div>
             </div>
             <div class="timeline-item">
               <span class="timeline-marker">2</span>
               <div class="timeline-content">
-                <h4>자료 조사 및 현황 파악</h4>
+                <h3>자료 조사 및 현황 파악</h3>
                 <p>의성의 전통 농업유산 및 못에 관한 기존 자료 검토</p>
               </div>
             </div>
             <div class="timeline-item">
               <span class="timeline-marker">3</span>
               <div class="timeline-content">
-                <h4>못 데이터 수집</h4>
+                <h3>못 데이터 수집</h3>
                 <p>원자료를 확인하고 의성군 행정경계 안의 못 위치정보를 선별</p>
               </div>
             </div>
             <div class="timeline-item">
               <span class="timeline-marker">4</span>
               <div class="timeline-content">
-                <h4>좌표 데이터 구축 및 변환</h4>
+                <h3>좌표 데이터 구축 및 변환</h3>
                 <p>원본 좌표계(EPSG:5174) → 국제표준(WGS84) 변환</p>
               </div>
             </div>
             <div class="timeline-item">
               <span class="timeline-marker">5</span>
               <div class="timeline-content">
-                <h4>GIS 공간정보 구축</h4>
+                <h3>GIS 공간정보 구축</h3>
                 <p>QGIS를 활용한 공간데이터 구축 및 분석</p>
               </div>
             </div>
             <div class="timeline-item">
               <span class="timeline-marker">6</span>
               <div class="timeline-content">
-                <h4>농업 관련 자료 조사</h4>
+                <h3>농업 관련 자료 조사</h3>
                 <p>지역 농업 및 농업유산 관련 공개 데이터 수집</p>
               </div>
             </div>
             <div class="timeline-item">
               <span class="timeline-marker">7</span>
               <div class="timeline-content">
-                <h4>데이터 분석</h4>
+                <h3>데이터 분석</h3>
                 <p>못의 공간적 분포, 지역별 특성, 군집성 분석</p>
               </div>
             </div>
             <div class="timeline-item">
               <span class="timeline-marker">8</span>
               <div class="timeline-content">
-                <h4>연구 결과 정리</h4>
+                <h3>연구 결과 정리</h3>
                 <p>GIS 분석 결과 및 시각화 자료 정리</p>
               </div>
             </div>
             <div class="timeline-item">
               <span class="timeline-marker">9</span>
               <div class="timeline-content">
-                <h4>2025.09 — 정책 제안</h4>
+                <h3>2025.09 — 정책 제안</h3>
                 <p>청년정책 및 지역활동 관련 제안 수립</p>
               </div>
             </div>
@@ -649,7 +650,7 @@
           <div class="outcome-grid">
             <div class="outcome-card">
               <span class="outcome-tag">DATA</span>
-              <h4>자료 검증과 전처리</h4>
+              <h3>자료 검증과 전처리</h3>
               <p>
                 주소 기반 자료의 좌표계를 확인하고<br>
                 의성군 경계 내부 데이터만 선별했습니다.
@@ -657,7 +658,7 @@
             </div>
             <div class="outcome-card">
               <span class="outcome-tag">ANALYSIS</span>
-              <h4>Python 공간분석</h4>
+              <h3>Python 공간분석</h3>
               <p>
                 pandas와 GeoPandas로 지역 집계,<br>
                 Buffer·Intersection·상관분석을 수행했습니다.
@@ -665,7 +666,7 @@
             </div>
             <div class="outcome-card">
               <span class="outcome-tag">WEB</span>
-              <h4>Interactive Web GIS</h4>
+              <h3>Interactive Web GIS</h3>
               <p>
                 GeoJSON을 Leaflet으로 연결해<br>
                 지도·레이어·필터·Popup을 구현했습니다.
