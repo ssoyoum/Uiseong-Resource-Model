@@ -3046,3 +3046,13 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
 @media (max-width: 700px) {
   .def-table-wrap::before, .scatter-plot-wrap::before { content: '← 옆으로 밀어서 전체 보기 →'; position: sticky; left: 0; display: block; width: max-content; margin: 0 0 .35rem; padding: .15rem .55rem; border-radius: 999px; background: #eef5f0; color: var(--primary); font-size: .72rem; font-weight: 700; }
 }
+
+/* 머리글 '움직임 줄이기' 버튼 */
+.site-header .nav { position: relative; }
+.motion-toggle { flex-shrink: 0; padding: .4rem .7rem; border: 1px solid var(--border); border-radius: 999px; background: #fff; color: #475650; font: inherit; font-size: .78rem; font-weight: 600; cursor: pointer; white-space: nowrap; }
+.motion-toggle:hover { color: #174b35; background: #e6f0e7; }
+.motion-toggle[aria-pressed="true"] { color: #fff; background: var(--primary); border-color: var(--primary); }
+.motion-toggle[hidden] { display: none; }
+@media (max-width: 800px) {
+  .motion-toggle { position: absolute; top: .5rem; right: 0; padding: .3rem .6rem; font-size: .72rem; }
+}

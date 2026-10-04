@@ -3,6 +3,40 @@
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const wide = window.matchMedia('(min-width: 901px)');
 const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value));
+const MOTION_KEY = 'sgis-motion';
+const ANCHOR_KEY = 'sgis-motion-anchor';
+// 저장소를 쓸 수 없는 환경(사생활 보호 모드 등)에서도 페이지는 그대로 동작해야 한다.
+const readStore = (store, key) => { try { return window[store].getItem(key); } catch { return null; } };
+const writeStore = (store, key, value) => {
+  try { if (value === null) window[store].removeItem(key); else window[store].setItem(key, value); } catch { /* 저장 실패 시 이번 방문에만 적용 */ }
+};
+
+// 머리글의 '움직임 줄이기' 버튼. 고정·가로 스크롤 연출 없이 내용만 빠르게 보고 싶은 사람을 위한 선택이다.
+function setupToggle(enabled) {
+  const button = document.querySelector('[data-motion-toggle]');
+  if (!button) return;
+  button.hidden = false;
+  button.setAttribute('aria-pressed', String(!enabled));
+  button.textContent = enabled ? '움직임 줄이기' : '움직임 켜기';
+  button.addEventListener('click', () => {
+    writeStore('localStorage', MOTION_KEY, enabled ? 'off' : null);
+    // 다시 불러온 뒤에도 보던 섹션으로 돌아온다(고정 연출 유무로 높이가 달라지므로 위치 대신 섹션을 기억).
+    const current = [...document.querySelectorAll('main > section[id]')].find((section) => section.getBoundingClientRect().bottom > window.innerHeight * 0.35);
+    writeStore('sessionStorage', ANCHOR_KEY, current?.id || null);
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    location.reload();
+  });
+}
+
+function restoreAnchor() {
+  const id = readStore('sessionStorage', ANCHOR_KEY);
+  if (!id) return;
+  writeStore('sessionStorage', ANCHOR_KEY, null);
+  const jump = () => document.getElementById(id)?.scrollIntoView({block: 'start'});
+  requestAnimationFrame(jump);
+  // 분석 화면이 늦게 채워지며 높이가 바뀌므로 한 번 더 맞춘다.
+  setTimeout(jump, 900);
+}
 
 function revealOnView(elements, {threshold = 0.15, repeat = false} = {}) {
   const items = [...elements].filter(Boolean);
@@ -249,6 +283,9 @@ function staggerRows(blocks) {
 
 export function initMotion() {
   if (reduceMotion || !('IntersectionObserver' in window)) return;
+  const enabled = readStore('localStorage', MOTION_KEY) !== 'off';
+  setupToggle(enabled);
+  if (!enabled) { restoreAnchor(); return; }
   document.documentElement.classList.add('motion');
   const header = document.querySelector('.site-header');
   document.documentElement.style.setProperty('--header-h', `${header?.offsetHeight || 64}px`);
@@ -288,4 +325,5 @@ export function initMotion() {
     window.addEventListener('resize', requestProgress);
     updateProgress();
   }
+  restoreAnchor();
 }
