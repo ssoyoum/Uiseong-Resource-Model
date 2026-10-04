@@ -3041,3 +3041,8 @@ html.motion main { overflow-x: clip; }
 .skip-link:focus { transform: none; outline: 3px solid #c58b22; outline-offset: 2px; }
 main:focus { outline: none; }
 a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible, summary:focus-visible { outline: 3px solid #c58b22; outline-offset: 3px; }
+
+/* 좁은 화면: 표·산점도가 옆으로 밀린다는 것을 알려 준다 */
+@media (max-width: 700px) {
+  .def-table-wrap::before, .scatter-plot-wrap::before { content: '← 옆으로 밀어서 전체 보기 →'; position: sticky; left: 0; display: block; width: max-content; margin: 0 0 .35rem; padding: .15rem .55rem; border-radius: 999px; background: #eef5f0; color: var(--primary); font-size: .72rem; font-weight: 700; }
+}
