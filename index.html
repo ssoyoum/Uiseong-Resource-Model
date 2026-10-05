@@ -17,7 +17,7 @@
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232d6a4f'/%3E%3Cellipse cx='32' cy='38' rx='19' ry='11' fill='%238bc9a8'/%3E%3Cellipse cx='32' cy='36' rx='12' ry='6' fill='%23e0efe6'/%3E%3C/svg%3E" />
     <title>SGIS 유휴자원 정책검토 모델 | 의성 못 사례</title>
     <link rel="stylesheet" href="vendor/leaflet/leaflet.css" integrity="sha256-M3v8pcq9A7OYFbJwD+vis7ft9VkhxZzUn4jssyghIwM=" crossorigin="" />
-    <link rel="stylesheet" href="styles.css?v=20261004-criteria" />
+    <link rel="stylesheet" href="styles.css?v=20261005-flow" />
   </head>
   <body>
     <noscript><p class="noscript-note">이 페이지의 지도와 분석 그래프는 JavaScript로 표시됩니다. 분석 결과 원본은 아래 ‘직접 재현하고 결과 내려받기’의 CSV·GeoJSON 링크에서 바로 확인할 수 있습니다.</p></noscript>
@@ -107,9 +107,9 @@
             </article>
             <article class="criteria-card">
               <span class="criteria-tag">데이터 다양성</span>
-              <h3>통계·공간·인구 자료 12종을 한 시설에 결합</h3>
-              <p>SGIS 생활권·지역통계, VWorld 시설·관광지·도로, 행정안전부 주민등록 인구를 결합했습니다. 교통문화지수는 군 단위 배경지표, WorldPop은 참고자료로 구분합니다.</p>
-              <div class="criteria-links"><a href="#data">데이터 처리</a><a href="#analysis-f">F. 도로·연령구조</a></div>
+              <h3>자료 12종을 쓰임에 따라 구분해 결합</h3>
+              <p>SGIS 생활권 인구, VWorld 시설·관광지·도로, 행정안전부 주민등록 인구, 농업지역을 시설·읍면 단위로 결합했습니다. 교통문화지수는 군 단위 배경지표, WorldPop은 참고자료로만 씁니다.</p>
+              <div class="criteria-links"><a href="#data-flow">자료–분석 연결도</a><a href="#analysis-f">F. 도로·연령구조</a></div>
             </article>
             <article class="criteria-card">
               <span class="criteria-tag">데이터 수급성</span>
@@ -301,6 +301,40 @@
             <p style="color: var(--muted); font-size: 0.85rem; margin-top: 1rem;">
               * 지도와 추가 분석에는 의성군 행정경계 안에서 확인된 427개 시설을 사용합니다.
             </p>
+          </div>
+
+          <div class="data-flow" id="data-flow">
+            <div class="data-flow-head">
+              <h3>어떤 자료가 어느 분석에 쓰였나</h3>
+              <p>출처 목록 12건(같은 계열은 한 칸으로 묶음)과 기존 연구의 못 목록을 분석별로 연결했습니다. 자료를 누르거나 마우스를 올리면 쓰인 분석만 강조됩니다. 분석 칸을 누르면 해당 분석으로 이동합니다.</p>
+            </div>
+            <div class="flow-map" data-flow-map>
+              <ul class="flow-col flow-sources" aria-label="입력 자료">
+                <li><button type="button" class="flow-node flow-source" data-flow-key="ponds" data-flow-to="A B C D E F MAP"><strong>의성 못 목록</strong><small>기존 연구 자료 · 427개 시설</small><span class="flow-use">A–F 전체의 분석 단위 · 지도</span></button></li>
+                <li><button type="button" class="flow-node flow-source" data-flow-key="boundary" data-flow-to="B MAP"><strong>의성군·읍면 경계</strong><small>기존 프로젝트 자료</small><span class="flow-use">분석 범위 · B 읍·면 비교 · 지도</span></button></li>
+                <li><button type="button" class="flow-node flow-source" data-flow-key="agri" data-flow-to="C"><strong>농업지역</strong><small>기존 프로젝트 자료</small><span class="flow-use">C 주변 농경지</span></button></li>
+                <li><button type="button" class="flow-node flow-source" data-flow-key="sgis" data-flow-to="D E"><strong>SGIS 생활권역 주행인구</strong><small>SGIS · 2024</small><span class="flow-use">D 생활권 인구 · E 검토 맥락</span></button></li>
+                <li><button type="button" class="flow-node flow-source" data-flow-key="facility" data-flow-to="E"><strong>VWorld 생활·관광시설</strong><small>UQ164 · UO601</small><span class="flow-use">E 주변 시설 수</span></button></li>
+                <li><button type="button" class="flow-node flow-source" data-flow-key="road" data-flow-to="F"><strong>VWorld 도로</strong><small>UQ151 · 직선거리</small><span class="flow-use">F 도로거리</span></button></li>
+                <li><button type="button" class="flow-node flow-source" data-flow-key="mois" data-flow-to="E F"><strong>주민등록 연령별 인구</strong><small>행정안전부 · 2024·2025</small><span class="flow-use">E 청년·고령 비율 · F 연령구조</span></button></li>
+                <li><button type="button" class="flow-node flow-source" data-flow-key="worldpop" data-flow-to="J"><strong>WorldPop 100m 인구</strong><small>2020 · 참고자료</small><span class="flow-use">J 참고 인구 (공식 인구 아님)</span></button></li>
+                <li><button type="button" class="flow-node flow-source" data-flow-key="sgisapi" data-flow-to="H"><strong>SGIS 지역통계 API</strong><small>가용성 점검</small><span class="flow-use">H 기록만 · 분석값 미사용</span></button></li>
+                <li><button type="button" class="flow-node flow-source" data-flow-key="traffic" data-flow-to="H"><strong>교통문화지수</strong><small>2014–2024 · 군 단위</small><span class="flow-use">H 기록만 · 시설별 값으로 쓰지 않음</span></button></li>
+              </ul>
+              <ul class="flow-col flow-targets" aria-label="분석">
+                <li><a class="flow-node flow-target" data-flow-target="A" href="#analysis-a"><b>A</b><span>규모·용량 분포</span></a></li>
+                <li><a class="flow-node flow-target" data-flow-target="B" href="#analysis-b"><b>B</b><span>읍·면 비교</span></a></li>
+                <li><a class="flow-node flow-target" data-flow-target="C" href="#analysis-c"><b>C</b><span>주변 농경지</span></a></li>
+                <li><a class="flow-node flow-target" data-flow-target="D" href="#analysis-d"><b>D</b><span>5분·10분 생활권 인구</span></a></li>
+                <li><a class="flow-node flow-target" data-flow-target="E" href="#analysis-e"><b>E</b><span>정책 검토 맥락</span></a></li>
+                <li><a class="flow-node flow-target" data-flow-target="F" href="#analysis-f"><b>F</b><span>도로·연령구조</span></a></li>
+                <li><a class="flow-node flow-target" data-flow-target="MAP" href="#webgis"><b>지도</b><span>Web GIS 427개 시설</span></a></li>
+                <li><a class="flow-node flow-target" data-flow-target="J" href="#quality-j"><b>J</b><span>가정 민감도·참고 인구</span></a></li>
+                <li><a class="flow-node flow-target" data-flow-target="H" href="#quality-h"><b>H</b><span>출처·기준연도 기록</span></a></li>
+              </ul>
+              <svg class="flow-lines" aria-hidden="true" focusable="false"></svg>
+            </div>
+            <p class="flow-note">SGIS 지역통계 API와 교통문화지수는 분석값으로 쓰지 않고 출처·가용성 기록(H)에만 남겼습니다. WorldPop은 국내 공식 인구를 대체하지 않는 참고자료입니다. VWorld 도로거리는 도로 객체까지의 직선거리입니다.</p>
           </div>
         </div>
       </section>
@@ -943,6 +977,6 @@
     </footer>
 
     <script src="vendor/leaflet/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
-    <script src="app.js?v=20261004-criteria" defer></script>
+    <script src="app.js?v=20261005-flow" defer></script>
   </body>
 </html>
