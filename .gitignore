@@ -2,7 +2,8 @@ analysis/__pycache__/
 *.py[cod]
 .venv/
 data/source/
-의성/
+의성/*
+!의성/정보공개청구(의성군 저수지, 의성군 관리, 농어촌공사 관리).xlsx
 data/raw/**
 !data/raw/**/
 vworld/
