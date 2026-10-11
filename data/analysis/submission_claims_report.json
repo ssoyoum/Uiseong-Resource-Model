@@ -24,6 +24,8 @@
     "docs/sgis-policy-evidence.md",
     "docs/sgis-uiseong-policy-proposal-guideline.md",
     "docs/submission/policy-review-context-detail.md",
+    "docs/submission/sgis-achievements-and-sources.md",
+    "docs/submission/sgis-source-and-press-evidence.md",
     "docs/submission/sgis-uiseong-final-draft.md",
     "docs/submission/sgis-uiseong-submission-report.md",
     "docs/vworld-competition-development-guideline.md",
@@ -598,7 +600,7 @@
       "name": "sgis_submission:markdown_paths_and_url_format",
       "status": "PASS",
       "details": {
-        "links_checked": 61,
+        "links_checked": 159,
         "errors": [],
         "scope": "Local paths and external URL format; no HTTP or heading-anchor check"
       }
