@@ -94,27 +94,6 @@ flowchart LR
 - VWorld 자료는 CC BY-NC-ND 조건입니다. 전국 원자료는 저장소에 올리지 않고, 분석 재현용 의성군 추출본만 둡니다.
 - 좌표 보완 후보(SGIS 지번 지오코딩), 가중치 민감도, WorldPop 참고 인구는 본 결과와 분리한 검토·참고 자료입니다.
 
-## 🚀 실행 방법
-
-```powershell
-pip install -r requirements.txt                 # Python 3.12에서 검증
-python analysis/acquire_population.py           # 행정안전부 주민등록 인구
-python analysis/acquire_worldpop.py             # WorldPop 참고격자
-# VWorld UQ151·UQ164·UO601은 로그인 후 내려받아 vworld/에 저장
-python analysis/run_competition_pipeline.py     # 마지막 줄 pipeline complete: PASS
-python analysis/build_public_site.py --output _site
-python -m http.server 8000 --bind 127.0.0.1 --directory _site
-```
-
-<details>
-<summary><b>SGIS 재조회 · 배포 안내</b></summary>
-<br>
-
-- SGIS 생활권을 다시 조회하려면 `.env.example`을 `.env`로 복사해 인증키를 넣습니다.
-- 공개 사이트는 `main`에 push할 때 Python 문법 검사와 웹 화면 테스트(`tests/`)를 통과해야 배포됩니다.
-
-</details>
-
 <details>
 <summary><b>저장소 구조</b></summary>
 <br>
