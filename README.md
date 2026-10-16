@@ -9,14 +9,20 @@
 SGIS 주행생활권 인구를 지역자원에 연결해 시설별 정책 검토 근거를 만듭니다.<br>
 첫 적용 사례는 경북 의성군의 전통수리시설 **'못' 427개**입니다.
 
-[![Web GIS](https://img.shields.io/badge/Web_GIS-바로가기-1f5f4a?style=for-the-badge&logo=leaflet&logoColor=white)](https://ssoyoum.github.io/Uiseong-Resource-Model/)
-[![Deploy](https://img.shields.io/github/actions/workflow/status/ssoyoum/Uiseong-Resource-Model/pages.yml?branch=main&style=for-the-badge&label=Pages%20%EB%B0%B0%ED%8F%AC)](https://github.com/ssoyoum/Uiseong-Resource-Model/actions/workflows/pages.yml)
-[![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)](requirements.txt)
+<br>
 
-[**공개 Web GIS**](https://ssoyoum.github.io/Uiseong-Resource-Model/) ·
+<a href="https://ssoyoum.github.io/Uiseong-Resource-Model/"><img src="https://img.shields.io/badge/공개_Web_GIS_바로가기_→-1f5f4a?style=for-the-badge&logo=leaflet&logoColor=white" alt="공개 Web GIS 바로가기" height="56"></a>
+
+### 🔗 [ssoyoum.github.io/Uiseong-Resource-Model](https://ssoyoum.github.io/Uiseong-Resource-Model/)
+
 [SGIS 인구 비교](https://ssoyoum.github.io/Uiseong-Resource-Model/#analysis-d) ·
 [정책 검토 결과](https://ssoyoum.github.io/Uiseong-Resource-Model/#analysis-e) ·
 [데이터 검증](https://ssoyoum.github.io/Uiseong-Resource-Model/#quality)
+
+<br>
+
+[![Deploy](https://img.shields.io/github/actions/workflow/status/ssoyoum/Uiseong-Resource-Model/pages.yml?branch=main&label=Pages%20%EB%B0%B0%ED%8F%AC)](https://github.com/ssoyoum/Uiseong-Resource-Model/actions/workflows/pages.yml)
+[![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)](requirements.txt)
 
 </div>
 

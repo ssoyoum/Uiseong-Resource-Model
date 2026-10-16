@@ -600,7 +600,7 @@
       "name": "sgis_submission:markdown_paths_and_url_format",
       "status": "PASS",
       "details": {
-        "links_checked": 164,
+        "links_checked": 163,
         "errors": [],
         "scope": "Local paths and external URL format; no HTTP or heading-anchor check"
       }
