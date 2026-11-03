@@ -1,26 +1,26 @@
 # 인구감소지역 유휴공간 정책매칭 모델 TODO
 
-최종 확인일: 2026-09-09 KST
+최종 확인일: 2026-11-04 KST (코드·산출물·테스트 대조 기준)
 
 > 기존 VWorld 공모전 데이터 확보 항목은 아래에 이력으로 보존한다. 현재 우선순위는 전국 전수분석이 아닌 SGIS 공모전용 의성 Case Study다. 상세 방향은 [`docs/sgis-uiseong-policy-proposal-guideline.md`](docs/sgis-uiseong-policy-proposal-guideline.md)를 따른다. 이전의 전국 정책매칭 확장안은 범위 축소로 보류한다.
 
 ## NOW — 지금 공모전 제출을 위해 바로 해야 하는 작업
 
-- 상태: 진행 중 — SGIS 의성 Case Study 제출 품질 검토
-- 마지막 업데이트: 2026-08-31
+- 상태: 진행 중 — SGIS 의성 Case Study 제출 품질 검토. 정적 Web GIS(GitHub Pages)·README 포트폴리오 정리는 완료, 좌표·현장자료·Word 서식 반영이 남음
+- 마지막 업데이트: 2026-11-04
 - 다음 액션: 좌표·현장자료를 확인할 수 있는 항목부터 검토하고, 제출문서 수치와 산출물·manifest를 최종 대조한다.
 
 ### 제출 우선순위 요약
 
 - [ ] SGIS 결측·좌표 보정 및 재추출
 - [ ] 현장자료 기반 정책 후보 검증
-- [ ] 데이터 기준연도·출처·manifest 최종 검증
+- [ ] 데이터 기준연도·출처·manifest 최종 검증 — 12필드 표준 `data/manifests/source_manifest.csv`(12건, 요약 PASS)는 생성됨. 단 다수 항목의 `accessed_at`·`download_url`·`license`가 `DATA_NOT_AVAILABLE`, 일부는 `LICENSE_UNVERIFIED`라 미완료
 - [ ] SGIS + 427개 못 정책 해석 확정
 - [x] 공모전 지도·그래프 최종 제작 (`docs/submission/sgis-uiseong-submission-report.md`의 시각화 목록)
 - [x] 제출 보고서 작성 (`docs/submission/sgis-uiseong-submission-report.md`, `docs/submission/sgis-uiseong-excellent-use-case-submission.docx`; 로컬 전용)
 - [x] 제출 수치 자동 검증
 - [x] SGIS 심사기준에 맞춘 최종 Markdown 원고 수정 및 실제 초안 포함 제출근거 65개 검증 (`docs/submission/sgis-uiseong-final-draft.md`; 로컬 전용)
-- [ ] 수정 원고를 Word 제출 서식에 반영하고 본문 5쪽·별첨의 실제 렌더링 확인 (기존 DOCX는 이전 편집본)
+- [ ] 수정 원고를 Word 제출 서식에 반영하고 본문 5쪽·별첨의 실제 렌더링 확인 (기존 DOCX는 이전 편집본; 2026-11-04 확인 시 로컬 `docs/submission/`에 `sgis-achievements-and-sources.docx/.md` 등이 있으나 렌더링 검증 기록은 없음)
 
 첫 화면의 상위 작업은 제출에 직접 영향을 주는 묶음만 보여준다. 외부 자료가 필요한 세부 항목과 완료된 검증 이력은 아래 접힌 목록에서 유지한다.
 
@@ -30,7 +30,7 @@
 ### 1. SGIS 결측·좌표·정책근거 검증
 
 - [x] `DATA_NOT_AVAILABLE` 399건은 원자료 좌표 문제와 SGIS 위치 인식·통계값 미반환 문제를 분리해 보고서에 표기
-- [ ] `coordinate_correction_template.csv`에 실제 좌표 출처가 확보된 못만 입력하고 SGIS 재수집
+- [ ] `coordinate_correction_template.csv`에 실제 좌표 출처가 확보된 못만 입력하고 SGIS 재수집 (2026-11-04 확인: 47행 중 보정값 입력 0건. SGIS 지오코딩 후보 `coordinate_geocode_candidates.csv`만 생성되어 검토 대기)
 - [ ] 대표점·중복좌표 43개 보정자료 확보 후 SGIS 재추출
 - [ ] 정책 근거표 후보를 현장관리 상태·보존가치·실제 서비스 수요와 대조
 - [ ] 427개 시설 ID와 연결되는 관리상태, 보존가치, 현장사진/조사일 필드 정리
@@ -69,7 +69,7 @@
 ## NEXT — NOW 완료 후 진행할 작업
 
 - 상태: 대기 — 현장·좌표·수치 검증 완료 후 보고서 완성
-- 마지막 업데이트: 2026-08-31
+- 마지막 업데이트: 2026-11-04
 - 다음 액션: NOW의 후보 검토 결과를 반영해 활용 가능성 해석과 정책 제안의 연결관계를 확정한다.
 
 ### P1 — 의성 지역자원·공간분석 정리
@@ -87,7 +87,7 @@
 ## BLOCKED — 외부 데이터·좌표·라이선스 등으로 현재 진행이 막힌 작업
 
 - 상태: 부분 차단 — 자료가 없거나 외부 확인이 필요한 항목
-- 마지막 업데이트: 2026-08-31
+- 마지막 업데이트: 2026-11-04
 - 다음 액션: 실제 원자료·공식 링크·현장조사 결과가 확보된 항목만 입력하고, 확보 전에는 `DATA_NOT_AVAILABLE`을 유지한다.
 
 ### 1. 국내 공식 인구 격자 데이터 — Buffer 인구 산출용
@@ -110,10 +110,10 @@
 
 ### 3. VWorld 최종 이용조건
 
-- [ ] VWorld 원자료의 최종 라이선스·재배포 조건 확인
-- [ ] 도로·생활시설 원자료를 GitHub에 올릴 수 있는지 이용조건 확인
-- [ ] VWorld 레이어명, 다운로드일, 제공기관, 이용조건을 `data/manifests/vworld_sources.csv`에 입력
-- [ ] 원자료 파일과 제출물에 적용되는 출처표시·상업적 이용금지·변경금지 조건 확인
+- [x] VWorld 원자료의 최종 라이선스·재배포 조건 확인 — `source_manifest.csv`에 CC BY-NC-ND(2026-10-03 확인, 출처표시·비영리·변경금지) 기록 (UQ164·UO601·UQ151)
+- [x] 도로·생활시설 원자료는 GitHub에 올리지 않기로 정리 — `redistribution_status=RAW_NOT_REDISTRIBUTED`, 루트 `vworld/`는 `.gitignore` 대상
+- [ ] VWorld 레이어명, 다운로드일, 제공기관, 이용조건을 `data/manifests/vworld_sources.csv`에 입력 — 제공기관·라이선스는 `source_manifest.csv`에 있으나 `vworld_sources.csv`는 `accessed_at` 비어 있고 이용조건이 "확인 필요"로 남아 있으며 다운로드일 `DATA_NOT_AVAILABLE`
+- [x] 원자료 파일과 제출물에 적용되는 출처표시·상업적 이용금지·변경금지 조건 확인 (`source_manifest.csv`)
 
 ### 4. SGIS 지역통계 API의 의성군 세부지표
 
@@ -125,7 +125,7 @@
 ## LATER — 공모전 이후 확장 또는 조건부 아이디어
 
 - 상태: 보류 — 현재 제출 범위 밖이거나 조건부 적용 항목
-- 마지막 업데이트: 2026-08-31
+- 마지막 업데이트: 2026-11-04
 - 다음 액션: 공모전 제출본 안정화 후 자료 범위·라이선스·정답라벨을 다시 확인하고 선택적으로 진행한다.
 
 ### 1. 전국 확장·정책매칭 모델
@@ -140,7 +140,7 @@
 - [ ] Web GIS·API·DB는 공모전 이후 확장 항목으로 유지
 - [ ] Flask 기반 VWorld 실시간 API 프록시
 - [ ] 실시간 VWorld API Web GIS 연동
-- [ ] 신규 결과 GeoJSON을 기존 Leaflet 레이어와 Popup에 연결
+- [x] 신규 결과 GeoJSON을 기존 Leaflet 레이어와 Popup에 연결 — 정적 Web GIS용 경량 레이어(`analysis/build_web_layers.py`, `data/analysis/web_layers_summary.json`)와 시설별 자료상태 Popup 반영
 - [ ] PostgreSQL + PostGIS 구축과 재현 가능한 import/seed 과정 검토
 
 ### 3. WorldPop 참고자료 확장
@@ -149,6 +149,7 @@
 - [x] 원자료 보관: `data/raw/population/worldpop/kor_pop_2020_CN_100m_R2025A_v1.tif`
 - [x] 다운로드 재현 스크립트: `python analysis/acquire_worldpop.py`
 - [x] 출처·접근일·SHA-256·라이선스 링크를 `data/manifests/worldpop_sources.csv`에 기록
+- [x] 못 주변 WorldPop 참고 Buffer 인구 산출 (`analysis/worldpop_reference_analysis.py`, `data/analysis/worldpop_reference_buffer.csv/json`; 공식 인구값과 별도 필드)
 
 비고: WorldPop은 약 100m(3 arc-second) 격자별 추정 인구수다. 국내 주민등록 인구와 산출모형·기준시점이 다르므로 공모전의 공식 인구값을 대체하지 않고, 인구분포 비교·Buffer 참고·시각화용으로만 사용한다. 원자료 라이선스는 [WorldPop licence](https://www.worldpop.org/data/licence.txt)를 확인한다.
 
@@ -192,15 +193,15 @@
 - [ ] 누가 427개의 A~E 정답을 부여했는지 정의
 - [ ] 라벨 기준·학습/검증 데이터 누수·결측값·class imbalance 확인
 - [ ] confusion matrix, per-class precision/recall/F1, macro/weighted F1, feature importance, random seed, split 방법, model version 산출
-- [ ] 정책 우선순위 0~100 점수 구현
-- [ ] 각 지표의 방향성·결측 처리·정규화·가중치 근거 기록
-- [ ] 기본·접근성 강조·보전 강조·청년활동 강조 시나리오와 민감도 분석 수행
+- [x] 정책 우선순위 0~100 점수 구현 (`analysis/policy_priority_scenarios.py`, `data/analysis/policy_priority_scenarios.csv/json`; 실험적 정책 가정)
+- [x] 각 지표의 방향성·결측 처리·정규화·가중치 근거 기록 (JSON의 `indicators`·`missing_rule`·`normalization`·`weight_rationale`)
+- [x] 시나리오와 민감도 분석 수행 (JSON의 `sensitivity`, `model_version`, `random_seed`) — 시나리오 구성이 지침의 4종(기본·접근성·보전·청년활동)과 일치하는지는 이번에 대조하지 않음
 - [ ] `top50`을 행정적으로 정해진 기준이 아니라 “정책 우선후보 예시”로 표현
 
 ## DONE — 이미 완료된 핵심 작업 요약
 
 - 상태: 완료 — 현재 제출본에서 재사용 가능한 핵심 분석·자료·문서
-- 마지막 업데이트: 2026-08-31
+- 마지막 업데이트: 2026-11-04
 - 다음 액션: 완료된 수치는 NOW의 최종 대조에서 다시 확인하고, 새 값으로 임의 변경하지 않는다.
 
 ### 1. 공모전 문제정의·범위
@@ -284,6 +285,16 @@ python analysis/run_competition_pipeline.py
 - [x] `data/analysis/submission_claims_report.json` 생성 및 통합 파이프라인 연결
 - [x] `python analysis/run_competition_pipeline.py` 실행 구조 확인
 
+### 6. 2026-09~10 추가 완료 (커밋 이력·산출물로 확인)
+
+- [x] 정적 Web GIS 공개 페이지(GitHub Pages) — `index.html`, `app.js`, `.github/workflows/pages.yml`, 404 페이지, 평가기준 안내, 출처→분석 흐름도, 데이터 품질·재현 섹션, 공개 결과 다운로드
+- [x] 12필드 표준 데이터 manifest 통합 — `analysis/build_source_manifest.py`, `data/manifests/source_manifest.csv`, `data/analysis/source_manifest_summary.json` (12건, PASS)
+- [x] 데이터 품질 감사 — `analysis/data_quality_audit.py`, `data/analysis/data_quality_audit.json` (PASS), `docs/data-quality.md`
+- [x] `requirements.txt` 추가 (Python 3.12 클린 venv에서 확인한 것으로 커밋 기록)
+- [x] CI: Pages 배포 전 대시보드 테스트·Python 문법검사 실행 (`pages.yml`)
+- [x] README를 포트폴리오 형식으로 재구성, 공개 Web GIS 링크 전면 배치 (원격 `main` 반영)
+- [x] 2026-11-04 재확인: `validation_report.json` PASS 16/0, `submission_claims_report.json` PASS 65/0/0, Python 문법검사·Node 테스트 2종(6·5건)·`tests/test_submission_validation.py` 5건 통과. `tests/test_def_interactions.mjs`는 `SGIS_DOM_RUNTIME`(linkedom) 환경변수가 없어 실행하지 못함(미검증). 파이프라인 전체 재실행은 이번에 하지 않음
+
 ### 기존 상태·판단 기록 보존
 
 기존 기록: 행정안전부 인구는 공공데이터 원자료 확보·처리 완료. VWorld UQ164·UO601 시설 원자료는 의성군 68개를 처리했고, UQ151 도로 공간파일은 확보하여 파이프라인 연결 중이다.
@@ -301,7 +312,7 @@ python analysis/run_competition_pipeline.py
 ### 참고자료·출처 운영 원칙
 
 - 상태: 유지 — 자료를 추가할 때 적용하는 출처·재현성 원칙
-- 마지막 업데이트: 2026-08-31
+- 마지막 업데이트: 2026-11-04
 - 다음 액션: NOW의 최종 대조 시 각 원자료의 manifest와 제출문서 수치를 함께 확인한다.
 
 본 분석은 아래 순서로 자료를 채운다.
